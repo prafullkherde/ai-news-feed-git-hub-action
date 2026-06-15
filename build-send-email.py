@@ -46,6 +46,8 @@ def send_email(html_body):
             "html": html_body,
         },
     )
+    print("Status:", resp.status_code)
+    print("Response:", resp.text)
     resp.raise_for_status()
     print("Email sent:", resp.status_code)
 
