@@ -17,4 +17,5 @@ jobs:
       - run: python build-send-email.py
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          GROQ_API_KEY_FOR_AUTO_EMAIL: ${{ secrets.GROQ_API_KEY_FOR_AUTO_EMAIL }}
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
