@@ -4,7 +4,7 @@ import feedparser
 from datetime import datetime, timedelta, timezone
 
 SOURCES = {
-    "Anthropic": "https://www.anthropic.com/news/rss.xml",
+    "Anthropic": "https://raw.githubusercontent.com/taobojlen/anthropic-rss-feed/main/anthropic_news_rss.xml",
     "Angular": "https://blog.angular.dev/feed",
     "AWS": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
     "Lobsters": "https://lobste.rs/rss",
@@ -39,9 +39,10 @@ def fetch_items():
 
 def filter_with_llm(items):
     prompt = (
-        "From this list of tech news items, select ONLY the 5-8 most relevant "
+        "Select 5-8 items, but ONLY if genuinely relevant — return fewer if the pool is weak. "
+        "Do not include borderline or padding items just to reach the count."    
         "for a Senior UI Solutions Architect (Angular, TypeScript, Java/Spring Boot, "
-        "AI/agent tooling, enterprise architecture, AWS). Exclude general tech news, "
+        "AI/agent tooling, enterprise architecture). Exclude general tech news, "
         "job postings, opinion pieces, unrelated niche tooling. "
         "For each selected item, output exactly: '- [TITLE](LINK): one-line why it matters'.\n\n"
         + "\n".join(f"- {it['title']} ({it['link']})" for it in items)
