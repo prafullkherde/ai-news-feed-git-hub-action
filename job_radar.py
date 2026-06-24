@@ -1,18 +1,17 @@
 """
-job_radar.py
+job_radar.py  v3
 ─────────────────────────────────────────────────────────────────────────────
-Same secrets as build-send-email.py — no new setup needed.
+Same secrets as build-send-email.py — GROQ_API_KEY_FOR_AUTO_EMAIL, RESEND_API_KEY, MY_EMAIL
 Workflow: .github/workflows/job-radar.yml  cron '30 1 * * *' (7 AM IST)
+pip install: requests feedparser
 
-pip install: requests feedparser beautifulsoup4
-
-PLATFORM          METHOD                    COST
-─────────────────────────────────────────────────
-RemoteOK          Public JSON API ?tags=X   Free, no key
-WeWorkRemotely    Public RSS feeds          Free, no key
-Working Nomads    Public JSON API           Free, no key
-Remote100K        HTML scrape               Free, fragile (JS-rendered)
-─────────────────────────────────────────────────
+PLATFORM        ENTRIES/DAY   FILTER STRATEGY
+──────────────────────────────────────────────────────────────────────
+RemoteOK        tag-scoped    keyword on title  (unfiltered feed needs it)
+WeWorkRemotely  64 entries    NO keyword — RSS already = programming only
+WorkingNomads   43 entries    NO keyword — API already = development only
+Remote100K      REMOVED       404 — dead URL
+──────────────────────────────────────────────────────────────────────
 """
 
 import os
@@ -20,7 +19,7 @@ import requests
 import feedparser
 from datetime import datetime, timedelta, timezone
 
-# ─── Candidate profile — injected into LLM scoring prompt ───────────────────
+# ─── Candidate profile ───────────────────────────────────────────────────────
 PROFILE = """
 UI Solution Architect, 17+ yrs exp.
 Stack: Angular, TypeScript, PrimeNG, ag-Grid, Spring Boot, Java 8, Oracle, OpenShift.
@@ -31,33 +30,27 @@ Preferred sectors: Banking GCC, fintech, product companies. Open to global remot
 NOT relevant: pure backend, DevOps, QA, junior/mid roles, on-site/hybrid India.
 """
 
-# ─── Keyword pre-filter — title only, keeps LLM cost low ────────────────────
-# DO NOT check tags — RemoteOK tags are noisy (Manufacturing jobs carry "react")
+# ─── Keyword pre-filter — used only for RemoteOK (unscoped feed) ─────────────
+# WWR and WorkingNomads skip this — their feeds are already scoped to dev roles
 KEYWORDS = [
     "angular", "typescript", "frontend architect", "ui architect",
     "solution architect", "component library", "design system",
     "tech lead", "technical lead", "senior frontend", "principal engineer",
     "staff engineer", "react architect", "web architect", "frontend lead",
-    "ui lead", "front end", "front-end architect",
+    "ui lead", "front end", "front-end",
 ]
 
-# 48 h window — jobs post less frequently than news
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=48)
-
-# Common User-Agent — feedparser and requests both use this
 UA_HEADERS = {"User-Agent": "Mozilla/5.0 (job-radar/1.0; personal job search)"}
 
 
 def _relevant(title: str) -> bool:
-    """Check title only — tags are unreliable across platforms."""
     t = title.lower()
     return any(k in t for k in KEYWORDS)
 
 
-# ─── SOURCE 1: RemoteOK ─────────────────────────────────────────────────────
-# API docs: https://remoteok.com/api
-# ?tags=X filters server-side — much cleaner than post-filter on all jobs
-# item[0] in every response = legal metadata, always skip it
+# ─── SOURCE 1: RemoteOK ──────────────────────────────────────────────────────
+# ?tags=X = server-side filter. Still run _relevant() — tag match != title match.
 
 REMOTEOK_TAG_URLS = [
     "https://remoteok.com/api?tags=angular",
@@ -66,26 +59,26 @@ REMOTEOK_TAG_URLS = [
     "https://remoteok.com/api?tags=architect",
 ]
 
-def fetch_remoteok(limit: int = 10) -> list[dict]:
+def fetch_remoteok(limit: int = 15) -> list[dict]:
     jobs, seen = [], set()
     for url in REMOTEOK_TAG_URLS:
         try:
             r = requests.get(url, headers=UA_HEADERS, timeout=15)
             r.raise_for_status()
-            for item in r.json()[1:]:           # skip item[0] — legal metadata
+            for item in r.json()[1:]:
                 job_id = str(item.get("id", ""))
                 if job_id in seen:
                     continue
                 title = item.get("position", "")
-                if not _relevant(title):        # title only — no tag noise
+                if not _relevant(title):
                     continue
                 seen.add(job_id)
                 jobs.append({
                     "source": "RemoteOK",
-                    "title": f"{title} @ {item.get('company', '?')}",
-                    "link":  item.get("url") or f"https://remoteok.com/jobs/{job_id}",
+                    "id":     job_id,
+                    "title":  f"{title} @ {item.get('company', '?')}",
+                    "link":   item.get("url") or f"https://remoteok.com/jobs/{job_id}",
                     "salary": item.get("salary", ""),
-                    "tags":  " ".join(item.get("tags", [])),
                 })
         except Exception as e:
             print(f"  RemoteOK error ({url}): {e}")
@@ -96,15 +89,15 @@ def fetch_remoteok(limit: int = 10) -> list[dict]:
 
 
 # ─── SOURCE 2: WeWorkRemotely ────────────────────────────────────────────────
-# WWR publishes official public RSS — blessed at weworkremotely.com/remote-job-rss-feed
-# feedparser needs User-Agent header in 2026 else returns 403 / bozo=True
+# RSS is already scoped to programming/full-stack — skip keyword filter.
+# Just deduplicate and respect the 48h cutoff.
 
 WWR_FEEDS = [
     "https://weworkremotely.com/categories/remote-programming-jobs.rss",
     "https://weworkremotely.com/categories/remote-full-stack-programming-jobs.rss",
 ]
 
-def fetch_weworkremotely(limit: int = 10) -> list[dict]:
+def fetch_weworkremotely(limit: int = 20) -> list[dict]:
     jobs, seen = [], set()
     for feed_url in WWR_FEEDS:
         try:
@@ -116,9 +109,7 @@ def fetch_weworkremotely(limit: int = 10) -> list[dict]:
             for entry in feed.entries:
                 link  = entry.get("link", "")
                 title = entry.get("title", "")
-                if link in seen:
-                    continue
-                if not _relevant(title):
+                if link in seen or not title:
                     continue
                 pub = entry.get("published_parsed")
                 if pub:
@@ -128,25 +119,24 @@ def fetch_weworkremotely(limit: int = 10) -> list[dict]:
                 seen.add(link)
                 jobs.append({
                     "source": "WeWorkRemotely",
-                    "title": title,
-                    "link":  link,
+                    "id":     link,
+                    "title":  title,
+                    "link":   link,
                     "salary": "",
-                    "tags":  "",
                 })
                 if len(jobs) >= limit:
-                    print(f"  WeWorkRemotely: {len(jobs)} matched")
-                    return jobs
+                    break
         except Exception as e:
             print(f"  WWR error ({feed_url}): {e}")
-    print(f"  WeWorkRemotely: {len(jobs)} matched")
+    print(f"  WeWorkRemotely: {len(jobs)} passed to LLM")
     return jobs
 
 
 # ─── SOURCE 3: Working Nomads ────────────────────────────────────────────────
-# Public JSON API — no key needed
-# Prints raw status + count to Actions log so any failure is immediately visible
+# API is already scoped to development category — skip keyword filter.
+# LLM will discard irrelevant roles (DevOps, backend, etc.).
 
-def fetch_workingnomads(limit: int = 10) -> list[dict]:
+def fetch_workingnomads(limit: int = 20) -> list[dict]:
     url = "https://www.workingnomads.com/api/exposed_jobs/?category=development"
     try:
         r = requests.get(url, headers=UA_HEADERS, timeout=15)
@@ -158,7 +148,7 @@ def fetch_workingnomads(limit: int = 10) -> list[dict]:
         for item in data:
             title   = item.get("title", "")
             company = item.get("company_name", "?")
-            if not _relevant(title):
+            if not title:
                 continue
             pub_str = item.get("pub_date", "")
             if pub_str:
@@ -170,63 +160,27 @@ def fetch_workingnomads(limit: int = 10) -> list[dict]:
                     pass
             jobs.append({
                 "source": "WorkingNomads",
-                "title": f"{title} @ {company}",
-                "link":  item.get("url", ""),
+                "id":     item.get("url", title),
+                "title":  f"{title} @ {company}",
+                "link":   item.get("url", ""),
                 "salary": "",
-                "tags":  "",
             })
             if len(jobs) >= limit:
                 break
-        print(f"  WorkingNomads: {len(jobs)} matched")
+        print(f"  WorkingNomads: {len(jobs)} passed to LLM")
         return jobs
     except Exception as e:
         print(f"  WorkingNomads ERROR: {e}")
         return []
 
 
-# ─── SOURCE 4: Remote100K ────────────────────────────────────────────────────
-# Site is Next.js / JS-rendered — requests returns empty shell, 0 jobs expected.
-# Kept as graceful fallback. No crash. Reports in email footer if empty.
-
-def fetch_remote100k(limit: int = 10) -> list[dict]:
-    try:
-        from bs4 import BeautifulSoup
-        r = requests.get("https://remote100k.com/jobs", headers=UA_HEADERS, timeout=15)
-        r.raise_for_status()
-        soup = BeautifulSoup(r.text, "html.parser")
-        jobs = []
-        for card in soup.select("a[href*='/jobs/']")[:60]:
-            title = card.get_text(strip=True)
-            href  = card.get("href", "")
-            if not href.startswith("http"):
-                href = "https://remote100k.com" + href
-            if not title or not _relevant(title):
-                continue
-            jobs.append({
-                "source": "Remote100K",
-                "title": title,
-                "link":  href,
-                "salary": "$100K+ verified",
-                "tags":  "$100K+",
-            })
-            if len(jobs) >= limit:
-                break
-        note = "0 (JS-rendered — expected)" if not jobs else str(len(jobs))
-        print(f"  Remote100K: {note} matched")
-        return jobs
-    except Exception as e:
-        print(f"  Remote100K ERROR: {e}")
-        return []
-
-
-# ─── Aggregate + dedup ───────────────────────────────────────────────────────
+# ─── Aggregate + dedup by canonical id ──────────────────────────────────────
 def fetch_all_jobs() -> tuple[list[dict], list[str]]:
     print("Fetching jobs...")
     sources = [
         ("RemoteOK",       fetch_remoteok),
         ("WeWorkRemotely", fetch_weworkremotely),
         ("WorkingNomads",  fetch_workingnomads),
-        ("Remote100K",     fetch_remote100k),
     ]
     all_jobs, errors = [], []
     for name, fn in sources:
@@ -237,18 +191,19 @@ def fetch_all_jobs() -> tuple[list[dict], list[str]]:
 
     seen, deduped = set(), []
     for j in all_jobs:
-        if j["link"] and j["link"] not in seen:
-            seen.add(j["link"])
+        key = j.get("id") or j["link"]
+        if key and key not in seen:
+            seen.add(key)
             deduped.append(j)
 
-    print(f"Total unique matched: {len(deduped)}")
+    print(f"Total unique jobs to LLM: {len(deduped)}")
     return deduped, errors
 
 
-# ─── LLM filter — same Groq call as build-send-email.py ─────────────────────
+# ─── LLM filter ──────────────────────────────────────────────────────────────
 def filter_with_llm(jobs: list[dict]) -> str:
     if not jobs:
-        return "No matching jobs found in the last 48 hours across all sources."
+        return "No jobs found in the last 48 hours."
 
     job_list = "\n".join(
         f"[{i+1}] [{j['source']}] {j['title']}"
@@ -259,16 +214,17 @@ def filter_with_llm(jobs: list[dict]) -> str:
 
     prompt = (
         f"Candidate profile:\n{PROFILE}\n\n"
-        "From the list below, select the TOP 10 best matches for this candidate. "
-        "Score each 0-100 for fit. "
-        "Output ONLY this exact format per job, sorted score descending:\n\n"
+        "From the job list below, select the BEST MATCHING jobs for this candidate. "
+        "Return UP TO 10, fewer if quality drops below 60. "
+        "CRITICAL: never list the same job twice — each job appears once only. "
+        "UI/frontend focus is MANDATORY for scores above 70 — "
+        "backend-only or sales roles must score below 60. "
+        "Sort by score descending. Output ONLY this format:\n\n"
         "## [NN/100] Job Title @ Company\n"
-        "**Source:** platform name\n"
-        "**Why:** one sentence — which specific skills match and why this role fits\n"
-        "**Gap:** one skill/requirement missing (or 'None')\n"
+        "**Source:** platform\n"
+        "**Why:** one sentence — name the specific matching skills\n"
+        "**Gap:** one missing requirement, or 'None'\n"
         "**Apply:** URL\n\n"
-        "Exclude pure backend, DevOps, junior, and non-remote roles entirely. "
-        "Score below 50 = exclude. Be strict.\n\n"
         f"JOB LIST:\n{job_list}"
     )
 
@@ -286,7 +242,7 @@ def filter_with_llm(jobs: list[dict]) -> str:
     return resp.json()["choices"][0]["message"]["content"]
 
 
-# ─── Email — same Resend pattern as build-send-email.py ─────────────────────
+# ─── Email ───────────────────────────────────────────────────────────────────
 def send_email(body_md: str, errors: list[str], total: int):
     rows = []
     for line in body_md.split("\n"):
@@ -320,15 +276,13 @@ def send_email(body_md: str, errors: list[str], total: int):
       <div style='background:#0d1b2a;color:white;padding:14px 18px;border-radius:8px;margin-bottom:16px'>
         <h2 style='margin:0;font-size:18px'>🎯 Job Radar — {datetime.now().strftime('%d %b %Y')}</h2>
         <p style='margin:4px 0 0;font-size:13px;opacity:.8'>
-          {total} keyword-matched jobs · RemoteOK · WeWorkRemotely · WorkingNomads · Remote100K
+          {total} jobs reviewed · RemoteOK · WeWorkRemotely · WorkingNomads
         </p>
       </div>
       {''.join(rows)}
       {error_block}
       <hr style='border:none;border-top:1px solid #eee;margin:20px 0'>
-      <p style='font-size:11px;color:#aaa'>
-        Next: open each link → use Claude browser plugin to review + apply.
-      </p>
+      <p style='font-size:11px;color:#aaa'>Next: open each link → use Claude browser plugin to review + apply.</p>
     </div>
     """
 
@@ -338,7 +292,7 @@ def send_email(body_md: str, errors: list[str], total: int):
         json={
             "from": "onboarding@resend.dev",
             "to": os.environ["MY_EMAIL"].split(","),
-            "subject": f"🎯 Job Radar {datetime.now().strftime('%d %b')} — {total} scanned",
+            "subject": f"🎯 Job Radar {datetime.now().strftime('%d %b')} — {total} reviewed",
             "html": html,
         },
         timeout=15,
