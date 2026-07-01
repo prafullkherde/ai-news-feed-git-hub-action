@@ -440,4 +440,4 @@ if __name__ == "__main__":
     save_seen(seen)
     print(f"seen_jobs.json updated: {len(seen)} total entries")
 
-    build_and_send_email(scored_new, cached_jobs, errors, len(new_jobs) + len(cached_jobs)))
+    build_and_send_email(scored_new, cached_jobs, errors, len(new_jobs) + len(cached_jobs))
