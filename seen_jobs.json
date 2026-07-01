@@ -1,0 +1,394 @@
+{
+  "RemoteOK::1133568": {
+    "title": "Front End Developer Fresher @ ZYPHRA TECH",
+    "score": 0,
+    "why": "The role is for a \u201cFresher\u201d front\u2011end developer, which is far below the candidate\u2019s seniority level.",
+    "gap": "Seniority",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "RemoteOK::1130866": {
+    "title": "Lead Front End Software Engineer @ Callibrity",
+    "score": 75,
+    "why": "A senior \u201cLead Front End Software Engineer\u201d matches the candidate\u2019s expertise, but the posting does not explicitly require Angular/TypeScript, so the score is capped at 75.",
+    "gap": "None",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "RemoteOK::1131840": {
+    "title": "Desenvolvedor Front end J\u00c3\u00banior @ AGGRANDIZE",
+    "score": 0,
+    "why": "The position is a junior front\u2011end role, which does not meet the 7\u2011year seniority threshold.",
+    "gap": "Seniority",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "RemoteOK::1131509": {
+    "title": "Tech Lead @ Zensurance",
+    "score": 0,
+    "why": "\u201cTech Lead\u201d is ambiguous and likely involves broader platform or backend responsibilities; no explicit UI/Angular focus is stated.",
+    "gap": "UI focus",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "RemoteOK::1131370": {
+    "title": "Front End Full Stack Developer @ Honor Foods",
+    "score": 75,
+    "why": "Senior\u2011level \u201cFront End Full Stack Developer\u201d aligns with the candidate\u2019s skill set, but without an explicit Angular/TS requirement the score is capped at 75.",
+    "gap": "None",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "RemoteOK::1131610": {
+    "title": "Sr Solution Architect Consultant Sales Engineer @ Cyara",
+    "score": 0,
+    "why": "The role is a \u201cSales Engineer\u201d \u2013 a pure sales/consulting position, excluded by the scoring rules.",
+    "gap": "Role type",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "RemoteOK::1132446": {
+    "title": "Junior Front End Developer @ PulseMediaNL",
+    "score": 0,
+    "why": "It is a junior front\u2011end developer role, below the required senior experience.",
+    "gap": "Seniority",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "RemoteOK::1131588": {
+    "title": "Staff Engineer Platform Engineering @ HighLevel",
+    "score": 0,
+    "why": "\u201cStaff Engineer Platform Engineering\u201d is typically a backend/platform role with no explicit UI focus.",
+    "gap": "UI focus",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "RemoteOK::1130892": {
+    "title": "Principal Solution Architect Professional Services Finance @ Anaplan",
+    "score": 0,
+    "why": "A \u201cPrincipal Solution Architect\u201d in finance services is not a UI\u2011focused position.",
+    "gap": "UI focus",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-gxp-instrument-systems-engineer-norwood-ma": {
+    "title": "AHU Technologies: GxP Instrument Systems Engineer- Norwood, MA",
+    "score": 0,
+    "why": "The position is an instrument systems engineer, unrelated to UI development.",
+    "gap": "Role type",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-facilities-maintenance-coordinator-tonawanda-ny": {
+    "title": "AHU Technologies: Facilities Maintenance Coordinator - Tonawanda, NY",
+    "score": 0,
+    "why": "A facilities maintenance coordinator role is outside the software UI domain.",
+    "gap": "Role type",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/cai-senior-frontend-web-developer": {
+    "title": "CAI: Senior Frontend Web Developer",
+    "score": 75,
+    "why": "Senior \u201cFrontend Web Developer\u201d matches the candidate\u2019s seniority; lack of explicit Angular/TS caps the score at 75.",
+    "gap": "None",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-electrical-engineer-tonawanda-ny": {
+    "title": "AHU Technologies: Electrical Engineer - Tonawanda, NY",
+    "score": 0,
+    "why": "Electrical engineering is a hardware role, not a UI development position.",
+    "gap": "Role type",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/servicetitan-web-developer": {
+    "title": "ServiceTitan: Web Developer",
+    "score": 70,
+    "why": "\u201cWeb Developer\u201d is a generic front\u2011end role; seniority is unclear, so the score is slightly below the maximum cap.",
+    "gap": "Seniority",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-ai-engineer-architect": {
+    "title": "A.Team: Senior Independent AI Engineer / Architect",
+    "score": 0,
+    "why": "The role is an AI engineer/architect, not a UI development position.",
+    "gap": "Role type",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-software-developer-90-170-hr": {
+    "title": "A.Team: Senior Independent Software Developer ($90-$170/hr)",
+    "score": 0,
+    "why": "\u201cSenior Independent Software Developer\u201d is a generic software role with no UI focus indicated.",
+    "gap": "UI focus",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/memora-aps-founding-engineer": {
+    "title": "Memora ApS: Founding Engineer",
+    "score": 0,
+    "why": "A \u201cFounding Engineer\u201d at a startup is likely full\u2011stack or backend\u2011heavy, with no explicit UI requirement.",
+    "gap": "UI focus",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/varicent-support-engineer-sql-web-applications-remote-mexico-only": {
+    "title": "Varicent: Support Engineer \u2013 SQL & Web Applications (Remote - Mexico Only)",
+    "score": 0,
+    "why": "Support Engineer for SQL & web apps is a support role, not a senior UI architect position.",
+    "gap": "Role type",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/akamai-senior-software-development-engineer-in-test-ii-automation": {
+    "title": "Akamai: Senior Software Development Engineer in Test II - Automation",
+    "score": 0,
+    "why": "Senior SDET (Software Development Engineer in Test) is a testing role, excluded by the rules.",
+    "gap": "Role type",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-web-applications-developer-sacramento-ca": {
+    "title": "AHU Technologies: Web Applications Developer - Sacramento, CA",
+    "score": 70,
+    "why": "\u201cWeb Applications Developer\u201d is a generic front\u2011end role; seniority is not specified, so the score is below the 75\u2011point cap.",
+    "gap": "Seniority",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-manager-business-development-remote-fulltime": {
+    "title": "AHU Technologies: Manager \u2013 Business Development (Remote - FullTime)",
+    "score": 0,
+    "why": "Business Development Manager is a non\u2011technical, non\u2011UI role.",
+    "gap": "Role type",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/activate-talent-senior-shopify-web-developer": {
+    "title": "Activate Talent: Senior Shopify Web Developer",
+    "score": 70,
+    "why": "Senior Shopify developer is a front\u2011end e\u2011commerce role, but the stack (Shopify/Liquid) differs from Angular/TS, capping the score below 75.",
+    "gap": "Tech\u2011stack mismatch",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/intercontinental-recruiting-front-end-web-developer-wfh": {
+    "title": "InterContinental Recruiting: Front End Web Developer, WFH",
+    "score": 70,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/anexia-internetdienstleistungs-technical-advisor-training-quality-m-w-d": {
+    "title": "Anexia Internetdienstleistungs: Technical Advisor \u2013 Training & Quality (M/W/D)",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/adoreal-web-development-manager-marketing-webflow": {
+    "title": "Adoreal: Web Development Manager (Marketing & Webflow)",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/anexia-internetdienstleistungs-senior-linux-system-engineer-m-w-d": {
+    "title": "Anexia Internetdienstleistungs: Senior Linux System Engineer (M/W/D)",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/hostinger-full-stack-developer-node-js-website-builder-based-in-poland": {
+    "title": "Hostinger: Full-Stack Developer (Node.js) | Website Builder | Based in Poland",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/akamai-senior-lead-software-engineer-ii": {
+    "title": "Akamai: Senior Lead Software Engineer II",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/pos-full-stack-javascript-engineer-remote-latam-or-europe": {
+    "title": "POS+: Full-Stack JavaScript Engineer (Remote - LATAM or Europe)",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1699984/": {
+    "title": "Senior Flutter Developer @ Lemon.io",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1691057/": {
+    "title": "Senior Swift & SwiftUI Developer @ Lemon.io",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1690536/": {
+    "title": "Looking For Online ESL Teachers - Remote @ Polly English",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1688480/": {
+    "title": "Senior React Full-stack Developer @ Lemon.io",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1687329/": {
+    "title": "Senior Performance Marketer (Full Remote - Worldwide) @ EverAI Limited",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1687328/": {
+    "title": "Senior AI Vertical Mini-Series Director (Full Remote - Worldwide) @ EverAI Limited",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1687327/": {
+    "title": "Mid/Senior AI Cinematic Video Editor (Full Remote - Worldwide) @ EverAI Limited",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1685353/": {
+    "title": "Senior DevOps Engineer @ Lemon.io",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1677142/": {
+    "title": "Senior Google Ads Account Manager - Remote (Work From Home) @ StubGroup",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1663269/": {
+    "title": "Senior React Native Developer @ Lemon.io",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1659921/": {
+    "title": "Quality Assurance Rater - English speakers (Remote) @ TELUS Digital",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1659833/": {
+    "title": "Quality Assurance Rater - German (DE) @ TELUS Digital",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1658647/": {
+    "title": "Senior UI & UX / Graphic Designer @ Lemon.io",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1656359/": {
+    "title": "Content Creator - Location-Based Video Tours (EU Only) - \u20ac50 onboarding @ Toureasy d.o.o.",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1656108/": {
+    "title": "Senior Blockchain Developer @ Lemon.io",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1656107/": {
+    "title": "AI Content Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1656105/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1654179/": {
+    "title": "Senior AI Engineer / Architect @ Lemon.io",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1653121/": {
+    "title": "Contract Case Processing Manager (Remote - Texas) @ Sneed|Mitchell LLP",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1652764/": {
+    "title": "Protocol Review Specialist @ Sun Coast Sciences",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-01",
+    "suppress_until": "2026-07-15"
+  }
+}
