@@ -1,13 +1,15 @@
-# .github/workflows/job-radar.yml
-# Separate from your existing news-feed workflow — same secrets, different cron.
-# Fires 7:00 AM IST (1:30 AM UTC) so digest is in inbox before you start day.
+# .github/workflows/job-radar.yml  v4
+# Needs permissions: contents: write — commits seen_jobs.json back after each run
 
 name: Job Radar
 
 on:
   schedule:
-    - cron: '30 1 * * *'   # 1:30 UTC = 7:00 AM IST daily
-  workflow_dispatch:         # manual run for testing — use this first
+    - cron: '30 1 * * *'   # 1:30 UTC = 7:00 AM IST
+  workflow_dispatch:
+
+permissions:
+  contents: write            # required for git push of seen_jobs.json
 
 jobs:
   job-radar:
@@ -21,7 +23,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install requests feedparser beautifulsoup4
+        run: pip install requests feedparser
 
       - name: Run job radar
         run: python job_radar.py
@@ -29,3 +31,11 @@ jobs:
           GROQ_API_KEY_FOR_AUTO_EMAIL: ${{ secrets.GROQ_API_KEY_FOR_AUTO_EMAIL }}
           RESEND_API_KEY:              ${{ secrets.RESEND_API_KEY }}
           MY_EMAIL:                    ${{ secrets.MY_EMAIL }}
+
+      - name: Commit seen_jobs.json
+        run: |
+          git config user.name  "job-radar[bot]"
+          git config user.email "job-radar@github-actions.local"
+          git add seen_jobs.json
+          git diff --staged --quiet || git commit -m "chore: update seen jobs [skip ci]"
+          git push
