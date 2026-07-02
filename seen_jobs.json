@@ -390,5 +390,37 @@
     "gap": "",
     "first_seen": "2026-07-01",
     "suppress_until": "2026-07-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/rehire-senior-web-developer-wordpress-shopify": {
+    "title": "Rehire: Senior Web Developer (WordPress & Shopify)",
+    "score": 70,
+    "why": "Senior Web Developer role centers on WordPress & Shopify, with no Angular/TypeScript requirement, so the candidate\u2019s core expertise is not utilized.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-07-02",
+    "suppress_until": "2026-07-16"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/fatturaelettronica-app-full-stack-web-app-developer-saas-mid-senior": {
+    "title": "FatturaElettronica APP: Full-Stack Web App Developer Saas (Mid-Senior)",
+    "score": 65,
+    "why": "Full\u2011Stack SaaS position is generic and does not explicitly call for Angular or TypeScript, capping the score despite the candidate\u2019s seniority.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-07-02",
+    "suppress_until": "2026-07-16"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/linkage-web-development-gohighlevel-expert-remote": {
+    "title": "Linkage Web Development: GoHighLevel Expert (Remote)",
+    "score": 0,
+    "why": "The role seeks a GoHighLevel platform expert, which does not align with UI architecture or the candidate\u2019s Angular/TypeScript specialization.",
+    "gap": "Mismatched technology stack",
+    "first_seen": "2026-07-02",
+    "suppress_until": "2026-07-16"
+  },
+  "WN::https://www.workingnomads.com/job/go/1701460/": {
+    "title": "Client Success Manager (US small & medium businesses) @ Integrated Hire",
+    "score": 0,
+    "why": "This is a Client Success Manager position, a non\u2011technical role unrelated to UI/Frontend architecture.",
+    "gap": "Non\u2011technical role",
+    "first_seen": "2026-07-02",
+    "suppress_until": "2026-07-16"
   }
 }
