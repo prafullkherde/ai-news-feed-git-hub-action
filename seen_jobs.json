@@ -422,5 +422,13 @@
     "gap": "Non\u2011technical role",
     "first_seen": "2026-07-02",
     "suppress_until": "2026-07-16"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/olsson-licensed-civil-engineer-site-design": {
+    "title": "Olsson: Licensed Civil Engineer - Site Design",
+    "score": 0,
+    "why": "The position is a Licensed Civil Engineer role unrelated to UI/Frontend development and does not require Angular or TypeScript.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-07-03",
+    "suppress_until": "2026-07-17"
   }
 }
