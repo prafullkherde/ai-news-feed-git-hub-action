@@ -574,5 +574,37 @@
     "gap": "Laravel/PHP backend focus",
     "first_seen": "2026-07-04",
     "suppress_until": "2026-07-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ninjaone-localization-web-developer": {
+    "title": "NinjaOne: Localization Web Developer",
+    "score": 70,
+    "why": "The Localization Web Developer role is a front\u2011end position but does not explicitly require Angular or TypeScript, so the candidate\u2019s expertise is relevant but not a perfect match.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-07-05",
+    "suppress_until": "2026-07-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-senior-technical-business-analyst-atlanta-ga": {
+    "title": "AHU Technologies: Senior Technical Business Analyst- Atlanta, GA",
+    "score": 0,
+    "why": "Senior Technical Business Analyst is a non\u2011technical, business\u2011analysis role, not a UI/frontend position.",
+    "gap": "Pure business\u2011analysis focus (no UI/frontend work)",
+    "first_seen": "2026-07-05",
+    "suppress_until": "2026-07-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/cortes-23-senior-qa-engineer-2": {
+    "title": "Cortes 23: Senior QA Engineer",
+    "score": 0,
+    "why": "Senior QA Engineer is a quality\u2011assurance role, not a UI/frontend development position.",
+    "gap": "Pure QA focus (no UI/frontend work)",
+    "first_seen": "2026-07-05",
+    "suppress_until": "2026-07-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/bunny-net-staff-software-engineer-magic-containers": {
+    "title": "bunny.net: Staff Software Engineer (Magic Containers)",
+    "score": 0,
+    "why": "Staff Software Engineer (Magic Containers) is a backend/container engineering role, not a UI/frontend position.",
+    "gap": "Backend/containers focus (no UI/frontend work)",
+    "first_seen": "2026-07-05",
+    "suppress_until": "2026-07-19"
   }
 }
