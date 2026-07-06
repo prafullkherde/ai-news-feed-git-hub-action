@@ -606,5 +606,53 @@
     "gap": "Backend/containers focus (no UI/frontend work)",
     "first_seen": "2026-07-05",
     "suppress_until": "2026-07-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/abstract-full-stack-web-developer-remote-contractor": {
+    "title": "Abstract: Full Stack Web Developer \u23e4 Remote Contractor",
+    "score": 0,
+    "why": "The role is a generic full\u2011stack web developer position likely aimed at mid\u2011level engineers and does not list Angular or TypeScript as requirements.",
+    "gap": "Senior\u2011level Angular focus",
+    "first_seen": "2026-07-06",
+    "suppress_until": "2026-07-20"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/https-shiperp-com-php-web-developer": {
+    "title": "https://shiperp.com/: PHP Web Developer",
+    "score": 0,
+    "why": "This is a pure PHP backend development role with no frontend component, so it falls under the \u201cpure backend\u201d exclusion.",
+    "gap": "Frontend Angular/TypeScript expertise",
+    "first_seen": "2026-07-06",
+    "suppress_until": "2026-07-20"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/workstaff360-e-commerce-web-developer-next-js-node-js-experience-is-required": {
+    "title": "WorkStaff360: E-commerce Web Developer (Next.js / Node.js experience is required)",
+    "score": 60,
+    "why": "The job explicitly requires Next.js/Node.js (React\u2011based) and does not mention Angular/TypeScript, triggering the React\u2011only cap of 60.",
+    "gap": "Lack of required React/Next.js experience",
+    "first_seen": "2026-07-06",
+    "suppress_until": "2026-07-20"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/indigenous-climate-action-request-for-proposals-website-developer": {
+    "title": "Indigenous Climate Action: Request for Proposals: Website Developer",
+    "score": 70,
+    "why": "The RFP seeks a generic website developer without specifying Angular/TypeScript, so the score is capped at 75; the candidate\u2019s seniority justifies a high sub\u2011cap score.",
+    "gap": "Absence of Angular/TypeScript in the specification",
+    "first_seen": "2026-07-06",
+    "suppress_until": "2026-07-20"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-tax-analyst-bloomington-il": {
+    "title": "AHU Technologies: Tax Analyst- Bloomington, IL",
+    "score": 0,
+    "why": "This is a tax analyst position, unrelated to UI/Frontend development, and is excluded by the \u201cpure non\u2011technical\u201d rule.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-07-06",
+    "suppress_until": "2026-07-20"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/air-apps-framer-website-designer": {
+    "title": "Air Apps: Framer Website Designer",
+    "score": 0,
+    "why": "The role is a Framer website designer focused on design rather than Angular/TypeScript development, falling outside the required tech stack.",
+    "gap": "Development (Angular/TS) focus",
+    "first_seen": "2026-07-06",
+    "suppress_until": "2026-07-20"
   }
 }
