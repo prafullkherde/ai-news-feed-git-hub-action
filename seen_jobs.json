@@ -654,5 +654,37 @@
     "gap": "Development (Angular/TS) focus",
     "first_seen": "2026-07-06",
     "suppress_until": "2026-07-20"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/drivetrain-ui-ux-website-designer-copy": {
+    "title": "Drivetrain: UI/UX Website Designer (copy)",
+    "score": 40,
+    "why": "The role is a UI/UX Website Designer focused on design rather than Angular/TypeScript development.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-07-07",
+    "suppress_until": "2026-07-21"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/sticker-mule-software-engineer-3": {
+    "title": "Sticker Mule: Software engineer",
+    "score": 55,
+    "why": "A generic Software Engineer position that may involve frontend work but does not explicitly require Angular/TypeScript.",
+    "gap": "Lack of explicit Angular/TS requirement",
+    "first_seen": "2026-07-07",
+    "suppress_until": "2026-07-21"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/aguru-uk-ltd-senior-full-stack-engineer": {
+    "title": "Aguru UK Ltd: Senior Full Stack Engineer",
+    "score": 85,
+    "why": "Senior Full\u2011Stack Engineer role likely includes a modern frontend stack where Angular/TypeScript expertise is valuable, matching the candidate\u2019s seniority and skill set.",
+    "gap": "None",
+    "first_seen": "2026-07-07",
+    "suppress_until": "2026-07-21"
+  },
+  "WN::https://www.workingnomads.com/job/go/1711099/": {
+    "title": "Content Creator (100% remote) @ Marker Video",
+    "score": 0,
+    "why": "Content Creator role is non\u2011technical and unrelated to UI development or Angular/TypeScript.",
+    "gap": "Not a development position",
+    "first_seen": "2026-07-07",
+    "suppress_until": "2026-07-21"
   }
 }
