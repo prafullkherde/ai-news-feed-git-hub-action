@@ -686,5 +686,21 @@
     "gap": "Not a development position",
     "first_seen": "2026-07-07",
     "suppress_until": "2026-07-21"
+  },
+  "WN::https://www.workingnomads.com/job/go/1713292/": {
+    "title": "Email + SMS Marketing Strategist @ Bebonia",
+    "score": 0,
+    "why": "The role is a marketing strategist position with no mention of Angular, TypeScript, or UI development.",
+    "gap": "No frontend/Angular responsibilities",
+    "first_seen": "2026-07-08",
+    "suppress_until": "2026-07-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1712616/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "The position is a data analyst role that does not require any UI, Angular, or TypeScript skills.",
+    "gap": "No frontend/Angular responsibilities",
+    "first_seen": "2026-07-08",
+    "suppress_until": "2026-07-22"
   }
 }
