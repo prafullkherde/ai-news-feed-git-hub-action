@@ -702,5 +702,61 @@
     "gap": "No frontend/Angular responsibilities",
     "first_seen": "2026-07-08",
     "suppress_until": "2026-07-22"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-sdet-automated-qa-engineer-seattle-wa": {
+    "title": "AHU Technologies: SDET / Automated QA Engineer- Seattle WA",
+    "score": 0,
+    "why": "The role is a pure QA/SDET position, which the candidate\u2019s UI\u2011focused experience does not cover.",
+    "gap": "None",
+    "first_seen": "2026-07-09",
+    "suppress_until": "2026-07-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/kuna-eit-civil-anchorage-ak": {
+    "title": "Kuna: EIT - Civil - Anchorage, AK",
+    "score": 0,
+    "why": "This is a civil engineering position, unrelated to software development.",
+    "gap": "None",
+    "first_seen": "2026-07-09",
+    "suppress_until": "2026-07-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/zensors-frontend-web-developer-react-typescript-remote": {
+    "title": "Zensors: Frontend Web Developer React/Typescript (Remote)",
+    "score": 60,
+    "why": "The job requires React (with TypeScript) while the candidate\u2019s expertise is in Angular/TypeScript, so the stack mismatch caps the score at 60.",
+    "gap": "React experience",
+    "first_seen": "2026-07-09",
+    "suppress_until": "2026-07-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-fullstack-developer-python-3": {
+    "title": "Proxify AB: Senior Fullstack Developer (Python)",
+    "score": 0,
+    "why": "The role is a senior full\u2011stack Python developer; the candidate\u2019s primary expertise is Angular/TypeScript UI architecture, not Python backend.",
+    "gap": "Python/Full\u2011stack experience",
+    "first_seen": "2026-07-09",
+    "suppress_until": "2026-07-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/bnk-to-the-future-graphic-web-designer": {
+    "title": "Bnk To The Future: Graphic & Web Designer",
+    "score": 0,
+    "why": "This is a graphic and web design role, not a software development position.",
+    "gap": "None",
+    "first_seen": "2026-07-09",
+    "suppress_until": "2026-07-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-data-analyst-curam": {
+    "title": "AHU Technologies: Data Analyst/ Curam",
+    "score": 0,
+    "why": "The position is for data analysis/Curam, which does not align with the candidate\u2019s UI architecture background.",
+    "gap": "None",
+    "first_seen": "2026-07-09",
+    "suppress_until": "2026-07-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/pavago-website-designer": {
+    "title": "Pavago: Website Designer",
+    "score": 0,
+    "why": "The job is a website designer role, lacking the software engineering focus required for the candidate.",
+    "gap": "None",
+    "first_seen": "2026-07-09",
+    "suppress_until": "2026-07-23"
   }
 }
