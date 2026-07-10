@@ -758,5 +758,13 @@
     "gap": "None",
     "first_seen": "2026-07-09",
     "suppress_until": "2026-07-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/mrioa-web-developer-remote": {
+    "title": "MRIoA: Web Developer (Remote)",
+    "score": 70,
+    "why": "The position calls for a general web developer with frontend experience but does not explicitly require Angular or TypeScript, capping the candidate\u2019s suitability.",
+    "gap": "No explicit Angular/TypeScript requirement.",
+    "first_seen": "2026-07-10",
+    "suppress_until": "2026-07-24"
   }
 }
