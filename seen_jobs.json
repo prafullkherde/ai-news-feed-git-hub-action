@@ -766,5 +766,53 @@
     "gap": "No explicit Angular/TypeScript requirement.",
     "first_seen": "2026-07-10",
     "suppress_until": "2026-07-24"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/1password-senior-web-developer": {
+    "title": "1Password: Senior Web Developer",
+    "score": 70,
+    "why": "Senior Web Developer role is senior\u2011level but does not explicitly require Angular/TypeScript, so it falls under the generic frontend cap.",
+    "gap": "Angular/TypeScript experience not required",
+    "first_seen": "2026-07-11",
+    "suppress_until": "2026-07-25"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/solar-secure-solutions-web-development-intern": {
+    "title": "Solar Secure Solutions: Web Development Intern",
+    "score": 0,
+    "why": "The position is an internship (junior level <\u202f7\u202fyears), which is excluded by the scoring rules.",
+    "gap": "Junior level (<\u202f7\u202fyears)",
+    "first_seen": "2026-07-11",
+    "suppress_until": "2026-07-25"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/remote-va-web-developer-ai-specialist": {
+    "title": "Remote VA: Web Developer & AI Specialist",
+    "score": 65,
+    "why": "Senior\u2011level web developer role combined with AI responsibilities; no Angular/TypeScript requirement, so capped at generic frontend level.",
+    "gap": "AI expertise required",
+    "first_seen": "2026-07-11",
+    "suppress_until": "2026-07-25"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/remote-va-web-developer-bigcommerce-experience-required": {
+    "title": "Remote VA: Web Developer (BigCommerce Experience Required)",
+    "score": 60,
+    "why": "Web developer role focused on BigCommerce; not an Angular/TypeScript position and therefore capped below the generic frontend maximum.",
+    "gap": "BigCommerce experience required",
+    "first_seen": "2026-07-11",
+    "suppress_until": "2026-07-25"
+  },
+  "WN::https://www.workingnomads.com/job/go/1719512/": {
+    "title": "AI Content Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "AI Content Analyst explicitly states \u201cNo Experience Required,\u201d indicating an entry\u2011level, non\u2011frontend role, which is excluded.",
+    "gap": "Entry\u2011level, not UI",
+    "first_seen": "2026-07-11",
+    "suppress_until": "2026-07-25"
+  },
+  "WN::https://www.workingnomads.com/job/go/1719508/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "Data Analyst is a pure data role with no frontend focus, thus excluded by the scoring rules.",
+    "gap": "Not a UI/frontend role",
+    "first_seen": "2026-07-11",
+    "suppress_until": "2026-07-25"
   }
 }
