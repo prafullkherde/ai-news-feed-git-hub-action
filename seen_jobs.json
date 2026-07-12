@@ -814,5 +814,85 @@
     "gap": "Not a UI/frontend role",
     "first_seen": "2026-07-11",
     "suppress_until": "2026-07-25"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer": {
+    "title": "Lemon.io: Senior React Native Developer",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-12",
+    "suppress_until": "2026-07-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/mindrift-freelance-full-stack-web-app-developer": {
+    "title": "Mindrift: Freelance Full-Stack Web App Developer",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-12",
+    "suppress_until": "2026-07-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/unqork-intern-web-application-penetration-tester": {
+    "title": "Unqork: Intern-Web Application Penetration Tester",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-12",
+    "suppress_until": "2026-07-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/akamai-security-architect-ii": {
+    "title": "Akamai: Security Architect II",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-12",
+    "suppress_until": "2026-07-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/atcom-senior-net-web-developer": {
+    "title": "Atcom: Senior .NET Web Developer",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-12",
+    "suppress_until": "2026-07-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/mindrift-freelance-web-designer": {
+    "title": "Mindrift: Freelance Web Designer",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-12",
+    "suppress_until": "2026-07-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/kai-partners-technical-solutions-engineer-web-developer": {
+    "title": "KAI Partners: Technical Solutions Engineer/Web Developer",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-12",
+    "suppress_until": "2026-07-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/aliqan-technologies-site-reliability-engineer": {
+    "title": "ALIQAN Technologies: Site Reliability Engineer",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-12",
+    "suppress_until": "2026-07-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/speechify-inc-senior-software-engineer-web-1": {
+    "title": "Speechify Inc: Senior Software Engineer, Web",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-12",
+    "suppress_until": "2026-07-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stellar-ai-senior-software-engineer": {
+    "title": "Stellar AI: Senior Software Engineer",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-12",
+    "suppress_until": "2026-07-26"
   }
 }
