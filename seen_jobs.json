@@ -894,5 +894,13 @@
     "gap": "",
     "first_seen": "2026-07-12",
     "suppress_until": "2026-07-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coin-market-cap-technical-ai-product-manager": {
+    "title": "Coin Market Cap: Technical AI Product Manager",
+    "score": 0,
+    "why": "The role is a Technical AI Product Manager, not a frontend development position and does not require Angular or TypeScript expertise.",
+    "gap": "No product management experience / no Angular/TS focus.",
+    "first_seen": "2026-07-13",
+    "suppress_until": "2026-07-27"
   }
 }
