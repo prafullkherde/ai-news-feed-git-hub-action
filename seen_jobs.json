@@ -902,5 +902,13 @@
     "gap": "No product management experience / no Angular/TS focus.",
     "first_seen": "2026-07-13",
     "suppress_until": "2026-07-27"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/highlevel-product-solutions-engineer-creator-platform": {
+    "title": "Highlevel: Product Solutions Engineer - Creator Platform",
+    "score": 68,
+    "why": "The role is a generic Product Solutions Engineer without an explicit Angular or TypeScript requirement, limiting alignment with the candidate\u2019s core expertise.",
+    "gap": "No explicit Angular/TypeScript requirement.",
+    "first_seen": "2026-07-14",
+    "suppress_until": "2026-07-28"
   }
 }
