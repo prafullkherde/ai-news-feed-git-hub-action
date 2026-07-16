@@ -2,10 +2,10 @@
   "RemoteOK::1133568": {
     "title": "Front End Developer Fresher @ ZYPHRA TECH",
     "score": 0,
-    "why": "The role is for a \u201cFresher\u201d front\u2011end developer, which is far below the candidate\u2019s seniority level.",
-    "gap": "Seniority",
-    "first_seen": "2026-07-01",
-    "suppress_until": "2026-07-15"
+    "why": "The role is for a \u201cFresher\u201d front\u2011end developer, which is far below the candidate\u2019s senior\u2011level experience.",
+    "gap": "Seniority level",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
   },
   "RemoteOK::1130866": {
     "title": "Lead Front End Software Engineer @ Callibrity",
@@ -18,58 +18,58 @@
   "RemoteOK::1131840": {
     "title": "Desenvolvedor Front end J\u00c3\u00banior @ AGGRANDIZE",
     "score": 0,
-    "why": "The position is a junior front\u2011end role, which does not meet the 7\u2011year seniority threshold.",
-    "gap": "Seniority",
-    "first_seen": "2026-07-01",
-    "suppress_until": "2026-07-15"
+    "why": "It is a junior front\u2011end position, not matching the candidate\u2019s 17+ years of senior UI architecture experience.",
+    "gap": "Seniority level",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
   },
   "RemoteOK::1131509": {
     "title": "Tech Lead @ Zensurance",
-    "score": 0,
-    "why": "\u201cTech Lead\u201d is ambiguous and likely involves broader platform or backend responsibilities; no explicit UI/Angular focus is stated.",
-    "gap": "UI focus",
-    "first_seen": "2026-07-01",
-    "suppress_until": "2026-07-15"
+    "score": 70,
+    "why": "A senior\u2011level Tech Lead role aligns with the candidate\u2019s experience, but the posting does not explicitly require Angular or TypeScript, limiting the fit.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
   },
   "RemoteOK::1131370": {
     "title": "Front End Full Stack Developer @ Honor Foods",
-    "score": 75,
-    "why": "Senior\u2011level \u201cFront End Full Stack Developer\u201d aligns with the candidate\u2019s skill set, but without an explicit Angular/TS requirement the score is capped at 75.",
-    "gap": "None",
-    "first_seen": "2026-07-01",
-    "suppress_until": "2026-07-15"
+    "score": 68,
+    "why": "The position is a front\u2011end/full\u2011stack developer role, suitable for a senior UI architect, yet it lacks a specific Angular/TS requirement, capping the score.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
   },
   "RemoteOK::1131610": {
     "title": "Sr Solution Architect Consultant Sales Engineer @ Cyara",
     "score": 0,
-    "why": "The role is a \u201cSales Engineer\u201d \u2013 a pure sales/consulting position, excluded by the scoring rules.",
-    "gap": "Role type",
-    "first_seen": "2026-07-01",
-    "suppress_until": "2026-07-15"
+    "why": "The job is a \u201cSr Solution Architect Consultant Sales Engineer\u201d role, which is sales\u2011oriented and not a pure UI/frontend position.",
+    "gap": "Role is sales\u2011engineer, not UI",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
   },
   "RemoteOK::1132446": {
     "title": "Junior Front End Developer @ PulseMediaNL",
     "score": 0,
-    "why": "It is a junior front\u2011end developer role, below the required senior experience.",
-    "gap": "Seniority",
-    "first_seen": "2026-07-01",
-    "suppress_until": "2026-07-15"
+    "why": "It is a junior front\u2011end developer role, far below the candidate\u2019s seniority.",
+    "gap": "Seniority level",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
   },
   "RemoteOK::1131588": {
     "title": "Staff Engineer Platform Engineering @ HighLevel",
     "score": 0,
-    "why": "\u201cStaff Engineer Platform Engineering\u201d is typically a backend/platform role with no explicit UI focus.",
-    "gap": "UI focus",
-    "first_seen": "2026-07-01",
-    "suppress_until": "2026-07-15"
+    "why": "The Staff Engineer Platform Engineering role is focused on platform/backend engineering, not UI/frontend work.",
+    "gap": "Not a UI/frontend role",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
   },
   "RemoteOK::1130892": {
     "title": "Principal Solution Architect Professional Services Finance @ Anaplan",
     "score": 0,
-    "why": "A \u201cPrincipal Solution Architect\u201d in finance services is not a UI\u2011focused position.",
-    "gap": "UI focus",
-    "first_seen": "2026-07-01",
-    "suppress_until": "2026-07-15"
+    "why": "The Principal Solution Architect position is centered on finance professional services, not a UI/frontend focus.",
+    "gap": "Not a UI/frontend role",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
   },
   "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-gxp-instrument-systems-engineer-norwood-ma": {
     "title": "AHU Technologies: GxP Instrument Systems Engineer- Norwood, MA",
@@ -910,5 +910,37 @@
     "gap": "No explicit Angular/TypeScript requirement.",
     "first_seen": "2026-07-14",
     "suppress_until": "2026-07-28"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/chemin-product-translation-reviewer-mandarin-english": {
+    "title": "Chemin: Product Translation Reviewer (Mandarin - English)",
+    "score": 0,
+    "why": "The role is a product translation reviewer, unrelated to UI development.",
+    "gap": "Not a UI/frontend role",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/win-home-inspection-devops-engineer": {
+    "title": "Win Home Inspection: DevOps Engineer",
+    "score": 0,
+    "why": "This is a DevOps Engineer position, which is excluded by the scoring rules.",
+    "gap": "Not a UI/frontend role",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/highlevel-staff-product-manager-conversations": {
+    "title": "Highlevel: Staff Product Manager - Conversations",
+    "score": 0,
+    "why": "The Staff Product Manager role is a product management position, not a UI/frontend engineering role.",
+    "gap": "Not a UI/frontend role",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/highlevel-product-solution-engineer-mobile-app": {
+    "title": "Highlevel: Product Solution Engineer - Mobile App",
+    "score": 65,
+    "why": "The Product Solution Engineer \u2013 Mobile App role is senior\u2011level and UI\u2011related, but it does not specifically call for Angular or TypeScript, limiting the score.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-07-16",
+    "suppress_until": "2026-07-30"
   }
 }
