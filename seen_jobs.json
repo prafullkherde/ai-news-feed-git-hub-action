@@ -942,5 +942,29 @@
     "gap": "No explicit Angular/TypeScript requirement",
     "first_seen": "2026-07-16",
     "suppress_until": "2026-07-30"
+  },
+  "WN::https://www.workingnomads.com/job/go/1732700/": {
+    "title": "Full-Time Remote Tutoring Position @ Revolution Prep",
+    "score": 0,
+    "why": "The role is a remote tutoring position and does not involve any UI, frontend, or software development work.",
+    "gap": "No UI/Angular responsibilities",
+    "first_seen": "2026-07-17",
+    "suppress_until": "2026-07-31"
+  },
+  "WN::https://www.workingnomads.com/job/go/1732355/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "This is a data analyst role with no experience required and contains no frontend or Angular requirements.",
+    "gap": "Lacks relevant UI/TypeScript focus",
+    "first_seen": "2026-07-17",
+    "suppress_until": "2026-07-31"
+  },
+  "WN::https://www.workingnomads.com/job/go/1730627/": {
+    "title": "Regional Sales Manager, SIU/K12 - Texas and Oklahoma Territory @ AVer Information, Inc.",
+    "score": 0,
+    "why": "The position is a regional sales manager role, unrelated to software engineering or UI architecture.",
+    "gap": "No technical/frontend duties required",
+    "first_seen": "2026-07-17",
+    "suppress_until": "2026-07-31"
   }
 }
