@@ -966,5 +966,85 @@
     "gap": "No technical/frontend duties required",
     "first_seen": "2026-07-17",
     "suppress_until": "2026-07-31"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/accuweather-careers-product-manager-mapping-and-weather-visualization": {
+    "title": "Accuweather Careers: Product Manager, Mapping and Weather Visualization",
+    "score": 0,
+    "why": "The role is a Product Manager position focused on mapping and weather visualization, not a UI development role.",
+    "gap": "None",
+    "first_seen": "2026-07-18",
+    "suppress_until": "2026-08-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/openrouter-developer-product-marketing-lead": {
+    "title": "Openrouter: Developer Product Marketing Lead",
+    "score": 0,
+    "why": "This is a Developer Product Marketing Lead role, which is marketing\u2011focused rather than a technical UI position.",
+    "gap": "None",
+    "first_seen": "2026-07-18",
+    "suppress_until": "2026-08-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/pixx-io-senior-product-manager-b2b-d-w-m": {
+    "title": "Pixx.io: (Senior) Product Manager B2B (d/w/m*)",
+    "score": 0,
+    "why": "The position is a Senior Product Manager role, not a hands\u2011on UI development or architecture job.",
+    "gap": "None",
+    "first_seen": "2026-07-18",
+    "suppress_until": "2026-08-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/base-com-full-stack-developer-react-aws": {
+    "title": "Base.com: Full-Stack Developer (React + AWS)",
+    "score": 55,
+    "why": "The job requires React front\u2011end expertise, while the candidate\u2019s deep experience is in Angular/TypeScript.",
+    "gap": "React experience",
+    "first_seen": "2026-07-18",
+    "suppress_until": "2026-08-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/hyperdev-intermediate-full-stack-developer": {
+    "title": "Hyperdev: Intermediate Full Stack Developer",
+    "score": 0,
+    "why": "The listing calls for an Intermediate Full\u2011Stack Developer, which is a junior/mid\u2011level role contrary to the senior\u2011level requirement.",
+    "gap": "None",
+    "first_seen": "2026-07-18",
+    "suppress_until": "2026-08-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/sowelo-consulting-full-stack-developer": {
+    "title": "Sowelo Consulting: Full Stack Developer",
+    "score": 70,
+    "why": "The role seeks a Full\u2011Stack Developer with unspecified front\u2011end tech; the candidate\u2019s senior Angular expertise is relevant but the stack isn\u2019t a direct match.",
+    "gap": "Stack alignment (Angular vs unspecified/likely other)",
+    "first_seen": "2026-07-18",
+    "suppress_until": "2026-08-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coupa-software-sr-director-product-management-11051": {
+    "title": "Coupa Software: Sr. Director, Product Management - 11051",
+    "score": 0,
+    "why": "This is a Sr. Director of Product Management position, not a UI development or architecture role.",
+    "gap": "None",
+    "first_seen": "2026-07-18",
+    "suppress_until": "2026-08-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/arize-ai-open-source-design-engineer": {
+    "title": "Arize Ai: Open Source Design Engineer",
+    "score": 0,
+    "why": "The Open Source Design Engineer role emphasizes design and open\u2011source contributions, not Angular/TypeScript UI development.",
+    "gap": "None",
+    "first_seen": "2026-07-18",
+    "suppress_until": "2026-08-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/databento-product-marketing-specialist": {
+    "title": "Databento: Product Marketing Specialist",
+    "score": 0,
+    "why": "The position is a Product Marketing Specialist role, unrelated to UI engineering.",
+    "gap": "None",
+    "first_seen": "2026-07-18",
+    "suppress_until": "2026-08-01"
+  },
+  "WN::https://www.workingnomads.com/job/go/1734670/": {
+    "title": "Senior AI Engineer @ Lemon.io",
+    "score": 0,
+    "why": "This is a Senior AI Engineer role, focused on artificial intelligence rather than front\u2011end UI work.",
+    "gap": "None",
+    "first_seen": "2026-07-18",
+    "suppress_until": "2026-08-01"
   }
 }
