@@ -1054,5 +1054,29 @@
     "gap": "",
     "first_seen": "2026-07-19",
     "suppress_until": "2026-08-02"
+  },
+  "WN::https://www.workingnomads.com/job/go/1740509/": {
+    "title": "Senior Google Ads Account Manager - Remote (Work From Home) @ StubGroup",
+    "score": 0,
+    "why": "The role is a Senior Google Ads Account Manager, unrelated to UI development or Angular/TypeScript.",
+    "gap": "No relevant frontend/Angular/TS requirements",
+    "first_seen": "2026-07-21",
+    "suppress_until": "2026-08-04"
+  },
+  "WN::https://www.workingnomads.com/job/go/1740151/": {
+    "title": "AI Operations Manager @ Storyteller",
+    "score": 0,
+    "why": "The AI Operations Manager position focuses on operational AI tasks, not frontend engineering or Angular/TypeScript.",
+    "gap": "No relevant frontend/Angular/TS requirements",
+    "first_seen": "2026-07-21",
+    "suppress_until": "2026-08-04"
+  },
+  "WN::https://www.workingnomads.com/job/go/1740116/": {
+    "title": "AI Operations Manager @ Storyteller",
+    "score": 0,
+    "why": "This AI Operations Manager role also centers on AI operations rather than UI/frontend work with Angular or TypeScript.",
+    "gap": "No relevant frontend/Angular/TS requirements",
+    "first_seen": "2026-07-21",
+    "suppress_until": "2026-08-04"
   }
 }
