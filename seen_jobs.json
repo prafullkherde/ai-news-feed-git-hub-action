@@ -682,10 +682,10 @@
   "WN::https://www.workingnomads.com/job/go/1711099/": {
     "title": "Content Creator (100% remote) @ Marker Video",
     "score": 0,
-    "why": "Content Creator role is non\u2011technical and unrelated to UI development or Angular/TypeScript.",
-    "gap": "Not a development position",
-    "first_seen": "2026-07-07",
-    "suppress_until": "2026-07-21"
+    "why": "This is a content\u2011creation role with no relevance to UI architecture or the candidate\u2019s technical background.",
+    "gap": "None",
+    "first_seen": "2026-07-22",
+    "suppress_until": "2026-08-05"
   },
   "WN::https://www.workingnomads.com/job/go/1713292/": {
     "title": "Email + SMS Marketing Strategist @ Bebonia",
@@ -1078,5 +1078,37 @@
     "gap": "No relevant frontend/Angular/TS requirements",
     "first_seen": "2026-07-21",
     "suppress_until": "2026-08-04"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/khibraty-product-manager-qa-analyst-full-time-remote-contractor": {
+    "title": "Khibraty: Product Manager / QA Analyst (Full-Time Remote Contractor)",
+    "score": 0,
+    "why": "The role is for Product Management / QA, not a frontend development position, which the candidate\u2019s profile does not match.",
+    "gap": "None",
+    "first_seen": "2026-07-22",
+    "suppress_until": "2026-08-05"
+  },
+  "WN::https://www.workingnomads.com/job/go/1742552/": {
+    "title": "Expert Short-Form Video Editor @ Exchange Life",
+    "score": 0,
+    "why": "This is a video editing role, unrelated to UI architecture or any of the candidate\u2019s technical skills.",
+    "gap": "None",
+    "first_seen": "2026-07-22",
+    "suppress_until": "2026-08-05"
+  },
+  "WN::https://www.workingnomads.com/job/go/1742437/": {
+    "title": "Senior React & Ruby Developer @ Lemon.io",
+    "score": 55,
+    "why": "The position requires senior React development (plus Ruby), while the candidate\u2019s expertise is centered on Angular/TypeScript, so the stack mismatch limits the score (capped at 60).",
+    "gap": "Lack of React experience",
+    "first_seen": "2026-07-22",
+    "suppress_until": "2026-08-05"
+  },
+  "WN::https://www.workingnomads.com/job/go/1741171/": {
+    "title": "Contract Case Processing Manager (Remote - Texas) @ Sneed|Mitchell LLP",
+    "score": 0,
+    "why": "The job is a case\u2011processing manager role, not a frontend or UI engineering position.",
+    "gap": "None",
+    "first_seen": "2026-07-22",
+    "suppress_until": "2026-08-05"
   }
 }
