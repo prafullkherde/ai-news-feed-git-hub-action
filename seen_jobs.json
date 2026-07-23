@@ -690,18 +690,18 @@
   "WN::https://www.workingnomads.com/job/go/1713292/": {
     "title": "Email + SMS Marketing Strategist @ Bebonia",
     "score": 0,
-    "why": "The role is a marketing strategist position with no mention of Angular, TypeScript, or UI development.",
-    "gap": "No frontend/Angular responsibilities",
-    "first_seen": "2026-07-08",
-    "suppress_until": "2026-07-22"
+    "why": "Email + SMS marketing strategist is a marketing role, with no requirement for Angular or TypeScript.",
+    "gap": "Not a frontend/Angular role",
+    "first_seen": "2026-07-23",
+    "suppress_until": "2026-08-06"
   },
   "WN::https://www.workingnomads.com/job/go/1712616/": {
     "title": "Data Analyst (No Experience Required) @ Peroptyx",
     "score": 0,
-    "why": "The position is a data analyst role that does not require any UI, Angular, or TypeScript skills.",
-    "gap": "No frontend/Angular responsibilities",
-    "first_seen": "2026-07-08",
-    "suppress_until": "2026-07-22"
+    "why": "Data analyst (no experience required) is a data\u2011focused position, not a frontend engineering job.",
+    "gap": "Not a frontend/Angular role",
+    "first_seen": "2026-07-23",
+    "suppress_until": "2026-08-06"
   },
   "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-sdet-automated-qa-engineer-seattle-wa": {
     "title": "AHU Technologies: SDET / Automated QA Engineer- Seattle WA",
@@ -1110,5 +1110,77 @@
     "gap": "None",
     "first_seen": "2026-07-22",
     "suppress_until": "2026-08-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/supportyourapp-native-finnish-customer-support-consultant-remotely": {
+    "title": "Supportyourapp: (Native Finnish) Customer Support Consultant (remotely)",
+    "score": 0,
+    "why": "The role is a native\u2011Finnish customer support consultant, which does not involve frontend development.",
+    "gap": "Not a frontend/Angular role",
+    "first_seen": "2026-07-23",
+    "suppress_until": "2026-08-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/supportyourapp-native-danish-customer-support-consultant-remotely": {
+    "title": "Supportyourapp: (Native Danish) Customer Support Consultant (remotely)",
+    "score": 0,
+    "why": "This is a native\u2011Danish customer support consultant position, unrelated to UI or TypeScript work.",
+    "gap": "Not a frontend/Angular role",
+    "first_seen": "2026-07-23",
+    "suppress_until": "2026-08-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/supportyourapp-native-swedish-customer-support-consultant-remotely": {
+    "title": "Supportyourapp: (Native Swedish) Customer Support Consultant (remotely)",
+    "score": 0,
+    "why": "The job is a native\u2011Swedish customer support consultant, with no frontend engineering responsibilities.",
+    "gap": "Not a frontend/Angular role",
+    "first_seen": "2026-07-23",
+    "suppress_until": "2026-08-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/elevenlabs-product-marketing-agents": {
+    "title": "Elevenlabs: Product Marketing - Agents",
+    "score": 0,
+    "why": "Product marketing for agents is a marketing role, not a software development position requiring Angular or TypeScript.",
+    "gap": "Not a frontend/Angular role",
+    "first_seen": "2026-07-23",
+    "suppress_until": "2026-08-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/holepunch-product-technical-project-manager-100-remote-worldwide": {
+    "title": "Holepunch: Product / Technical Project Manager (100% Remote, Worldwide)",
+    "score": 0,
+    "why": "The title indicates a product/technical project manager role, which does not explicitly require Angular or TypeScript development.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-07-23",
+    "suppress_until": "2026-08-06"
+  },
+  "WN::https://www.workingnomads.com/job/go/1744213/": {
+    "title": "Content Reviewer - English US @ TELUS Digital",
+    "score": 0,
+    "why": "Content reviewer is a quality\u2011control/content moderation job, not a frontend engineering position.",
+    "gap": "Not a frontend/Angular role",
+    "first_seen": "2026-07-23",
+    "suppress_until": "2026-08-06"
+  },
+  "WN::https://www.workingnomads.com/job/go/1744009/": {
+    "title": "Content Creator - Location-Based Video Tours (EU Only) - \u20ac50 onboarding @ Toureasy d.o.o.",
+    "score": 0,
+    "why": "Content creator for video tours is a creative/content role, unrelated to UI development with Angular/TypeScript.",
+    "gap": "Not a frontend/Angular role",
+    "first_seen": "2026-07-23",
+    "suppress_until": "2026-08-06"
+  },
+  "WN::https://www.workingnomads.com/job/go/1743875/": {
+    "title": "Quality Assurance Rater - German (DE) @ TELUS Digital",
+    "score": 0,
+    "why": "Quality Assurance rater is a testing/QA position, not a frontend development role.",
+    "gap": "Not a frontend/Angular role",
+    "first_seen": "2026-07-23",
+    "suppress_until": "2026-08-06"
+  },
+  "WN::https://www.workingnomads.com/job/go/1743873/": {
+    "title": "Online Data Analyst United States Spanish Speaker @ TELUS Digital",
+    "score": 0,
+    "why": "Online data analyst focuses on data analysis, not on UI or Angular development.",
+    "gap": "Not a frontend/Angular role",
+    "first_seen": "2026-07-23",
+    "suppress_until": "2026-08-06"
   }
 }
