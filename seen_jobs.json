@@ -1182,5 +1182,37 @@
     "gap": "Not a frontend/Angular role",
     "first_seen": "2026-07-23",
     "suppress_until": "2026-08-06"
+  },
+  "RemoteOK::1135285": {
+    "title": "Junior Front End Developer @ PULSE (MENA)",
+    "score": 0,
+    "why": "The role is a **Junior** Front End Developer, which requires <7\u202fyears experience, while the candidate has 17+\u202fyears and is senior\u2011level.",
+    "gap": "Seniority level",
+    "first_seen": "2026-07-24",
+    "suppress_until": "2026-08-07"
+  },
+  "RemoteOK::1135269": {
+    "title": "Front End Developer @ Acro Commerce",
+    "score": 70,
+    "why": "The position is a generic **Front End Developer** role without explicit Angular/TypeScript requirements, so the candidate\u2019s expertise is relevant but not directly matched, capping the score below the 80\u2011point threshold.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-07-24",
+    "suppress_until": "2026-08-07"
+  },
+  "WN::https://www.workingnomads.com/job/go/1746261/": {
+    "title": "Account Manager, Creative Operations @ Storm Ideas",
+    "score": 0,
+    "why": "This is an **Account Manager, Creative Operations** role, not a frontend development position, thus outside the candidate\u2019s technical focus.",
+    "gap": "Role mismatch (non\u2011technical)",
+    "first_seen": "2026-07-24",
+    "suppress_until": "2026-08-07"
+  },
+  "WN::https://www.workingnomads.com/job/go/1746259/": {
+    "title": "Account Manager, Creative Operations @ Storm Ideas",
+    "score": 0,
+    "why": "Identical to job\u202f3 \u2013 an **Account Manager, Creative Operations** role, which does not align with the candidate\u2019s UI architecture expertise.",
+    "gap": "Role mismatch (non\u2011technical)",
+    "first_seen": "2026-07-24",
+    "suppress_until": "2026-08-07"
   }
 }
