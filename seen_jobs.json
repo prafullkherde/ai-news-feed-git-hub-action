@@ -1214,5 +1214,37 @@
     "gap": "Role mismatch (non\u2011technical)",
     "first_seen": "2026-07-24",
     "suppress_until": "2026-08-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/supportyourapp-fluent-german-english-l1-customer-support-consultant-eu-remote-1": {
+    "title": "Supportyourapp: (fluent German & English) L1 Customer Support Consultant (EU Remote)",
+    "score": 0,
+    "why": "The role is a Level\u20111 Customer Support Consultant, not a development position.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-07-25",
+    "suppress_until": "2026-08-08"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/supportyourapp-fluent-german-english-l1-customer-support-consultant-eu-remote": {
+    "title": "Supportyourapp: (fluent German & English) L1 Customer Support Consultant (EU Remote)",
+    "score": 0,
+    "why": "Identical to job\u202f1 \u2013 a customer\u2011support role with no UI development responsibilities.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-07-25",
+    "suppress_until": "2026-08-08"
+  },
+  "WN::https://www.workingnomads.com/job/go/1750002/": {
+    "title": "Senior UI & UX / Graphic Designer @ Lemon.io",
+    "score": 0,
+    "why": "The position is a Senior UI/UX\u202f&\u202fGraphic Designer role focused on design, not on Angular/TypeScript development.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-07-25",
+    "suppress_until": "2026-08-08"
+  },
+  "WN::https://www.workingnomads.com/job/go/1749860/": {
+    "title": "Live Photo Collection Study in India @ TELUS Digital",
+    "score": 0,
+    "why": "This is a research\u2011oriented \u201cLive Photo Collection Study,\u201d unrelated to software development.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-07-25",
+    "suppress_until": "2026-08-08"
   }
 }
