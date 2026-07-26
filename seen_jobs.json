@@ -802,18 +802,18 @@
   "WN::https://www.workingnomads.com/job/go/1719512/": {
     "title": "AI Content Analyst (No Experience Required) @ Peroptyx",
     "score": 0,
-    "why": "AI Content Analyst explicitly states \u201cNo Experience Required,\u201d indicating an entry\u2011level, non\u2011frontend role, which is excluded.",
-    "gap": "Entry\u2011level, not UI",
-    "first_seen": "2026-07-11",
-    "suppress_until": "2026-07-25"
+    "why": "The AI Content Analyst role is labeled \u201cNo Experience Required,\u201d indicating a junior level position unrelated to UI development.",
+    "gap": "Junior\u2011level requirement; not a frontend/Angular role.",
+    "first_seen": "2026-07-26",
+    "suppress_until": "2026-08-09"
   },
   "WN::https://www.workingnomads.com/job/go/1719508/": {
     "title": "Data Analyst (No Experience Required) @ Peroptyx",
     "score": 0,
-    "why": "Data Analyst is a pure data role with no frontend focus, thus excluded by the scoring rules.",
-    "gap": "Not a UI/frontend role",
-    "first_seen": "2026-07-11",
-    "suppress_until": "2026-07-25"
+    "why": "The Data Analyst position is also junior\u2011focused and does not involve Angular, TypeScript, or UI architecture.",
+    "gap": "No Angular/TypeScript requirement; pure data analysis.",
+    "first_seen": "2026-07-26",
+    "suppress_until": "2026-08-09"
   },
   "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer": {
     "title": "Lemon.io: Senior React Native Developer",
@@ -1246,5 +1246,13 @@
     "gap": "No Angular/TypeScript requirement",
     "first_seen": "2026-07-25",
     "suppress_until": "2026-08-08"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/tether-ai-research-engineer": {
+    "title": "Tether: AI Research Engineer",
+    "score": 0,
+    "why": "The role is an AI Research Engineer position with no mention of frontend work or Angular/TypeScript, which falls outside the candidate\u2019s UI expertise.",
+    "gap": "No Angular/TypeScript requirement; pure AI/ML focus.",
+    "first_seen": "2026-07-26",
+    "suppress_until": "2026-08-09"
   }
 }
