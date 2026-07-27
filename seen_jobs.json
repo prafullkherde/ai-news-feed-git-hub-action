@@ -1254,5 +1254,165 @@
     "gap": "No Angular/TypeScript requirement; pure AI/ML focus.",
     "first_seen": "2026-07-26",
     "suppress_until": "2026-08-09"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-vue-developer": {
+    "title": "Lemon.io: Senior Vue Developer",
+    "score": 60,
+    "why": "The role explicitly requires Vue (no Angular/TypeScript), which caps the score at 60 despite the senior UI background.",
+    "gap": "Lack of Vue experience",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/dropbox-senior-director-revenue-operations-1": {
+    "title": "Dropbox: Senior Director, Revenue Operations",
+    "score": 0,
+    "why": "Position is a senior revenue\u2011operations leadership role, not a UI/Frontend engineering job.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/dropbox-senior-director-revenue-operations": {
+    "title": "Dropbox: Senior Director, Revenue Operations",
+    "score": 0,
+    "why": "Same as #2 \u2013 a senior director role in revenue operations, unrelated to UI development.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/hightouch-ai-strategy-consultant": {
+    "title": "Hightouch: AI Strategy Consultant",
+    "score": 0,
+    "why": "AI Strategy Consultant is a non\u2011technical, advisory role with no UI focus.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/collibra-director-facility-security-officer": {
+    "title": "Collibra: Director, Facility Security Officer",
+    "score": 0,
+    "why": "Director, Facility Security Officer is a security/operations role, not a UI engineering position.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/sezzle-ai-engineer-ii-remote-1": {
+    "title": "Sezzle: AI Engineer II (Remote)",
+    "score": 0,
+    "why": "AI Engineer II is a machine\u2011learning engineering role, not a frontend/UI job.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/hightouch-ai-creative-designer-email": {
+    "title": "Hightouch: AI Creative Designer, Email",
+    "score": 0,
+    "why": "AI Creative Designer is a design\u2011focused role without explicit frontend development requirements.",
+    "gap": "Not a UI/Frontend development role",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/gitlab-ai-transformation-owner-cro": {
+    "title": "GitLab: AI Transformation Owner, CRO",
+    "score": 0,
+    "why": "AI Transformation Owner is a senior AI strategy role, unrelated to UI/Frontend work.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/sezzle-ai-engineer-ii-remote": {
+    "title": "Sezzle: AI Engineer II (Remote)",
+    "score": 0,
+    "why": "Same as #6 \u2013 AI Engineer II, no UI focus.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/twilio-senior-software-engineer-identity": {
+    "title": "Twilio: Senior Software Engineer, Identity",
+    "score": 0,
+    "why": "Senior Software Engineer, Identity is a backend\u2011heavy role with no explicit frontend or Angular/TS requirement.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/gitlab-ai-engineer": {
+    "title": "GitLab: AI Engineer",
+    "score": 0,
+    "why": "AI Engineer is a machine\u2011learning engineering position, not a UI/Frontend role.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/twilio-senior-software-engineer-fraud": {
+    "title": "Twilio: Senior Software Engineer, Fraud",
+    "score": 0,
+    "why": "Senior Software Engineer, Fraud focuses on security/backend, lacking UI/Angular scope.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/reddit-ads-conversion-modeling-machine-learning-engineering-manager": {
+    "title": "Reddit: Ads Conversion Modeling, Machine Learning Engineering Manager",
+    "score": 0,
+    "why": "Machine Learning Engineering Manager is a leadership role in ML, not UI development.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/sezzle-ai-engineer-ii-marketing": {
+    "title": "Sezzle: AI Engineer II - Marketing",
+    "score": 0,
+    "why": "AI Engineer II \u2013 Marketing is an AI engineering role, not a UI/Frontend position.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/mindrift-freelance-full-stack-web-app-developer-1": {
+    "title": "Mindrift: Freelance Full-Stack Web App Developer",
+    "score": 70,
+    "why": "The freelance full\u2011stack web app developer role is a generic frontend/backend position, allowing a senior Angular/TS architect to contribute, but without an explicit Angular/TS requirement the score is capped at 75.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/jobgether-product-manager-progressive-web-apps-pwa": {
+    "title": "Jobgether: Product Manager \u2013 Progressive Web Apps (PWA)",
+    "score": 0,
+    "why": "Product Manager \u2013 PWA is a product ownership role, not a hands\u2011on UI engineering position.",
+    "gap": "Not a UI/Frontend development role",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/wevote-general-volunteering-opportunities-digital-democracy": {
+    "title": "WeVote: General Volunteering Opportunities: Digital Democracy",
+    "score": 0,
+    "why": "General volunteering opportunity is unrelated to professional UI/Frontend work.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/esm-intermediate-web-applications-developer-java-aws-remote": {
+    "title": "ESM: Intermediate Web Applications Developer - JAVA/AWS (Remote)",
+    "score": 0,
+    "why": "Intermediate Web Applications Developer is a mid\u2011level (\u22483\u20115\u202fyr) role, below the senior\u2011level threshold, and focuses on Java/AWS rather than Angular/TS.",
+    "gap": "Mid\u2011level seniority & no Angular/TS focus",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-staff-software-engineer-data-platform": {
+    "title": "Coinbase: Senior Staff Software Engineer, Data Platform",
+    "score": 0,
+    "why": "Senior Staff Software Engineer, Data Platform is a backend/data\u2011platform role with no UI/Angular component.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-staff-software-engineer-blockchain-platform": {
+    "title": "Coinbase: Senior Staff Software Engineer - Blockchain Platform",
+    "score": 0,
+    "why": "Senior Staff Software Engineer \u2013 Blockchain Platform is a backend/blockchain engineering role, not a UI/Frontend position.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-07-27",
+    "suppress_until": "2026-08-10"
   }
 }
