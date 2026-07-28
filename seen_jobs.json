@@ -1414,5 +1414,13 @@
     "gap": "No frontend/Angular requirement",
     "first_seen": "2026-07-27",
     "suppress_until": "2026-08-10"
+  },
+  "WN::https://www.workingnomads.com/job/go/1755198/": {
+    "title": "Looking For Online ESL Teachers - Remote @ Polly English",
+    "score": 0,
+    "why": "The position is for an online ESL teacher, which does not involve any Angular, TypeScript, or UI development work.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-07-28",
+    "suppress_until": "2026-08-11"
   }
 }
