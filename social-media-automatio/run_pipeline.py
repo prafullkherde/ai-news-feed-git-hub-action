@@ -66,7 +66,7 @@ def main():
         return
 
     # 1. render
-    out_dir = f"/home/claude/carousel-pipeline/output/{item['id']}"
+    out_dir = f"output/{item['id']}"
     local_paths = render_carousel(item["slides"], out_dir)
 
     # 2. host (public URL required by Graph API)
