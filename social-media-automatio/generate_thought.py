@@ -9,7 +9,15 @@ import os
 import json
 from groq import Groq  # pip install groq
 
-client = Groq(api_key=os.environ["GROQ_API_KEY"])
+_key = os.environ.get("GROQ_API_KEY", "")
+if not _key:
+    raise RuntimeError(
+        "GROQ_API_KEY is empty or missing. Check: (1) secret exists in "
+        "GitHub → Settings → Secrets and variables → Actions, (2) the "
+        "workflow's env: block maps it to the exact name GROQ_API_KEY, "
+        "(3) the secret's VALUE field isn't blank."
+    )
+client = Groq(api_key=_key)
 
 SYSTEM_PROMPT = """You write short, original thoughts on discipline, alignment,
 and momentum -- in the style of a practitioner, not a generic quote account.
