@@ -15,8 +15,8 @@ import os
 
 # ---- BRAND CONSTANTS (fixed once, do not change per-post) ----
 CANVAS = (1080, 1080)               # 1:1 square, per your spec ("Instagram square 1:1 format")
-FONT_BOLD = "/usr/share/fonts/truetype/google-fonts/Poppins-Bold.ttf"
-FONT_REGULAR = "/usr/share/fonts/truetype/google-fonts/Poppins-Regular.ttf"
+FONT_BOLD = "fonts/Poppins-Bold.ttf"
+FONT_REGULAR = "fonts/Poppins-Regular.ttf"
 BRAND_GRADIENT = [(250, 240, 210), (250, 240, 210)]  # cream fallback, matches Ideogram bg family
 ACCENT = (20, 20, 20)                # black underline accent, per your spec ("bold black text")
 TEXT_COLOR = (20, 20, 20)            # near-black, high contrast on mustard/cream/mint
