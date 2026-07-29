@@ -1422,5 +1422,29 @@
     "gap": "Not a UI/Frontend role",
     "first_seen": "2026-07-28",
     "suppress_until": "2026-08-11"
+  },
+  "WN::https://www.workingnomads.com/job/go/1758221/": {
+    "title": "Senior DevOps Engineer @ Lemon.io",
+    "score": 0,
+    "why": "The role is a Senior DevOps Engineer, which falls under the excluded \u201cpure DevOps\u201d category.",
+    "gap": "DevOps focus",
+    "first_seen": "2026-07-29",
+    "suppress_until": "2026-08-12"
+  },
+  "WN::https://www.workingnomads.com/job/go/1757938/": {
+    "title": "Senior React Full-stack Developer @ Lemon.io",
+    "score": 60,
+    "why": "The position calls for a Senior React Full\u2011stack Developer; the candidate\u2019s expertise is Angular/TypeScript, not React, triggering the React\u2011only cap.",
+    "gap": "React experience",
+    "first_seen": "2026-07-29",
+    "suppress_until": "2026-08-12"
+  },
+  "WN::https://www.workingnomads.com/job/go/1757736/": {
+    "title": "New Business Manager @ Surfer",
+    "score": 0,
+    "why": "The New Business Manager role is a non\u2011technical, business\u2011focused position, outside the UI/Frontend scope.",
+    "gap": "Business management focus",
+    "first_seen": "2026-07-29",
+    "suppress_until": "2026-08-12"
   }
 }
