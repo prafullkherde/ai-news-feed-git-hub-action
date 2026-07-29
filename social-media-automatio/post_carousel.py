@@ -36,11 +36,10 @@ def create_child_container(image_url):
             "access_token": ACCESS_TOKEN,
         },
     )
+    if not resp.ok:
+        print(f"META ERROR for {image_url}: {resp.status_code} - {resp.text}")
     resp.raise_for_status()
     return resp.json()["id"]
-
-
-def create_carousel_container(child_ids, caption):
     """Step 2: parent container referencing all child container IDs"""
     resp = requests.post(
         f"{BASE_URL}/{IG_USER_ID}/media",
