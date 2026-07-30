@@ -1446,5 +1446,13 @@
     "gap": "Business management focus",
     "first_seen": "2026-07-29",
     "suppress_until": "2026-08-12"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/reveleer-full-stack-ai-engineer": {
+    "title": "Reveleer: Full Stack AI Engineer",
+    "score": 0,
+    "why": "The position is a Full Stack AI Engineer with no explicit Angular or TypeScript requirement, focusing on AI/backend technologies rather than the candidate\u2019s core stack.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-07-30",
+    "suppress_until": "2026-08-13"
   }
 }
