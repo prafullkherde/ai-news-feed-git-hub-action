@@ -18,18 +18,18 @@
   "RemoteOK::1131840": {
     "title": "Desenvolvedor Front end J\u00c3\u00banior @ AGGRANDIZE",
     "score": 0,
-    "why": "It is a junior front\u2011end position, not matching the candidate\u2019s 17+ years of senior UI architecture experience.",
-    "gap": "Seniority level",
-    "first_seen": "2026-07-16",
-    "suppress_until": "2026-07-30"
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "RemoteOK::1131509": {
     "title": "Tech Lead @ Zensurance",
-    "score": 70,
-    "why": "A senior\u2011level Tech Lead role aligns with the candidate\u2019s experience, but the posting does not explicitly require Angular or TypeScript, limiting the fit.",
-    "gap": "No explicit Angular/TypeScript requirement",
-    "first_seen": "2026-07-16",
-    "suppress_until": "2026-07-30"
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "RemoteOK::1131370": {
     "title": "Front End Full Stack Developer @ Honor Foods",
@@ -42,34 +42,34 @@
   "RemoteOK::1131610": {
     "title": "Sr Solution Architect Consultant Sales Engineer @ Cyara",
     "score": 0,
-    "why": "The job is a \u201cSr Solution Architect Consultant Sales Engineer\u201d role, which is sales\u2011oriented and not a pure UI/frontend position.",
-    "gap": "Role is sales\u2011engineer, not UI",
-    "first_seen": "2026-07-16",
-    "suppress_until": "2026-07-30"
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "RemoteOK::1132446": {
     "title": "Junior Front End Developer @ PulseMediaNL",
     "score": 0,
-    "why": "It is a junior front\u2011end developer role, far below the candidate\u2019s seniority.",
-    "gap": "Seniority level",
-    "first_seen": "2026-07-16",
-    "suppress_until": "2026-07-30"
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "RemoteOK::1131588": {
     "title": "Staff Engineer Platform Engineering @ HighLevel",
     "score": 0,
-    "why": "The Staff Engineer Platform Engineering role is focused on platform/backend engineering, not UI/frontend work.",
-    "gap": "Not a UI/frontend role",
-    "first_seen": "2026-07-16",
-    "suppress_until": "2026-07-30"
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "RemoteOK::1130892": {
     "title": "Principal Solution Architect Professional Services Finance @ Anaplan",
     "score": 0,
-    "why": "The Principal Solution Architect position is centered on finance professional services, not a UI/frontend focus.",
-    "gap": "Not a UI/frontend role",
-    "first_seen": "2026-07-16",
-    "suppress_until": "2026-07-30"
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "WWR::https://weworkremotely.com/remote-jobs/ahu-technologies-gxp-instrument-systems-engineer-norwood-ma": {
     "title": "AHU Technologies: GxP Instrument Systems Engineer- Norwood, MA",
@@ -114,10 +114,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-ai-engineer-architect": {
     "title": "A.Team: Senior Independent AI Engineer / Architect",
     "score": 0,
-    "why": "The role is an AI engineer/architect, not a UI development position.",
-    "gap": "Role type",
-    "first_seen": "2026-07-01",
-    "suppress_until": "2026-07-15"
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-software-developer-90-170-hr": {
     "title": "A.Team: Senior Independent Software Developer ($90-$170/hr)",
@@ -594,18 +594,18 @@
   "WWR::https://weworkremotely.com/remote-jobs/cortes-23-senior-qa-engineer-2": {
     "title": "Cortes 23: Senior QA Engineer",
     "score": 0,
-    "why": "Senior QA Engineer is a quality\u2011assurance role, not a UI/frontend development position.",
-    "gap": "Pure QA focus (no UI/frontend work)",
-    "first_seen": "2026-07-05",
-    "suppress_until": "2026-07-19"
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "WWR::https://weworkremotely.com/remote-jobs/bunny-net-staff-software-engineer-magic-containers": {
     "title": "bunny.net: Staff Software Engineer (Magic Containers)",
     "score": 0,
-    "why": "Staff Software Engineer (Magic Containers) is a backend/container engineering role, not a UI/frontend position.",
-    "gap": "Backend/containers focus (no UI/frontend work)",
-    "first_seen": "2026-07-05",
-    "suppress_until": "2026-07-19"
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "WWR::https://weworkremotely.com/remote-jobs/abstract-full-stack-web-developer-remote-contractor": {
     "title": "Abstract: Full Stack Web Developer \u23e4 Remote Contractor",
@@ -665,11 +665,11 @@
   },
   "WWR::https://weworkremotely.com/remote-jobs/sticker-mule-software-engineer-3": {
     "title": "Sticker Mule: Software engineer",
-    "score": 55,
-    "why": "A generic Software Engineer position that may involve frontend work but does not explicitly require Angular/TypeScript.",
-    "gap": "Lack of explicit Angular/TS requirement",
-    "first_seen": "2026-07-07",
-    "suppress_until": "2026-07-21"
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "WWR::https://weworkremotely.com/remote-jobs/aguru-uk-ltd-senior-full-stack-engineer": {
     "title": "Aguru UK Ltd: Senior Full Stack Engineer",
@@ -730,10 +730,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-fullstack-developer-python-3": {
     "title": "Proxify AB: Senior Fullstack Developer (Python)",
     "score": 0,
-    "why": "The role is a senior full\u2011stack Python developer; the candidate\u2019s primary expertise is Angular/TypeScript UI architecture, not Python backend.",
-    "gap": "Python/Full\u2011stack experience",
-    "first_seen": "2026-07-09",
-    "suppress_until": "2026-07-23"
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "WWR::https://weworkremotely.com/remote-jobs/bnk-to-the-future-graphic-web-designer": {
     "title": "Bnk To The Future: Graphic & Web Designer",
@@ -892,8 +892,8 @@
     "score": 0,
     "why": "",
     "gap": "",
-    "first_seen": "2026-07-12",
-    "suppress_until": "2026-07-26"
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   },
   "WWR::https://weworkremotely.com/remote-jobs/coin-market-cap-technical-ai-product-manager": {
     "title": "Coin Market Cap: Technical AI Product Manager",
@@ -1454,5 +1454,117 @@
     "gap": "No Angular/TypeScript requirement",
     "first_seen": "2026-07-30",
     "suppress_until": "2026-08-13"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/maptiler-location-services-engineer-maps-platform-remote-in-europe": {
+    "title": "MapTiler:  \ufe0f Location Services Engineer | Maps Platform (Remote in Europe)",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/steady-vision-web-designer": {
+    "title": "Steady Vision: Web Designer",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/silvertech-account-director": {
+    "title": "SilverTech: Account Director",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/work-and-study-travel-website-builder-wordpress-specialist": {
+    "title": "Work and Study Travel: Website Builder / WordPress Specialist",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/snapscale-wp-dev-remote": {
+    "title": "Snapscale: WP dev (remote)",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-java-backend-developer": {
+    "title": "Proxify AB: Senior Java Backend Developer",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-frontend-developer-react-js-next-js-1": {
+    "title": "Proxify AB: Senior Frontend Developer (React.js / Next.js)",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-fullstack-developer-react-js-node-js-2": {
+    "title": "Proxify AB: Senior Fullstack Developer (React.js / Node.js)",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-ruby-on-rails-developer-3": {
+    "title": "Proxify AB: Senior Ruby on Rails Developer",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-python-8": {
+    "title": "Proxify AB: Senior Backend Developer (Python)",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/wonderdog-full-stack-product-engineer-agentic-first": {
+    "title": "Wonderdog: Full-Stack Product Engineer - Agentic First",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-react-full-stack-developer-5": {
+    "title": "Lemon.io: Senior React Full-stack Developer",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/vidalytics-ai-automation-engineer-in-house-martech-video-saas": {
+    "title": "Vidalytics: AI Automation Engineer, In-House MarTech Video SaaS",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/vidalytics-europe-only-gtm-martech-engineer-growth-attribution-at-video-martech-saas": {
+    "title": "Vidalytics: [EUROPE ONLY] GTM MarTech Engineer (Growth & Attribution) at Video MarTech SaaS",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-07-31",
+    "suppress_until": "2026-08-14"
   }
 }
