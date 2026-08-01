@@ -1566,5 +1566,37 @@
     "gap": "",
     "first_seen": "2026-07-31",
     "suppress_until": "2026-08-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/cloudflare-principal-partner-solutions-engineer-saarc-based-in-bangalore": {
+    "title": "Cloudflare: Principal Partner Solutions Engineer, SAARC (Based in Bangalore)",
+    "score": 0,
+    "why": "The role is a Principal Partner Solutions Engineer, focused on partner integration and not on UI development.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-08-01",
+    "suppress_until": "2026-08-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/gusto-inc-business-money-engineering": {
+    "title": "Gusto, Inc.: Business Money Engineering",
+    "score": 0,
+    "why": "Business Money Engineering is a backend/payments engineering position, not a frontend/UI role.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-08-01",
+    "suppress_until": "2026-08-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/cloudflare-country-director-india": {
+    "title": "Cloudflare: Country Director, India",
+    "score": 0,
+    "why": "Country Director is an executive leadership role with no technical UI responsibilities.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-08-01",
+    "suppress_until": "2026-08-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1764739/": {
+    "title": "Customer Success Lead @ Cloudasta",
+    "score": 0,
+    "why": "Customer Success Lead is a non\u2011technical, client\u2011facing role, not a development position.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-08-01",
+    "suppress_until": "2026-08-15"
   }
 }
