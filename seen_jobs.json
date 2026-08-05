@@ -1058,26 +1058,26 @@
   "WN::https://www.workingnomads.com/job/go/1740509/": {
     "title": "Senior Google Ads Account Manager - Remote (Work From Home) @ StubGroup",
     "score": 0,
-    "why": "The role is a Senior Google Ads Account Manager, unrelated to UI development or Angular/TypeScript.",
-    "gap": "No relevant frontend/Angular/TS requirements",
-    "first_seen": "2026-07-21",
-    "suppress_until": "2026-08-04"
+    "why": "The position is a Senior Google Ads Account Manager, a non\u2011technical sales/marketing role.",
+    "gap": "Not a UI/Frontend engineering role",
+    "first_seen": "2026-08-05",
+    "suppress_until": "2026-08-19"
   },
   "WN::https://www.workingnomads.com/job/go/1740151/": {
     "title": "AI Operations Manager @ Storyteller",
     "score": 0,
-    "why": "The AI Operations Manager position focuses on operational AI tasks, not frontend engineering or Angular/TypeScript.",
-    "gap": "No relevant frontend/Angular/TS requirements",
-    "first_seen": "2026-07-21",
-    "suppress_until": "2026-08-04"
+    "why": "AI Operations Manager is an operations\u2011focused role with no mention of frontend development.",
+    "gap": "No Angular/TypeScript requirement (operations focus)",
+    "first_seen": "2026-08-05",
+    "suppress_until": "2026-08-19"
   },
   "WN::https://www.workingnomads.com/job/go/1740116/": {
     "title": "AI Operations Manager @ Storyteller",
     "score": 0,
-    "why": "This AI Operations Manager role also centers on AI operations rather than UI/frontend work with Angular or TypeScript.",
-    "gap": "No relevant frontend/Angular/TS requirements",
-    "first_seen": "2026-07-21",
-    "suppress_until": "2026-08-04"
+    "why": "Same as job 3 \u2013 an AI Operations Manager role without frontend responsibilities.",
+    "gap": "No Angular/TypeScript requirement (operations focus)",
+    "first_seen": "2026-08-05",
+    "suppress_until": "2026-08-19"
   },
   "WWR::https://weworkremotely.com/remote-jobs/khibraty-product-manager-qa-analyst-full-time-remote-contractor": {
     "title": "Khibraty: Product Manager / QA Analyst (Full-Time Remote Contractor)",
@@ -1598,5 +1598,13 @@
     "gap": "Not a UI/Frontend position",
     "first_seen": "2026-08-01",
     "suppress_until": "2026-08-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stripe-backend-engineer-ai-security": {
+    "title": "Stripe: Backend Engineer, AI Security",
+    "score": 0,
+    "why": "The role is a Backend Engineer focused on AI security, which does not involve Angular or TypeScript.",
+    "gap": "No Angular/TypeScript requirement (backend focus)",
+    "first_seen": "2026-08-05",
+    "suppress_until": "2026-08-19"
   }
 }
