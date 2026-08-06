@@ -13,14 +13,32 @@ from PIL import Image, ImageDraw, ImageFont
 import textwrap
 import os
 
-# ---- BRAND CONSTANTS (fixed once, do not change per-post) ----
+# ---- BRAND CONSTANTS ----
 CANVAS = (1080, 1080)               # 1:1 square, per your spec ("Instagram square 1:1 format")
 FONT_BOLD = "fonts/Poppins-Bold.ttf"
 FONT_REGULAR = "fonts/Poppins-Regular.ttf"
-BRAND_GRADIENT = [(250, 240, 210), (250, 240, 210)]  # cream fallback, matches Ideogram bg family
 ACCENT = (20, 20, 20)                # black underline accent, per your spec ("bold black text")
-TEXT_COLOR = (20, 20, 20)            # near-black, high contrast on mustard/cream/mint
-FOOTER_TEXT = "@your_handle"         # identity anchor, appears on every slide
+TEXT_COLOR = (20, 20, 20)            # near-black, works on all 4 palette colors below
+FOOTER_TEXT = "@prafull_daily_thoughts"
+
+# Rotating background palette - one flat color per post, cycled deterministically
+# so the SAME thought always renders the same color (idempotent re-runs),
+# but different thoughts get visible variation. Matches your original spec:
+# mustard-yellow, cream, beige, mint-green.
+COLOR_PALETTE = [
+    (245, 196, 85),   # mustard-yellow
+    (250, 240, 210),  # cream
+    (235, 224, 200),  # beige
+    (200, 230, 210),  # mint-green
+]
+
+
+def pick_background_color(thought_id):
+    """Deterministic rotation - same thought_id always gets the same color
+    (so re-running a failed post doesn't change its look), different
+    thoughts cycle through the palette."""
+    idx = sum(ord(c) for c in thought_id) % len(COLOR_PALETTE)
+    return COLOR_PALETTE[idx]
 
 
 def make_gradient_bg(size, top_color, bottom_color):
@@ -53,17 +71,19 @@ def wrap_text(text, font, max_width, draw):
     return lines
 
 
-def render_slide(text, slide_no, total_slides, out_path, background_bytes=None):
+def render_slide(text, slide_no, total_slides, out_path, background_bytes=None, bg_color=None):
     """
     background_bytes: raw PNG/JPG bytes from generate_background.py (Ideogram).
-    If None, falls back to flat gradient -- lets you test/run without an
-    Ideogram key while wiring the rest.
+    If None, falls back to a flat color background -- lets you test/run
+    without an Ideogram key while wiring the rest.
+    bg_color: RGB tuple for the flat background. If None, defaults to cream.
     """
     if background_bytes:
         from io import BytesIO
         img = Image.open(BytesIO(background_bytes)).convert("RGB").resize(CANVAS)
     else:
-        img = make_gradient_bg(CANVAS, *BRAND_GRADIENT)
+        color = bg_color or COLOR_PALETTE[1]  # cream default
+        img = make_gradient_bg(CANVAS, color, color)
     draw = ImageDraw.Draw(img)
 
     # accent bar - top-left, brand anchor repeated every slide
@@ -96,17 +116,20 @@ def render_slide(text, slide_no, total_slides, out_path, background_bytes=None):
     return out_path
 
 
-def render_carousel(thought_slides, out_dir):
+def render_carousel(thought_slides, out_dir, thought_id="default"):
     """
     thought_slides: list of 3 short strings (one idea split across slides,
     or 3 related sub-points of the same thought)
+    thought_id: used to deterministically pick this carousel's background
+    color from COLOR_PALETTE - same id always gets the same color.
     Returns list of file paths, in post order.
     """
     os.makedirs(out_dir, exist_ok=True)
+    bg_color = pick_background_color(thought_id)
     paths = []
     for i, text in enumerate(thought_slides, start=1):
         path = os.path.join(out_dir, f"slide_{i}.png")
-        render_slide(text, i, len(thought_slides), path)
+        render_slide(text, i, len(thought_slides), path, bg_color=bg_color)
         paths.append(path)
     return paths
 
@@ -118,5 +141,5 @@ if __name__ == "__main__":
         "Momentum is built in the repetitions nobody sees.",
         "Alignment beats intensity every single time.",
     ]
-    result = render_carousel(sample, "/home/claude/carousel-pipeline/output/test_carousel")
+    result = render_carousel(sample, "output/test_carousel")
     print("Rendered:", result)
