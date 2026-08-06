@@ -6,6 +6,8 @@ Idempotent: safe to re-run same day, won't double-post (queue_manager guards it)
 
 import os
 import uuid
+import time
+import requests
 from datetime import date
 
 from queue_manager import load_queue, save_queue, needs_generation, next_unposted, mark_posted
@@ -54,6 +56,28 @@ def upload_to_repo(local_paths, thought_id):
     return urls
 
 
+def wait_for_urls_live(urls, max_wait_seconds=30, poll_interval=3):
+    """
+    GitHub's raw content CDN can take a few seconds to propagate a fresh
+    push to the edge node Meta's crawler hits. Instead of racing that gap,
+    poll each URL ourselves until it's actually fetchable before ever
+    calling Meta's API -- turns a flaky timing bug into a deterministic wait.
+    """
+    for url in urls:
+        waited = 0
+        while waited < max_wait_seconds:
+            try:
+                resp = requests.head(url, timeout=5)
+                if resp.status_code == 200:
+                    break
+            except requests.RequestException:
+                pass
+            time.sleep(poll_interval)
+            waited += poll_interval
+        else:
+            print(f"WARNING: {url} still not live after {max_wait_seconds}s, proceeding anyway")
+
+
 def main():
     queue = load_queue()
 
@@ -76,6 +100,7 @@ def main():
 
     # 2. host (public URL required by Graph API)
     public_urls = upload_to_repo(local_paths, item["id"])
+    wait_for_urls_live(public_urls)
 
     # 3. caption = slide 1 text (hook) + fixed hashtag suffix
     caption = item["slides"][0] + FB_CAPTION_SUFFIX
