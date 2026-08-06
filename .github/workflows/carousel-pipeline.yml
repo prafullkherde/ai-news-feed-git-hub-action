@@ -13,6 +13,8 @@ on:
 jobs:
   post-carousel:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # GITHUB_TOKEN defaults to read-only; needed to push images/queue state
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,7 +25,7 @@ jobs:
       - name: Run pipeline
         working-directory: social-media-automatio
         env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY_INSTA }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           META_SYSTEM_USER_TOKEN: ${{ secrets.META_SYSTEM_USER_TOKEN }}
