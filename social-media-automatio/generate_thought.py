@@ -35,9 +35,10 @@ Return ONLY valid JSON, no markdown fences, no preamble."""
 USER_PROMPT_TEMPLATE = """Generate {n} distinct thoughts for today.
 Mix categories: aim for at least 1-2 health/fitness-angled thoughts and
 1-2 discipline/mindset-angled thoughts, not all from the same category.
-Each thought must be splittable into exactly 3 short slide-lines
-(slide 1 = hook, slide 2 = the mechanism/why, slide 3 = the takeaway).
-Return JSON: {{"thoughts": [{{"id": "t1", "slides": ["...", "...", "..."]}}]}}"""
+Each thought must be splittable into exactly 5 short slide-lines that
+build progressively (slide 1 = hook, slides 2-4 = the mechanism/why/
+supporting points, slide 5 = the takeaway).
+Return JSON: {{"thoughts": [{{"id": "t1", "slides": ["...", "...", "...", "...", "..."]}}]}}"""
 
 
 def generate_daily_thoughts(n=4):
