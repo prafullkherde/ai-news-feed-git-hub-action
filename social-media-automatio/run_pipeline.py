@@ -41,12 +41,16 @@ def upload_to_repo(local_paths, thought_id):
         subprocess.run(["cp", path, os.path.join(dest_dir, fname)], check=True)
         urls.append(f"{GITHUB_REPO_RAW_BASE}/carousel-images/{thought_id}/{fname}")
 
+    subprocess.run(["git", "config", "user.name", "carousel-bot"], cwd=repo_root, check=True)
+    subprocess.run(["git", "config", "user.email", "bot@noreply.local"], cwd=repo_root, check=True)
     subprocess.run(["git", "add", "carousel-images"], cwd=repo_root, check=True)
     result = subprocess.run(
         ["git", "commit", "-m", f"post: {thought_id}"], cwd=repo_root, capture_output=True
     )
     if result.returncode == 0:  # non-zero = nothing to commit, not a real failure
         subprocess.run(["git", "push"], cwd=repo_root, check=True)
+    else:
+        print(f"git commit output: {result.stdout} {result.stderr}")
     return urls
 
 
