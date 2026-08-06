@@ -19,12 +19,22 @@ if not _key:
     )
 client = Groq(api_key=_key)
 
-SYSTEM_PROMPT = """You write short, original thoughts on discipline, alignment,
-and momentum -- in the style of a practitioner, not a generic quote account.
-No cliches ("hustle", "grind never stops"). Concrete, specific, slightly
-unexpected angle. Return ONLY valid JSON, no markdown fences, no preamble."""
+SYSTEM_PROMPT = """You write short, original thoughts across a mix of topics:
+discipline, alignment, momentum, habits, mindset -- AND health/fitness
+specifically (body, training, longevity, energy). Rotate across both
+categories day to day, don't stay only on one.
+Style: a practitioner, not a generic quote account. No cliches
+("hustle", "grind never stops"). Concrete, specific, slightly unexpected
+angle, quotable one-liners welcome.
+Examples of the tone/structure to match (don't reuse these, write new ones):
+- "Fit body + healthy mind = pain free living."
+- "The idea is to die young as late as possible."
+- "Discipline is choosing what you want most over what you want now."
+Return ONLY valid JSON, no markdown fences, no preamble."""
 
 USER_PROMPT_TEMPLATE = """Generate {n} distinct thoughts for today.
+Mix categories: aim for at least 1-2 health/fitness-angled thoughts and
+1-2 discipline/mindset-angled thoughts, not all from the same category.
 Each thought must be splittable into exactly 3 short slide-lines
 (slide 1 = hook, slide 2 = the mechanism/why, slide 3 = the takeaway).
 Return JSON: {{"thoughts": [{{"id": "t1", "slides": ["...", "...", "..."]}}]}}"""
