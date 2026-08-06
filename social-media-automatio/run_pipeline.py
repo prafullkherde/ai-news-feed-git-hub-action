@@ -31,6 +31,7 @@ def upload_to_repo(local_paths, thought_id):
     """
     import subprocess
     repo_root = os.environ.get("GITHUB_WORKSPACE", ".")
+    repo_root = os.path.join(repo_root, "social-media-automatio")  # matches working-directory in yml
     dest_dir = os.path.join(repo_root, "carousel-images", thought_id)
     os.makedirs(dest_dir, exist_ok=True)
 
@@ -75,14 +76,15 @@ def main():
     # 3. caption = slide 1 text (hook) + fixed hashtag suffix
     caption = item["slides"][0] + FB_CAPTION_SUFFIX
 
-    # 4. post both platforms
+    # 4. post to IG (FB deferred - pages_manage_posts permission blocked,
+    #    likely needs Meta App Review. Re-enable below once resolved.)
     ig_media_id = post_ig_carousel(public_urls, caption)
-    fb_post_id = post_fb_photos(public_urls, caption)
+    # fb_post_id = post_fb_photos(public_urls, caption)
 
     # 5. mark done, prevents re-post on next cron trigger same day
-    mark_posted(queue, item["id"], f"ig:{ig_media_id}|fb:{fb_post_id}")
+    mark_posted(queue, item["id"], f"ig:{ig_media_id}")
 
-    print(f"Posted {item['id']} -> IG:{ig_media_id} FB:{fb_post_id}")
+    print(f"Posted {item['id']} -> IG:{ig_media_id}")
 
 
 if __name__ == "__main__":
