@@ -23,7 +23,20 @@ BASE_URL = f"https://graph.facebook.com/{GRAPH_VERSION}"
 
 IG_USER_ID = os.environ["IG_USER_ID"]
 PAGE_ID = os.environ["FB_PAGE_ID"]
-ACCESS_TOKEN = os.environ["META_SYSTEM_USER_TOKEN"]
+ACCESS_TOKEN = os.environ.get("META_SYSTEM_USER_TOKEN", "").strip()
+
+if not ACCESS_TOKEN:
+    raise RuntimeError(
+        "META_SYSTEM_USER_TOKEN is empty. Check the GitHub secret's value field isn't blank."
+    )
+if len(ACCESS_TOKEN) < 100:
+    # real long-lived System User tokens are long; short-lived Explorer
+    # tokens or a truncated paste both tend to be noticeably shorter
+    print(
+        f"WARNING: META_SYSTEM_USER_TOKEN is only {len(ACCESS_TOKEN)} chars -- "
+        "this looks too short for a System User token. Did you paste the "
+        "Graph API Explorer token by mistake, or does it look cut off?"
+    )
 
 
 def create_child_container(image_url):
@@ -40,6 +53,9 @@ def create_child_container(image_url):
         print(f"META ERROR for {image_url}: {resp.status_code} - {resp.text}")
     resp.raise_for_status()
     return resp.json()["id"]
+
+
+def create_carousel_container(child_ids, caption):
     """Step 2: parent container referencing all child container IDs"""
     resp = requests.post(
         f"{BASE_URL}/{IG_USER_ID}/media",
