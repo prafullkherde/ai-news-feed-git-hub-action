@@ -38,11 +38,16 @@ def generate_daily_thoughts(n=4):
             {"role": "user", "content": USER_PROMPT_TEMPLATE.format(n=n)},
         ],
         temperature=0.9,
+        response_format={"type": "json_object"},  # forces valid JSON, prevents this exact bug
     )
     raw = resp.choices[0].message.content.strip()
     # defensive: strip accidental fences, same failure mode you hit in job_radar
     raw = raw.replace("```json", "").replace("```", "").strip()
-    return json.loads(raw)["thoughts"]
+    try:
+        return json.loads(raw)["thoughts"]
+    except json.JSONDecodeError as e:
+        print(f"RAW GROQ OUTPUT (failed to parse):\n{raw}")
+        raise
 
 
 if __name__ == "__main__":
