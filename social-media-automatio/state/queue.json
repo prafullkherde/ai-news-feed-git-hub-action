@@ -28,7 +28,8 @@
         "Each completed micro\u2011task reduces the activation energy for the next one",
         "Start with a 30\u2011second action; the rest follows"
       ],
-      "posted": false
+      "posted": true,
+      "media_id": "ig:18382371373163205"
     },
     {
       "id": "t4",
@@ -40,5 +41,5 @@
       "posted": false
     }
   ],
-  "posted_count": 2
+  "posted_count": 3
 }
