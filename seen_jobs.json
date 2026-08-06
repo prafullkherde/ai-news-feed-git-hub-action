@@ -1606,5 +1606,141 @@
     "gap": "No Angular/TypeScript requirement (backend focus)",
     "first_seen": "2026-08-05",
     "suppress_until": "2026-08-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/gusto-inc-enterprise-application-ai-architect": {
+    "title": "Gusto, Inc.: Enterprise Application AI Architect",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stripe-backend-engineer-core-technology": {
+    "title": "Stripe: Backend Engineer, Core Technology",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773218/": {
+    "title": "Senior Python Developer (FastAPI) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773214/": {
+    "title": "Senior Python Developer (Flask) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773186/": {
+    "title": "Senior Shopify Developer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773172/": {
+    "title": "Senior Fullstack (MERN) Developer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773165/": {
+    "title": "Senior Backend Developer (Python) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773159/": {
+    "title": "Senior Data Scientist (Python) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773157/": {
+    "title": "Senior Django Developer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773155/": {
+    "title": "Senior Adobe Commerce Developer (Magento) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773153/": {
+    "title": "Senior Data Engineer (Python) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773151/": {
+    "title": "Senior Salesforce Developer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773149/": {
+    "title": "Senior Fullstack Developer (React.js / Node.js) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773145/": {
+    "title": "Senior Sharepoint Developer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773143/": {
+    "title": "Senior DevOps Engineer (Azure) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773141/": {
+    "title": "Senior Ruby on Rails Developer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1773139/": {
+    "title": "Senior Microsoft Dynamics 365 Developer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-06",
+    "suppress_until": "2026-08-20"
   }
 }
