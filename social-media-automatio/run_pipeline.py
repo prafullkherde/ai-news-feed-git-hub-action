@@ -96,7 +96,7 @@ def main():
 
     # 1. render
     out_dir = f"output/{item['id']}"
-    local_paths = render_carousel(item["slides"], out_dir)
+    local_paths = render_carousel(item["slides"], out_dir, thought_id=item["id"])
 
     # 2. host (public URL required by Graph API)
     public_urls = upload_to_repo(local_paths, item["id"])
