@@ -1742,5 +1742,53 @@
     "gap": "",
     "first_seen": "2026-08-06",
     "suppress_until": "2026-08-20"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/dropbox-director-product-design": {
+    "title": "Dropbox: Director, Product Design",
+    "score": 0,
+    "why": "The role is a senior product design leadership position and does not require Angular or TypeScript development.",
+    "gap": "No Angular/TypeScript requirement; focus on design leadership rather than UI engineering.",
+    "first_seen": "2026-08-07",
+    "suppress_until": "2026-08-21"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-analytics-engineer-gfco-analytics": {
+    "title": "Coinbase: Analytics Engineer, GFCO Analytics",
+    "score": 0,
+    "why": "This is an analytics engineering role focused on data pipelines, not a frontend development position.",
+    "gap": "No frontend/Angular/TypeScript responsibilities.",
+    "first_seen": "2026-08-07",
+    "suppress_until": "2026-08-21"
+  },
+  "WN::https://www.workingnomads.com/job/go/1775657/": {
+    "title": "AI Content Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "The AI Content Analyst position is entry\u2011level and unrelated to UI development or Angular/TypeScript.",
+    "gap": "No UI/Angular/TS experience required; role is non\u2011technical.",
+    "first_seen": "2026-08-07",
+    "suppress_until": "2026-08-21"
+  },
+  "WN::https://www.workingnomads.com/job/go/1775628/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "The Data Analyst role is a junior\u2011level analytics position with no frontend development component.",
+    "gap": "No Angular/TypeScript or UI focus.",
+    "first_seen": "2026-08-07",
+    "suppress_until": "2026-08-21"
+  },
+  "WN::https://www.workingnomads.com/job/go/1775548/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "Similar to the other Data Analyst posting, it targets entry\u2011level analytics work, not UI architecture.",
+    "gap": "No Angular/TS requirement; not a UI role.",
+    "first_seen": "2026-08-07",
+    "suppress_until": "2026-08-21"
+  },
+  "WN::https://www.workingnomads.com/job/go/1775475/": {
+    "title": "Content Creator (100% remote) @ Marker Video",
+    "score": 0,
+    "why": "Content Creator is a creative writing/marketing role, not a software development position.",
+    "gap": "No frontend development or Angular/TypeScript duties.",
+    "first_seen": "2026-08-07",
+    "suppress_until": "2026-08-21"
   }
 }
