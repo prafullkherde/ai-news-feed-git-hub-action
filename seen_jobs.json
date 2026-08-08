@@ -1186,18 +1186,18 @@
   "RemoteOK::1135285": {
     "title": "Junior Front End Developer @ PULSE (MENA)",
     "score": 0,
-    "why": "The role is a **Junior** Front End Developer, which requires <7\u202fyears experience, while the candidate has 17+\u202fyears and is senior\u2011level.",
-    "gap": "Seniority level",
-    "first_seen": "2026-07-24",
-    "suppress_until": "2026-08-07"
+    "why": "The role is explicitly a **Junior** Front End Developer, which falls below the 7\u2011year seniority threshold.",
+    "gap": "Junior\u2011level experience requirement",
+    "first_seen": "2026-08-08",
+    "suppress_until": "2026-08-22"
   },
   "RemoteOK::1135269": {
     "title": "Front End Developer @ Acro Commerce",
-    "score": 70,
-    "why": "The position is a generic **Front End Developer** role without explicit Angular/TypeScript requirements, so the candidate\u2019s expertise is relevant but not directly matched, capping the score below the 80\u2011point threshold.",
-    "gap": "No explicit Angular/TypeScript requirement",
-    "first_seen": "2026-07-24",
-    "suppress_until": "2026-08-07"
+    "score": 0,
+    "why": "The posting does not specify seniority but is a generic Front End Developer role, typically targeting mid\u2011level candidates (<7\u202fyears).",
+    "gap": "Mid\u2011level experience expectation",
+    "first_seen": "2026-08-08",
+    "suppress_until": "2026-08-22"
   },
   "WN::https://www.workingnomads.com/job/go/1746261/": {
     "title": "Account Manager, Creative Operations @ Storm Ideas",
@@ -1790,5 +1790,13 @@
     "gap": "No frontend development or Angular/TypeScript duties.",
     "first_seen": "2026-08-07",
     "suppress_until": "2026-08-21"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/gusto-inc-retirement-implementation-specialist": {
+    "title": "Gusto, Inc.: Retirement Implementation Specialist",
+    "score": 0,
+    "why": "The position is a **Retirement Implementation Specialist**, not a frontend development role, so it does not match the candidate\u2019s UI/Angular expertise.",
+    "gap": "Role mismatch \u2013 non\u2011frontend focus",
+    "first_seen": "2026-08-08",
+    "suppress_until": "2026-08-22"
   }
 }
