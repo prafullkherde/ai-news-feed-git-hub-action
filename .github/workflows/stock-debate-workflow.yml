@@ -2,8 +2,18 @@ name: Stock Debate
 
 on:
   schedule:
-    - cron: '30 3 * * 1-5'   # 3:30 UTC = 9:00 AM IST, weekdays
+    # Real daily run: NSE closes 15:30 IST (10:00 UTC). 13:00 UTC = 18:30
+    # IST gives ~3hrs buffer for Yahoo Finance's data to settle after close
+    # — running right at/before close risks fetching incomplete same-day data.
+    - cron: '0 13 * * 1-5'
+    # TEMPORARY — 7am IST test trigger. Remove this line once you've
+    # confirmed a run works; it has no purpose after that, and every extra
+    # run burns real quota for no benefit (see README's quota-math note).
+    - cron: '30 1 * * 1-5'
   workflow_dispatch: {}
+  # ^ Prefer this over waiting for a scheduled time when you want to test
+  # right now — go to Actions tab -> Stock Debate -> Run workflow. Instant,
+  # no cron wait, and doesn't require remembering to delete a test trigger.
 
 permissions:
   contents: write   # needed to commit the updated logs/ back to the repo
