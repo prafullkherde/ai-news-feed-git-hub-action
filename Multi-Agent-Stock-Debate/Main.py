@@ -249,8 +249,41 @@ _gemini_working_model = {"name": None}  # cache of whichever Gemini candidate ac
 def _sleep_backoff(resp, attempt: int):
     retry_after = resp.headers.get("Retry-After") if resp is not None else None
     wait = float(retry_after) if retry_after else cfg.RETRY.base_backoff_seconds * (attempt + 1)
-    print(f"    429 rate limited — waiting {wait:.0f}s (attempt {attempt + 1}/{cfg.RETRY.max_retries})", file=sys.stderr)
+    # Log the actual response body (truncated) so a 429 is diagnosable —
+    # without this we can't tell a per-minute limit (worth waiting out)
+    # from a daily quota exhaustion (waiting won't help at all today).
+    body_snippet = (resp.text[:300] if resp is not None and resp.text else "")
+    print(f"    429 rate limited — waiting {wait:.0f}s (attempt {attempt + 1}/{cfg.RETRY.max_retries}) — body: {body_snippet}", file=sys.stderr)
     time.sleep(wait)
+
+
+def _is_daily_quota_exhausted(resp) -> bool:
+    """Heuristic check on a 429 response body for a per-DAY quota signal
+    (as opposed to per-minute). If the daily cap is hit, retrying within
+    this run cannot succeed — the quota only resets on the provider's
+    daily window, not by waiting a few seconds. Matches common phrasing
+    from both Groq and Gemini error bodies; if the check can't tell,
+    it defaults to False (retry normally) rather than guessing wrong
+    and abandoning a call that could have succeeded."""
+    if resp is None or not resp.text:
+        return False
+    body_lower = resp.text.lower()
+    return any(marker in body_lower for marker in ("per day", "perday", "daily", "requests per day", "rpd"))
+
+
+def _log_rate_limit_headers(resp, provider: str):
+    """Print any header whose name suggests remaining quota (rate-limit,
+    quota, retry-after). Groq reliably sends these (x-ratelimit-remaining-
+    requests, x-ratelimit-remaining-tokens, x-ratelimit-reset-requests,
+    etc.) on every response, success or not. Gemini's REST API is less
+    consistent about it, so this may print nothing for Gemini — that
+    itself is useful information (means we're flying blind on Gemini's
+    real-time quota and can only infer it from 429 bodies)."""
+    if resp is None:
+        return
+    relevant = {k: v for k, v in resp.headers.items() if any(s in k.lower() for s in ("ratelimit", "rate-limit", "quota", "retry-after"))}
+    if relevant:
+        print(f"    [{provider} quota headers] {relevant}", file=sys.stderr)
 
 
 def call_groq(system_prompt: str, user_prompt: str, model: str, max_tokens: int) -> str:
@@ -276,7 +309,12 @@ def call_groq(system_prompt: str, user_prompt: str, model: str, max_tokens: int)
                 json=body,
                 timeout=60,
             )
+            _log_rate_limit_headers(resp, f"GROQ:{model}")
             if resp.status_code == 429:
+                if _is_daily_quota_exhausted(resp):
+                    last_error = f"429 daily quota exhausted, not retrying — body: {resp.text[:300]}"
+                    print(f"    429 looks like a DAILY quota, not per-minute — skipping remaining retries. body: {resp.text[:200]}", file=sys.stderr)
+                    break
                 _sleep_backoff(resp, attempt)
                 last_error = "429 Too Many Requests (all retries exhausted)"
                 continue
@@ -317,10 +355,15 @@ def call_gemini(system_prompt: str, user_prompt: str) -> str:
                     },
                     timeout=60,
                 )
+                _log_rate_limit_headers(resp, f"GEMINI:{model}")
                 if resp.status_code == 404:
                     last_error = f"{model}: 404 not found for this key/API version"
                     break  # try next candidate model, no point retrying a 404
                 if resp.status_code == 429:
+                    if _is_daily_quota_exhausted(resp):
+                        print(f"    {model}: 429 looks like a DAILY quota, not per-minute — stopping entirely for this call. body: {resp.text[:200]}", file=sys.stderr)
+                        time.sleep(cfg.CRITIC.request_delay_seconds)
+                        return f"[GEMINI ERROR: daily quota exhausted, not retrying — body: {resp.text[:300]!r}]"
                     _sleep_backoff(resp, attempt)
                     last_error = f"{model}: 429 Too Many Requests (all retries exhausted)"
                     continue
