@@ -44,12 +44,14 @@ def env_or_default(key: str, default: str) -> str:
     """GitHub Actions sets an env var to an EMPTY STRING when the referenced
     secret doesn't exist — it does not leave the var unset. Plain
     os.environ.get(key, default) never falls back in that case, since the
-    key IS present. This treats '' the same as missing."""
+    key IS present. This treats '' and whitespace-only the same as missing."""
     val = os.environ.get(key)
+    val = val.strip() if val else val
     return val if val else default
 
 
 TICKERS = [t.strip() for t in env_or_default("STOCK_P_TICKERS", "CDSL.NS,TRENT.NS,SUZLON.NS,MON100.NS").split(",") if t.strip()]
+TICKERS_RAW_ENV = os.environ.get("STOCK_P_TICKERS")  # kept for diagnostics if TICKERS ends up empty
 
 PORTFOLIO_VALUE = float(env_or_default("STOCK_P_PORTFOLIO_VALUE", "100000"))
 MAX_POSITION_PCT = float(env_or_default("STOCK_P_MAX_POSITION_PCT", "5"))
@@ -496,6 +498,21 @@ def send_email(subject: str, html: str):
 
 
 if __name__ == "__main__":
+    if not TICKERS:
+        print(f"STOCK_P_TICKERS resolved to an empty list. Raw value: {TICKERS_RAW_ENV!r}", file=sys.stderr)
+        try:
+            send_email(
+                "Stock Debate FAILED — no tickers configured",
+                f"<p>STOCK_P_TICKERS resolved to an empty ticker list, so no debate ran.</p>"
+                f"<p><b>Raw secret value received by the script:</b> {TICKERS_RAW_ENV!r}</p>"
+                f"<p>Check Settings → Secrets → STOCK_P_TICKERS in the repo — it should be a "
+                f"comma-separated list like <code>CDSL.NS,TRENT.NS,SUZLON.NS,MON100.NS</code>, "
+                f"or simply deleted if you want the default.</p>",
+            )
+        except Exception as e:
+            print(f"Email send also failed: {e}", file=sys.stderr)
+        sys.exit(1)
+
     results, errors = [], []
     for ticker in TICKERS:
         try:
