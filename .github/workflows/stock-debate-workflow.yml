@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install yfinance requests pandas
-      - run: python stock-agent-debate/main.py
+      - run: python Multi-Agent-Stock-Debate/main.py
         env:
           # reused from your existing ai-news-feed-git-hub-action secrets:
           GROQ_API_KEY_FOR_AUTO_EMAIL: ${{ secrets.GROQ_API_KEY_FOR_AUTO_EMAIL }}
@@ -34,6 +34,6 @@ jobs:
         run: |
           git config user.name "stock-debate-bot"
           git config user.email "actions@github.com"
-          git add stock-agent-debate/logs/
+          git add Multi-Agent-Stock-Debate/logs/
           git diff --cached --quiet || git commit -m "Log: $(date -u +%Y-%m-%d) debate run"
           git push
