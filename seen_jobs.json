@@ -1798,5 +1798,13 @@
     "gap": "Role mismatch \u2013 non\u2011frontend focus",
     "first_seen": "2026-08-08",
     "suppress_until": "2026-08-22"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/airtable-manager-sales-strategy-planning": {
+    "title": "Airtable: Manager, Sales Strategy & Planning",
+    "score": 0,
+    "why": "The role is a sales strategy and planning manager position, not a UI/Frontend engineering role.",
+    "gap": "Not a UI/Frontend position.",
+    "first_seen": "2026-08-09",
+    "suppress_until": "2026-08-23"
   }
 }
