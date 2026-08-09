@@ -39,12 +39,22 @@ GROQ_EXECUTOR_MODEL = "openai/gpt-oss-120b"
 GROQ_BA_MODEL = "llama-3.3-70b-versatile"
 GEMINI_MODEL = "gemini-2.5-flash"
 
-TICKERS = [t.strip() for t in os.environ.get("STOCK_P_TICKERS", "CDSL.NS,TRENT.NS,SUZLON.NS,MON100.NS").split(",") if t.strip()]
 
-PORTFOLIO_VALUE = float(os.environ.get("STOCK_P_PORTFOLIO_VALUE", "100000"))
-MAX_POSITION_PCT = float(os.environ.get("STOCK_P_MAX_POSITION_PCT", "5"))
+def env_or_default(key: str, default: str) -> str:
+    """GitHub Actions sets an env var to an EMPTY STRING when the referenced
+    secret doesn't exist — it does not leave the var unset. Plain
+    os.environ.get(key, default) never falls back in that case, since the
+    key IS present. This treats '' the same as missing."""
+    val = os.environ.get(key)
+    return val if val else default
+
+
+TICKERS = [t.strip() for t in env_or_default("STOCK_P_TICKERS", "CDSL.NS,TRENT.NS,SUZLON.NS,MON100.NS").split(",") if t.strip()]
+
+PORTFOLIO_VALUE = float(env_or_default("STOCK_P_PORTFOLIO_VALUE", "100000"))
+MAX_POSITION_PCT = float(env_or_default("STOCK_P_MAX_POSITION_PCT", "5"))
 try:
-    CURRENT_EXPOSURE = json.loads(os.environ.get("STOCK_P_CURRENT_EXPOSURE_JSON", "{}"))
+    CURRENT_EXPOSURE = json.loads(env_or_default("STOCK_P_CURRENT_EXPOSURE_JSON", "{}"))
 except json.JSONDecodeError:
     CURRENT_EXPOSURE = {}
 
