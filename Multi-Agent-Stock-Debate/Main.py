@@ -30,6 +30,7 @@ with real numbers, whether they're worth anything over time.
 import os
 import sys
 import json
+import time
 import datetime
 import requests
 import pandas as pd
@@ -37,7 +38,6 @@ import yfinance as yf
 
 GROQ_EXECUTOR_MODEL = "openai/gpt-oss-120b"
 GROQ_BA_MODEL = "llama-3.3-70b-versatile"
-GEMINI_MODEL = "gemini-2.5-flash"
 
 
 def env_or_default(key: str, default: str) -> str:
@@ -239,46 +239,93 @@ def get_market_data(ticker: str):
 
 # ------------------------------------------------------------- models -----
 
+MAX_RETRIES = int(env_or_default("STOCK_P_MAX_RETRIES", "4"))
+BASE_BACKOFF_SECONDS = float(env_or_default("STOCK_P_BASE_BACKOFF_SECONDS", "15"))
+REQUEST_DELAY_SECONDS = float(env_or_default("STOCK_P_REQUEST_DELAY_SECONDS", "3"))
+
+# Gemini model aliases change/retire without much notice — a hardcoded single
+# name (gemini-2.5-flash) was 404ing in production. Try candidates in order,
+# remember whichever one works so we don't re-probe dead ones every call.
+GEMINI_MODEL_CANDIDATES = ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.0-flash"]
+_gemini_working_model = {"name": None}
+
+
+def _sleep_backoff(resp, attempt: int):
+    retry_after = resp.headers.get("Retry-After") if resp is not None else None
+    wait = float(retry_after) if retry_after else BASE_BACKOFF_SECONDS * (attempt + 1)
+    print(f"    429 rate limited — waiting {wait:.0f}s (attempt {attempt + 1}/{MAX_RETRIES})", file=sys.stderr)
+    time.sleep(wait)
+
+
 def call_groq(system: str, user: str, model: str) -> str:
-    try:
-        resp = requests.post(
-            "https://api.groq.com/openai/v1/chat/completions",
-            headers={"Authorization": f"Bearer {os.environ['GROQ_API_KEY_FOR_AUTO_EMAIL']}"},
-            json={
-                "model": model,
-                "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
-                "temperature": 0.4,
-                "max_tokens": 450,
-            },
-            timeout=60,
-        )
-        resp.raise_for_status()
-        return resp.json()["choices"][0]["message"]["content"].strip()
-    except Exception as e:
-        return f"[GROQ ERROR ({model}): {e}]"
+    last_error = None
+    for attempt in range(MAX_RETRIES):
+        try:
+            resp = requests.post(
+                "https://api.groq.com/openai/v1/chat/completions",
+                headers={"Authorization": f"Bearer {os.environ['GROQ_API_KEY_FOR_AUTO_EMAIL']}"},
+                json={
+                    "model": model,
+                    "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
+                    "temperature": 0.4,
+                    "max_tokens": 450,
+                },
+                timeout=60,
+            )
+            if resp.status_code == 429:
+                _sleep_backoff(resp, attempt)
+                last_error = "429 Too Many Requests (all retries exhausted)"
+                continue
+            resp.raise_for_status()
+            time.sleep(REQUEST_DELAY_SECONDS)
+            return resp.json()["choices"][0]["message"]["content"].strip()
+        except Exception as e:
+            last_error = str(e)
+            break
+    time.sleep(REQUEST_DELAY_SECONDS)
+    return f"[GROQ ERROR ({model}): {last_error}]"
 
 
 def call_gemini(system: str, user: str) -> str:
-    try:
-        resp = requests.post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent",
-            headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"], "Content-Type": "application/json"},
-            json={
-                "system_instruction": {"parts": [{"text": system}]},
-                "contents": [{"role": "user", "parts": [{"text": user}]}],
-                "generationConfig": {"temperature": 0.4, "maxOutputTokens": 350},
-            },
-            timeout=60,
-        )
-        resp.raise_for_status()
-        data = resp.json()
-        candidates = data.get("candidates") or []
-        if not candidates or "content" not in candidates[0]:
-            reason = (candidates[0].get("finishReason") if candidates else data.get("promptFeedback"))
-            return f"[GEMINI ERROR — no usable content, reason: {reason}]"
-        return candidates[0]["content"]["parts"][0]["text"].strip()
-    except Exception as e:
-        return f"[GEMINI ERROR: {e}]"
+    candidates = [_gemini_working_model["name"]] if _gemini_working_model["name"] else GEMINI_MODEL_CANDIDATES
+    last_error = None
+
+    for model in candidates:
+        for attempt in range(MAX_RETRIES):
+            try:
+                resp = requests.post(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                    headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"], "Content-Type": "application/json"},
+                    json={
+                        "system_instruction": {"parts": [{"text": system}]},
+                        "contents": [{"role": "user", "parts": [{"text": user}]}],
+                        "generationConfig": {"temperature": 0.4, "maxOutputTokens": 350},
+                    },
+                    timeout=60,
+                )
+                if resp.status_code == 404:
+                    last_error = f"{model}: 404 not found for this key/API version"
+                    break  # try next candidate model, no point retrying a 404
+                if resp.status_code == 429:
+                    _sleep_backoff(resp, attempt)
+                    last_error = f"{model}: 429 Too Many Requests (all retries exhausted)"
+                    continue
+                resp.raise_for_status()
+                data = resp.json()
+                cands = data.get("candidates") or []
+                if not cands or "content" not in cands[0]:
+                    reason = (cands[0].get("finishReason") if cands else data.get("promptFeedback"))
+                    last_error = f"{model}: no usable content, reason: {reason}"
+                    break
+                _gemini_working_model["name"] = model  # cache the model that actually works
+                time.sleep(REQUEST_DELAY_SECONDS)
+                return cands[0]["content"]["parts"][0]["text"].strip()
+            except Exception as e:
+                last_error = f"{model}: {e}"
+                break
+
+    time.sleep(REQUEST_DELAY_SECONDS)
+    return f"[GEMINI ERROR: {last_error}]"
 
 
 # -------------------------------------------------------------- rounds ----
