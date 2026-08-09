@@ -19,17 +19,14 @@ jobs:
       - run: pip install yfinance requests pandas
       - run: python Multi-Agent-Stock-Debate/Main.py
         env:
-          # reused from your existing ai-news-feed-git-hub-action secrets:
+          # These 4 are the ONLY secrets this project needs. Every other
+          # value (tickers, portfolio size, model choice, retry/delay
+          # tuning) lives in Multi-Agent-Stock-Debate/config/settings.py —
+          # edit that file directly instead of adding more secrets here.
           GROQ_API_KEY_FOR_AUTO_EMAIL: ${{ secrets.GROQ_API_KEY_FOR_AUTO_EMAIL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
-          # new secret — free key from https://aistudio.google.com/apikey
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          # new, all prefixed STOCK_P_ so they're identifiable in the secrets list:
-          STOCK_P_TICKERS: ${{ secrets.STOCK_P_TICKERS }}                       # default in code: CDSL.NS,TRENT.NS,SUZLON.NS,MON100.NS
-          STOCK_P_PORTFOLIO_VALUE: ${{ secrets.STOCK_P_PORTFOLIO_VALUE }}       # default in code: 100000
-          STOCK_P_MAX_POSITION_PCT: ${{ secrets.STOCK_P_MAX_POSITION_PCT }}     # default in code: 5
-          STOCK_P_CURRENT_EXPOSURE_JSON: ${{ secrets.STOCK_P_CURRENT_EXPOSURE_JSON }}  # default in code: {}
       - name: Commit updated logs
         run: |
           git config user.name "stock-debate-bot"
