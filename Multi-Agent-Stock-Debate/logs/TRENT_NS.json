@@ -1,0 +1,23 @@
+[
+  {
+    "date": "2026-08-09",
+    "price_at_prediction": 2997.0,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 2997.0,
+    "predicted_next_week_price": 3000.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Insufficient data to make a strong fundamental case due to API errors",
+      "Technical": "The stock's RSI is 64.11, indicating a slightly overbought condition, but not excessively so",
+      "Sentiment": "Recent headlines are mixed, with some indicating profit growth and others indicating stalled growth",
+      "Bull": "No strong bull case can be made due to lack of data",
+      "Bear": "No strong bear case can be made due to lack of data",
+      "Risk": "High risk due to lack of verified predictions and potential for high volatility"
+    },
+    "corrections_made": "Overrode all Executor and Critic conclusions due to API errors and lack of usable data",
+    "verified_next_day": null,
+    "verified_next_week": null
+  }
+]
