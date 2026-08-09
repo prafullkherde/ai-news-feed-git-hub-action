@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install yfinance requests pandas
-      - run: python Multi-Agent-Stock-Debate/main.py
+      - run: python Multi-Agent-Stock-Debate/Main.py
         env:
           # reused from your existing ai-news-feed-git-hub-action secrets:
           GROQ_API_KEY_FOR_AUTO_EMAIL: ${{ secrets.GROQ_API_KEY_FOR_AUTO_EMAIL }}
