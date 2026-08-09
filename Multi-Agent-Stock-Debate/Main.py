@@ -1,16 +1,16 @@
 """
 Multi-Agent Stock Debate — Executor / Critic / Senior BA Reviewer
 ====================================================================
-3 roles, 2 model providers:
-  EXECUTOR  -> Groq  openai/gpt-oss-120b   (argues each of 7 rounds)
-  CRITIC    -> Gemini 2.5 Flash             (counters each round, different vendor)
-  BA REVIEW -> Groq  llama-3.3-70b-versatile (different model than Executor —
-               reads the full transcript + yesterday's logged outcome, is
-               instructed to correct anything wrong, and produces the final
-               structured call: BUY/SELL/HOLD, next-day + next-week price
-               target, confidence, and a clamped position size)
+3 roles, 2 model providers (config in ./config/settings.py):
+  EXECUTOR  -> Groq   (argues each of 7 rounds)
+  CRITIC    -> Gemini (counters each round — different vendor on purpose)
+  BA REVIEW -> Groq, but a DIFFERENT model than the Executor (reads the
+               full transcript + yesterday's logged outcome, corrects
+               anything wrong, and produces the final structured call:
+               BUY/SELL/HOLD, next-day + next-week price target,
+               confidence, and a code-clamped position size)
 
-Runs over a LIST of tickers (STOCK_P_TICKERS). Each ticker has its own
+Runs over the ticker list in config/settings.py. Each ticker has its own
 append-only JSON log under logs/<ticker>.json, committed back to the repo
 by the GitHub Action (see stock-debate.yml) — this is the persistence
 layer, since Action runners have no disk between runs.
@@ -26,6 +26,9 @@ Every run, BEFORE making a new prediction, it:
 IMPORTANT — price targets are LLM-generated estimates, not a statistical
 model. The entire point of the verification loop is to make it visible,
 with real numbers, whether they're worth anything over time.
+
+See README.md for the full "assumed -> observed -> diagnosed -> fixed"
+incident log covering every bug found in this project so far.
 """
 import os
 import sys
@@ -36,32 +39,12 @@ import requests
 import pandas as pd
 import yfinance as yf
 
-GROQ_EXECUTOR_MODEL = "openai/gpt-oss-120b"
-GROQ_BA_MODEL = "llama-3.3-70b-versatile"
+from config import settings as cfg
 
-
-def env_or_default(key: str, default: str) -> str:
-    """GitHub Actions sets an env var to an EMPTY STRING when the referenced
-    secret doesn't exist — it does not leave the var unset. Plain
-    os.environ.get(key, default) never falls back in that case, since the
-    key IS present. This treats '' and whitespace-only the same as missing."""
-    val = os.environ.get(key)
-    val = val.strip() if val else val
-    return val if val else default
-
-
-TICKERS = [t.strip() for t in env_or_default("STOCK_P_TICKERS", "CDSL.NS,TRENT.NS,SUZLON.NS,MON100.NS").split(",") if t.strip()]
-TICKERS_RAW_ENV = os.environ.get("STOCK_P_TICKERS")  # kept for diagnostics if TICKERS ends up empty
-
-PORTFOLIO_VALUE = float(env_or_default("STOCK_P_PORTFOLIO_VALUE", "100000"))
-MAX_POSITION_PCT = float(env_or_default("STOCK_P_MAX_POSITION_PCT", "5"))
-try:
-    CURRENT_EXPOSURE = json.loads(env_or_default("STOCK_P_CURRENT_EXPOSURE_JSON", "{}"))
-except json.JSONDecodeError:
-    CURRENT_EXPOSURE = {}
-
-LOG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
-MAX_LOG_ENTRIES = 90  # keep repo size sane; older entries still contributed to accuracy stats before trim
+REQUIRED_SECRETS = ["GROQ_API_KEY_FOR_AUTO_EMAIL", "GEMINI_API_KEY", "RESEND_API_KEY", "MY_EMAIL"]
+# These 4 are the ONLY values that belong in GitHub Secrets. Everything
+# else lives in config/settings.py — see that file's module docstring
+# for why that split matters.
 
 ROLES = [
     ("Fundamental", "Evaluate {t}'s financial health and business performance using the fundamental data below."),
@@ -73,8 +56,12 @@ ROLES = [
     ("Risk & Portfolio", "Evaluate the proposed trade for {t} against the portfolio constraints below. Give a preliminary APPROVE or REJECT — the final call is made by the BA reviewer afterward."),
 ]
 
+LOG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
 
-# ---------------------------------------------------------- persistence ---
+
+# ============================================================
+# START: PERSISTENCE — read/write/verify the per-ticker JSON logs
+# ============================================================
 
 def log_path(ticker: str) -> str:
     safe = "".join(c if c.isalnum() else "_" for c in ticker)
@@ -94,7 +81,7 @@ def load_log(ticker: str):
 
 def save_log(ticker: str, entries: list):
     os.makedirs(LOG_DIR, exist_ok=True)
-    entries = entries[-MAX_LOG_ENTRIES:]
+    entries = entries[-cfg.MAX_LOG_ENTRIES:]
     with open(log_path(ticker), "w") as f:
         json.dump(entries, f, indent=2, default=str)
 
@@ -154,8 +141,14 @@ def track_record_summary(entries: list) -> str:
         parts.append(f"Next-week direction accuracy: {acc:.0f}% over {len(week_calls)} verified calls")
     return " | ".join(parts)
 
+# ============================================================
+# END: PERSISTENCE
+# ============================================================
 
-# ---------------------------------------------------------------- data ----
+
+# ============================================================
+# START: MARKET DATA — yfinance fetch + technical indicator math
+# ============================================================
 
 def compute_rsi(close: pd.Series, period: int = 14):
     delta = close.diff()
@@ -176,6 +169,8 @@ def compute_macd(close: pd.Series, fast=12, slow=26, signal=9):
 
 
 def extract_headlines(news_items):
+    """yfinance's news schema has changed shape more than once (title can
+    sit at top level or nested under 'content'). Handle both, never crash."""
     headlines = []
     for n in news_items or []:
         title = n.get("title")
@@ -236,40 +231,49 @@ def get_market_data(ticker: str):
 
     return fundamentals, technicals, headlines, close
 
+# ============================================================
+# END: MARKET DATA
+# ============================================================
 
-# ------------------------------------------------------------- models -----
 
-MAX_RETRIES = int(env_or_default("STOCK_P_MAX_RETRIES", "4"))
-BASE_BACKOFF_SECONDS = float(env_or_default("STOCK_P_BASE_BACKOFF_SECONDS", "15"))
-REQUEST_DELAY_SECONDS = float(env_or_default("STOCK_P_REQUEST_DELAY_SECONDS", "3"))
+# ============================================================
+# START: MODEL CALLS — Groq (Executor + BA) and Gemini (Critic)
+# ============================================================
+# Shared retry/backoff behavior: config/settings.py -> RETRY
+# Provider-specific behavior (reasoning budgets, model fallback,
+# per-provider pacing): config/settings.py -> EXECUTOR / CRITIC / BA_REVIEWER
 
-# Gemini model aliases change/retire without much notice — a hardcoded single
-# name (gemini-2.5-flash) was 404ing in production. Try candidates in order,
-# remember whichever one works so we don't re-probe dead ones every call.
-GEMINI_MODEL_CANDIDATES = ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.0-flash"]
-_gemini_working_model = {"name": None}
+_gemini_working_model = {"name": None}  # cache of whichever Gemini candidate actually responded, set at runtime
 
 
 def _sleep_backoff(resp, attempt: int):
     retry_after = resp.headers.get("Retry-After") if resp is not None else None
-    wait = float(retry_after) if retry_after else BASE_BACKOFF_SECONDS * (attempt + 1)
-    print(f"    429 rate limited — waiting {wait:.0f}s (attempt {attempt + 1}/{MAX_RETRIES})", file=sys.stderr)
+    wait = float(retry_after) if retry_after else cfg.RETRY.base_backoff_seconds * (attempt + 1)
+    print(f"    429 rate limited — waiting {wait:.0f}s (attempt {attempt + 1}/{cfg.RETRY.max_retries})", file=sys.stderr)
     time.sleep(wait)
 
 
-def call_groq(system: str, user: str, model: str) -> str:
+def call_groq(system_prompt: str, user_prompt: str, model: str, max_tokens: int) -> str:
+    """Calls Groq's chat completions endpoint. Used for both the Executor
+    and the BA Reviewer, with different `model` and `max_tokens` per config."""
     last_error = None
-    for attempt in range(MAX_RETRIES):
+    body = {
+        "model": model,
+        "messages": [{"role": "system", "content": system_prompt}, {"role": "user", "content": user_prompt}],
+        "temperature": 0.4,
+        "max_tokens": max_tokens,
+    }
+    if model == cfg.EXECUTOR.model:
+        # Only the Executor's model needs this — see config/settings.py ->
+        # ExecutorConfig.reasoning_effort for why.
+        body["reasoning_effort"] = cfg.EXECUTOR.reasoning_effort
+
+    for attempt in range(cfg.RETRY.max_retries):
         try:
             resp = requests.post(
                 "https://api.groq.com/openai/v1/chat/completions",
                 headers={"Authorization": f"Bearer {os.environ['GROQ_API_KEY_FOR_AUTO_EMAIL']}"},
-                json={
-                    "model": model,
-                    "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
-                    "temperature": 0.4,
-                    "max_tokens": 450,
-                },
+                json=body,
                 timeout=60,
             )
             if resp.status_code == 429:
@@ -277,29 +281,39 @@ def call_groq(system: str, user: str, model: str) -> str:
                 last_error = "429 Too Many Requests (all retries exhausted)"
                 continue
             resp.raise_for_status()
-            time.sleep(REQUEST_DELAY_SECONDS)
-            return resp.json()["choices"][0]["message"]["content"].strip()
+            time.sleep(cfg.EXECUTOR.request_delay_seconds)
+            choice = resp.json()["choices"][0]
+            content = choice["message"]["content"].strip()
+            finish_reason = choice.get("finish_reason")
+            if finish_reason == "length" or len(content) < cfg.RETRY.min_valid_response_chars:
+                return f"[GROQ TRUNCATED ({model}, finish_reason={finish_reason}): {content!r}]"
+            return content
         except Exception as e:
             last_error = str(e)
             break
-    time.sleep(REQUEST_DELAY_SECONDS)
+    time.sleep(cfg.EXECUTOR.request_delay_seconds)
     return f"[GROQ ERROR ({model}): {last_error}]"
 
 
-def call_gemini(system: str, user: str) -> str:
-    candidates = [_gemini_working_model["name"]] if _gemini_working_model["name"] else GEMINI_MODEL_CANDIDATES
+def call_gemini(system_prompt: str, user_prompt: str) -> str:
+    """Calls Gemini's generateContent endpoint. Used only for the Critic."""
+    candidates = [_gemini_working_model["name"]] if _gemini_working_model["name"] else list(cfg.CRITIC.model_candidates)
     last_error = None
 
     for model in candidates:
-        for attempt in range(MAX_RETRIES):
+        for attempt in range(cfg.RETRY.max_retries):
             try:
                 resp = requests.post(
                     f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                     headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"], "Content-Type": "application/json"},
                     json={
-                        "system_instruction": {"parts": [{"text": system}]},
-                        "contents": [{"role": "user", "parts": [{"text": user}]}],
-                        "generationConfig": {"temperature": 0.4, "maxOutputTokens": 350},
+                        "system_instruction": {"parts": [{"text": system_prompt}]},
+                        "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
+                        "generationConfig": {
+                            "temperature": 0.4,
+                            "maxOutputTokens": cfg.CRITIC.max_output_tokens,
+                            "thinkingConfig": {"thinkingBudget": cfg.CRITIC.thinking_budget},
+                        },
                     },
                     timeout=60,
                 )
@@ -318,61 +332,84 @@ def call_gemini(system: str, user: str) -> str:
                     last_error = f"{model}: no usable content, reason: {reason}"
                     break
                 _gemini_working_model["name"] = model  # cache the model that actually works
-                time.sleep(REQUEST_DELAY_SECONDS)
-                return cands[0]["content"]["parts"][0]["text"].strip()
+                time.sleep(cfg.CRITIC.request_delay_seconds)
+                text = cands[0]["content"]["parts"][0]["text"].strip()
+                finish_reason = cands[0].get("finishReason")
+                if finish_reason == "MAX_TOKENS" or len(text) < cfg.RETRY.min_valid_response_chars:
+                    return f"[GEMINI TRUNCATED ({model}, finishReason={finish_reason}): {text!r}]"
+                return text
             except Exception as e:
                 last_error = f"{model}: {e}"
                 break
 
-    time.sleep(REQUEST_DELAY_SECONDS)
+    time.sleep(cfg.CRITIC.request_delay_seconds)
     return f"[GEMINI ERROR: {last_error}]"
 
+# ============================================================
+# END: MODEL CALLS
+# ============================================================
 
-# -------------------------------------------------------------- rounds ----
+
+# ============================================================
+# START: DEBATE ROUNDS — Executor argues, Critic counters, x7
+# ============================================================
 
 def executor_turn(template, ticker, data_ctx, transcript):
-    system = (
+    system_prompt = (
         "You are the EXECUTOR agent in a stock research pipeline. "
         "Argue a specific analytical position using ONLY the data provided. "
         "Cite specific numbers from the data in every claim. Never state an "
         "opinion without a number behind it. Be concise (5-7 sentences)."
     )
-    user = f"{template.format(t=ticker)}\n\nDATA:\n{data_ctx}\n\nPrior discussion:\n{transcript}"
-    return call_groq(system, user, GROQ_EXECUTOR_MODEL)
+    user_prompt = f"{template.format(t=ticker)}\n\nDATA:\n{data_ctx}\n\nPrior discussion:\n{transcript}"
+    return call_groq(system_prompt, user_prompt, cfg.EXECUTOR.model, cfg.EXECUTOR.max_tokens)
 
 
 def critic_turn(role_name, ticker, data_ctx, exec_claim, transcript):
-    system = (
+    system_prompt = (
         "You are the CRITIC agent in a stock research pipeline. "
         "Find the weakest point in the Executor's argument and counter it "
         "using a specific number from the SAME data (or a different metric "
         "within it). You must disagree on at least one concrete point — do "
         "not just validate. Be concise (5-7 sentences)."
     )
-    user = (
+    user_prompt = (
         f"Topic: {role_name} analysis for {ticker}\n\nDATA:\n{data_ctx}\n\n"
         f"Executor's claim:\n{exec_claim}\n\nPrior discussion:\n{transcript}\n\n"
         "Counter this with data-backed pushback."
     )
-    return call_gemini(system, user)
+    return call_gemini(system_prompt, user_prompt)
 
 
 def run_debate(ticker: str, data_ctx: str, portfolio_ctx: str):
     transcript = ""
     rounds = []
     for role_name, template in ROLES:
+        round_start = time.time()
         round_ctx = data_ctx if role_name != "Risk & Portfolio" else f"{data_ctx}\nPortfolio constraints: {portfolio_ctx}"
+
+        print(f"  [{ticker}] {role_name}: calling Executor (Groq)...", file=sys.stderr)
         exec_claim = executor_turn(template, ticker, round_ctx, transcript)
+
+        print(f"  [{ticker}] {role_name}: calling Critic (Gemini)...", file=sys.stderr)
         critic_claim = critic_turn(role_name, ticker, round_ctx, exec_claim, transcript)
+
         transcript += f"\n[{role_name} — EXECUTOR]: {exec_claim}\n[{role_name} — CRITIC]: {critic_claim}\n"
         rounds.append((role_name, exec_claim, critic_claim))
-        print(f"  OK {role_name}", file=sys.stderr)
+        print(f"  [{ticker}] OK {role_name} ({time.time() - round_start:.1f}s)", file=sys.stderr)
     return rounds, transcript
 
+# ============================================================
+# END: DEBATE ROUNDS
+# ============================================================
 
-# --------------------------------------------------------- BA reviewer ----
+
+# ============================================================
+# START: BA REVIEWER — reads the transcript, corrects it, issues the final call
+# ============================================================
 
 def ba_review(ticker, transcript, data_ctx, portfolio_ctx, yesterday_entry, track_record):
+    print(f"  [{ticker}] calling Senior BA Reviewer (Groq)...", file=sys.stderr)
     yesterday_note = "No prior logged prediction for this ticker."
     if yesterday_entry:
         yesterday_note = (
@@ -382,7 +419,7 @@ def ba_review(ticker, transcript, data_ctx, portfolio_ctx, yesterday_entry, trac
             f"Verified outcome: {yesterday_entry.get('verified_next_day')}"
         )
 
-    system = (
+    system_prompt = (
         "You are a SENIOR STOCK BROKER acting as Business Analyst reviewer. "
         "You receive a full Executor-vs-Critic debate transcript across 7 "
         "analysis rounds. Your job: find anything wrong or overstated in "
@@ -401,13 +438,13 @@ def ba_review(ticker, transcript, data_ctx, portfolio_ctx, yesterday_entry, trac
         '"Bull": "...", "Bear": "...", "Risk": "..."}, '
         '"corrections_made": "what you fixed or overrode from the debate, or none"}'
     )
-    user = (
+    user_prompt = (
         f"Ticker: {ticker}\nCurrent price: {data_ctx.split(chr(10))[1] if chr(10) in data_ctx else ''}\n\n"
         f"DATA:\n{data_ctx}\n\nPORTFOLIO CONSTRAINTS:\n{portfolio_ctx}\n\n"
         f"TRACK RECORD FOR THIS TICKER:\n{track_record}\n\n{yesterday_note}\n\n"
         f"FULL DEBATE TRANSCRIPT:\n{transcript}"
     )
-    raw = call_groq(system, user, GROQ_BA_MODEL)
+    raw = call_groq(system_prompt, user_prompt, cfg.BA_REVIEWER.model, cfg.BA_REVIEWER.max_tokens)
 
     cleaned = raw.strip()
     if cleaned.startswith("```"):
@@ -428,18 +465,25 @@ def ba_review(ticker, transcript, data_ctx, portfolio_ctx, yesterday_entry, trac
         }
     return parsed
 
+# ============================================================
+# END: BA REVIEWER
+# ============================================================
 
-# -------------------------------------------------------------- runner ----
+
+# ============================================================
+# START: RUNNER — one full ticker end-to-end (data -> debate -> review -> log)
+# ============================================================
 
 def run_ticker(ticker: str):
-    print(f"\n=== {ticker} ===", file=sys.stderr)
+    ticker_start = time.time()
+    print(f"\n=== {ticker} (started {datetime.datetime.now().strftime('%H:%M:%S')}) ===", file=sys.stderr)
     fundamentals, technicals, headlines, close_series = get_market_data(ticker)
     data_ctx = f"Fundamentals: {fundamentals}\nTechnicals: {technicals}\nRecent headlines: {headlines}"
 
-    exposure = CURRENT_EXPOSURE.get(ticker, 0)
-    room_pct = max(MAX_POSITION_PCT - exposure, 0)
+    exposure = cfg.PORTFOLIO.current_exposure_pct.get(ticker, 0)
+    room_pct = max(cfg.PORTFOLIO.max_position_pct - exposure, 0)
     portfolio_ctx = (
-        f"Portfolio value: {PORTFOLIO_VALUE:,.0f} | Max position per ticker: {MAX_POSITION_PCT}% | "
+        f"Portfolio value: {cfg.PORTFOLIO.value:,.0f} | Max position per ticker: {cfg.PORTFOLIO.max_position_pct}% | "
         f"Current exposure to {ticker}: {exposure}% | Remaining room: {room_pct}%"
     )
 
@@ -453,18 +497,30 @@ def run_ticker(ticker: str):
     rounds, transcript = run_debate(ticker, data_ctx, portfolio_ctx)
     ba = ba_review(ticker, transcript, data_ctx, portfolio_ctx, yesterday_entry, track_record)
 
-    # Code enforces the position cap — never trust the LLM to have obeyed it.
+    # Code enforces both position rules below — never trust the LLM's own
+    # JSON to have obeyed them, even though the prompt asked it to.
     proposed = ba.get("proposed_position_pct") or 0
     try:
         proposed = float(proposed)
     except (TypeError, ValueError):
         proposed = 0
-    clamped = max(0, min(proposed, room_pct))
-    was_capped = clamped < proposed
+
+    recommendation = ba.get("recommendation")
+    if recommendation != "BUY":
+        # Rule 1: a HOLD/SELL/PARSE_ERROR call proposing a nonzero new
+        # position is self-contradictory — force it to 0 in code.
+        if proposed > 0:
+            ba["corrections_made"] = (ba.get("corrections_made", "") + f" | Position forced to 0% by code — recommendation was {recommendation}, not BUY.").strip(" |")
+        clamped = 0
+    else:
+        # Rule 2: never allocate more than the remaining portfolio room,
+        # regardless of how bullish the BA's own case sounds.
+        clamped = max(0, min(proposed, room_pct))
+        if clamped < proposed:
+            ba["corrections_made"] = (ba.get("corrections_made", "") + f" | Position auto-capped from {proposed}% to {clamped}% by risk rule (room={room_pct}%).").strip(" |")
+
     ba["proposed_position_pct"] = clamped
-    ba["position_value"] = round(PORTFOLIO_VALUE * clamped / 100, 2)
-    if was_capped:
-        ba["corrections_made"] = (ba.get("corrections_made", "") + f" | Position auto-capped from {proposed}% to {clamped}% by risk rule (room={room_pct}%).").strip(" |")
+    ba["position_value"] = round(cfg.PORTFOLIO.value * clamped / 100, 2)
 
     entry = {
         "date": datetime.date.today().isoformat(),
@@ -482,6 +538,7 @@ def run_ticker(ticker: str):
     }
     entries.append(entry)
     save_log(ticker, entries)
+    print(f"  [{ticker}] DONE in {time.time() - ticker_start:.1f}s total", file=sys.stderr)
 
     return {
         "ticker": ticker,
@@ -494,15 +551,21 @@ def run_ticker(ticker: str):
         "yesterday_entry": yesterday_entry,
     }
 
+# ============================================================
+# END: RUNNER
+# ============================================================
 
-# --------------------------------------------------------------- email ----
+
+# ============================================================
+# START: EMAIL — build the HTML summary and send via Resend
+# ============================================================
 
 def build_email_html(results, errors):
     today = datetime.date.today()
     parts = [
         f"<h2>Multi-Agent Stock Debate — {today}</h2>",
-        "<p><b>Executor</b>: Groq gpt-oss-120b &nbsp;|&nbsp; <b>Critic</b>: Gemini 2.5 Flash &nbsp;|&nbsp; "
-        "<b>Senior BA Reviewer</b>: Groq llama-3.3-70b-versatile</p>",
+        f"<p><b>Executor</b>: Groq {cfg.EXECUTOR.model} &nbsp;|&nbsp; <b>Critic</b>: Gemini &nbsp;|&nbsp; "
+        f"<b>Senior BA Reviewer</b>: Groq {cfg.BA_REVIEWER.model}</p>",
         "<p style='color:#a00'><b>Note:</b> next-day/next-week prices are model-generated estimates, "
         "not a statistical forecast. Track record below is the actual accuracy check.</p>",
     ]
@@ -543,25 +606,49 @@ def send_email(subject: str, html: str):
     print("Email status:", resp.status_code, resp.text, file=sys.stderr)
     resp.raise_for_status()
 
+# ============================================================
+# END: EMAIL
+# ============================================================
+
+
+# ============================================================
+# START: MAIN — secret validation, per-ticker loop, final summary email
+# ============================================================
+
+def check_required_secrets():
+    """Only the 4 REQUIRED_SECRETS above should ever be missing/empty —
+    everything else is a config/settings.py value with a real default, so
+    it can't be empty by the GitHub-Actions-empty-string mechanism that
+    caused earlier bugs. Returns the list of missing/empty secret names."""
+    return [name for name in REQUIRED_SECRETS if not os.environ.get(name, "").strip()]
+
 
 if __name__ == "__main__":
-    if not TICKERS:
-        print(f"STOCK_P_TICKERS resolved to an empty list. Raw value: {TICKERS_RAW_ENV!r}", file=sys.stderr)
-        try:
-            send_email(
-                "Stock Debate FAILED — no tickers configured",
-                f"<p>STOCK_P_TICKERS resolved to an empty ticker list, so no debate ran.</p>"
-                f"<p><b>Raw secret value received by the script:</b> {TICKERS_RAW_ENV!r}</p>"
-                f"<p>Check Settings → Secrets → STOCK_P_TICKERS in the repo — it should be a "
-                f"comma-separated list like <code>CDSL.NS,TRENT.NS,SUZLON.NS,MON100.NS</code>, "
-                f"or simply deleted if you want the default.</p>",
-            )
-        except Exception as e:
-            print(f"Email send also failed: {e}", file=sys.stderr)
+    missing_secrets = check_required_secrets()
+    if missing_secrets:
+        print(f"Missing or empty required secrets: {missing_secrets}", file=sys.stderr)
+        # Can't email about a missing RESEND_API_KEY/MY_EMAIL, obviously.
+        if "RESEND_API_KEY" not in missing_secrets and "MY_EMAIL" not in missing_secrets:
+            try:
+                send_email(
+                    "Stock Debate FAILED — missing secrets",
+                    f"<p>These required secrets were missing or empty: {missing_secrets}</p>"
+                    f"<p>Check Settings → Secrets → Actions in the repo.</p>",
+                )
+            except Exception as e:
+                print(f"Email send also failed: {e}", file=sys.stderr)
         sys.exit(1)
 
+    if not cfg.TICKERS:
+        # Defensive only — TICKERS is now a plain list in config/settings.py,
+        # not a parsed secret string, so this should only trip if someone
+        # edits the file to an empty list directly.
+        print("config.settings.TICKERS is empty — edit that file to add tickers.", file=sys.stderr)
+        sys.exit(1)
+
+    run_start = time.time()
     results, errors = [], []
-    for ticker in TICKERS:
+    for ticker in cfg.TICKERS:
         try:
             results.append(run_ticker(ticker))
         except Exception as e:
@@ -570,10 +657,14 @@ if __name__ == "__main__":
 
     html = build_email_html(results, errors)
     try:
-        send_email(f"Stock Debate — {datetime.date.today()} ({len(results)}/{len(TICKERS)} tickers)", html)
+        send_email(f"Stock Debate — {datetime.date.today()} ({len(results)}/{len(cfg.TICKERS)} tickers)", html)
     except Exception as e:
         print(f"Email send failed: {e}", file=sys.stderr)
 
-    print(f"\nDone. {len(results)} succeeded, {len(errors)} failed.")
+    print(f"\nDone in {time.time() - run_start:.1f}s total. {len(results)} succeeded, {len(errors)} failed.")
     if not results:
         sys.exit(1)
+
+# ============================================================
+# END: MAIN
+# ============================================================
