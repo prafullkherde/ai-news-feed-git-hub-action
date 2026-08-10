@@ -18,11 +18,17 @@ jobs:
       - name: Run API tests
         working-directory: social-media-automatio  # adjust path if you place the script elsewhere
         env:
-          # Optional -- add these as repo secrets to test candidates 3/5/6 too.
-          # Leave unset to test only the no-signup candidates (1, 2, 4) today.
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          DEEPAI_API_KEY: ${{ secrets.DEEPAI_API_KEY }}
-          STABILITY_API_KEY: ${{ secrets.STABILITY_API_KEY }}
+          # Optional -- add these as repo secrets to test candidates 3/5-11.
+          # All prefixed IMGAPI_ so you can find and delete them as a group
+          # once you've picked a winner and don't need the rest anymore.
+          IMGAPI_HF_TOKEN: ${{ secrets.IMGAPI_HF_TOKEN }}
+          IMGAPI_DEEPAI_KEY: ${{ secrets.IMGAPI_DEEPAI_KEY }}
+          IMGAPI_STABILITY_KEY: ${{ secrets.IMGAPI_STABILITY_KEY }}
+          IMGAPI_FAL_KEY: ${{ secrets.IMGAPI_FAL_KEY }}
+          IMGAPI_REPLICATE_KEY: ${{ secrets.IMGAPI_REPLICATE_KEY }}
+          IMGAPI_SEGMIND_KEY: ${{ secrets.IMGAPI_SEGMIND_KEY }}
+          IMGAPI_OPENAI_KEY: ${{ secrets.IMGAPI_OPENAI_KEY }}
+          IMGAPI_LEONARDO_KEY: ${{ secrets.IMGAPI_LEONARDO_KEY }}
         run: python test_image_apis.py
       - name: Upload results
         uses: actions/upload-artifact@v4
