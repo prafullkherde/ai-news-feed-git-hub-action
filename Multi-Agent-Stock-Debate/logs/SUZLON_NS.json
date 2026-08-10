@@ -17,7 +17,11 @@
       "Risk": "High risk due to lack of verified predictions and high debt-to-equity ratio"
     },
     "corrections_made": "Overrode all executor and critic statements due to API errors and lack of usable data",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 47.5,
+      "direction_correct": true,
+      "error_pct": -1.04
+    },
     "verified_next_week": null
   },
   {
@@ -38,7 +42,11 @@
       "Risk": "High risk due to lack of verified predictions and high debt-to-equity ratio"
     },
     "corrections_made": "None, due to insufficient data from the debate transcript",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 47.5,
+      "direction_correct": true,
+      "error_pct": -1.04
+    },
     "verified_next_week": null
   },
   {
@@ -59,7 +67,11 @@
       "Risk": "High risk due to debt-to-equity ratio and potential for further declines"
     },
     "corrections_made": "Overrode Executor's REJECT recommendation due to potential for short-term rebound and mixed sentiment, but maintained caution due to high risk profile",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 47.5,
+      "direction_correct": true,
+      "error_pct": 0.0
+    },
     "verified_next_week": null
   },
   {
@@ -80,7 +92,11 @@
       "Risk": "The trade proposal exceeds the portfolio's allowable exposure, and the stock has a high volatility and regulatory risk."
     },
     "corrections_made": "The trade proposal was rejected due to exceeding the portfolio's allowable exposure, and the recommendation was changed to HOLD due to the high risk and uncertainty.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 47.5,
+      "direction_correct": true,
+      "error_pct": 0.0
+    },
     "verified_next_week": null
   },
   {
@@ -101,6 +117,27 @@
       "Risk": "The high debt-to-equity ratio and regulatory risks are key concerns that need to be monitored closely."
     },
     "corrections_made": "Adjusted the proposed position percentage to 2.5% due to the lack of verified predictions and to be more conservative. Also, predicted prices are based on a potential technical bounce from oversold conditions, but with a low confidence level due to the mixed sentiment and bearish technical regime.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-10",
+    "price_at_prediction": 47.5,
+    "recommendation": "BUY",
+    "confidence": "Medium",
+    "predicted_next_day_price": 48.8,
+    "predicted_next_week_price": 51.2,
+    "proposed_position_pct": 5.0,
+    "position_value": 5000.0,
+    "why": {
+      "Fundamental": "Strong profitability and revenue growth, but high debt-to-equity ratio",
+      "Technical": "Oversold conditions with RSI of 19.15, potential for short-term rebound",
+      "Sentiment": "Mixed but slightly bearish due to regulatory concerns and weak price momentum",
+      "Bull": "Robust earnings foundation, potential for near-term price bounce",
+      "Bear": "High leverage, regulatory risks, and downside potential",
+      "Risk": "Position size should be limited to 5% of portfolio to manage risk"
+    },
+    "corrections_made": "Adjusted proposed position size to 5% of portfolio, corrected stop-loss and target prices to be more conservative",
     "verified_next_day": null,
     "verified_next_week": null
   }

@@ -17,7 +17,11 @@
       "Risk": "High risk due to lack of verified predictions and potential for high volatility"
     },
     "corrections_made": "Overrode all Executor and Critic conclusions due to API errors and lack of usable data",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3025.0,
+      "direction_correct": true,
+      "error_pct": 0.93
+    },
     "verified_next_week": null
   },
   {
@@ -38,7 +42,11 @@
       "Risk": "The lack of verified predictions and the company's high debt-to-equity ratio of 36.034 increase the risk."
     },
     "corrections_made": "None, due to the lack of complete debate transcript and the reliance on external data sources.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3025.0,
+      "direction_correct": true,
+      "error_pct": 0.93
+    },
     "verified_next_week": null
   },
   {
@@ -59,7 +67,11 @@
       "Risk": "The trade fails the risk-reward test due to the stock's high valuation and limited upside momentum."
     },
     "corrections_made": "Overrode the Executor's technical analysis to reflect a more nuanced view of the MACD gap, and adjusted the predicted prices to reflect a more conservative outlook.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3025.0,
+      "direction_correct": false,
+      "error_pct": 1.0
+    },
     "verified_next_week": null
   },
   {
@@ -80,7 +92,11 @@
       "Risk": "High valuation and slowing growth pose risks, but the company's size and low debt mitigate some of these concerns."
     },
     "corrections_made": "Adjusted the proposed position size to 0% due to exceeding portfolio constraints, and considered the lack of verified predictions and track record for this ticker, leading to a more conservative HOLD recommendation.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3025.0,
+      "direction_correct": true,
+      "error_pct": 0.83
+    },
     "verified_next_week": null
   },
   {
@@ -101,6 +117,27 @@
       "Risk": "High valuation risk and potential for price correction"
     },
     "corrections_made": "Adjusted the recommendation to HOLD due to high valuation, decelerating revenue growth, and mixed sentiment, despite bullish technical indicators",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-10",
+    "price_at_prediction": 3025.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3010.0,
+    "predicted_next_week_price": 3000.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "The company's large market capitalization and modest debt-to-equity ratio are positives, but the high trailing and forward P/E ratios and slowing revenue growth are concerns.",
+      "Technical": "The stock's price is above its short-term moving averages, and the RSI and MACD indicate a bullish trend, but the negative sentiment and high valuation metrics warrant caution.",
+      "Sentiment": "The predominantly negative headline sentiment and slowing revenue growth suggest a cautious approach.",
+      "Bull": "The company's solid balance sheet and potential for earnings growth are positives, but the high valuation and slowing revenue growth are negatives.",
+      "Bear": "The high valuation, slowing revenue growth, and negative sentiment are concerns that outweigh the positives.",
+      "Risk": "The proposed trade's risk is managed with a stop-loss, but the overall risk profile of the stock is high due to its valuation and growth concerns."
+    },
+    "corrections_made": "The Critic's views were not available due to a quota error, so the analysis relied solely on the Executor's views, and a more conservative approach was taken given the lack of counterpoint and the stock's high valuation and slowing growth.",
     "verified_next_day": null,
     "verified_next_week": null
   }
