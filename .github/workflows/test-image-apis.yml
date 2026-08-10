@@ -1,0 +1,32 @@
+# Save as .github/workflows/test-image-apis.yml
+# Separate, one-off workflow -- does NOT touch your working carousel pipeline.
+name: Test Image Generation APIs
+
+on:
+  workflow_dispatch: {}   # manual trigger only, this is a one-time comparison test
+
+jobs:
+  test-apis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install requests
+      - name: Run API tests
+        working-directory: social-media-automatio  # adjust path if you place the script elsewhere
+        env:
+          # Optional -- add these as repo secrets to test candidates 3/5/6 too.
+          # Leave unset to test only the no-signup candidates (1, 2, 4) today.
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          DEEPAI_API_KEY: ${{ secrets.DEEPAI_API_KEY }}
+          STABILITY_API_KEY: ${{ secrets.STABILITY_API_KEY }}
+        run: python test_image_apis.py
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-api-test-results
+          path: social-media-automatio/results/
+          retention-days: 7
