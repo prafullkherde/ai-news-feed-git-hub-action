@@ -22,7 +22,8 @@
         "Reward the cue, not the outcome.",
         "Build the bridge once, walk it forever."
       ],
-      "posted": false
+      "posted": true,
+      "media_id": "ig:18021893111854629"
     },
     {
       "id": "t3",
@@ -47,5 +48,5 @@
       "posted": false
     }
   ],
-  "posted_count": 1
+  "posted_count": 2
 }
