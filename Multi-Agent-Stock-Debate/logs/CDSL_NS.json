@@ -117,7 +117,11 @@
       "Risk": "The proposed short trade exceeds the portfolio's position-size constraint, making it unfeasible."
     },
     "corrections_made": "Adjusted the trade proposal to HOLD due to the position-size constraint and lack of verified predictions for this ticker, adopting a more conservative approach.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1347.0,
+      "direction_correct": false,
+      "error_pct": 1.66
+    },
     "verified_next_week": null
   },
   {
@@ -138,6 +142,31 @@
       "Risk": "High valuation multiples and potential for further downside due to regulatory risk"
     },
     "corrections_made": "Revised trade proposal to reject short position due to excessive proposed position size, and adjusted recommendation to HOLD due to lack of strong conviction in either direction and poor track record of predictions",
+    "verified_next_day": {
+      "actual_price": 1347.0,
+      "direction_correct": false,
+      "error_pct": 1.66
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-11",
+    "price_at_prediction": 1347.0,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 1345.0,
+    "predicted_next_week_price": 1350.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong balance sheet and profitability, but high valuation",
+      "Technical": "Neutral RSI and MACD bearish divergence",
+      "Sentiment": "Mixed sentiment due to regulatory penalty and positive earnings reports",
+      "Bull": "Strong fundamentals and premium valuation",
+      "Bear": "High valuation and bearish technical momentum",
+      "Risk": "Regulatory risk and potential for further price weakness"
+    },
+    "corrections_made": "Overrode Executor's buy recommendation due to high valuation, bearish MACD divergence, and recent incorrect next-day direction accuracy of 0%",
     "verified_next_day": null,
     "verified_next_week": null
   }

@@ -117,7 +117,11 @@
       "Risk": "High valuation risk and potential for price correction"
     },
     "corrections_made": "Adjusted the recommendation to HOLD due to high valuation, decelerating revenue growth, and mixed sentiment, despite bullish technical indicators",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3000.0,
+      "direction_correct": true,
+      "error_pct": 0.0
+    },
     "verified_next_week": null
   },
   {
@@ -138,6 +142,31 @@
       "Risk": "The proposed trade's risk is managed with a stop-loss, but the overall risk profile of the stock is high due to its valuation and growth concerns."
     },
     "corrections_made": "The Critic's views were not available due to a quota error, so the analysis relied solely on the Executor's views, and a more conservative approach was taken given the lack of counterpoint and the stock's high valuation and slowing growth.",
+    "verified_next_day": {
+      "actual_price": 3000.0,
+      "direction_correct": true,
+      "error_pct": -0.33
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-11",
+    "price_at_prediction": 3000.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 2990.0,
+    "predicted_next_week_price": 3020.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples and slowing revenue growth are concerns, but the company's low debt and respectable profit margin are positives.",
+      "Technical": "The stock is above its 20-day and 50-day SMAs, and the RSI and MACD indicate upward momentum, but the three-month return and volatility are low.",
+      "Sentiment": "Mixed sentiment with both positive and negative headlines, but overall leaning towards concern over slowing revenue growth.",
+      "Bull": "The company's scale, liquidity, and solid momentum indicators are bullish factors.",
+      "Bear": "The high valuation, slowing revenue growth, and limited upside potential are bearish factors.",
+      "Risk": "The proposed trade size exceeds the portfolio's limit, and the high valuation multiples and slowing growth pose risks."
+    },
+    "corrections_made": "Corrected the proposed position size to 0% due to exceeding the portfolio's 5% limit, and adjusted the recommendation to HOLD due to mixed sentiment and high valuation multiples.",
     "verified_next_day": null,
     "verified_next_week": null
   }
