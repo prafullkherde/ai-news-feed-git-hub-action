@@ -1806,5 +1806,45 @@
     "gap": "Not a UI/Frontend position.",
     "first_seen": "2026-08-09",
     "suppress_until": "2026-08-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stripe-credit-risk-analyst-commercial-underwriter-west-coast": {
+    "title": "Stripe: Credit Risk Analyst Commercial Underwriter, West Coast",
+    "score": 0,
+    "why": "The role is a Credit Risk Analyst/Underwriter with no frontend development responsibilities or Angular/TypeScript requirements.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-08-11",
+    "suppress_until": "2026-08-25"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/airtable-program-manager-professional-services-east": {
+    "title": "Airtable: Program Manager, Professional Services - East",
+    "score": 0,
+    "why": "The position is a Program Manager in Professional Services, unrelated to UI development and does not mention Angular or TypeScript.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-08-11",
+    "suppress_until": "2026-08-25"
+  },
+  "WN::https://www.workingnomads.com/job/go/1783105/": {
+    "title": "Protocol Review Specialist @ Sun Coast Sciences",
+    "score": 0,
+    "why": "This is a Protocol Review Specialist role focused on scientific/technical review, not on UI or frontend engineering.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-08-11",
+    "suppress_until": "2026-08-25"
+  },
+  "WN::https://www.workingnomads.com/job/go/1783103/": {
+    "title": "Appointment Setting Representative @ Sun Coast Sciences",
+    "score": 0,
+    "why": "The Appointment Setting Representative role is a sales/lead generation position with no relevance to UI or frontend technologies.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-08-11",
+    "suppress_until": "2026-08-25"
+  },
+  "WN::https://www.workingnomads.com/job/go/1781770/": {
+    "title": "Offensive Cybersecurity Engineer - Red Team @ Techno Vista Dynamics",
+    "score": 0,
+    "why": "The Offensive Cybersecurity Engineer \u2013 Red Team role is a security engineering position, not a frontend/UI development job.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-08-11",
+    "suppress_until": "2026-08-25"
   }
 }
