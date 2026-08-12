@@ -1846,5 +1846,53 @@
     "gap": "No frontend/Angular requirement",
     "first_seen": "2026-08-11",
     "suppress_until": "2026-08-25"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/airtable-program-manager-professional-services-west": {
+    "title": "Airtable: Program Manager, Professional Services - West",
+    "score": 0,
+    "why": "The role is a Program Manager for professional services and does not involve any frontend development.",
+    "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
+    "first_seen": "2026-08-12",
+    "suppress_until": "2026-08-26"
+  },
+  "WN::https://www.workingnomads.com/job/go/1785901/": {
+    "title": "Face Deduplication Collection @ TELUS Digital",
+    "score": 0,
+    "why": "The position focuses on face deduplication collection, likely data/ML work, with no frontend responsibilities.",
+    "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
+    "first_seen": "2026-08-12",
+    "suppress_until": "2026-08-26"
+  },
+  "WN::https://www.workingnomads.com/job/go/1785860/": {
+    "title": "Content Reviewer - United States @ TELUS Digital",
+    "score": 0,
+    "why": "This is a Content Reviewer role, which is unrelated to UI development or engineering.",
+    "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
+    "first_seen": "2026-08-12",
+    "suppress_until": "2026-08-26"
+  },
+  "WN::https://www.workingnomads.com/job/go/1785856/": {
+    "title": "Content Reviewer - United States @ TELUS Digital",
+    "score": 0,
+    "why": "This is another Content Reviewer position, not a software development role.",
+    "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
+    "first_seen": "2026-08-12",
+    "suppress_until": "2026-08-26"
+  },
+  "WN::https://www.workingnomads.com/job/go/1785844/": {
+    "title": "Content Reviewer - United States @ TELUS Digital",
+    "score": 0,
+    "why": "Yet another Content Reviewer job, with no relevance to frontend architecture or coding.",
+    "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
+    "first_seen": "2026-08-12",
+    "suppress_until": "2026-08-26"
+  },
+  "WN::https://www.workingnomads.com/job/go/1785833/": {
+    "title": "Senior Blockchain Developer @ Lemon.io",
+    "score": 0,
+    "why": "The Senior Blockchain Developer role is centered on blockchain/backend technologies, not on Angular or TypeScript UI work.",
+    "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
+    "first_seen": "2026-08-12",
+    "suppress_until": "2026-08-26"
   }
 }
