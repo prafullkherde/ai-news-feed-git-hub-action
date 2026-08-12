@@ -167,6 +167,31 @@
       "Risk": "Regulatory risk and potential for further price weakness"
     },
     "corrections_made": "Overrode Executor's buy recommendation due to high valuation, bearish MACD divergence, and recent incorrect next-day direction accuracy of 0%",
+    "verified_next_day": {
+      "actual_price": 1339.0,
+      "direction_correct": true,
+      "error_pct": -0.45
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-12",
+    "price_at_prediction": 1339.0,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 1335.0,
+    "predicted_next_week_price": 1340.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "The company has strong earnings efficiency with a profit margin of 36.9% and return on equity of 23.9%, but the valuation multiples are high with a trailing P/E of 59.5\u00d7 and a forward P/E of 45.0\u00d7.",
+      "Technical": "The stock is trading between its 20- and 50-day SMAs, with a neutral RSI of 56.07 and a MACD below its signal line, indicating a neutral technical outlook.",
+      "Sentiment": "The recent news feed contains mixed sentiment, with positive earnings-call headlines and a negative regulatory penalty.",
+      "Bull": "The company has a high-quality, large-cap depository with a market-cap of \u20b9279.85 billion, and strong earnings efficiency.",
+      "Bear": "The stock is severely overvalued, with a weakening technical momentum and a regulatory penalty that could erode client confidence.",
+      "Risk": "The trade proposal violates the portfolio constraints, and the next-day direction accuracy is low at 14% over 7 verified calls."
+    },
+    "corrections_made": "The trade proposal was resized to comply with the portfolio constraints, but due to the low confidence and high risk, the recommendation is to hold the stock.",
     "verified_next_day": null,
     "verified_next_week": null
   }
