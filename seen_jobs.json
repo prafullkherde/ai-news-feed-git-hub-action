@@ -1894,5 +1894,53 @@
     "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
     "first_seen": "2026-08-12",
     "suppress_until": "2026-08-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/airtable-senior-solutions-architect-west-coast": {
+    "title": "Airtable: Senior Solutions Architect- West Coast",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-13",
+    "suppress_until": "2026-08-27"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/gusto-inc-staff-software-engineer-ai-developer-tools": {
+    "title": "Gusto, Inc.: Staff Software Engineer,  AI Developer Tools",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-13",
+    "suppress_until": "2026-08-27"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-communications-manager-policy-public-affairs": {
+    "title": "Coinbase: Communications Manager, Policy & Public Affairs",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-13",
+    "suppress_until": "2026-08-27"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/dropbox-head-of-field-and-partner-marketing": {
+    "title": "Dropbox: Head of Field and Partner Marketing",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-13",
+    "suppress_until": "2026-08-27"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stripe-credit-risk-analyst-north-american-underwriter": {
+    "title": "Stripe: Credit Risk Analyst, North American Underwriter",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-13",
+    "suppress_until": "2026-08-27"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-business-operations-senior-associate-institutional": {
+    "title": "Coinbase: Business Operations Senior Associate, Institutional",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-08-13",
+    "suppress_until": "2026-08-27"
   }
 }
