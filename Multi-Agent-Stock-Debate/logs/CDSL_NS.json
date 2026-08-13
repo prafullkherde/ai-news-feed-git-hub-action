@@ -192,6 +192,31 @@
       "Risk": "The trade proposal violates the portfolio constraints, and the next-day direction accuracy is low at 14% over 7 verified calls."
     },
     "corrections_made": "The trade proposal was resized to comply with the portfolio constraints, but due to the low confidence and high risk, the recommendation is to hold the stock.",
+    "verified_next_day": {
+      "actual_price": 1350.0,
+      "direction_correct": false,
+      "error_pct": 1.12
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-13",
+    "price_at_prediction": 1350.0,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 1345.0,
+    "predicted_next_week_price": 1360.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "The company's financial health is robust, with a low debt-to-equity ratio and strong profitability, but the valuation remains elevated.",
+      "Technical": "The stock is trading slightly above its short-term trends, and the RSI indicates neither overbought nor oversold conditions, but the MACD signal is bearish.",
+      "Sentiment": "The recent headlines show a mixed sentiment, with a record earnings call but also a regulatory penalty.",
+      "Bull": "The company's balance sheet is clean, and earnings expectations are high, but the valuation is already pricing in high growth.",
+      "Bear": "The stock's valuation is vulnerable to any earnings miss, and the MACD divergence is bearish.",
+      "Risk": "The track record for this ticker shows a low next-day direction accuracy, and the recent call was incorrect, making it prudent to be cautious."
+    },
+    "corrections_made": "Overrode the Executor's trade proposal due to the low confidence in the recommendation, the mixed sentiment, and the bearish MACD signal, as well as the low next-day direction accuracy of the track record for this ticker.",
     "verified_next_day": null,
     "verified_next_week": null
   }
