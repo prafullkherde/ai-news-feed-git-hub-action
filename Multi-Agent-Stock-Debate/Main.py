@@ -3,7 +3,7 @@ Multi-Agent Stock Debate — Executor / Critic / Senior BA Reviewer
 ====================================================================
 3 roles, 2 model providers (config in ./config/settings.py):
   EXECUTOR  -> Groq   (argues each of 7 rounds)
-  CRITIC    -> Gemini (counters each round — different vendor on purpose)
+  CRITIC    -> Groq (counters each round — different model than Executor on purpose)
   BA REVIEW -> Groq, but a DIFFERENT model than the Executor (reads the
                full transcript + yesterday's logged outcome, corrects
                anything wrong, and produces the final structured call:
@@ -41,7 +41,7 @@ import yfinance as yf
 
 from config import settings as cfg
 
-REQUIRED_SECRETS = ["GROQ_API_KEY_FOR_AUTO_EMAIL", "GEMINI_API_KEY", "RESEND_API_KEY", "MY_EMAIL"]
+REQUIRED_SECRETS = ["GROQ_API_KEY_FOR_AUTO_EMAIL", "RESEND_API_KEY", "MY_EMAIL"]
 # These 4 are the ONLY values that belong in GitHub Secrets. Everything
 # else lives in config/settings.py — see that file's module docstring
 # for why that split matters.
@@ -237,14 +237,11 @@ def get_market_data(ticker: str):
 
 
 # ============================================================
-# START: MODEL CALLS — Groq (Executor + BA) and Gemini (Critic)
+# START: MODEL CALLS — Groq (Executor + Critic + BA), one shared quota
 # ============================================================
 # Shared retry/backoff behavior: config/settings.py -> RETRY
 # Provider-specific behavior (reasoning budgets, model fallback,
 # per-provider pacing): config/settings.py -> EXECUTOR / CRITIC / BA_REVIEWER
-
-_gemini_working_model = {"name": None}  # cache of whichever Gemini candidate actually responded, set at runtime
-
 
 def _sleep_backoff(resp, attempt: int):
     retry_after = resp.headers.get("Retry-After") if resp is not None else None
@@ -286,9 +283,13 @@ def _log_rate_limit_headers(resp, provider: str):
         print(f"    [{provider} quota headers] {relevant}", file=sys.stderr)
 
 
-def call_groq(system_prompt: str, user_prompt: str, model: str, max_tokens: int) -> str:
-    """Calls Groq's chat completions endpoint. Used for both the Executor
-    and the BA Reviewer, with different `model` and `max_tokens` per config."""
+def call_groq(system_prompt: str, user_prompt: str, model: str, max_tokens: int, delay_seconds: float) -> str:
+    """Calls Groq's chat completions endpoint. Used for the Executor,
+    Critic, and BA Reviewer, with different `model`/`max_tokens`/
+    `delay_seconds` per config. delay_seconds is now an explicit
+    parameter rather than always reading cfg.EXECUTOR's value — that
+    was a real bug where every caller (including BA Reviewer) paced
+    off Executor's delay regardless of its own config setting."""
     last_error = None
     body = {
         "model": model,
@@ -319,7 +320,7 @@ def call_groq(system_prompt: str, user_prompt: str, model: str, max_tokens: int)
                 last_error = "429 Too Many Requests (all retries exhausted)"
                 continue
             resp.raise_for_status()
-            time.sleep(cfg.EXECUTOR.request_delay_seconds)
+            time.sleep(delay_seconds)
             choice = resp.json()["choices"][0]
             content = choice["message"]["content"].strip()
             finish_reason = choice.get("finish_reason")
@@ -329,64 +330,8 @@ def call_groq(system_prompt: str, user_prompt: str, model: str, max_tokens: int)
         except Exception as e:
             last_error = str(e)
             break
-    time.sleep(cfg.EXECUTOR.request_delay_seconds)
+    time.sleep(delay_seconds)
     return f"[GROQ ERROR ({model}): {last_error}]"
-
-
-def call_gemini(system_prompt: str, user_prompt: str) -> str:
-    """Calls Gemini's generateContent endpoint. Used only for the Critic."""
-    candidates = [_gemini_working_model["name"]] if _gemini_working_model["name"] else list(cfg.CRITIC.model_candidates)
-    last_error = None
-
-    for model in candidates:
-        for attempt in range(cfg.RETRY.max_retries):
-            try:
-                resp = requests.post(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-                    headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"], "Content-Type": "application/json"},
-                    json={
-                        "system_instruction": {"parts": [{"text": system_prompt}]},
-                        "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
-                        "generationConfig": {
-                            "temperature": 0.4,
-                            "maxOutputTokens": cfg.CRITIC.max_output_tokens,
-                            "thinkingConfig": {"thinkingBudget": cfg.CRITIC.thinking_budget},
-                        },
-                    },
-                    timeout=60,
-                )
-                _log_rate_limit_headers(resp, f"GEMINI:{model}")
-                if resp.status_code == 404:
-                    last_error = f"{model}: 404 not found for this key/API version"
-                    break  # try next candidate model, no point retrying a 404
-                if resp.status_code == 429:
-                    if _is_daily_quota_exhausted(resp):
-                        print(f"    {model}: 429 looks like a DAILY quota, not per-minute — stopping entirely for this call. body: {resp.text[:200]}", file=sys.stderr)
-                        time.sleep(cfg.CRITIC.request_delay_seconds)
-                        return f"[GEMINI ERROR: daily quota exhausted, not retrying — body: {resp.text[:300]!r}]"
-                    _sleep_backoff(resp, attempt)
-                    last_error = f"{model}: 429 Too Many Requests (all retries exhausted)"
-                    continue
-                resp.raise_for_status()
-                data = resp.json()
-                cands = data.get("candidates") or []
-                if not cands or "content" not in cands[0]:
-                    reason = (cands[0].get("finishReason") if cands else data.get("promptFeedback"))
-                    last_error = f"{model}: no usable content, reason: {reason}"
-                    break
-                _gemini_working_model["name"] = model  # cache the model that actually works
-                time.sleep(cfg.CRITIC.request_delay_seconds)
-                text = cands[0]["content"]["parts"][0]["text"].strip()
-                finish_reason = cands[0].get("finishReason")
-                if finish_reason == "MAX_TOKENS" or len(text) < cfg.RETRY.min_valid_response_chars:
-                    return f"[GEMINI TRUNCATED ({model}, finishReason={finish_reason}): {text!r}]"
-                return text
-            except Exception as e:
-                last_error = f"{model}: {e}"
-                break
-
-    time.sleep(cfg.CRITIC.request_delay_seconds)
-    return f"[GEMINI ERROR: {last_error}]"
 
 # ============================================================
 # END: MODEL CALLS
@@ -405,7 +350,7 @@ def executor_turn(template, ticker, data_ctx, transcript):
         "opinion without a number behind it. Be concise (5-7 sentences)."
     )
     user_prompt = f"{template.format(t=ticker)}\n\nDATA:\n{data_ctx}\n\nPrior discussion:\n{transcript}"
-    return call_groq(system_prompt, user_prompt, cfg.EXECUTOR.model, cfg.EXECUTOR.max_tokens)
+    return call_groq(system_prompt, user_prompt, cfg.EXECUTOR.model, cfg.EXECUTOR.max_tokens, cfg.EXECUTOR.request_delay_seconds)
 
 
 def critic_turn(role_name, ticker, data_ctx, exec_claim, transcript):
@@ -421,7 +366,7 @@ def critic_turn(role_name, ticker, data_ctx, exec_claim, transcript):
         f"Executor's claim:\n{exec_claim}\n\nPrior discussion:\n{transcript}\n\n"
         "Counter this with data-backed pushback."
     )
-    return call_gemini(system_prompt, user_prompt)
+    return call_groq(system_prompt, user_prompt, cfg.CRITIC.model, cfg.CRITIC.max_tokens, cfg.CRITIC.request_delay_seconds)
 
 
 def run_debate(ticker: str, data_ctx: str, portfolio_ctx: str):
@@ -434,7 +379,7 @@ def run_debate(ticker: str, data_ctx: str, portfolio_ctx: str):
         print(f"  [{ticker}] {role_name}: calling Executor (Groq)...", file=sys.stderr)
         exec_claim = executor_turn(template, ticker, round_ctx, transcript)
 
-        print(f"  [{ticker}] {role_name}: calling Critic (Gemini)...", file=sys.stderr)
+        print(f"  [{ticker}] {role_name}: calling Critic (Groq)...", file=sys.stderr)
         critic_claim = critic_turn(role_name, ticker, round_ctx, exec_claim, transcript)
 
         transcript += f"\n[{role_name} — EXECUTOR]: {exec_claim}\n[{role_name} — CRITIC]: {critic_claim}\n"
@@ -487,7 +432,7 @@ def ba_review(ticker, transcript, data_ctx, portfolio_ctx, yesterday_entry, trac
         f"TRACK RECORD FOR THIS TICKER:\n{track_record}\n\n{yesterday_note}\n\n"
         f"FULL DEBATE TRANSCRIPT:\n{transcript}"
     )
-    raw = call_groq(system_prompt, user_prompt, cfg.BA_REVIEWER.model, cfg.BA_REVIEWER.max_tokens)
+    raw = call_groq(system_prompt, user_prompt, cfg.BA_REVIEWER.model, cfg.BA_REVIEWER.max_tokens, cfg.BA_REVIEWER.request_delay_seconds)
 
     cleaned = raw.strip()
     if cleaned.startswith("```"):
@@ -607,7 +552,7 @@ def build_email_html(results, errors):
     today = datetime.date.today()
     parts = [
         f"<h2>Multi-Agent Stock Debate — {today}</h2>",
-        f"<p><b>Executor</b>: Groq {cfg.EXECUTOR.model} &nbsp;|&nbsp; <b>Critic</b>: Gemini &nbsp;|&nbsp; "
+        f"<p><b>Executor</b>: Groq {cfg.EXECUTOR.model} &nbsp;|&nbsp; <b>Critic</b>: Groq {cfg.CRITIC.model} &nbsp;|&nbsp; "
         f"<b>Senior BA Reviewer</b>: Groq {cfg.BA_REVIEWER.model}</p>",
         "<p style='color:#a00'><b>Note:</b> next-day/next-week prices are model-generated estimates, "
         "not a statistical forecast. Track record below is the actual accuracy check.</p>",
