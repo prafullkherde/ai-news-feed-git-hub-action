@@ -13,6 +13,9 @@ on:
 jobs:
   post-carousel:
     runs-on: ubuntu-latest
+    concurrency:
+      group: repo-git-push-lock
+      cancel-in-progress: false
     permissions:
       contents: write   # GITHUB_TOKEN defaults to read-only; needed to push images/queue state
     steps:
