@@ -1,9 +1,11 @@
 """
 Multi-Agent Stock Debate — Configuration
 ============================================================
-Every tunable value lives HERE, not in GitHub Secrets. Only 4 true
+Every tunable value lives HERE, not in GitHub Secrets. Only 3 true
 secrets remain in repo Settings -> Secrets: GROQ_API_KEY_FOR_AUTO_EMAIL,
-GEMINI_API_KEY, RESEND_API_KEY, MY_EMAIL. Everything else — model
+RESEND_API_KEY, MY_EMAIL. GEMINI_API_KEY is no longer used — the
+Critic moved onto Groq (see CriticConfig below) after Gemini's free
+tier hit a full daily quota exhaustion in production. Everything else — model
 choice, token budgets, retry behavior, portfolio size, ticker list — is
 plain, readable, version-controlled Python you can edit directly here.
 
@@ -44,48 +46,42 @@ class ExecutorConfig:
     # some budget still goes to hidden reasoning. 900 leaves comfortable
     # room for a full 5-7 sentence answer after that overhead.
 
-    request_delay_seconds: float = 4.0
-    # WHY: Groq's free tier is 30 requests/minute, so 2s is the
-    # mathematical floor. 4s adds headroom because TPM (6,000-8,000
-    # tokens/minute on this model), not RPM, is usually the real
-    # constraint once each round's prompt grows with the accumulating
-    # transcript.
+    request_delay_seconds: float = 10.0
+    # WHY 10, not the original 4: Groq's free-tier rate limit is per
+    # ORGANIZATION, not per-model — Executor, Critic, and BA Reviewer
+    # now all draw from the SAME 30 RPM / ~6,000-8,000 TPM pool once
+    # Critic moved off Gemini onto Groq too (see CriticConfig below).
+    # OBSERVED: at the old 4.0s delay with Executor ALONE, remaining
+    # tokens dropped to double/triple digits by the 3rd-4th ticker,
+    # triggering repeated 429s. Doubling total Groq call volume (Critic
+    # now included) at the same delay would make that worse, not
+    # better. 10s keeps combined throughput under the refill rate.
 
 
 EXECUTOR = ExecutorConfig()
 
 
 # ============================================================
-# CRITIC — counters every Executor round, different vendor on purpose
+# CRITIC — counters every Executor round, different Groq model on purpose
 # ============================================================
 @dataclass(frozen=True)
 class CriticConfig:
-    model_candidates: tuple = ("gemini-2.5-flash", "gemini-flash-latest", "gemini-2.0-flash")
-    # WHY a list, not one hardcoded model: gemini-2.5-flash returned a
-    # live 404 in production — Gemini model aliases retire or shift
-    # without much notice. Candidates are tried in order at runtime;
-    # whichever responds first is cached and reused for the rest of the
-    # run so later calls don't waste time re-probing dead ones.
+    model: str = "qwen/qwen3.6-27b"
+    # WHY this model, not Gemini anymore: Gemini's free tier hit a full
+    # DAILY quota exhaustion in production — every single Critic call
+    # failed for an entire run, silently, while the pipeline still
+    # reported "success". Qwen3.6-27b is one of only two models Groq's
+    # own deprecation notices point every retiring model toward
+    # (the other being Executor's gpt-oss-120b) — architecturally
+    # distinct from Executor's model, which is what actually gives the
+    # debate a genuine second opinion, not the vendor it's hosted on.
 
-    max_output_tokens: int = 600
-    # Raised from the original 350 — see thinking_budget below for why
-    # the original number was too tight even before this raise.
+    max_tokens: int = 600
 
-    thinking_budget: int = 0
-    # WHY: Gemini 2.5 Flash defaults to "thinking" mode, which spends
-    # the SAME output-token budget on hidden reasoning before writing
-    # the visible critique. OBSERVED: real critic replies cut after
-    # 5-10 words ("The Executor's argument overstates CDSL's", then
-    # nothing). 0 disables thinking mode entirely — a short critique
-    # doesn't need it.
-
-    request_delay_seconds: float = 7.0
-    # WHY: Gemini's free tier is roughly 10 requests/minute, so 6s is
-    # the mathematical floor. 7s adds a small safety margin. This was
-    # the direct, confirmed cause of an 18-minute run with the 4th
-    # ticker alone spending 10+ minutes in repeated exhausted retries —
-    # cumulative call volume across the earlier tickers had already
-    # eaten most of the per-minute quota by the time it got there.
+    request_delay_seconds: float = 10.0
+    # Same combined-Groq-quota reasoning as EXECUTOR above — see that
+    # comment for the full explanation. Both delays must move together;
+    # changing one without the other reintroduces the exhaustion risk.
 
 
 CRITIC = CriticConfig()
@@ -96,16 +92,21 @@ CRITIC = CriticConfig()
 # ============================================================
 @dataclass(frozen=True)
 class BAReviewerConfig:
-    model: str = "llama-3.3-70b-versatile"
-    # WHY a third, different model rather than reusing the Executor's:
-    # (1) it is NOT a reasoning model, so it doesn't share gpt-oss-120b's
-    # hidden-token truncation risk, and (2) using a different model than
-    # the one that argued the Executor's case makes this an independent
-    # check rather than the same weights reviewing their own work.
+    model: str = "qwen/qwen3.6-27b"
+    # WHY changed from llama-3.3-70b-versatile: that model is deprecated
+    # per Groq's own docs (announced June 17, 2026) and could stop
+    # working at any time. qwen3.6-27b is Groq's own official
+    # recommended replacement for it. Still a different model than the
+    # Executor's gpt-oss-120b, preserving the "independent reviewer,
+    # not the same weights checking their own work" property this was
+    # originally designed for.
 
     max_tokens: int = 700
     # Needs headroom for a full structured JSON response covering all
     # 6 "why" fields plus the numeric predictions — 700 is comfortable.
+
+    request_delay_seconds: float = 10.0
+    # Same shared-Groq-quota reasoning as EXECUTOR/CRITIC above.
 
 
 BA_REVIEWER = BAReviewerConfig()
