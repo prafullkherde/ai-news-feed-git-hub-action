@@ -22,7 +22,8 @@
         "Batch routine decisions\u2014clothes, meals, routes\u2014into a single planning block.",
         "Conserve will for the choices that truly matter."
       ],
-      "posted": false
+      "posted": true,
+      "media_id": "ig:18332124886287469"
     },
     {
       "id": "t3",
@@ -47,5 +48,5 @@
       "posted": false
     }
   ],
-  "posted_count": 1
+  "posted_count": 2
 }
