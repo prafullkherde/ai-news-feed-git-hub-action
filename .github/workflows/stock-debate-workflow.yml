@@ -32,12 +32,14 @@ jobs:
       - run: pip install yfinance requests pandas
       - run: python Multi-Agent-Stock-Debate/Main.py
         env:
-          # These 4 are the ONLY secrets this project needs. Every other
+          # These 3 are the ONLY secrets this project needs. Every other
           # value (tickers, portfolio size, model choice, retry/delay
           # tuning) lives in Multi-Agent-Stock-Debate/config/settings.py —
           # edit that file directly instead of adding more secrets here.
+          # GEMINI_API_KEY removed: Critic moved onto Groq after Gemini's
+          # free tier hit a full daily quota exhaustion in production —
+          # see CriticConfig in settings.py.
           GROQ_API_KEY_FOR_AUTO_EMAIL: ${{ secrets.GROQ_API_KEY_FOR_AUTO_EMAIL }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
       - name: Commit updated logs
