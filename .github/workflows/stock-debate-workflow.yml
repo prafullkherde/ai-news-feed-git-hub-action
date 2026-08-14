@@ -9,7 +9,7 @@ on:
     # TEMPORARY — 7am IST test trigger. Remove this line once you've
     # confirmed a run works; it has no purpose after that, and every extra
     # run burns real quota for no benefit (see README's quota-math note).
-    - cron: '30 1 * * 1-5'
+    # - cron: '30 1 * * 1-5' -- this is causing Both smoking guns line up: the leftover "TEMPORARY" cron and the exact same-minute collision, three days running.
   workflow_dispatch: {}
   # ^ Prefer this over waiting for a scheduled time when you want to test
   # right now — go to Actions tab -> Stock Debate -> Run workflow. Instant,
