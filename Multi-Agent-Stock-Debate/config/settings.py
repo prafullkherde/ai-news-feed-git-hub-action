@@ -92,14 +92,16 @@ CRITIC = CriticConfig()
 # ============================================================
 @dataclass(frozen=True)
 class BAReviewerConfig:
-    model: str = "qwen/qwen3.6-27b"
-    # WHY changed from llama-3.3-70b-versatile: that model is deprecated
-    # per Groq's own docs (announced June 17, 2026) and could stop
-    # working at any time. qwen3.6-27b is Groq's own official
-    # recommended replacement for it. Still a different model than the
-    # Executor's gpt-oss-120b, preserving the "independent reviewer,
-    # not the same weights checking their own work" property this was
-    # originally designed for.
+    model: str = "openai/gpt-oss-20b"
+    # WHY this, not qwen3.6-27b (Critic's model): Groq's rate limits are
+    # tracked per-MODEL, not pooled across an org. Putting BA Reviewer on
+    # the SAME model as Critic meant they competed for one 8000 TPM
+    # bucket within a single ticker's run — CONFIRMED in production: that
+    # bucket drained to double digits by round 4, triggering repeated
+    # 429s and a run that got cancelled mid-way through ticker 2.
+    # gpt-oss-20b is Groq's other currently-live recommended model
+    # (distinct from both Executor's gpt-oss-120b and Critic's
+    # qwen3.6-27b), giving BA Reviewer its own separate quota bucket.
 
     max_tokens: int = 700
     # Needs headroom for a full structured JSON response covering all
