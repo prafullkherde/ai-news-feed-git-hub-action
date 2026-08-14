@@ -8,6 +8,9 @@ on:
 jobs:
   send-digest:
     runs-on: ubuntu-latest
+    concurrency:
+      group: repo-git-push-lock
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
