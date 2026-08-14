@@ -22,7 +22,11 @@
       "direction_correct": true,
       "error_pct": 0.93
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3009.2,
+      "direction_correct": true,
+      "error_pct": 0.31
+    }
   },
   {
     "date": "2026-08-09",
@@ -47,7 +51,11 @@
       "direction_correct": true,
       "error_pct": 0.93
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3009.2,
+      "direction_correct": true,
+      "error_pct": 0.31
+    }
   },
   {
     "date": "2026-08-09",
@@ -72,7 +80,11 @@
       "direction_correct": false,
       "error_pct": 1.0
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3009.2,
+      "direction_correct": true,
+      "error_pct": -0.03
+    }
   },
   {
     "date": "2026-08-09",
@@ -97,7 +109,11 @@
       "direction_correct": true,
       "error_pct": 0.83
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3009.2,
+      "direction_correct": true,
+      "error_pct": -1.34
+    }
   },
   {
     "date": "2026-08-10",
@@ -217,6 +233,31 @@
       "Risk": "Trade proposal exceeds the maximum position size limit of 5% of the portfolio"
     },
     "corrections_made": "Adjusted the trade proposal to HOLD due to the proposed short position size exceeding the maximum position size limit, and considered the mixed technical and sentimental analysis",
+    "verified_next_day": {
+      "actual_price": 3009.2,
+      "direction_correct": true,
+      "error_pct": 0.47
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-14",
+    "price_at_prediction": 3009.2,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3010.0,
+    "predicted_next_week_price": 3030.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples, modest profit margins, and slowing revenue growth",
+      "Technical": "Price stability near short-term support levels, but high RSI and limited MACD gap",
+      "Sentiment": "Mixed news flow with bearish tilt due to weakening demand and competitive pressure",
+      "Bull": "Strong scale, low debt, and supportive technicals",
+      "Bear": "High valuation, modest profitability, and potential for further growth slowdown",
+      "Risk": "Limited upside potential due to high valuation, and potential for downside risk if sentiment turns negative"
+    },
+    "corrections_made": "Adjusted the recommendation to HOLD due to high valuation multiples, slowing revenue growth, and mixed sentiment, despite supportive technicals and strong scale",
     "verified_next_day": null,
     "verified_next_week": null
   }

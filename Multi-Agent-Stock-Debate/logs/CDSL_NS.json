@@ -22,7 +22,11 @@
       "direction_correct": false,
       "error_pct": 0.57
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1341.8,
+      "direction_correct": false,
+      "error_pct": 3.22
+    }
   },
   {
     "date": "2026-08-09",
@@ -47,7 +51,11 @@
       "direction_correct": false,
       "error_pct": 0.57
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1341.8,
+      "direction_correct": true,
+      "error_pct": -0.61
+    }
   },
   {
     "date": "2026-08-09",
@@ -72,7 +80,11 @@
       "direction_correct": false,
       "error_pct": 0.57
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1341.8,
+      "direction_correct": true,
+      "error_pct": 0.13
+    }
   },
   {
     "date": "2026-08-09",
@@ -97,7 +109,11 @@
       "direction_correct": false,
       "error_pct": 0.57
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1341.8,
+      "direction_correct": true,
+      "error_pct": 0.13
+    }
   },
   {
     "date": "2026-08-10",
@@ -217,6 +233,31 @@
       "Risk": "The track record for this ticker shows a low next-day direction accuracy, and the recent call was incorrect, making it prudent to be cautious."
     },
     "corrections_made": "Overrode the Executor's trade proposal due to the low confidence in the recommendation, the mixed sentiment, and the bearish MACD signal, as well as the low next-day direction accuracy of the track record for this ticker.",
+    "verified_next_day": {
+      "actual_price": 1341.8,
+      "direction_correct": true,
+      "error_pct": -0.24
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-14",
+    "price_at_prediction": 1341.8,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1340.0,
+    "predicted_next_week_price": 1330.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "The company's strong financial health and profitability are overshadowed by its high valuation multiples and modest revenue growth, creating a growth-to-valuation disconnect.",
+      "Technical": "The stock's technical indicators, such as the MACD and RSI, suggest neutral-to-bearish momentum, and the price is trading near its 20-day and 50-day SMAs.",
+      "Sentiment": "The recent news mix is mixed-to-slightly-positive, but the regulatory penalty introduces a compliance risk that could weigh on sentiment.",
+      "Bull": "The company's rock-solid balance sheet and exceptional profitability are positives, but the high valuation multiples and modest revenue growth are concerns.",
+      "Bear": "The severe growth-to-valuation mismatch, weak technical momentum, and compliance risk introduce substantial downside risk.",
+      "Risk": "The high valuation multiples and modest revenue growth create a risk of a sharp correction if the company fails to deliver on expected earnings growth."
+    },
+    "corrections_made": "The Executor's and Critic's conclusions were reviewed and corrected to reflect a more conservative view due to the high valuation multiples, modest revenue growth, and technical indicators suggesting neutral-to-bearish momentum. The proposed trade was also adjusted to a HOLD recommendation to reflect the medium confidence level and the potential risks associated with the stock.",
     "verified_next_day": null,
     "verified_next_week": null
   }

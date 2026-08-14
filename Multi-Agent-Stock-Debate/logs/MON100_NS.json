@@ -217,6 +217,31 @@
       "Risk": "The trade proposal exceeds the maximum allowed exposure, and the track record for this ticker shows a low next-day direction accuracy of 38%."
     },
     "corrections_made": "The proposed position size exceeded the maximum allowed exposure, and the trade was rejected due to this constraint. The recommendation is to hold due to the lack of fundamental data, high valuation, and low confidence in the prediction.",
+    "verified_next_day": {
+      "actual_price": 332.6,
+      "direction_correct": false,
+      "error_pct": 1.08
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-14",
+    "price_at_prediction": 332.6,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 330.0,
+    "predicted_next_week_price": 325.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High trailing P/E ratio of 33.37, suggesting the stock may be overvalued",
+      "Technical": "RSI of 53.68 indicates modest bullish momentum, but the stock is not overbought",
+      "Sentiment": "No headlines available to assess sentiment",
+      "Bull": "Strong recent price appreciation and low volatility",
+      "Bear": "High trailing P/E ratio and potential for mean-reversion correction",
+      "Risk": "Recent track record of this ticker shows only 33% next-day direction accuracy, making the trade riskier"
+    },
+    "corrections_made": "Overrode the Executor's buy recommendation due to high trailing P/E ratio, modest RSI, and poor track record of predictions for this ticker",
     "verified_next_day": null,
     "verified_next_week": null
   }
