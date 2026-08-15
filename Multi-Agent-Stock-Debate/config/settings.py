@@ -76,7 +76,15 @@ class CriticConfig:
     # distinct from Executor's model, which is what actually gives the
     # debate a genuine second opinion, not the vendor it's hosted on.
 
-    max_tokens: int = 600
+    max_tokens: int = 900
+    # Raised from 600: qwen3.6-27b was observed writing its reasoning
+    # out as VISIBLE text ("Here's a thinking process: 1. Analyze...")
+    # rather than using a hidden channel like gpt-oss models do — every
+    # single Critic response in production was finish_reason=length,
+    # cut off mid-thought before ever reaching the actual critique. The
+    # real fix is the explicit "do not narrate your thinking" instruction
+    # now in Main.py's critic_turn() system prompt; this higher ceiling
+    # is just a safety margin on top of that.
 
     request_delay_seconds: float = 10.0
     # Same combined-Groq-quota reasoning as EXECUTOR above — see that
@@ -103,11 +111,23 @@ class BAReviewerConfig:
     # (distinct from both Executor's gpt-oss-120b and Critic's
     # qwen3.6-27b), giving BA Reviewer its own separate quota bucket.
 
-    max_tokens: int = 700
-    # Needs headroom for a full structured JSON response covering all
-    # 6 "why" fields plus the numeric predictions — 700 is comfortable.
+    max_tokens: int = 1200
+    # Raised from 700: gpt-oss-20b is a reasoning model, same family as
+    # Executor's gpt-oss-120b, and PARSE_ERROR on every ticker in
+    # production strongly suggests it was hitting the same hidden-
+    # reasoning-eats-the-budget problem Executor had before
+    # reasoning_effort="low" was applied to it. Needs real headroom for
+    # both that overhead AND a full structured JSON response.
 
     request_delay_seconds: float = 10.0
+
+    reasoning_effort: str = "low"
+    # WHY: same fix as ExecutorConfig — gpt-oss-20b is a reasoning model
+    # that spends part of its output budget on hidden chain-of-thought
+    # unless told to minimize it. This was NEVER being applied before —
+    # the code only checked `if model == cfg.EXECUTOR.model`, which
+    # never matched BA Reviewer's model name, so this suppression
+    # silently never fired for BA Reviewer at all.
     # Same shared-Groq-quota reasoning as EXECUTOR/CRITIC above.
 
 
