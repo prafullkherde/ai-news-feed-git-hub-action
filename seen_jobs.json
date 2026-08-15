@@ -18,18 +18,18 @@
   "RemoteOK::1131840": {
     "title": "Desenvolvedor Front end J\u00c3\u00banior @ AGGRANDIZE",
     "score": 0,
-    "why": "",
-    "gap": "",
-    "first_seen": "2026-07-31",
-    "suppress_until": "2026-08-14"
+    "why": "The role is for a **Junior** Front\u2011end developer, which is below the senior\u2011level experience required by the candidate.",
+    "gap": "Seniority level (Junior)",
+    "first_seen": "2026-08-15",
+    "suppress_until": "2026-08-29"
   },
   "RemoteOK::1131509": {
     "title": "Tech Lead @ Zensurance",
-    "score": 0,
-    "why": "",
-    "gap": "",
-    "first_seen": "2026-07-31",
-    "suppress_until": "2026-08-14"
+    "score": 70,
+    "why": "The Tech Lead position is senior and relevant, but the posting does not explicitly require **Angular** or **TypeScript**, so the candidate\u2019s strongest stack is not guaranteed to match.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-08-15",
+    "suppress_until": "2026-08-29"
   },
   "RemoteOK::1131370": {
     "title": "Front End Full Stack Developer @ Honor Foods",
@@ -1458,10 +1458,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/maptiler-location-services-engineer-maps-platform-remote-in-europe": {
     "title": "MapTiler:  \ufe0f Location Services Engineer | Maps Platform (Remote in Europe)",
     "score": 0,
-    "why": "",
-    "gap": "",
-    "first_seen": "2026-07-31",
-    "suppress_until": "2026-08-14"
+    "why": "The role is a **Location Services Engineer** focused on maps/platform engineering, not a UI or frontend position.",
+    "gap": "Not a UI/frontend role",
+    "first_seen": "2026-08-15",
+    "suppress_until": "2026-08-29"
   },
   "WWR::https://weworkremotely.com/remote-jobs/steady-vision-web-designer": {
     "title": "Steady Vision: Web Designer",
@@ -1950,5 +1950,13 @@
     "gap": "",
     "first_seen": "2026-08-14",
     "suppress_until": "2026-08-28"
+  },
+  "WN::https://www.workingnomads.com/job/go/1792423/": {
+    "title": "Senior Data Engineer @ Lemon.io",
+    "score": 0,
+    "why": "The position is a **Senior Data Engineer**, which is a backend/data\u2011focused role and does not involve UI/frontend work.",
+    "gap": "Not a UI/frontend role",
+    "first_seen": "2026-08-15",
+    "suppress_until": "2026-08-29"
   }
 }
