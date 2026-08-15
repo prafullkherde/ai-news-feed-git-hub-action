@@ -677,7 +677,7 @@ def send_email(subject: str, html: str):
 # ============================================================
 
 def check_required_secrets():
-    """Only the 4 REQUIRED_SECRETS above should ever be missing/empty —
+    """Only the 3 REQUIRED_SECRETS above should ever be missing/empty —
     everything else is a config/settings.py value with a real default, so
     it can't be empty by the GitHub-Actions-empty-string mechanism that
     caused earlier bugs. Returns the list of missing/empty secret names."""
