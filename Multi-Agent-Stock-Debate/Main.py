@@ -237,6 +237,33 @@ def get_market_data(ticker: str):
 
 
 # ============================================================
+# START: COMPACT FORMATTING — same information, fewer tokens
+# ============================================================
+# Python's default f-string embedding of a dict/list (e.g. f"{fundamentals}")
+# produces {'marketCap': 280979603456, 'trailingPE': 59.28, ...} -- full
+# key names, quotes, braces, commas. That punctuation overhead gets paid
+# EVERY round (7x per ticker), not once. These helpers produce the same
+# information as plain "key: value" pairs instead -- no functional change,
+# same numbers, same precision, just less punctuation to pay tokens for.
+
+def _format_fundamentals(fundamentals: dict) -> str:
+    parts = [f"{k}: {v}" for k, v in fundamentals.items() if k != "_warning"]
+    line = "Fundamentals: " + ", ".join(parts)
+    if "_warning" in fundamentals:
+        line += f" ({fundamentals['_warning']})"
+    return line
+
+
+def _format_technicals(technicals: dict) -> str:
+    parts = [f"{k}: {v}" for k, v in technicals.items()]
+    return "Technicals: " + ", ".join(parts)
+
+
+def _format_headlines(headlines: list) -> str:
+    return "Recent headlines: " + "; ".join(headlines)
+
+
+# ============================================================
 # START: MODEL CALLS — Groq (Executor + Critic + BA), one shared quota
 # ============================================================
 # Shared retry/backoff behavior: config/settings.py -> RETRY
@@ -283,13 +310,15 @@ def _log_rate_limit_headers(resp, provider: str):
         print(f"    [{provider} quota headers] {relevant}", file=sys.stderr)
 
 
-def call_groq(system_prompt: str, user_prompt: str, model: str, max_tokens: int, delay_seconds: float) -> str:
+def call_groq(system_prompt: str, user_prompt: str, model: str, max_tokens: int, delay_seconds: float, reasoning_effort: str = None) -> str:
     """Calls Groq's chat completions endpoint. Used for the Executor,
     Critic, and BA Reviewer, with different `model`/`max_tokens`/
-    `delay_seconds` per config. delay_seconds is now an explicit
-    parameter rather than always reading cfg.EXECUTOR's value — that
-    was a real bug where every caller (including BA Reviewer) paced
-    off Executor's delay regardless of its own config setting."""
+    `delay_seconds`/`reasoning_effort` per config. reasoning_effort is now
+    an explicit parameter rather than being inferred by comparing `model`
+    to cfg.EXECUTOR.model — that was a real bug: BA Reviewer moved onto
+    gpt-oss-20b (also a reasoning model, same family as Executor's
+    gpt-oss-120b) but never got reasoning suppression applied, since the
+    comparison only ever matched Executor's own model name."""
     last_error = None
     body = {
         "model": model,
@@ -297,10 +326,11 @@ def call_groq(system_prompt: str, user_prompt: str, model: str, max_tokens: int,
         "temperature": 0.4,
         "max_tokens": max_tokens,
     }
-    if model == cfg.EXECUTOR.model:
-        # Only the Executor's model needs this — see config/settings.py ->
-        # ExecutorConfig.reasoning_effort for why.
-        body["reasoning_effort"] = cfg.EXECUTOR.reasoning_effort
+    if reasoning_effort:
+        # Any gpt-oss family model (Executor's 120b, BA Reviewer's 20b)
+        # spends hidden output-token budget on chain-of-thought unless
+        # told otherwise — see config/settings.py for the per-role value.
+        body["reasoning_effort"] = reasoning_effort
 
     for attempt in range(cfg.RETRY.max_retries):
         try:
@@ -350,7 +380,7 @@ def executor_turn(template, ticker, data_ctx, transcript):
         "opinion without a number behind it. Be concise (5-7 sentences)."
     )
     user_prompt = f"{template.format(t=ticker)}\n\nDATA:\n{data_ctx}\n\nPrior discussion:\n{transcript}"
-    return call_groq(system_prompt, user_prompt, cfg.EXECUTOR.model, cfg.EXECUTOR.max_tokens, cfg.EXECUTOR.request_delay_seconds)
+    return call_groq(system_prompt, user_prompt, cfg.EXECUTOR.model, cfg.EXECUTOR.max_tokens, cfg.EXECUTOR.request_delay_seconds, cfg.EXECUTOR.reasoning_effort)
 
 
 def critic_turn(role_name, ticker, data_ctx, exec_claim, transcript):
@@ -359,7 +389,11 @@ def critic_turn(role_name, ticker, data_ctx, exec_claim, transcript):
         "Find the weakest point in the Executor's argument and counter it "
         "using a specific number from the SAME data (or a different metric "
         "within it). You must disagree on at least one concrete point — do "
-        "not just validate. Be concise (5-7 sentences)."
+        "not just validate. Be concise (5-7 sentences). "
+        "Respond with ONLY the final critique — do not narrate your "
+        "thinking process, do not write 'here's my analysis' or numbered "
+        "reasoning steps, do not restate the task. Go straight to the "
+        "counter-argument, first word to last."
     )
     user_prompt = (
         f"Topic: {role_name} analysis for {ticker}\n\nDATA:\n{data_ctx}\n\n"
@@ -369,23 +403,48 @@ def critic_turn(role_name, ticker, data_ctx, exec_claim, transcript):
     return call_groq(system_prompt, user_prompt, cfg.CRITIC.model, cfg.CRITIC.max_tokens, cfg.CRITIC.request_delay_seconds)
 
 
-def run_debate(ticker: str, data_ctx: str, portfolio_ctx: str):
-    transcript = ""
+MAX_CONTEXT_ROUNDS = 2
+# WHY: passing the FULL accumulating transcript to every round is what
+# drove per-call token consumption from ~150 tokens (round 1) to 2000+
+# (round 6-7), which is the real cause of hitting Groq's 200k/day TPD
+# cap partway through a run — CONFIRMED in production (SUZLON's later
+# rounds and all of MON100 failed with daily quota exhausted). Each
+# round only needs recent context to avoid repeating the same point,
+# not the entire history — trimming to the last 2 rounds cuts per-call
+# token cost substantially without changing what the debate can argue.
+# The FULL transcript is still built and passed to BA Reviewer once at
+# the end, since that one call genuinely needs the complete picture and
+# only happens once per ticker, not 7 times.
+
+
+def run_debate(ticker: str, fund_str: str, tech_str: str, headlines_str: str, portfolio_ctx: str):
+    full_ctx = f"{fund_str}\n{tech_str}\n{headlines_str}"
+    rounds_text = []
     rounds = []
     for role_name, template in ROLES:
         round_start = time.time()
-        round_ctx = data_ctx if role_name != "Risk & Portfolio" else f"{data_ctx}\nPortfolio constraints: {portfolio_ctx}"
+        if role_name == "Fundamental":
+            round_ctx = fund_str
+        elif role_name == "Technical":
+            round_ctx = tech_str
+        elif role_name == "Sentiment":
+            round_ctx = headlines_str
+        elif role_name == "Risk & Portfolio":
+            round_ctx = f"{full_ctx}\nPortfolio constraints: {portfolio_ctx}"
+        else:  # Bull Case, Bear Case, Trade Proposal — synthesis rounds need the full picture
+            round_ctx = full_ctx
+        recent_context = "".join(rounds_text[-MAX_CONTEXT_ROUNDS:])
 
         print(f"  [{ticker}] {role_name}: calling Executor (Groq)...", file=sys.stderr)
-        exec_claim = executor_turn(template, ticker, round_ctx, transcript)
+        exec_claim = executor_turn(template, ticker, round_ctx, recent_context)
 
         print(f"  [{ticker}] {role_name}: calling Critic (Groq)...", file=sys.stderr)
-        critic_claim = critic_turn(role_name, ticker, round_ctx, exec_claim, transcript)
+        critic_claim = critic_turn(role_name, ticker, round_ctx, exec_claim, recent_context)
 
-        transcript += f"\n[{role_name} — EXECUTOR]: {exec_claim}\n[{role_name} — CRITIC]: {critic_claim}\n"
+        rounds_text.append(f"\n[{role_name} — EXECUTOR]: {exec_claim}\n[{role_name} — CRITIC]: {critic_claim}\n")
         rounds.append((role_name, exec_claim, critic_claim))
         print(f"  [{ticker}] OK {role_name} ({time.time() - round_start:.1f}s)", file=sys.stderr)
-    return rounds, transcript
+    return rounds, "".join(rounds_text)
 
 # ============================================================
 # END: DEBATE ROUNDS
@@ -432,7 +491,7 @@ def ba_review(ticker, transcript, data_ctx, portfolio_ctx, yesterday_entry, trac
         f"TRACK RECORD FOR THIS TICKER:\n{track_record}\n\n{yesterday_note}\n\n"
         f"FULL DEBATE TRANSCRIPT:\n{transcript}"
     )
-    raw = call_groq(system_prompt, user_prompt, cfg.BA_REVIEWER.model, cfg.BA_REVIEWER.max_tokens, cfg.BA_REVIEWER.request_delay_seconds)
+    raw = call_groq(system_prompt, user_prompt, cfg.BA_REVIEWER.model, cfg.BA_REVIEWER.max_tokens, cfg.BA_REVIEWER.request_delay_seconds, cfg.BA_REVIEWER.reasoning_effort)
 
     cleaned = raw.strip()
     if cleaned.startswith("```"):
@@ -466,7 +525,13 @@ def run_ticker(ticker: str):
     ticker_start = time.time()
     print(f"\n=== {ticker} (started {datetime.datetime.now().strftime('%H:%M:%S')}) ===", file=sys.stderr)
     fundamentals, technicals, headlines, close_series = get_market_data(ticker)
-    data_ctx = f"Fundamentals: {fundamentals}\nTechnicals: {technicals}\nRecent headlines: {headlines}"
+    fund_str = _format_fundamentals(fundamentals)
+    tech_str = _format_technicals(technicals)
+    headlines_str = _format_headlines(headlines)
+    data_ctx = f"{fund_str}\n{tech_str}\n{headlines_str}"
+    # ^ same 3-line order as before (Fundamentals, Technicals, Headlines) —
+    # ba_review()'s "Current price" extraction below indexes line 1 of
+    # this string and depends on that order staying put.
 
     exposure = cfg.PORTFOLIO.current_exposure_pct.get(ticker, 0)
     room_pct = max(cfg.PORTFOLIO.max_position_pct - exposure, 0)
@@ -482,7 +547,7 @@ def run_ticker(ticker: str):
     track_record = track_record_summary(entries)
     yesterday_entry = entries[-1] if entries else None
 
-    rounds, transcript = run_debate(ticker, data_ctx, portfolio_ctx)
+    rounds, transcript = run_debate(ticker, fund_str, tech_str, headlines_str, portfolio_ctx)
     ba = ba_review(ticker, transcript, data_ctx, portfolio_ctx, yesterday_entry, track_record)
 
     # Code enforces both position rules below — never trust the LLM's own
