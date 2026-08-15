@@ -288,5 +288,19 @@
     "corrections_made": "BA response could not be parsed as JSON",
     "verified_next_day": null,
     "verified_next_week": null
+  },
+  {
+    "date": "2026-08-15",
+    "price_at_prediction": 2978.0,
+    "recommendation": "PARSE_ERROR",
+    "confidence": "Low",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {},
+    "corrections_made": "BA response could not be parsed as JSON",
+    "verified_next_day": null,
+    "verified_next_week": null
   }
 ]

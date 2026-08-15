@@ -22,7 +22,11 @@
       "direction_correct": false,
       "error_pct": -0.28
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": false,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-08-09",
@@ -47,7 +51,11 @@
       "direction_correct": false,
       "error_pct": -0.28
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": false,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-08-09",
@@ -72,7 +80,11 @@
       "direction_correct": false,
       "error_pct": -0.28
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": false,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-08-09",
@@ -97,7 +109,11 @@
       "direction_correct": false,
       "error_pct": -0.28
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": false,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-08-10",
@@ -270,6 +286,27 @@
     "position_value": 0.0,
     "why": {},
     "corrections_made": "BA response could not be parsed as JSON",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-15",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 332.5,
+    "predicted_next_week_price": 332.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing PE of 37.06 is high relative to most peers and, without supporting revenue growth or margin data, suggests the stock may be overvalued. The lack of market cap, debt\u2011to\u2011equity, and profitability metrics further limits confidence in upside potential.",
+      "Technical": "MACD is positive (0.906 vs \u20130.377) but the absence of price, SMA, and RSI data prevents a robust trend assessment. Low volatility (1.6%) indicates a calm market, which could either support a sustained move or keep the stock range\u2011bound. The MACD spread of 1.283 is modest and not sufficient alone to drive a significant price change.",
+      "Sentiment": "Zero headlines imply low media attention, which can be interpreted as neutral sentiment rather than a bullish or bearish catalyst. No recent news reduces the likelihood of a sudden catalyst but also removes a potential downside trigger.",
+      "Bull": "The bullish case overstates the valuation as modest; a 37.06 PE is premium and without growth data does not justify upside. MACD positivity alone is insufficient for a buy recommendation.",
+      "Bear": "The bearish case correctly notes the high PE and low volatility but overemphasizes a potential downside breakout without evidence of earnings risk or negative catalysts.",
+      "Risk": "The trade would use the full 5% allocation with a tight 3.2% stop, leaving little room for error. Given the low accuracy of past predictions for this ticker, a conservative stance is warranted."
+    },
+    "corrections_made": "Overstated valuation as modest; clarified that a 37.06 PE is premium and lacks supporting fundamentals. Adjusted technical assessment to reflect lack of price data and modest MACD spread. Maintained low confidence due to poor historical prediction accuracy.",
     "verified_next_day": null,
     "verified_next_week": null
   }
