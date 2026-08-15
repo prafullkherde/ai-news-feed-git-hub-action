@@ -213,6 +213,9 @@ def get_market_data(ticker: str):
         "marketCap": info.get("marketCap"),
         "trailingPE": info.get("trailingPE"),
         "forwardPE": info.get("forwardPE"),
+        "priceToBook": info.get("priceToBook"),
+        "dividendYield": info.get("dividendYield"),
+        "sector": info.get("sector"),
         "profitMargins": info.get("profitMargins"),
         "revenueGrowth": info.get("revenueGrowth"),
         "debtToEquity": info.get("debtToEquity"),
@@ -233,6 +236,57 @@ def get_market_data(ticker: str):
 
 # ============================================================
 # END: MARKET DATA
+# ============================================================
+
+
+# ============================================================
+# START: FINANCIAL HISTORY — UI-only, not used by the debate pipeline
+# ============================================================
+# Kept deliberately separate from get_market_data(): this is extra data
+# for the on-demand Streamlit page's charts, not something the daily
+# cron debate needs — calling it there would add yfinance load and
+# token cost to a pipeline that already has real quota constraints.
+
+def get_financial_history(ticker: str):
+    """Returns {years: [...], revenue: [...], net_income: [...], total_debt: [...]}
+    for up to the last 4 fiscal years, or empty lists per key if unavailable
+    (common for ETFs/mutual funds, which don't file income statements)."""
+    tk = yf.Ticker(ticker)
+    result = {"years": [], "revenue": [], "net_income": [], "total_debt": []}
+
+    try:
+        income = tk.financials
+        if income is not None and not income.empty:
+            years = [str(c.year) for c in income.columns]
+            result["years"] = years
+            # yfinance's exact row naming has shifted across versions —
+            # try the current name first, fall back to older variants.
+            for label, candidates in [
+                ("revenue", ["Total Revenue", "TotalRevenue"]),
+                ("net_income", ["Net Income", "NetIncome"]),
+            ]:
+                row = next((income.loc[c] for c in candidates if c in income.index), None)
+                result[label] = [float(v) if v is not None else None for v in row] if row is not None else [None] * len(years)
+    except Exception:
+        pass  # ETFs/MFs commonly have no income statement — leave lists empty, not an error
+
+    try:
+        balance = tk.balance_sheet
+        if balance is not None and not balance.empty:
+            for candidates in (["Total Debt", "TotalDebt"], ["Long Term Debt", "LongTermDebt"]):
+                row = next((balance.loc[c] for c in candidates if c in balance.index), None)
+                if row is not None:
+                    result["total_debt"] = [float(v) if v is not None else None for v in row]
+                    break
+            if not result["total_debt"] and result["years"]:
+                result["total_debt"] = [None] * len(result["years"])
+    except Exception:
+        pass
+
+    return result
+
+# ============================================================
+# END: FINANCIAL HISTORY
 # ============================================================
 
 
@@ -657,11 +711,14 @@ def build_email_html(results, errors):
     return "\n".join(parts)
 
 
-def send_email(subject: str, html: str):
+def send_email(subject: str, html: str, extra_recipient: str = None):
+    recipients = os.environ["MY_EMAIL"].split(",")
+    if extra_recipient:
+        recipients = recipients + [extra_recipient]
     resp = requests.post(
         "https://api.resend.com/emails",
         headers={"Authorization": f"Bearer {os.environ['RESEND_API_KEY']}"},
-        json={"from": "onboarding@resend.dev", "to": os.environ["MY_EMAIL"].split(","), "subject": subject, "html": html},
+        json={"from": "onboarding@resend.dev", "to": recipients, "subject": subject, "html": html},
         timeout=30,
     )
     print("Email status:", resp.status_code, resp.text, file=sys.stderr)
