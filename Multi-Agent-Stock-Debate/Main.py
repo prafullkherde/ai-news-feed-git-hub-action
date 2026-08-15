@@ -398,8 +398,16 @@ def critic_turn(role_name, ticker, data_ctx, exec_claim, transcript):
     user_prompt = (
         f"Topic: {role_name} analysis for {ticker}\n\nDATA:\n{data_ctx}\n\n"
         f"Executor's claim:\n{exec_claim}\n\nPrior discussion:\n{transcript}\n\n"
-        "Counter this with data-backed pushback."
+        "Counter this with data-backed pushback. /no_think"
     )
+    # WHY the literal "/no_think" suffix: the system-prompt instruction to
+    # skip narration was CONFIRMED ignored in production — the model wrote
+    # "no narrating thinking process" back at us as part of its own visible
+    # chain-of-thought, then narrated for 800+ tokens before running out of
+    # room anyway. Qwen3's chat template has a documented control token for
+    # this exact case: /no_think suppresses reasoning mode at the template
+    # level rather than relying on the model to voluntarily comply with a
+    # plain-language instruction it can (and did) disregard.
     return call_groq(system_prompt, user_prompt, cfg.CRITIC.model, cfg.CRITIC.max_tokens, cfg.CRITIC.request_delay_seconds)
 
 
