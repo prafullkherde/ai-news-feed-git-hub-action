@@ -16,6 +16,7 @@ import streamlit as st
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from Main import run_ticker, build_email_html, send_email, check_required_secrets, get_financial_history, get_market_data
+from config import settings as cfg
 
 st.set_page_config(page_title="Stock Analysis — On Demand", page_icon="📊", layout="wide")
 st.title("📊 On-Demand Stock Analysis")
@@ -23,6 +24,27 @@ st.caption(
     "Runs the same Executor/Critic/BA Reviewer debate as the daily report — "
     "just for one ticker, right now. Takes about 3 minutes."
 )
+with st.expander("How this works — 3 AI models, in sequence"):
+    st.markdown(
+        f"""
+For each of 7 analysis rounds (Fundamental → Technical → Sentiment → Bull Case →
+Bear Case → Trade Proposal → Risk & Portfolio), two models argue in sequence:
+
+1. **Executor** (`{cfg.EXECUTOR.model}`, via Groq) — argues a specific position
+   using only the data provided, citing real numbers.
+2. **Critic** (`{cfg.CRITIC.model}`, via Groq) — deliberately disagrees, pushing
+   back on the Executor's weakest point using the same data.
+
+After all 7 rounds complete, a third model reviews the full transcript once:
+
+3. **Senior BA Reviewer** (`{cfg.BA_REVIEWER.model}`, via Groq) — reads
+   everything Executor and Critic argued, corrects anything overstated or
+   wrong, and issues the final BUY/SELL/HOLD call with position sizing.
+
+All three run on separate Groq models specifically so no single model is
+checking its own work.
+        """
+    )
 
 # ---- Lightweight access gate ----
 APP_PASSCODE = os.environ.get("APP_PASSCODE", "")
@@ -44,20 +66,19 @@ with col_a:
              "the daily pipeline already uses.",
     ).strip().upper()
 with col_b:
-    user_email = st.text_input(
-        "Send a copy to (optional)",
-        placeholder="you@example.com",
-        help="Leave blank to only see results on this page. If filled, the "
-             "report is also emailed to this address in addition to the "
-             "account owner's inbox.",
-    ).strip()
+    send_email_toggle = st.toggle("📧 Email me a copy", value=False)
+    user_email = ""
+    if send_email_toggle:
+        user_email = st.text_input("Email address", placeholder="you@example.com").strip()
 
 EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
-email_valid = (not user_email) or EMAIL_RE.match(user_email)
-if user_email and not email_valid:
+# Email only sent if the toggle is on AND a valid address is entered —
+# toggle off means zero emails, not even to the account owner.
+email_ready = (not send_email_toggle) or (user_email and EMAIL_RE.match(user_email))
+if send_email_toggle and user_email and not EMAIL_RE.match(user_email):
     st.warning("That doesn't look like a valid email address — double-check it.")
 
-run_clicked = st.button("Run Analysis", type="primary", disabled=not raw_ticker or not email_valid)
+run_clicked = st.button("Run Analysis", type="primary", disabled=not raw_ticker or not email_ready)
 
 if run_clicked:
     missing = check_required_secrets()
@@ -93,6 +114,23 @@ if run_clicked:
         st.info(f"'{raw_ticker}' didn't resolve directly — showing results for **{ticker_to_use}** (NSE) instead.")
 
     ba = result["ba"]
+
+    # If every round hit the daily Groq quota, the transcript is entirely
+    # error strings and BA Reviewer's output is essentially empty. Detect
+    # this and say so plainly rather than showing a dashboard full of
+    # blank fields and "nan" with no explanation.
+    quota_failures = sum(
+        1 for _, exec_claim, critic_claim in result["rounds"]
+        if "quota exhausted" in exec_claim.lower() or "quota exhausted" in critic_claim.lower()
+    )
+    if quota_failures >= 4:
+        st.error(
+            f"⚠️ This run largely failed — {quota_failures} of 7 rounds hit Groq's "
+            "daily token quota (shared with the automated cron job). The results "
+            "below are unreliable. Wait for the quota to reset, or use a separate "
+            "Groq API key for this app (see the account owner)."
+        )
+
     st.success(f"Done — {result['ticker']}: **{ba.get('recommendation')}** ({ba.get('confidence')} confidence)")
 
     tab_overview, tab_financials, tab_debate = st.tabs(["📈 Overview", "💰 Financials", "🗣️ Agent Debate"])
@@ -123,10 +161,19 @@ if run_clicked:
         r1.metric("P/E (trailing)", f.get("trailingPE") or "—")
         r1.metric("P/E (forward)", f.get("forwardPE") or "—")
         r2.metric("P/B", f.get("priceToBook") or "—")
-        r2.metric("Dividend Yield", f"{f.get('dividendYield')*100:.2f}%" if f.get("dividendYield") else "—")
+        r2.metric("Dividend Yield", f"{f.get('dividendYield'):.2f}%" if f.get("dividendYield") else "—")
+        # NOT ×100: yfinance already returns dividendYield as a percentage
+        # number (e.g. 0.46 meaning 0.46%), not a fraction like 0.0046.
+        # The earlier ×100 version showed 46.00% for RELIANCE.NS, whose
+        # real dividend yield is ~0.4-0.5% — confirms the raw value was
+        # already correctly scaled and the multiplication was the bug.
         r3.metric("ROE", f"{f.get('returnOnEquity')*100:.1f}%" if f.get("returnOnEquity") else "—")
         r3.metric("Debt/Equity", f.get("debtToEquity") or "—")
-        r4.metric("Market Cap", f"₹{f.get('marketCap'):,}" if f.get("marketCap") else "—")
+        market_cap = f.get("marketCap")
+        r4.metric("Market Cap", f"₹{market_cap / 1e7:,.0f} Cr" if market_cap else "—")
+        # 1 Crore = 1e7. Raw rupee figures (₹17,727,538,331,648) are
+        # unreadable at large-cap scale — Indian markets conventionally
+        # quote market cap in Crores.
         r4.metric("Sector", f.get("sector") or "—")
         st.caption("Sector-average P/E isn't reliably available from this data source — "
                    "not shown to avoid displaying a made-up comparison.")
@@ -163,16 +210,16 @@ if run_clicked:
                 st.markdown(f"**{role_name} — CRITIC:** {critic_claim}")
                 st.divider()
 
-    # ---- Email ----
-    try:
-        html = build_email_html([result], [])
-        send_email(f"On-Demand Analysis: {result['ticker']}", html, extra_recipient=user_email or None)
-        if user_email:
-            st.caption(f"📧 Emailed to the account owner and {user_email}.")
-        else:
-            st.caption("📧 Also emailed to the account owner.")
-    except Exception as e:
-        st.warning(f"Analysis succeeded but email failed to send: {e}")
+    # ---- Email (only if the toggle is on) ----
+    if send_email_toggle and user_email:
+        try:
+            html = build_email_html([result], [])
+            send_email(f"On-Demand Analysis: {result['ticker']}", html, extra_recipient=user_email)
+            st.caption(f"📧 Emailed to {user_email}.")
+        except Exception as e:
+            st.warning(f"Analysis succeeded but email failed to send: {e}")
+    else:
+        st.caption("📧 Email copy not requested — results shown above only.")
 
 
 # ============================================================
