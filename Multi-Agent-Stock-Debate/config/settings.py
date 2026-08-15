@@ -76,15 +76,17 @@ class CriticConfig:
     # distinct from Executor's model, which is what actually gives the
     # debate a genuine second opinion, not the vendor it's hosted on.
 
-    max_tokens: int = 900
-    # Raised from 600: qwen3.6-27b was observed writing its reasoning
-    # out as VISIBLE text ("Here's a thinking process: 1. Analyze...")
-    # rather than using a hidden channel like gpt-oss models do — every
-    # single Critic response in production was finish_reason=length,
-    # cut off mid-thought before ever reaching the actual critique. The
-    # real fix is the explicit "do not narrate your thinking" instruction
-    # now in Main.py's critic_turn() system prompt; this higher ceiling
-    # is just a safety margin on top of that.
+    max_tokens: int = 1400
+    # Raised again from 900: the "do not narrate your thinking" system
+    # prompt instruction was CONFIRMED INEFFECTIVE in production — the
+    # model quoted the instruction back in its own visible chain-of-
+    # thought, then narrated anyway for 800+ tokens before truncating.
+    # The real attempted fix is now the literal "/no_think" Qwen3 control
+    # token appended in Main.py's critic_turn() user prompt (template-
+    # level suppression, not a request the model can choose to ignore).
+    # This higher ceiling is insurance in case /no_think only partially
+    # works on Groq's specific serving of this model — UNVERIFIED, needs
+    # a live run to confirm either fix actually worked.
 
     request_delay_seconds: float = 10.0
     # Same combined-Groq-quota reasoning as EXECUTOR above — see that
