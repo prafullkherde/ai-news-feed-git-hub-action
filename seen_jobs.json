@@ -1958,5 +1958,45 @@
     "gap": "Not a UI/frontend role",
     "first_seen": "2026-08-15",
     "suppress_until": "2026-08-29"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stripe-gtm-operations-process-architect": {
+    "title": "Stripe: GTM Operations Process Architect",
+    "score": 0,
+    "why": "The role is a GTM Operations Process Architect, which is unrelated to UI/frontend development.",
+    "gap": "No frontend or UI responsibilities.",
+    "first_seen": "2026-08-16",
+    "suppress_until": "2026-08-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stripe-fullstack-engineer-privy": {
+    "title": "Stripe: Fullstack Engineer, Privy",
+    "score": 65,
+    "why": "The Fullstack Engineer position is generic and does not explicitly require Angular or TypeScript, limiting relevance for a senior UI architect.",
+    "gap": "Lack of explicit Angular/TypeScript requirement.",
+    "first_seen": "2026-08-16",
+    "suppress_until": "2026-08-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-gfco-program-manager": {
+    "title": "Coinbase: GFCO Program Manager",
+    "score": 0,
+    "why": "The GFCO Program Manager role is a program\u2011management position, not a technical UI or frontend role.",
+    "gap": "Non\u2011technical, managerial focus.",
+    "first_seen": "2026-08-16",
+    "suppress_until": "2026-08-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-creative-director": {
+    "title": "Coinbase: Creative Director",
+    "score": 0,
+    "why": "Creative Director is a design/leadership role without hands\u2011on UI development expectations.",
+    "gap": "No development or Angular/TypeScript work.",
+    "first_seen": "2026-08-16",
+    "suppress_until": "2026-08-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-counsel-commercial": {
+    "title": "Coinbase: Counsel, Commercial",
+    "score": 0,
+    "why": "Counsel, Commercial is a legal position, unrelated to software development.",
+    "gap": "Not a technical role.",
+    "first_seen": "2026-08-16",
+    "suppress_until": "2026-08-30"
   }
 }
