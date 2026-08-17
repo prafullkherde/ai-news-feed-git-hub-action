@@ -1998,5 +1998,13 @@
     "gap": "Not a technical role.",
     "first_seen": "2026-08-16",
     "suppress_until": "2026-08-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stripe-head-of-self-serve-paid-media": {
+    "title": "Stripe: Head of Self-Serve Paid Media",
+    "score": 0,
+    "why": "The position is a product/marketing leadership role (Head of Self\u2011Serve Paid Media) with no relevance to Angular, TypeScript, or UI development.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-17",
+    "suppress_until": "2026-08-31"
   }
 }
