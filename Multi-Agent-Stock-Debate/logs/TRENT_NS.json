@@ -138,7 +138,11 @@
       "direction_correct": true,
       "error_pct": 0.0
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 2946.0,
+      "direction_correct": false,
+      "error_pct": -3.41
+    }
   },
   {
     "date": "2026-08-10",
@@ -163,7 +167,11 @@
       "direction_correct": true,
       "error_pct": -0.33
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 2946.0,
+      "direction_correct": true,
+      "error_pct": -1.8
+    }
   },
   {
     "date": "2026-08-11",
@@ -258,7 +266,11 @@
       "Risk": "Limited upside potential due to high valuation, and potential for downside risk if sentiment turns negative"
     },
     "corrections_made": "Adjusted the recommendation to HOLD due to high valuation multiples, slowing revenue growth, and mixed sentiment, despite supportive technicals and strong scale",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 2946.0,
+      "direction_correct": false,
+      "error_pct": -2.13
+    },
     "verified_next_week": null
   },
   {
@@ -321,6 +333,24 @@
       "Risk": "The trade proposal exceeded the portfolio limit by a factor of 6,000; even a minimal position would consume most of the allowed exposure. Given the high valuation and weak technicals, the risk of a downside outweighs potential upside."
     },
     "corrections_made": "Overstated bullish narrative by ignoring high P/E and weak earnings; ignored portfolio constraint in trade proposal; corrected recommendation to HOLD with low confidence.",
+    "verified_next_day": {
+      "actual_price": 2946.0,
+      "direction_correct": true,
+      "error_pct": -0.64
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-17",
+    "price_at_prediction": 2946.0,
+    "recommendation": "PARSE_ERROR",
+    "confidence": "Low",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {},
+    "corrections_made": "BA response could not be parsed as JSON",
     "verified_next_day": null,
     "verified_next_week": null
   }

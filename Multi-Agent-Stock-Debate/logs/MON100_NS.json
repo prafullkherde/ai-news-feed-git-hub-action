@@ -138,7 +138,11 @@
       "direction_correct": true,
       "error_pct": 0.74
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 336.81,
+      "direction_correct": true,
+      "error_pct": 1.91
+    }
   },
   {
     "date": "2026-08-10",
@@ -163,7 +167,11 @@
       "direction_correct": false,
       "error_pct": 1.51
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 336.81,
+      "direction_correct": false,
+      "error_pct": 3.63
+    }
   },
   {
     "date": "2026-08-11",
@@ -258,7 +266,11 @@
       "Risk": "Recent track record of this ticker shows only 33% next-day direction accuracy, making the trade riskier"
     },
     "corrections_made": "Overrode the Executor's buy recommendation due to high trailing P/E ratio, modest RSI, and poor track record of predictions for this ticker",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 336.81,
+      "direction_correct": false,
+      "error_pct": 2.06
+    },
     "verified_next_week": null
   },
   {
@@ -307,7 +319,11 @@
       "Risk": "The trade would use the full 5% allocation with a tight 3.2% stop, leaving little room for error. Given the low accuracy of past predictions for this ticker, a conservative stance is warranted."
     },
     "corrections_made": "Overstated valuation as modest; clarified that a 37.06 PE is premium and lacks supporting fundamentals. Adjusted technical assessment to reflect lack of price data and modest MACD spread. Maintained low confidence due to poor historical prediction accuracy.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 336.81,
+      "direction_correct": true,
+      "error_pct": 1.3
+    },
     "verified_next_week": null
   },
   {
@@ -328,6 +344,20 @@
       "Risk": "Track record shows 33% next\u2011day accuracy and 0% next\u2011week accuracy; high uncertainty; portfolio constraints allow 5% but risk too high."
     },
     "corrections_made": "None",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-17",
+    "price_at_prediction": 336.81,
+    "recommendation": "PARSE_ERROR",
+    "confidence": "Low",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {},
+    "corrections_made": "BA response could not be parsed as JSON",
     "verified_next_day": null,
     "verified_next_week": null
   }

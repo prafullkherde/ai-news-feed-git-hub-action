@@ -138,7 +138,11 @@
       "direction_correct": false,
       "error_pct": -4.04
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 49.0,
+      "direction_correct": true,
+      "error_pct": -4.3
+    }
   },
   {
     "date": "2026-08-10",
@@ -163,7 +167,11 @@
       "direction_correct": true,
       "error_pct": -2.66
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 49.0,
+      "direction_correct": true,
+      "error_pct": -4.3
+    }
   },
   {
     "date": "2026-08-11",
@@ -258,7 +266,11 @@
       "Risk": "High debt-to-equity ratio, recent regulatory fine, and limited upside potential."
     },
     "corrections_made": "Adjusted the proposed position size to 0% due to exceeding the portfolio's 5% limit, and considered the track record of past predictions, which shows low accuracy for next-week direction, leading to a more conservative HOLD recommendation.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 49.0,
+      "direction_correct": false,
+      "error_pct": 5.38
+    },
     "verified_next_week": null
   },
   {
@@ -321,6 +333,24 @@
       "Risk": "Leverage risk, low volatility, and recent fine could dampen investor confidence; portfolio exposure limited to 5% but current recommendation is no new position."
     },
     "corrections_made": "Revised recommendation to HOLD based on 0% next\u2011week accuracy record and high debt risk; adjusted next\u2011day and next\u2011week price predictions to reflect flat trend; removed proposed position size.",
+    "verified_next_day": {
+      "actual_price": 49.0,
+      "direction_correct": false,
+      "error_pct": 4.26
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-17",
+    "price_at_prediction": 49.0,
+    "recommendation": "PARSE_ERROR",
+    "confidence": "Low",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {},
+    "corrections_made": "BA response could not be parsed as JSON",
     "verified_next_day": null,
     "verified_next_week": null
   }
