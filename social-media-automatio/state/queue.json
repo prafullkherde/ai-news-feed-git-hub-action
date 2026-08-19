@@ -22,7 +22,8 @@
         "Track your micro-commitments for a feedback loop.",
         "Start the day with a tiny win; ride that momentum all day."
       ],
-      "posted": false
+      "posted": true,
+      "media_id": "ig:18486988843096400"
     },
     {
       "id": "t3",
@@ -47,5 +48,5 @@
       "posted": false
     }
   ],
-  "posted_count": 1
+  "posted_count": 2
 }
