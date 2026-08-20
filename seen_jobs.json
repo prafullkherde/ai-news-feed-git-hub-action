@@ -2038,5 +2038,21 @@
     "gap": "Not a UI/Frontend role",
     "first_seen": "2026-08-19",
     "suppress_until": "2026-09-02"
+  },
+  "WN::https://www.workingnomads.com/job/go/1802649/": {
+    "title": "Senior Golang Developer @ Lemon.io",
+    "score": 0,
+    "why": "The role is a Senior Golang Developer focused on backend development with no Angular or TypeScript requirements.",
+    "gap": "No frontend/Angular/TypeScript focus",
+    "first_seen": "2026-08-20",
+    "suppress_until": "2026-09-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/1801137/": {
+    "title": "Account Manager \u2013 Client Services @ Integrated Hire",
+    "score": 0,
+    "why": "The position is an Account Manager \u2013 Client Services, a non\u2011technical sales/relationship role unrelated to UI architecture.",
+    "gap": "Not a technical UI role",
+    "first_seen": "2026-08-20",
+    "suppress_until": "2026-09-03"
   }
 }
