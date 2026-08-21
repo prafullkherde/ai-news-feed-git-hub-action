@@ -2054,5 +2054,45 @@
     "gap": "Not a technical UI role",
     "first_seen": "2026-08-20",
     "suppress_until": "2026-09-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/twilio-machine-learning-engineer": {
+    "title": "Twilio: Machine Learning Engineer",
+    "score": 0,
+    "why": "The role is a Machine Learning Engineer position, which is unrelated to UI/Frontend development.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-08-21",
+    "suppress_until": "2026-09-04"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-head-of-finance-canada": {
+    "title": "Coinbase: Head of Finance, Canada",
+    "score": 0,
+    "why": "The position is Head of Finance, a senior finance leadership role, not a UI/Frontend technical role.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-08-21",
+    "suppress_until": "2026-09-04"
+  },
+  "WN::https://www.workingnomads.com/job/go/1804593/": {
+    "title": "Quality Assurance Rater - French (FR) @ TELUS Digital",
+    "score": 0,
+    "why": "This is a Quality Assurance Rater role focused on testing, not on UI/Frontend architecture or development.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-08-21",
+    "suppress_until": "2026-09-04"
+  },
+  "WN::https://www.workingnomads.com/job/go/1804594/": {
+    "title": "Quality Assurance Rater - Spanish (ES) @ TELUS Digital",
+    "score": 0,
+    "why": "This is a Quality Assurance Rater role focused on testing, not on UI/Frontend architecture or development.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-08-21",
+    "suppress_until": "2026-09-04"
+  },
+  "WN::https://www.workingnomads.com/job/go/1804584/": {
+    "title": "Quality Assurance Rater - German (DE) @ TELUS Digital",
+    "score": 0,
+    "why": "This is a Quality Assurance Rater role focused on testing, not on UI/Frontend architecture or development.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-08-21",
+    "suppress_until": "2026-09-04"
   }
 }
