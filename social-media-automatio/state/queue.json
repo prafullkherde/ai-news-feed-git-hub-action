@@ -34,7 +34,8 @@
         "A cool, dark room restores muscle glycogen faster than a protein shake.",
         "Prioritize blackout; your next PR depends on it."
       ],
-      "posted": false
+      "posted": true,
+      "media_id": "ig:18007592081956555"
     },
     {
       "id": "t4",
@@ -48,5 +49,5 @@
       "posted": false
     }
   ],
-  "posted_count": 2
+  "posted_count": 3
 }
