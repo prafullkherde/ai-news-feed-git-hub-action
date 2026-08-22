@@ -1762,18 +1762,18 @@
   "WN::https://www.workingnomads.com/job/go/1775657/": {
     "title": "AI Content Analyst (No Experience Required) @ Peroptyx",
     "score": 0,
-    "why": "The AI Content Analyst position is entry\u2011level and unrelated to UI development or Angular/TypeScript.",
-    "gap": "No UI/Angular/TS experience required; role is non\u2011technical.",
-    "first_seen": "2026-08-07",
-    "suppress_until": "2026-08-21"
+    "why": "AI content analyst is an entry\u2011level, non\u2011technical role that does not require Angular/TS.",
+    "gap": "Junior level, no UI",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
   },
   "WN::https://www.workingnomads.com/job/go/1775628/": {
     "title": "Data Analyst (No Experience Required) @ Peroptyx",
     "score": 0,
-    "why": "The Data Analyst role is a junior\u2011level analytics position with no frontend development component.",
-    "gap": "No Angular/TypeScript or UI focus.",
-    "first_seen": "2026-08-07",
-    "suppress_until": "2026-08-21"
+    "why": "Data analyst entry\u2011level position lacks any frontend or Angular requirements.",
+    "gap": "Junior level, no UI",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
   },
   "WN::https://www.workingnomads.com/job/go/1775548/": {
     "title": "Data Analyst (No Experience Required) @ Peroptyx",
@@ -2094,5 +2094,165 @@
     "gap": "Not a UI/Frontend role",
     "first_seen": "2026-08-21",
     "suppress_until": "2026-09-04"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-software-engineer-backend-consumer-risk": {
+    "title": "Coinbase: Senior Software Engineer, Backend (Consumer - Risk)",
+    "score": 0,
+    "why": "The role is a backend engineering position with no UI focus.",
+    "gap": "Backend focus",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-software-engineer-backend-platform-core-ai-automation": {
+    "title": "Coinbase: Senior Software Engineer, Backend - Platform (Core AI Automation)",
+    "score": 0,
+    "why": "This is a backend\u2011focused software engineer role for AI automation, not a UI position.",
+    "gap": "Backend focus",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/twilio-senior-engineering-manager-v-v-media-1": {
+    "title": "Twilio: Senior Engineering Manager V&V Media",
+    "score": 0,
+    "why": "It is a senior engineering manager role for verification & validation, not a frontend/Angular role.",
+    "gap": "Management, non\u2011UI",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/twilio-senior-engineering-manager-v-v-media": {
+    "title": "Twilio: Senior Engineering Manager V&V Media",
+    "score": 0,
+    "why": "Same as above \u2013 a senior engineering manager role without UI responsibilities.",
+    "gap": "Management, non\u2011UI",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-software-engineer": {
+    "title": "Coinbase: Senior Software Engineer",
+    "score": 0,
+    "why": "The listing is a generic senior software engineer role with no explicit Angular/TypeScript requirement.",
+    "gap": "No Angular/TS requirement",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/twilio-senior-engineering-manager-voice-and-video": {
+    "title": "Twilio: Senior Engineering Manager, Voice and Video",
+    "score": 0,
+    "why": "Senior engineering manager for voice and video, not a UI/Angular position.",
+    "gap": "Management, non\u2011UI",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-payroll-specialist": {
+    "title": "Coinbase: Senior Payroll Specialist",
+    "score": 0,
+    "why": "Payroll specialist is a non\u2011technical role unrelated to UI development.",
+    "gap": "Non\u2011technical",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-manager-internal-audit-it": {
+    "title": "Coinbase: Senior Manager, Internal Audit IT",
+    "score": 0,
+    "why": "Internal audit IT manager is a governance role, not a frontend engineering position.",
+    "gap": "Non\u2011technical",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-manager-clearing-operations": {
+    "title": "Coinbase: Senior Manager, Clearing Operations",
+    "score": 0,
+    "why": "Clearing operations manager is an operations role, not a UI/Angular job.",
+    "gap": "Non\u2011technical",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-machine-learning-engineer-cx-intelligence": {
+    "title": "Coinbase: Senior Machine Learning Engineer, CX Intelligence",
+    "score": 0,
+    "why": "Senior machine\u2011learning engineer focuses on AI, not on UI or Angular development.",
+    "gap": "ML focus, no UI",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-machine-learning-engineer": {
+    "title": "Coinbase: Senior Machine Learning Engineer",
+    "score": 0,
+    "why": "Another senior machine\u2011learning engineer role with no UI responsibilities.",
+    "gap": "ML focus, no UI",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/twilio-project-manager-3": {
+    "title": "Twilio: Project Manager 3",
+    "score": 0,
+    "why": "Project manager is a non\u2011technical leadership role, not a UI development position.",
+    "gap": "Non\u2011technical",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stripe-risk-strategist-screening-financial-crimes": {
+    "title": "Stripe: Risk Strategist - Screening (Financial Crimes)",
+    "score": 0,
+    "why": "Risk strategist is a financial\u2011crime role, unrelated to frontend engineering.",
+    "gap": "Non\u2011technical",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/twilio-principal-software-engineer": {
+    "title": "Twilio: Principal Software Engineer",
+    "score": 0,
+    "why": "Principal software engineer role does not specify Angular/TypeScript, so it falls outside the required stack.",
+    "gap": "No Angular/TS requirement",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-finance-strategy-analyst-consumer": {
+    "title": "Coinbase: Senior Finance & Strategy Analyst, Consumer",
+    "score": 0,
+    "why": "Finance & strategy analyst is a business\u2011analytics role, not a UI/Angular position.",
+    "gap": "Non\u2011technical",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-data-scientist-cx-analytics": {
+    "title": "Coinbase: Senior Data Scientist, CX Analytics",
+    "score": 0,
+    "why": "Senior data scientist focuses on analytics, not frontend development.",
+    "gap": "Non\u2011UI focus",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-analytics-engineer-platform-financial-analytics": {
+    "title": "Coinbase: Senior Analytics Engineer (Platform - Financial Analytics)",
+    "score": 0,
+    "why": "Analytics engineer for financial analytics is a backend/data role, not UI.",
+    "gap": "Backend focus",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-analyst-compliance-technology": {
+    "title": "Coinbase: Senior Analyst, Compliance Technology",
+    "score": 0,
+    "why": "Senior analyst in compliance technology is not a frontend engineering role.",
+    "gap": "Non\u2011UI focus",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-regional-threat-assessment-manager-2": {
+    "title": "Coinbase: Regional Threat Assessment Manager",
+    "score": 0,
+    "why": "Regional threat assessment manager is a security/operations role, not UI development.",
+    "gap": "Non\u2011technical",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-regional-threat-assessment-manager-1": {
+    "title": "Coinbase: Regional Threat Assessment Manager",
+    "score": 0,
+    "why": "Same as above \u2013 a threat assessment manager with no UI responsibilities.",
+    "gap": "Non\u2011technical",
+    "first_seen": "2026-08-22",
+    "suppress_until": "2026-09-05"
   }
 }
