@@ -1,53 +1,51 @@
 {
-  "date": "2026-08-21",
+  "date": "2026-08-22",
   "thoughts": [
     {
       "id": "t1",
       "slides": [
-        "Your joints remember the last time you moved them.",
-        "Static sitting compresses cartilage, accelerating wear.",
-        "Micro\u2011loads each day trigger synovial fluid production.",
-        "Even 5 minutes of dynamic stretch resets the joint\u2019s lubrication.",
-        "Move daily; longevity is a habit, not a marathon."
+        "Your body remembers every hour you stay still.",
+        "Muscles lose tension, nerves lose firing patterns.",
+        "Circulation stalls, mitochondria idle.",
+        "Even 5 minutes of dynamic stretch reignites the system.",
+        "Move now, and your day runs on fuel, not fatigue."
       ],
       "posted": true,
-      "media_id": "ig:18111873224096308"
+      "media_id": "ig:18126035032838175"
     },
     {
       "id": "t2",
       "slides": [
-        "The smallest pause before a choice can be your leverage.",
-        "Brain scans show a 2\u2011second gap spikes prefrontal activity.",
-        "That gap lets you reframe desire versus outcome.",
-        "Use the pause to ask, \u2018Will this serve my 6\u2011month vision?\u2019",
-        "Turn hesitation into deliberate advantage."
+        "Choices are the currency of willpower.",
+        "Each small decision drains a finite mental reserve.",
+        "When the reserve empties, you default to habit.",
+        "Pre\u2011plan the trivial \u2013 meals, clothes, routes.",
+        "Reserve your energy for the choices that truly matter."
       ],
-      "posted": true,
-      "media_id": "ig:17979391974080154"
+      "posted": false
     },
     {
       "id": "t3",
       "slides": [
-        "Recovery isn\u2019t in the gym; it lives in the dark.",
-        "Growth hormone peaks during the first 90 minutes of deep sleep.",
-        "Blue\u2011light exposure shaves that peak by up to 40%.",
-        "A cool, dark room restores muscle glycogen faster than a protein shake.",
-        "Prioritize blackout; your next PR depends on it."
+        "Sleep is the silent trainer you never see.",
+        "Growth hormone spikes during deep stages.",
+        "Neural pathways rewire, clearing mental clutter.",
+        "A 90\u2011minute block aligns body clocks better than 6\u2011hour fragments.",
+        "Prioritize uninterrupted sleep; it upgrades every rep you do."
       ],
-      "posted": true,
-      "media_id": "ig:18007592081956555"
+      "posted": false
     },
     {
       "id": "t4",
       "slides": [
-        "Bad habits thrive on isolation.",
-        "When a cue stands alone, the brain assigns it full attention.",
-        "Pair the cue with a micro\u2011positive action\u2014one rep, one breath.",
-        "The brain links the two, making the positive the default response.",
-        "Stack, don\u2019t separate; replace the loop in place."
+        "Momentum is a chain reaction, not a feeling.",
+        "The first link only needs 2 minutes of effort.",
+        "That link pulls the next, reducing perceived friction.",
+        "Stack a micro\u2011habit after each completed link.",
+        "Soon you\u2019re moving forward without noticing the push."
       ],
       "posted": false
     }
   ],
-  "posted_count": 3
+  "posted_count": 1
 }
