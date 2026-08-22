@@ -34,7 +34,8 @@
         "A 90\u2011minute block aligns body clocks better than 6\u2011hour fragments.",
         "Prioritize uninterrupted sleep; it upgrades every rep you do."
       ],
-      "posted": false
+      "posted": true,
+      "media_id": "ig:17981476758054042"
     },
     {
       "id": "t4",
@@ -48,5 +49,5 @@
       "posted": false
     }
   ],
-  "posted_count": 2
+  "posted_count": 3
 }
