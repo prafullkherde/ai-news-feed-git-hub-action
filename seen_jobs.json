@@ -1186,18 +1186,18 @@
   "RemoteOK::1135285": {
     "title": "Junior Front End Developer @ PULSE (MENA)",
     "score": 0,
-    "why": "The role is explicitly a **Junior** Front End Developer, which falls below the 7\u2011year seniority threshold.",
-    "gap": "Junior\u2011level experience requirement",
-    "first_seen": "2026-08-08",
-    "suppress_until": "2026-08-22"
+    "why": "The role is explicitly a **Junior** Front End Developer, which is below the senior\u2011level experience threshold.",
+    "gap": "Junior\u2011level expectation",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
   },
   "RemoteOK::1135269": {
     "title": "Front End Developer @ Acro Commerce",
-    "score": 0,
-    "why": "The posting does not specify seniority but is a generic Front End Developer role, typically targeting mid\u2011level candidates (<7\u202fyears).",
-    "gap": "Mid\u2011level experience expectation",
-    "first_seen": "2026-08-08",
-    "suppress_until": "2026-08-22"
+    "score": 70,
+    "why": "The position is a generic Front End Developer role with no explicit Angular/TypeScript requirement, so the candidate\u2019s fit is capped at 75.",
+    "gap": "None (no explicit Angular/TS mention)",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
   },
   "WN::https://www.workingnomads.com/job/go/1746261/": {
     "title": "Account Manager, Creative Operations @ Storm Ideas",
@@ -1257,11 +1257,11 @@
   },
   "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-vue-developer": {
     "title": "Lemon.io: Senior Vue Developer",
-    "score": 60,
-    "why": "The role explicitly requires Vue (no Angular/TypeScript), which caps the score at 60 despite the senior UI background.",
-    "gap": "Lack of Vue experience",
-    "first_seen": "2026-07-27",
-    "suppress_until": "2026-08-10"
+    "score": 55,
+    "why": "Senior Vue Developer is a Vue\u2011only front\u2011end role, which according to the rules caps the score at 60.",
+    "gap": "Vue\u2011only stack (no Angular/TS)",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
   },
   "WWR::https://weworkremotely.com/remote-jobs/dropbox-senior-director-revenue-operations-1": {
     "title": "Dropbox: Senior Director, Revenue Operations",
@@ -1282,10 +1282,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/hightouch-ai-strategy-consultant": {
     "title": "Hightouch: AI Strategy Consultant",
     "score": 0,
-    "why": "AI Strategy Consultant is a non\u2011technical, advisory role with no UI focus.",
-    "gap": "Not a UI/Frontend position",
-    "first_seen": "2026-07-27",
-    "suppress_until": "2026-08-10"
+    "why": "AI Strategy Consultant is a consulting role, not a software development position.",
+    "gap": "Not a development role",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
   },
   "WWR::https://weworkremotely.com/remote-jobs/collibra-director-facility-security-officer": {
     "title": "Collibra: Director, Facility Security Officer",
@@ -1314,10 +1314,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/gitlab-ai-transformation-owner-cro": {
     "title": "GitLab: AI Transformation Owner, CRO",
     "score": 0,
-    "why": "AI Transformation Owner is a senior AI strategy role, unrelated to UI/Frontend work.",
-    "gap": "Not a UI/Frontend position",
-    "first_seen": "2026-07-27",
-    "suppress_until": "2026-08-10"
+    "why": "AI Transformation Owner, CRO is a senior leadership/strategy role, not a technical UI development role.",
+    "gap": "Not a development role",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
   },
   "WWR::https://weworkremotely.com/remote-jobs/sezzle-ai-engineer-ii-remote": {
     "title": "Sezzle: AI Engineer II (Remote)",
@@ -1449,11 +1449,11 @@
   },
   "WWR::https://weworkremotely.com/remote-jobs/reveleer-full-stack-ai-engineer": {
     "title": "Reveleer: Full Stack AI Engineer",
-    "score": 0,
-    "why": "The position is a Full Stack AI Engineer with no explicit Angular or TypeScript requirement, focusing on AI/backend technologies rather than the candidate\u2019s core stack.",
-    "gap": "No Angular/TypeScript requirement",
-    "first_seen": "2026-07-30",
-    "suppress_until": "2026-08-13"
+    "score": 70,
+    "why": "Full Stack AI Engineer is a full\u2011stack position without a specific Angular/TS demand, so the score is capped at 75.",
+    "gap": "No explicit Angular/TS requirement",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
   },
   "WWR::https://weworkremotely.com/remote-jobs/maptiler-location-services-engineer-maps-platform-remote-in-europe": {
     "title": "MapTiler:  \ufe0f Location Services Engineer | Maps Platform (Remote in Europe)",
@@ -2254,5 +2254,133 @@
     "gap": "Non\u2011technical",
     "first_seen": "2026-08-22",
     "suppress_until": "2026-09-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/azumo-data-engineer-databricks-aws-gaming-liveops-latin-america": {
+    "title": "Azumo: Data Engineer - Databricks / AWS (Gaming & LiveOps) - Latin America",
+    "score": 0,
+    "why": "This is a pure Data Engineering role (Databricks/AWS) with no front\u2011end focus.",
+    "gap": "Pure backend/data\u2011engineer focus",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/faire-senior-staff-data-engineer-platform-data-and-analytics": {
+    "title": "Faire: Senior Staff Data Engineer - Platform Data and Analytics",
+    "score": 0,
+    "why": "Senior Staff Data Engineer is a backend\u2011centric position, not a front\u2011end UI role.",
+    "gap": "Pure backend focus",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/doximity-data-engineering-manager": {
+    "title": "Doximity: Data Engineering Manager",
+    "score": 0,
+    "why": "Data Engineering Manager is a leadership role for data pipelines, not a UI/Frontend position.",
+    "gap": "Pure backend/management focus",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/doximity-data-analyst-reporting-partnerships": {
+    "title": "Doximity: Data Analyst, Reporting Partnerships",
+    "score": 0,
+    "why": "Data Analyst, Reporting Partnerships is an analytics role without UI development responsibilities.",
+    "gap": "Pure data/analytics focus",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/clickhouse-ai-product-engineer-clickstack-1": {
+    "title": "ClickHouse: AI Product Engineer - ClickStack",
+    "score": 70,
+    "why": "\u201cAI Product Engineer\u201d is a product\u2011engineer role that may involve UI work but does not explicitly require Angular/TypeScript, so it is capped at 75.",
+    "gap": "No explicit Angular/TS requirement",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/clickhouse-ai-product-engineer-clickstack": {
+    "title": "ClickHouse: AI Product Engineer - ClickStack",
+    "score": 70,
+    "why": "Same as job\u202f7 \u2013 a generic product\u2011engineer role without explicit Angular/TypeScript, capped at 75.",
+    "gap": "No explicit Angular/TS requirement",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/storetasker-senior-shopify-developer-remote-flexible-3": {
+    "title": "Storetasker: Senior Shopify Developer (Remote + Flexible)",
+    "score": 70,
+    "why": "Senior Shopify Developer is a front\u2011end role focused on Shopify/Liquid, not Angular/TypeScript, thus capped at 75.",
+    "gap": "No Angular/TS requirement",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/superplane-product-engineer-1": {
+    "title": "SuperPlane: Product Engineer",
+    "score": 70,
+    "why": "Product Engineer is a generic engineering role with potential UI work but no Angular/TS specificity, capped at 75.",
+    "gap": "No explicit Angular/TS requirement",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/hygraph-senior-fullstack-engineer-f-m-d-berlin-i-germany-emea-i-remote": {
+    "title": "Hygraph: Senior Fullstack Engineer (f/m/d) - Berlin I Germany, EMEA I Remote",
+    "score": 70,
+    "why": "Senior Fullstack Engineer is a broad role lacking an explicit Angular/TypeScript requirement, thus capped at 75.",
+    "gap": "No explicit Angular/TS requirement",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/maven-clinic-content-creative-strategist": {
+    "title": "Maven Clinic: Content & Creative Strategist",
+    "score": 0,
+    "why": "Content & Creative Strategist is a non\u2011technical, marketing\u2011focused position, not a UI development role.",
+    "gap": "Not a development role",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/onthegosystems-ai-native-software-developer": {
+    "title": "OnTheGoSystems: AI-Native Software Developer",
+    "score": 0,
+    "why": "AI\u2011Native Software Developer is an AI/backend\u2011centric role with no front\u2011end focus.",
+    "gap": "Pure backend/AI focus",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/yoko-co-front-end-wordpress-developer": {
+    "title": "Yoko Co: Front-End WordPress Developer",
+    "score": 70,
+    "why": "Front\u2011End WordPress Developer is a front\u2011end role but does not mention Angular/TypeScript, so it is capped at 75.",
+    "gap": "No explicit Angular/TS requirement",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/jetbrains-backend-customer-success-engineer-kotlin-ecosystem": {
+    "title": "JetBrains: Backend Customer Success Engineer (Kotlin Ecosystem)",
+    "score": 0,
+    "why": "Backend Customer Success Engineer is a backend\u2011focused engineering support role, not a UI position.",
+    "gap": "Pure backend focus",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/launchdarkly-backend-engineer-flag-delivery": {
+    "title": "LaunchDarkly: Backend Engineer, Flag Delivery",
+    "score": 0,
+    "why": "Backend Engineer, Flag Delivery is a backend engineering role with no front\u2011end responsibilities.",
+    "gap": "Pure backend focus",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-staff-software-engineer-legal-automation": {
+    "title": "Coinbase: Senior Staff Software Engineer, Legal Automation",
+    "score": 0,
+    "why": "Senior Staff Software Engineer, Legal Automation is a backend\u2011heavy engineering role, not a UI/Frontend position.",
+    "gap": "Pure backend focus",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-staff-software-engineer-finance-automation": {
+    "title": "Coinbase: Senior Staff Software Engineer, Finance Automation",
+    "score": 0,
+    "why": "Senior Staff Software Engineer, Finance Automation is a backend\u2011centric engineering role without front\u2011end focus.",
+    "gap": "Pure backend focus",
+    "first_seen": "2026-08-23",
+    "suppress_until": "2026-09-06"
   }
 }
