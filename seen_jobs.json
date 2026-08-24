@@ -114,18 +114,18 @@
   "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-ai-engineer-architect": {
     "title": "A.Team: Senior Independent AI Engineer / Architect",
     "score": 0,
-    "why": "",
-    "gap": "",
-    "first_seen": "2026-07-31",
-    "suppress_until": "2026-08-14"
+    "why": "Senior Independent AI Engineer/Architect is an AI\u2011only role, unrelated to UI work.",
+    "gap": "Role is AI\u2011centric, no frontend responsibilities.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
   },
   "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-software-developer-90-170-hr": {
     "title": "A.Team: Senior Independent Software Developer ($90-$170/hr)",
     "score": 0,
-    "why": "\u201cSenior Independent Software Developer\u201d is a generic software role with no UI focus indicated.",
-    "gap": "UI focus",
-    "first_seen": "2026-07-01",
-    "suppress_until": "2026-07-15"
+    "why": "Senior Independent Software Developer is a broad software role with no clear UI focus.",
+    "gap": "No explicit frontend or Angular/TypeScript requirement.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
   },
   "WWR::https://weworkremotely.com/remote-jobs/memora-aps-founding-engineer": {
     "title": "Memora ApS: Founding Engineer",
@@ -2382,5 +2382,93 @@
     "gap": "Pure backend focus",
     "first_seen": "2026-08-23",
     "suppress_until": "2026-09-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lattice-engineering-manager-ai-1": {
+    "title": "Lattice: Engineering Manager, AI",
+    "score": 0,
+    "why": "Engineering Manager, AI role focuses on AI leadership, not UI/frontend work.",
+    "gap": "Role is AI\u2011centric, no frontend responsibilities.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lattice-engineering-manager-ai": {
+    "title": "Lattice: Engineering Manager, AI",
+    "score": 0,
+    "why": "Same as Job\u202f1 \u2013 AI\u2011focused engineering management with no UI component.",
+    "gap": "Role is AI\u2011centric, no frontend responsibilities.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-stibo-sr-architect-platform-owner-for-global-fortune-500": {
+    "title": "Toptal: Stibo Sr. Architect/Platform Owner for Global Fortune 500",
+    "score": 70,
+    "why": "Senior architect/platform owner position is senior\u2011level but does not explicitly require Angular/TypeScript.",
+    "gap": "No explicit Angular/TypeScript requirement (generic platform scope).",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-ai-engineer-4": {
+    "title": "Lemon.io: Senior AI Engineer",
+    "score": 0,
+    "why": "Senior AI Engineer is an AI\u2011focused position, not a UI/frontend role.",
+    "gap": "Role is AI\u2011centric, no frontend responsibilities.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/yooli-full-time-software-engineer-position-react-and-rest-1": {
+    "title": "Yooli: FULL TIME: Software Engineer Position - React and Rest",
+    "score": 60,
+    "why": "React\u2011only front\u2011end role caps the score at 60 per the rules; candidate\u2019s expertise is Angular/TS.",
+    "gap": "React\u2011only stack, no Angular/TypeScript experience required.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/thehivecareers-co-web-developer-remote-1": {
+    "title": "thehivecareers.co: Web Developer (Remote)",
+    "score": 70,
+    "why": "Generic Web Developer role aligns with frontend experience but lacks Angular/TypeScript specificity, capping at 75.",
+    "gap": "No explicit Angular/TypeScript requirement.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/charles-technology-africa-web-developer": {
+    "title": "Charles Technology Africa: Web Developer",
+    "score": 70,
+    "why": "Generic Web Developer position matches senior frontend background but does not mention Angular/TS, so capped below 75.",
+    "gap": "No explicit Angular/TypeScript requirement.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/azumo-technical-leader-latin-america": {
+    "title": "Azumo: Technical Leader - Latin America",
+    "score": 75,
+    "why": "Technical Leader role is senior\u2011level and aligns with UI leadership, but without Angular/TS mention, the maximum is 75.",
+    "gap": "No explicit Angular/TypeScript requirement.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/azumo-data-engineer-latin-america": {
+    "title": "Azumo: Data Engineer - Latin America",
+    "score": 0,
+    "why": "Data Engineer is a backend/data\u2011focused role, not relevant to UI architecture.",
+    "gap": "Role is data\u2011engineering, no frontend responsibilities.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/azumo-java-engineer-latin-america": {
+    "title": "Azumo: Java Engineer - Latin America",
+    "score": 0,
+    "why": "Java Engineer is a backend development position, unrelated to UI/Angular work.",
+    "gap": "Role is backend\u2011focused, no frontend responsibilities.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lmg-staffing-solutions-ai-assisted-software-engineer-web-applications": {
+    "title": "LMG Staffing Solutions: AI-Assisted Software Engineer, Web Applications",
+    "score": 70,
+    "why": "AI\u2011Assisted Software Engineer for Web Applications is a web\u2011app role but does not specify Angular/TS, capping below 75.",
+    "gap": "No explicit Angular/TypeScript requirement.",
+    "first_seen": "2026-08-24",
+    "suppress_until": "2026-09-07"
   }
 }
