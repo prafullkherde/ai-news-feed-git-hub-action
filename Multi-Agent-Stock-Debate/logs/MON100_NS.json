@@ -283,7 +283,11 @@
       "direction_correct": false,
       "error_pct": 2.06
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 330.51,
+      "direction_correct": true,
+      "error_pct": 1.7
+    }
   },
   {
     "date": "2026-08-14",
@@ -336,7 +340,11 @@
       "direction_correct": true,
       "error_pct": 1.3
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 330.51,
+      "direction_correct": true,
+      "error_pct": -0.6
+    }
   },
   {
     "date": "2026-08-15",
@@ -418,6 +426,20 @@
   {
     "date": "2026-08-21",
     "price_at_prediction": 330.51,
+    "recommendation": "PARSE_ERROR",
+    "confidence": "Low",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {},
+    "corrections_made": "BA response could not be parsed as JSON",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-08-24",
+    "price_at_prediction": 327.98,
     "recommendation": "PARSE_ERROR",
     "confidence": "Low",
     "predicted_next_day_price": null,
