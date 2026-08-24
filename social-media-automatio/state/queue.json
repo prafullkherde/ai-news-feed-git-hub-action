@@ -34,7 +34,8 @@
         "Pair it with movement for a 2\u2011hour energy lift.",
         "Step outside, soak the light, and power up."
       ],
-      "posted": false
+      "posted": true,
+      "media_id": "ig:18106709765332249"
     },
     {
       "id": "t4",
@@ -48,5 +49,5 @@
       "posted": false
     }
   ],
-  "posted_count": 2
+  "posted_count": 3
 }
