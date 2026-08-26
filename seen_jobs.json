@@ -1537,11 +1537,11 @@
   },
   "WWR::https://weworkremotely.com/remote-jobs/wonderdog-full-stack-product-engineer-agentic-first": {
     "title": "Wonderdog: Full-Stack Product Engineer - Agentic First",
-    "score": 0,
-    "why": "",
-    "gap": "",
-    "first_seen": "2026-07-31",
-    "suppress_until": "2026-08-14"
+    "score": 70,
+    "why": "The Full\u2011Stack Product Engineer role is generic and does not call for Angular/TypeScript, so the candidate\u2019s expertise is only partially aligned.",
+    "gap": "Lack of Angular/TypeScript focus in the job description",
+    "first_seen": "2026-08-26",
+    "suppress_until": "2026-09-09"
   },
   "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-react-full-stack-developer-5": {
     "title": "Lemon.io: Senior React Full-stack Developer",
@@ -1826,26 +1826,26 @@
   "WN::https://www.workingnomads.com/job/go/1783105/": {
     "title": "Protocol Review Specialist @ Sun Coast Sciences",
     "score": 0,
-    "why": "This is a Protocol Review Specialist role focused on scientific/technical review, not on UI or frontend engineering.",
-    "gap": "No frontend/Angular requirement",
-    "first_seen": "2026-08-11",
-    "suppress_until": "2026-08-25"
+    "why": "Protocol Review Specialist is a non\u2011technical, domain\u2011specific role unrelated to UI development.",
+    "gap": "None",
+    "first_seen": "2026-08-26",
+    "suppress_until": "2026-09-09"
   },
   "WN::https://www.workingnomads.com/job/go/1783103/": {
     "title": "Appointment Setting Representative @ Sun Coast Sciences",
     "score": 0,
-    "why": "The Appointment Setting Representative role is a sales/lead generation position with no relevance to UI or frontend technologies.",
-    "gap": "No frontend/Angular requirement",
-    "first_seen": "2026-08-11",
-    "suppress_until": "2026-08-25"
+    "why": "Appointment Setting Representative is a sales/administrative role, not a software engineering position.",
+    "gap": "None",
+    "first_seen": "2026-08-26",
+    "suppress_until": "2026-09-09"
   },
   "WN::https://www.workingnomads.com/job/go/1781770/": {
     "title": "Offensive Cybersecurity Engineer - Red Team @ Techno Vista Dynamics",
     "score": 0,
-    "why": "The Offensive Cybersecurity Engineer \u2013 Red Team role is a security engineering position, not a frontend/UI development job.",
-    "gap": "No frontend/Angular requirement",
-    "first_seen": "2026-08-11",
-    "suppress_until": "2026-08-25"
+    "why": "Offensive Cybersecurity Engineer (Red Team) focuses on security, not UI/Frontend development.",
+    "gap": "None",
+    "first_seen": "2026-08-26",
+    "suppress_until": "2026-09-09"
   },
   "WWR::https://weworkremotely.com/remote-jobs/airtable-program-manager-professional-services-west": {
     "title": "Airtable: Program Manager, Professional Services - West",
@@ -2470,5 +2470,29 @@
     "gap": "No explicit Angular/TypeScript requirement.",
     "first_seen": "2026-08-24",
     "suppress_until": "2026-09-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/gusto-inc-staff-software-engineer-time-and-scheduling": {
+    "title": "Gusto, Inc.: Staff Software Engineer, Time and Scheduling",
+    "score": 0,
+    "why": "The role is a Staff Software Engineer for time and scheduling with no explicit Angular or TypeScript requirement, likely backend\u2011focused.",
+    "gap": "None",
+    "first_seen": "2026-08-26",
+    "suppress_until": "2026-09-09"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/amwell-manager-government-compliance-authorization": {
+    "title": "Amwell: Manager, Government Compliance & Authorization",
+    "score": 0,
+    "why": "This is a managerial compliance position, not a software development role.",
+    "gap": "None",
+    "first_seen": "2026-08-26",
+    "suppress_until": "2026-09-09"
+  },
+  "WN::https://www.workingnomads.com/job/go/1814693/": {
+    "title": "Senior QA Engineer @ Lemon.io",
+    "score": 0,
+    "why": "Senior QA Engineer is a quality\u2011assurance role, not a UI development position.",
+    "gap": "None",
+    "first_seen": "2026-08-26",
+    "suppress_until": "2026-09-09"
   }
 }
