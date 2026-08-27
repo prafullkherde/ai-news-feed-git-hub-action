@@ -1858,42 +1858,42 @@
   "WN::https://www.workingnomads.com/job/go/1785901/": {
     "title": "Face Deduplication Collection @ TELUS Digital",
     "score": 0,
-    "why": "The position focuses on face deduplication collection, likely data/ML work, with no frontend responsibilities.",
-    "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
-    "first_seen": "2026-08-12",
-    "suppress_until": "2026-08-26"
+    "why": "Face Deduplication Collection is a computer\u2011vision/ML task, not a frontend UI role.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-27",
+    "suppress_until": "2026-09-10"
   },
   "WN::https://www.workingnomads.com/job/go/1785860/": {
     "title": "Content Reviewer - United States @ TELUS Digital",
     "score": 0,
-    "why": "This is a Content Reviewer role, which is unrelated to UI development or engineering.",
-    "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
-    "first_seen": "2026-08-12",
-    "suppress_until": "2026-08-26"
+    "why": "Content Reviewer is a moderation role with no relevance to UI architecture or Angular/TS.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-27",
+    "suppress_until": "2026-09-10"
   },
   "WN::https://www.workingnomads.com/job/go/1785856/": {
     "title": "Content Reviewer - United States @ TELUS Digital",
     "score": 0,
-    "why": "This is another Content Reviewer position, not a software development role.",
-    "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
-    "first_seen": "2026-08-12",
-    "suppress_until": "2026-08-26"
+    "why": "Same as above \u2013 a Content Reviewer position lacking any frontend development requirements.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-27",
+    "suppress_until": "2026-09-10"
   },
   "WN::https://www.workingnomads.com/job/go/1785844/": {
     "title": "Content Reviewer - United States @ TELUS Digital",
     "score": 0,
-    "why": "Yet another Content Reviewer job, with no relevance to frontend architecture or coding.",
-    "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
-    "first_seen": "2026-08-12",
-    "suppress_until": "2026-08-26"
+    "why": "Another Content Reviewer role, unrelated to UI/Angular development.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-27",
+    "suppress_until": "2026-09-10"
   },
   "WN::https://www.workingnomads.com/job/go/1785833/": {
     "title": "Senior Blockchain Developer @ Lemon.io",
     "score": 0,
-    "why": "The Senior Blockchain Developer role is centered on blockchain/backend technologies, not on Angular or TypeScript UI work.",
-    "gap": "No Angular/TypeScript requirement (non\u2011frontend role)",
-    "first_seen": "2026-08-12",
-    "suppress_until": "2026-08-26"
+    "why": "Senior Blockchain Developer focuses on blockchain/backend technologies, not Angular or frontend UI.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-27",
+    "suppress_until": "2026-09-10"
   },
   "WWR::https://weworkremotely.com/remote-jobs/airtable-senior-solutions-architect-west-coast": {
     "title": "Airtable: Senior Solutions Architect- West Coast",
@@ -2494,5 +2494,29 @@
     "gap": "None",
     "first_seen": "2026-08-26",
     "suppress_until": "2026-09-09"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-data-scientist-for-top-cosmetic-firm": {
+    "title": "Toptal: Data Scientist for Top Cosmetic firm",
+    "score": 0,
+    "why": "The role is a Data Scientist position with no frontend or Angular/TypeScript requirements.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-27",
+    "suppress_until": "2026-09-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lithic-senior-dispute-analyst": {
+    "title": "Lithic: Senior Dispute Analyst",
+    "score": 0,
+    "why": "This is a Senior Dispute Analyst role, unrelated to UI development or the required tech stack.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-27",
+    "suppress_until": "2026-09-10"
+  },
+  "WN::https://www.workingnomads.com/job/go/1818986/": {
+    "title": "Senior Embedded Software Engineer @ Lemon.io",
+    "score": 0,
+    "why": "The position is for a Senior Embedded Software Engineer, which does not involve Angular or frontend work.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-27",
+    "suppress_until": "2026-09-10"
   }
 }
