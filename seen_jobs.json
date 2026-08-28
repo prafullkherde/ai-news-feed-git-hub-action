@@ -2518,5 +2518,37 @@
     "gap": "No Angular/TypeScript focus",
     "first_seen": "2026-08-27",
     "suppress_until": "2026-09-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-tech-lead-manufacturing-data-ai-platforms-global-pharmaceutical-company": {
+    "title": "Toptal: Tech Lead - Manufacturing Data & AI Platforms - Global Pharmaceutical Company",
+    "score": 0,
+    "why": "The Tech Lead role is centered on manufacturing data and AI platforms with no explicit Angular or TypeScript requirement, indicating a backend/data\u2011focused position.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-28",
+    "suppress_until": "2026-09-11"
+  },
+  "WN::https://www.workingnomads.com/job/go/1821524/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "The Data Analyst position requires no experience and is purely analytical, lacking any frontend or Angular/TypeScript responsibilities.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-28",
+    "suppress_until": "2026-09-11"
+  },
+  "WN::https://www.workingnomads.com/job/go/1821504/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "This Data Analyst role is similarly entry\u2011level and analytical, with no mention of frontend development or Angular/TypeScript.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-28",
+    "suppress_until": "2026-09-11"
+  },
+  "WN::https://www.workingnomads.com/job/go/1821502/": {
+    "title": "AI Content Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "The AI Content Analyst position focuses on content analysis and AI, not on UI development or Angular/TypeScript.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-08-28",
+    "suppress_until": "2026-09-11"
   }
 }
