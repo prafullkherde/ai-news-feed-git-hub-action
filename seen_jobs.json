@@ -2550,5 +2550,29 @@
     "gap": "No Angular/TypeScript focus",
     "first_seen": "2026-08-28",
     "suppress_until": "2026-09-11"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/mercury-counsel-product-regulatory-payments-aml": {
+    "title": "Mercury: Counsel, Product & Regulatory - Payments & AML",
+    "score": 0,
+    "why": "The position is a legal counsel role focused on payments and AML, not a UI/Angular development job.",
+    "gap": "No Angular/TypeScript experience required",
+    "first_seen": "2026-08-29",
+    "suppress_until": "2026-09-12"
+  },
+  "WN::https://www.workingnomads.com/job/go/1822420/": {
+    "title": "Contract Attorney - Remote @ Sneed & Mitchell LLP",
+    "score": 0,
+    "why": "This is a contract attorney role, unrelated to frontend engineering or Angular/TypeScript work.",
+    "gap": "No Angular/TypeScript experience required",
+    "first_seen": "2026-08-29",
+    "suppress_until": "2026-09-12"
+  },
+  "WN::https://www.workingnomads.com/job/go/1822473/": {
+    "title": "Legal File Clerk (Philippines) @ Sneed & Mitchell LLP",
+    "score": 0,
+    "why": "The job is a legal file clerk position, which does not involve UI architecture or Angular/TypeScript.",
+    "gap": "No Angular/TypeScript experience required",
+    "first_seen": "2026-08-29",
+    "suppress_until": "2026-09-12"
   }
 }
