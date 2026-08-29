@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Repo Trend Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  body { font-family: -apple-system, Arial, sans-serif; background:#0f1115; color:#e6e6e6; margin:0; padding:24px; }
+  h1 { font-size:20px; margin-bottom:4px; }
+  .sub { color:#9aa0a6; font-size:13px; margin-bottom:20px; }
+  select { background:#1c1f26; color:#e6e6e6; border:1px solid #333; padding:8px 12px; border-radius:6px; font-size:14px; margin-bottom:16px; }
+  .phase-badge { display:inline-block; padding:3px 10px; border-radius:12px; font-size:12px; font-weight:600; margin-left:10px; }
+  .Birth { background:#2d3a55; color:#8fb3ff; }
+  .Discovery { background:#264d33; color:#7ee08a; }
+  .Popular { background:#4d3a1a; color:#ffcf6b; }
+  .Saturation { background:#4d2a1a; color:#ff9d6b; }
+  .Unmaintained, .Steady\/Niche { background:#333; color:#aaa; }
+  #chartWrap { background:#1c1f26; border-radius:10px; padding:16px; }
+  table { width:100%; border-collapse:collapse; margin-top:24px; font-size:13px; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid #2a2d34; }
+  th { color:#9aa0a6; font-weight:600; }
+  a { color:#7ee0ff; }
+</style>
+</head>
+<body>
+  <h1>Repo Lifecycle Dashboard</h1>
+  <div class="sub">Star history + growth phase, updated every tracker run (Mon/Thu). Data: <code>data.json</code></div>
+
+  <select id="repoSelect"></select>
+  <span id="phaseBadge"></span>
+
+  <div id="chartWrap"><canvas id="starChart" height="90"></canvas></div>
+
+  <table id="summaryTable">
+    <thead><tr><th>Repo</th><th>Phase</th><th>Latest Stars</th><th>Top Contributors</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+<script>
+async function main() {
+  const res = await fetch('data.json');
+  const data = await res.json();
+  const repos = Object.keys(data).sort((a, b) => {
+    const la = data[a].history.at(-1)?.stars || 0;
+    const lb = data[b].history.at(-1)?.stars || 0;
+    return lb - la;
+  });
+
+  const select = document.getElementById('repoSelect');
+  repos.forEach(r => {
+    const opt = document.createElement('option');
+    opt.value = r; opt.textContent = r;
+    select.appendChild(opt);
+  });
+
+  const ctx = document.getElementById('starChart');
+  let chart;
+
+  function render(repo) {
+    const info = data[repo];
+    document.getElementById('phaseBadge').innerHTML =
+      `<span class="phase-badge ${info.phase.replace('/', '\\/')}">${info.phase}</span>`;
+    const labels = info.history.map(h => h.date);
+    const stars = info.history.map(h => h.stars);
+    if (chart) chart.destroy();
+    chart = new Chart(ctx, {
+      type: 'line',
+      data: { labels, datasets: [{ label: repo + ' stars', data: stars, borderColor: '#7ee0ff', tension: 0.25 }] },
+      options: { plugins: { legend: { labels: { color: '#e6e6e6' } } },
+                 scales: { x: { ticks: { color: '#9aa0a6' } }, y: { ticks: { color: '#9aa0a6' } } } }
+    });
+  }
+
+  select.addEventListener('change', e => render(e.target.value));
+  if (repos.length) { select.value = repos[0]; render(repos[0]); }
+
+  const tbody = document.querySelector('#summaryTable tbody');
+  repos.forEach(r => {
+    const info = data[r];
+    const latest = info.history.at(-1)?.stars ?? '-';
+    const row = document.createElement('tr');
+    row.innerHTML = `<td><a href="https://github.com/${r}" target="_blank">${r}</a></td>
+      <td><span class="phase-badge ${info.phase.replace('/', '\\/')}">${info.phase}</span></td>
+      <td>${latest}</td><td>${(info.contributors || []).join(', ')}</td>`;
+    tbody.appendChild(row);
+  });
+}
+main();
+</script>
+</body>
+</html>
