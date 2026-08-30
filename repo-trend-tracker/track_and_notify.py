@@ -599,35 +599,52 @@ def contributor_overlap(history):
 # ---------- email ----------
 
 def compose_html(fast_growers, reasons, overlap, dashboard_url, errors):
-    parts = [f"<h2>Repo Trend Digest — {datetime.now().strftime('%d %b %Y')}</h2>"]
+    style = "font-family:-apple-system,Arial,sans-serif;"
+    parts = [f"<div style='{style}'><h2 style='margin-bottom:2px;'>Repo Trend Digest — {datetime.now().strftime('%d %b %Y')}</h2>"]
 
-    if fast_growers:
-        parts.append("<h3>🚀 Fast-growing repos</h3><ul>")
-        for name, info in fast_growers.items():
+    growers_sorted = sorted(fast_growers.items(), key=lambda kv: -kv[1]["velocity"])
+
+    if growers_sorted:
+        parts.append(f"<p style='color:#666;margin-top:0;'>{len(growers_sorted)} repo(s) crossed a growth threshold this run.</p>")
+        parts.append("<h3>🚀 Fast-growing repos</h3><ul style='padding-left:18px;'>")
+        for name, info in growers_sorted:
             reason = reasons.get(name, "")
+            category, _, sentence = reason.partition(" — ")
+            badge = (
+                f"<span style='background:#eef;color:#335;padding:1px 8px;border-radius:10px;"
+                f"font-size:12px;font-weight:600;'>{category.strip()}</span>"
+                if sentence else ""
+            )
             parts.append(
-                f"<li><b><a href='https://github.com/{name}'>{name}</a></b> — "
-                f"{info['velocity']} stars/day, phase: {info['phase']}, {info['stars']} total stars"
-                f"{'<br>' + reason if reason else ''}</li>"
+                f"<li style='margin-bottom:10px;'><b><a href='https://github.com/{name}'>{name}</a></b> "
+                f"— <b>{info['velocity']} ⭐/day</b> · {info['phase']} · {info['stars']} total stars"
+                f"{'<br>' + badge + ' ' + sentence.strip() if sentence else ('<br>' + reason if reason else '')}</li>"
             )
         parts.append("</ul>")
     else:
         parts.append("<p>No new fast-growing repos this run.</p>")
 
     if overlap:
-        parts.append("<h3>🔁 Contributors active across multiple growing repos</h3><ul>")
+        parts.append("<h3>🔁 Contributors active across multiple growing repos</h3><ul style='padding-left:18px;'>")
         for contributor, repos in sorted(overlap.items(), key=lambda kv: -len(kv[1]))[:10]:
             parts.append(f"<li><b>{contributor}</b> — {', '.join(repos)}</li>")
         parts.append("</ul>")
 
-    parts.append(f"<p><a href='{dashboard_url}'>Open the lifecycle dashboard →</a></p>")
+    if dashboard_url and "<your-" not in dashboard_url:
+        parts.append(f"<p><a href='{dashboard_url}'>Open the lifecycle dashboard →</a></p>")
+    else:
+        parts.append(
+            "<p style='color:#888;font-size:13px;'>Dashboard link not shown — set the "
+            "<code>DASHBOARD_URL</code> repo variable to your GitHub Pages URL to enable it.</p>"
+        )
 
     if errors:
-        parts.append("<h3>⚠️ Pipeline issues this run</h3><ul>")
+        parts.append("<h3>⚠️ Pipeline issues this run</h3><ul style='padding-left:18px;'>")
         for e in errors:
             parts.append(f"<li style='color:#b00;'>{e}</li>")
         parts.append("</ul>")
 
+    parts.append("</div>")
     return "".join(parts)
 
 
@@ -652,10 +669,13 @@ def write_dashboard_data(history):
     out = {}
     for full_name, rows in history.items():
         trimmed = rows[-MAX_HISTORY_POINTS:]  # keep data.json light — full history stays in snapshots.csv
+        v = compute_velocities(rows)
         out[full_name] = {
             "phase": classify_phase(rows),
             "history": [{"date": r["date"], "stars": int(r["stars"])} for r in trimmed],
             "contributors": rows[-1]["top_contributors"].split(";") if rows[-1]["top_contributors"] else [],
+            "velocity": round(v[-1], 1) if v else None,   # null -> dashboard shows "—", not a fake 0
+            "snapshots": len(rows),
         }
     os.makedirs(os.path.dirname(DASHBOARD_DATA), exist_ok=True)
     with open(DASHBOARD_DATA, "w") as f:
