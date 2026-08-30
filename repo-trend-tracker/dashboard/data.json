@@ -1,0 +1,687 @@
+{
+  "angular/angular": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 101010
+      }
+    ],
+    "contributors": [
+      "gkalpak",
+      "petebacondarwin",
+      "angular-robot",
+      "devversion",
+      "crisbeto"
+    ]
+  },
+  "spring-projects/spring-boot": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 81377
+      }
+    ],
+    "contributors": [
+      "wilkinsona",
+      "snicoll",
+      "philwebb",
+      "mhalbritter",
+      "mbhave"
+    ]
+  },
+  "vercel/next.js": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 142015
+      }
+    ],
+    "contributors": [
+      "ijjk",
+      "timneutkens",
+      "sokra",
+      "vercel-release-bot",
+      "huozhi"
+    ]
+  },
+  "HKUDS/Vibe-Trading": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 32076
+      }
+    ],
+    "contributors": [
+      "warren618",
+      "santhreal",
+      "shadowinlife",
+      "xkam7ar",
+      "wiliao"
+    ]
+  },
+  "blader/humanizer": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 38845
+      }
+    ],
+    "contributors": [
+      "blader",
+      "mvanhorn",
+      "MackDing",
+      "marcoenricovd-lang",
+      "Kutomore"
+    ]
+  },
+  "herdrdev/herdr": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 33462
+      }
+    ],
+    "contributors": [
+      "ogulcancelik",
+      "kangal-bot",
+      "akbash-bot",
+      "github-actions[bot]",
+      "Pimpmuckl"
+    ]
+  },
+  "block/buzz": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 31462
+      }
+    ],
+    "contributors": [
+      "wesbillman",
+      "wpfleger96",
+      "tlongwell-block",
+      "klopez4212",
+      "renovate[bot]"
+    ]
+  },
+  "google-antigravity/antigravity-sdk-python": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 3227
+      }
+    ],
+    "contributors": [
+      "karmel",
+      "abhipatel12",
+      "allenhutchison",
+      "kibergus",
+      "leehagoodjames"
+    ]
+  },
+  "KKKKhazix/human-writing": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 3279
+      }
+    ],
+    "contributors": [
+      "KKKKhazix"
+    ]
+  },
+  "dataelement/dsh-desktop": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 3240
+      }
+    ],
+    "contributors": [
+      "wisdomqin",
+      "yaojin3616",
+      "ba0gu0",
+      "SuperstructureJH",
+      "AdamPlatin123"
+    ]
+  },
+  "kubernetes/kubernetes": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 125570
+      }
+    ],
+    "contributors": [
+      "k8s-ci-robot",
+      "liggitt",
+      "thockin",
+      "wojtek-t",
+      "brendandburns"
+    ]
+  },
+  "pathwaycom/arc-task-gen": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 8856
+      }
+    ],
+    "contributors": [
+      "ludovicPathway"
+    ]
+  },
+  "plannotator/effective-html": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 2712
+      }
+    ],
+    "contributors": [
+      "backnotprop",
+      "velaswami",
+      "jkklee"
+    ]
+  },
+  "MadsLorentzen/ai-job-search": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 38189
+      }
+    ],
+    "contributors": [
+      "MadsLorentzen",
+      "ayobamiseun",
+      "oscarbol09",
+      "LeoWinston-9596",
+      "erikpr1994"
+    ]
+  },
+  "mreflow/control-center": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 137
+      }
+    ],
+    "contributors": [
+      "mreflow"
+    ]
+  },
+  "abi/screenshot-to-code": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 76130
+      }
+    ],
+    "contributors": [
+      "abi",
+      "claude",
+      "clean99",
+      "sweep-ai-deprecated[bot]",
+      "kachbit"
+    ]
+  },
+  "holaboss-ai/holaOS": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 11043
+      }
+    ],
+    "contributors": [
+      "jeffreyliimerch",
+      "jotyy",
+      "JeliPenguin",
+      "wakqasahmed",
+      "dependabot[bot]"
+    ]
+  },
+  "denoland/deno": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 108342
+      }
+    ],
+    "contributors": [
+      "bartlomieju",
+      "dsherret",
+      "ry",
+      "littledivy",
+      "nayeemrmn"
+    ]
+  },
+  "eternityspring/shuohao-skills": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 2418
+      }
+    ],
+    "contributors": [
+      "eternityspring",
+      "shawncodes9",
+      "Aibrother258",
+      "zqyhimself"
+    ]
+  },
+  "HKUDS/DeepTutor": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 37865
+      }
+    ],
+    "contributors": [
+      "pancacake",
+      "Pinkllow",
+      "github-actions[bot]",
+      "tusharkhatriofficial",
+      "scrrlt"
+    ]
+  },
+  "aquasecurity/trivy": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 37692
+      }
+    ],
+    "contributors": [
+      "knqyf263",
+      "DmitriyLewen",
+      "dependabot[bot]",
+      "nikpivkin",
+      "simar7"
+    ]
+  },
+  "MudCosmetologist/Autocad-Software": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 1197
+      }
+    ],
+    "contributors": [
+      "MudCosmetologist"
+    ]
+  },
+  "omdsh-dev/DSH-better-sidebar": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 3106
+      }
+    ],
+    "contributors": [
+      "Menghuan1918",
+      "HuanLinOTO",
+      "Zzy-min",
+      "yanzhaohui1999",
+      "Hoemr"
+    ]
+  },
+  "multica-ai/multica": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 48250
+      }
+    ],
+    "contributors": [
+      "Bohan-J",
+      "NevilleQingNY",
+      "forrestchang",
+      "ldnvnbl",
+      "multica-eve"
+    ]
+  },
+  "agentscope-ai/QwenPaw": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 34673
+      }
+    ],
+    "contributors": [
+      "rayrayraykk",
+      "zhaozhuang521",
+      "zhijianma",
+      "hongxicheng",
+      "xieyxclack"
+    ]
+  },
+  "Tianyu199509/DeskBox": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 2092
+      }
+    ],
+    "contributors": [
+      "Tianyu199509"
+    ]
+  },
+  "kaifcodec/user-scanner": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 3730
+      }
+    ],
+    "contributors": [
+      "kaifcodec",
+      "brunolm",
+      "VamatoHD",
+      "json-hunter07",
+      "kristoisberg"
+    ]
+  },
+  "deeplethe/utopia": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 676
+      }
+    ],
+    "contributors": [
+      "WaylandYang"
+    ]
+  },
+  "IBM/mcp-context-forge": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 4386
+      }
+    ],
+    "contributors": [
+      "crivetimihai",
+      "madhav165",
+      "kevalmahajan",
+      "rakdutta",
+      "jonpspri"
+    ]
+  },
+  "walkinglabs/learn-harness-engineering": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 14509
+      }
+    ],
+    "contributors": [
+      "sanbuphy",
+      "jpcmf",
+      "jim60105",
+      "luojiyin1987",
+      "ozzgurr"
+    ]
+  },
+  "jhipster/generator-jhipster": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 22449
+      }
+    ],
+    "contributors": [
+      "dependabot[bot]",
+      "mshima",
+      "DanielFran",
+      "github-actions[bot]",
+      "jdubois"
+    ]
+  },
+  "rohitg00/ai-engineering-from-scratch": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 51046
+      }
+    ],
+    "contributors": [
+      "rohitg00",
+      "github-actions[bot]",
+      "abhinav-m22",
+      "thereisnotime",
+      "thejesh23"
+    ]
+  },
+  "agentconnect-md/agentconnect": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 797
+      }
+    ],
+    "contributors": [
+      "zfy0701",
+      "spacedragon",
+      "Poytr1",
+      "frozenluo",
+      "stkevintan"
+    ]
+  },
+  "Zeejay0/gathered-scenes-zine-skill": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 4576
+      }
+    ],
+    "contributors": [
+      "Zeejay0"
+    ]
+  },
+  "ZzzLc0405/photo-abstract-editorial": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 5079
+      }
+    ],
+    "contributors": [
+      "ZzzLc0405"
+    ]
+  },
+  "immich-app/immich": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 112952
+      }
+    ],
+    "contributors": [
+      "alextran1502",
+      "jrasm91",
+      "renovate[bot]",
+      "shenlong-tanwen",
+      "mertalev"
+    ]
+  },
+  "addyosmani/agent-skills": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 90797
+      }
+    ],
+    "contributors": [
+      "addyosmani",
+      "nucliweb",
+      "federicobartoli",
+      "ayobamiseun",
+      "Liyuk"
+    ]
+  },
+  "rocketride-org/rocketride-server": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 7375
+      }
+    ],
+    "contributors": [
+      "Rod-Christensen",
+      "kwit75",
+      "asclearuc",
+      "ryan-t-christensen",
+      "anandray"
+    ]
+  },
+  "volcengine/OpenViking": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 34350
+      }
+    ],
+    "contributors": [
+      "qin-ctx",
+      "zhoujh01",
+      "ZaynJarvis",
+      "r266-tech",
+      "MaojiaSheng"
+    ]
+  },
+  "fabric8io/kubernetes-client": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 3671
+      }
+    ],
+    "contributors": [
+      "manusa",
+      "dependabot[bot]",
+      "fusesource-ci",
+      "iocanel",
+      "rohanKanojia"
+    ]
+  },
+  "conorbronsdon/avoid-ai-writing": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 3796
+      }
+    ],
+    "contributors": [
+      "conorbronsdon",
+      "ClaySecAI",
+      "mbhall88",
+      "wilu222",
+      "claude"
+    ]
+  },
+  "apolloconfig/apollo": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 29807
+      }
+    ],
+    "contributors": [
+      "nobodyiam",
+      "lepdou",
+      "yiming187",
+      "klboke",
+      "Anilople"
+    ]
+  },
+  "cactus-compute/needle": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 9692
+      }
+    ],
+    "contributors": [
+      "HenryNdubuaku",
+      "ncylich",
+      "kar-m",
+      "LeonSGP43",
+      "justinl66"
+    ]
+  },
+  "langchain-ai/langchain": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 145261
+      }
+    ],
+    "contributors": [
+      "baskaryan",
+      "hwchase17",
+      "ccurme",
+      "mdrxy",
+      "eyurtsev"
+    ]
+  },
+  "firecrawl/anydoc": {
+    "phase": "Birth",
+    "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 19239
+      }
+    ],
+    "contributors": [
+      "tomsideguide",
+      "nickscamara",
+      "abimaelmartell",
+      "Andsu-dev",
+      "ericciarla"
+    ]
+  }
+}
