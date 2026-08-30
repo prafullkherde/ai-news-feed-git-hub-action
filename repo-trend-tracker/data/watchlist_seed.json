@@ -1,0 +1,16 @@
+{
+  "always_track": [
+    "vercel/next.js",
+    "angular/angular",
+    "spring-projects/spring-boot"
+  ],
+  "topics_of_interest": [
+    "angular",
+    "typescript",
+    "spring-boot",
+    "kubernetes",
+    "openshift",
+    "llm-agents",
+    "model-context-protocol"
+  ]
+}
