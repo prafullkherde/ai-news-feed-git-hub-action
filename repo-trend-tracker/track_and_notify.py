@@ -237,19 +237,25 @@ def get_repo_stats(full_name):
         return None
 
 
+BOT_SUFFIX = "[bot]"  # GitHub's own convention for bot accounts (dependabot[bot], renovate[bot], ...)
+
+
 def get_top_contributors(full_name, limit=5):
+    """Fetches more than `limit` and filters bots out before truncating, so a repo whose
+    top-5 by raw commit count is 3 bots + 2 humans still returns up to 5 real humans."""
     try:
         resp = requests.get(
             f"{GITHUB_API}/repos/{full_name}/contributors",
             headers=HEADERS,
-            params={"per_page": limit},
+            params={"per_page": min(limit * 4, 30)},
             timeout=15,
         )
         if resp.status_code == 202:
             return []  # GitHub still computing contributor stats for this repo — try next run
         if resp.status_code != 200:
             return []
-        return [c["login"] for c in resp.json() if "login" in c][:limit]
+        logins = [c["login"] for c in resp.json() if "login" in c and not c["login"].endswith(BOT_SUFFIX)]
+        return logins[:limit]
     except requests.RequestException as e:
         _note_error(f"get_top_contributors({full_name}): {e}")
         return []
@@ -571,12 +577,21 @@ def llm_reason(fast_growers, evidence, descriptions):
 
 # ---------- contributor overlap ----------
 
+GROWING_PHASES = {"Discovery", "Early Signal", "Breakout", "Popularizing", "Popular"}
+
+
 def contributor_overlap(history):
+    """Restricted to repos currently in a growing phase — Maintenance/Saturation/
+    Unmaintained/Birth repos (e.g. long-established projects like jhipster or trivy)
+    don't belong in a 'growing repos' contributor-overlap section even if they're
+    still being tracked for their own lifecycle chart."""
     contrib_to_repos = {}
     for full_name, rows in history.items():
+        if classify_phase(rows) not in GROWING_PHASES:
+            continue
         latest = rows[-1]
         for c in latest["top_contributors"].split(";"):
-            if c:
+            if c and not c.endswith(BOT_SUFFIX):  # defensive — also filtered at source in get_top_contributors
                 contrib_to_repos.setdefault(c, set()).add(full_name)
     return {c: sorted(r) for c, r in contrib_to_repos.items() if len(r) >= 2}
 
