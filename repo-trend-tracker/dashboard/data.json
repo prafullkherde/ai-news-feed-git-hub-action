@@ -1,10 +1,14 @@
 {
   "angular/angular": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 101010
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 101011
       }
     ],
     "contributors": [
@@ -16,11 +20,15 @@
     ]
   },
   "spring-projects/spring-boot": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 81377
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 81378
       }
     ],
     "contributors": [
@@ -32,8 +40,12 @@
     ]
   },
   "vercel/next.js": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 142015
+      },
       {
         "date": "2026-08-30",
         "stars": 142015
@@ -48,11 +60,15 @@
     ]
   },
   "HKUDS/Vibe-Trading": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 32076
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 32077
       }
     ],
     "contributors": [
@@ -64,11 +80,15 @@
     ]
   },
   "blader/humanizer": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 38845
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 38849
       }
     ],
     "contributors": [
@@ -80,27 +100,35 @@
     ]
   },
   "herdrdev/herdr": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 33462
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 33469
       }
     ],
     "contributors": [
       "ogulcancelik",
       "kangal-bot",
       "akbash-bot",
-      "github-actions[bot]",
-      "Pimpmuckl"
+      "Pimpmuckl",
+      "dhh"
     ]
   },
   "block/buzz": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 31462
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 31463
       }
     ],
     "contributors": [
@@ -108,12 +136,16 @@
       "wpfleger96",
       "tlongwell-block",
       "klopez4212",
-      "renovate[bot]"
+      "tellaho"
     ]
   },
   "google-antigravity/antigravity-sdk-python": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 3227
+      },
       {
         "date": "2026-08-30",
         "stars": 3227
@@ -128,8 +160,12 @@
     ]
   },
   "KKKKhazix/human-writing": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 3279
+      },
       {
         "date": "2026-08-30",
         "stars": 3279
@@ -145,6 +181,10 @@
       {
         "date": "2026-08-30",
         "stars": 3240
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 3245
       }
     ],
     "contributors": [
@@ -156,11 +196,15 @@
     ]
   },
   "kubernetes/kubernetes": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 125570
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 125571
       }
     ],
     "contributors": [
@@ -172,11 +216,15 @@
     ]
   },
   "pathwaycom/arc-task-gen": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 8856
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 8860
       }
     ],
     "contributors": [
@@ -184,11 +232,15 @@
     ]
   },
   "plannotator/effective-html": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 2712
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 2713
       }
     ],
     "contributors": [
@@ -198,11 +250,15 @@
     ]
   },
   "MadsLorentzen/ai-job-search": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 38189
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 38196
       }
     ],
     "contributors": [
@@ -219,6 +275,10 @@
       {
         "date": "2026-08-30",
         "stars": 137
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 137
       }
     ],
     "contributors": [
@@ -226,27 +286,35 @@
     ]
   },
   "abi/screenshot-to-code": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 76130
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 76139
       }
     ],
     "contributors": [
       "abi",
       "claude",
       "clean99",
-      "sweep-ai-deprecated[bot]",
-      "kachbit"
+      "kachbit",
+      "justindhillon"
     ]
   },
   "holaboss-ai/holaOS": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 11043
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 11044
       }
     ],
     "contributors": [
@@ -254,12 +322,16 @@
       "jotyy",
       "JeliPenguin",
       "wakqasahmed",
-      "dependabot[bot]"
+      "QinXi-ai"
     ]
   },
   "denoland/deno": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 108342
+      },
       {
         "date": "2026-08-30",
         "stars": 108342
@@ -274,11 +346,15 @@
     ]
   },
   "eternityspring/shuohao-skills": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 2418
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 2419
       }
     ],
     "contributors": [
@@ -289,8 +365,12 @@
     ]
   },
   "HKUDS/DeepTutor": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 37865
+      },
       {
         "date": "2026-08-30",
         "stars": 37865
@@ -299,14 +379,18 @@
     "contributors": [
       "pancacake",
       "Pinkllow",
-      "github-actions[bot]",
       "tusharkhatriofficial",
-      "scrrlt"
+      "scrrlt",
+      "wedone"
     ]
   },
   "aquasecurity/trivy": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 37692
+      },
       {
         "date": "2026-08-30",
         "stars": 37692
@@ -315,14 +399,18 @@
     "contributors": [
       "knqyf263",
       "DmitriyLewen",
-      "dependabot[bot]",
       "nikpivkin",
-      "simar7"
+      "simar7",
+      "afdesk"
     ]
   },
   "MudCosmetologist/Autocad-Software": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 1197
+      },
       {
         "date": "2026-08-30",
         "stars": 1197
@@ -333,8 +421,12 @@
     ]
   },
   "omdsh-dev/DSH-better-sidebar": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 3106
+      },
       {
         "date": "2026-08-30",
         "stars": 3106
@@ -349,11 +441,15 @@
     ]
   },
   "multica-ai/multica": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 48250
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 48251
       }
     ],
     "contributors": [
@@ -365,8 +461,12 @@
     ]
   },
   "agentscope-ai/QwenPaw": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 34673
+      },
       {
         "date": "2026-08-30",
         "stars": 34673
@@ -381,11 +481,15 @@
     ]
   },
   "Tianyu199509/DeskBox": {
-    "phase": "Birth",
+    "phase": "Popularizing",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 2092
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 2104
       }
     ],
     "contributors": [
@@ -393,11 +497,15 @@
     ]
   },
   "kaifcodec/user-scanner": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 3730
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 3736
       }
     ],
     "contributors": [
@@ -409,11 +517,15 @@
     ]
   },
   "deeplethe/utopia": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 676
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 677
       }
     ],
     "contributors": [
@@ -421,8 +533,12 @@
     ]
   },
   "IBM/mcp-context-forge": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 4386
+      },
       {
         "date": "2026-08-30",
         "stars": 4386
@@ -437,8 +553,12 @@
     ]
   },
   "walkinglabs/learn-harness-engineering": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 14509
+      },
       {
         "date": "2026-08-30",
         "stars": 14509
@@ -453,43 +573,55 @@
     ]
   },
   "jhipster/generator-jhipster": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 22449
+      },
       {
         "date": "2026-08-30",
         "stars": 22449
       }
     ],
     "contributors": [
-      "dependabot[bot]",
       "mshima",
       "DanielFran",
-      "github-actions[bot]",
-      "jdubois"
+      "jdubois",
+      "deepu105",
+      "pascalgrimaud"
     ]
   },
   "rohitg00/ai-engineering-from-scratch": {
-    "phase": "Birth",
+    "phase": "Popularizing",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 51046
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 51060
       }
     ],
     "contributors": [
       "rohitg00",
-      "github-actions[bot]",
       "abhinav-m22",
       "thereisnotime",
-      "thejesh23"
+      "thejesh23",
+      "ismet"
     ]
   },
   "agentconnect-md/agentconnect": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 797
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 801
       }
     ],
     "contributors": [
@@ -501,11 +633,15 @@
     ]
   },
   "Zeejay0/gathered-scenes-zine-skill": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 4576
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 4577
       }
     ],
     "contributors": [
@@ -513,11 +649,15 @@
     ]
   },
   "ZzzLc0405/photo-abstract-editorial": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 5079
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 5081
       }
     ],
     "contributors": [
@@ -525,27 +665,35 @@
     ]
   },
   "immich-app/immich": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 112952
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 112953
       }
     ],
     "contributors": [
       "alextran1502",
       "jrasm91",
-      "renovate[bot]",
       "shenlong-tanwen",
-      "mertalev"
+      "mertalev",
+      "danieldietzler"
     ]
   },
   "addyosmani/agent-skills": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 90797
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 90803
       }
     ],
     "contributors": [
@@ -557,11 +705,15 @@
     ]
   },
   "rocketride-org/rocketride-server": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 7375
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 7374
       }
     ],
     "contributors": [
@@ -573,24 +725,32 @@
     ]
   },
   "volcengine/OpenViking": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 34350
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 34352
       }
     ],
     "contributors": [
       "qin-ctx",
-      "zhoujh01",
       "ZaynJarvis",
+      "zhoujh01",
       "r266-tech",
       "MaojiaSheng"
     ]
   },
   "fabric8io/kubernetes-client": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 3671
+      },
       {
         "date": "2026-08-30",
         "stars": 3671
@@ -598,18 +758,22 @@
     ],
     "contributors": [
       "manusa",
-      "dependabot[bot]",
       "fusesource-ci",
       "iocanel",
-      "rohanKanojia"
+      "rohanKanojia",
+      "shawkins"
     ]
   },
   "conorbronsdon/avoid-ai-writing": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 3796
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 3799
       }
     ],
     "contributors": [
@@ -621,8 +785,12 @@
     ]
   },
   "apolloconfig/apollo": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 29807
+      },
       {
         "date": "2026-08-30",
         "stars": 29807
@@ -637,11 +805,15 @@
     ]
   },
   "cactus-compute/needle": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 9692
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 9693
       }
     ],
     "contributors": [
@@ -653,8 +825,12 @@
     ]
   },
   "langchain-ai/langchain": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
+      {
+        "date": "2026-08-30",
+        "stars": 145261
+      },
       {
         "date": "2026-08-30",
         "stars": 145261
@@ -669,11 +845,15 @@
     ]
   },
   "firecrawl/anydoc": {
-    "phase": "Birth",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
         "stars": 19239
+      },
+      {
+        "date": "2026-08-30",
+        "stars": 19242
       }
     ],
     "contributors": [
