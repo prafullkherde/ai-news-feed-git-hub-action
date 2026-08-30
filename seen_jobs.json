@@ -1954,10 +1954,10 @@
   "WN::https://www.workingnomads.com/job/go/1792423/": {
     "title": "Senior Data Engineer @ Lemon.io",
     "score": 0,
-    "why": "The position is a **Senior Data Engineer**, which is a backend/data\u2011focused role and does not involve UI/frontend work.",
-    "gap": "Not a UI/frontend role",
-    "first_seen": "2026-08-15",
-    "suppress_until": "2026-08-29"
+    "why": "The role is a Senior Data Engineer position focused on backend/data technologies, which does not match the candidate\u2019s UI/Angular expertise.",
+    "gap": "Data engineering experience (e.g., ETL, big\u2011data platforms, data pipelines)",
+    "first_seen": "2026-08-30",
+    "suppress_until": "2026-09-13"
   },
   "WWR::https://weworkremotely.com/remote-jobs/stripe-gtm-operations-process-architect": {
     "title": "Stripe: GTM Operations Process Architect",
