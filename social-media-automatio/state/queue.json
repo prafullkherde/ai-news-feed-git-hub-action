@@ -22,7 +22,8 @@
         "Each ignored urge removes a plank.",
         "Keep laying planks and the bridge never collapses."
       ],
-      "posted": false
+      "posted": true,
+      "media_id": "ig:18051249599585001"
     },
     {
       "id": "t3",
@@ -47,5 +48,5 @@
       "posted": false
     }
   ],
-  "posted_count": 1
+  "posted_count": 2
 }
