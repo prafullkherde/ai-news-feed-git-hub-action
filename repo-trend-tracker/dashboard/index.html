@@ -37,10 +37,16 @@
   <select id="repoSelect"></select>
   <span id="phaseBadge"></span>
 
-  <div id="chartWrap"><canvas id="starChart" height="90"></canvas></div>
+  <div id="chartWrap">
+    <canvas id="starChart" height="90"></canvas>
+    <p id="chartEmptyState" style="display:none;color:#9aa0a6;font-size:13px;margin:8px 0 0;">
+      Only one snapshot recorded so far for this repo — a trend line needs at least two.
+      It'll appear after the next run (Mon/Thu).
+    </p>
+  </div>
 
   <table id="summaryTable">
-    <thead><tr><th>Repo</th><th>Phase</th><th>Latest Stars</th><th>Top Contributors</th></tr></thead>
+    <thead><tr><th>Repo</th><th>Phase</th><th>Latest Stars</th><th>⭐/day</th><th>Snapshots</th><th>Top Contributors</th></tr></thead>
     <tbody></tbody>
   </table>
 
@@ -97,12 +103,23 @@ async function main() {
   });
 
   const ctx = document.getElementById('starChart');
+  const emptyState = document.getElementById('chartEmptyState');
   let chart;
 
   function render(repo) {
     const info = data[repo];
     document.getElementById('phaseBadge').innerHTML =
       `<span class="phase-badge ${phaseClass(info.phase)}">${info.phase}</span>`;
+
+    if (info.history.length < 2) {
+      if (chart) chart.destroy();
+      ctx.style.display = 'none';
+      emptyState.style.display = 'block';
+      return;
+    }
+    ctx.style.display = 'block';
+    emptyState.style.display = 'none';
+
     const labels = info.history.map(h => h.date);
     const stars = info.history.map(h => h.stars);
     if (chart) chart.destroy();
@@ -124,7 +141,8 @@ async function main() {
     const row = document.createElement('tr');
     row.innerHTML = `<td><a href="https://github.com/${r}" target="_blank">${r}</a></td>
       <td><span class="phase-badge ${phaseClass(info.phase)}">${info.phase}</span></td>
-      <td>${latest}</td><td>${(info.contributors || []).join(', ')}</td>`;
+      <td>${latest}</td><td>${info.velocity ?? '—'}</td><td>${info.snapshots ?? info.history.length}</td>
+      <td>${(info.contributors || []).join(', ') || '—'}</td>`;
     tbody.appendChild(row);
   });
 }
