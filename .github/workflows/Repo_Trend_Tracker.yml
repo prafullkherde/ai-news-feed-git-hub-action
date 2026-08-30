@@ -2,16 +2,18 @@ name: Repo Trend Tracker
 
 on:
   schedule:
-    # Mon & Thu, 03:00 UTC = 08:30 IST
     - cron: "0 3 * * 1,4"
   workflow_dispatch: {}
 
 permissions:
-  contents: write   # needed to commit snapshots.csv / dashboard/data.json back to the repo
+  contents: write
 
 jobs:
   track:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: repo-trend-tracker   # <-- everything below runs from here
     steps:
       - uses: actions/checkout@v4
 
@@ -24,27 +26,29 @@ jobs:
 
       - name: Run tracker
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          # auto-provided, no setup needed
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
           GROQ_API_KEY_FOR_AUTO_EMAIL: ${{ secrets.GROQ_API_KEY_FOR_AUTO_EMAIL }}
-          DASHBOARD_URL: ${{ vars.DASHBOARD_URL }}            # optional repo variable, e.g. GH Pages URL
+          DASHBOARD_URL: ${{ vars.DASHBOARD_URL }}
         run: python track_and_notify.py
 
       - name: Commit updated data
-        if: always()   # persist whatever the script managed to write, even if it exited non-zero
+        if: always()
+        working-directory: .                    # <-- git commands need the repo root, not the subfolder
         run: |
           git config user.name "repo-trend-tracker-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/snapshots.csv data/notified.json data/health.json dashboard/data.json
+          git add repo-trend-tracker/data/snapshots.csv repo-trend-tracker/data/notified.json repo-trend-tracker/data/health.json repo-trend-tracker/dashboard/data.json
           git diff --cached --quiet || git commit -m "chore: update trend snapshot [skip ci]"
           git push
 
       - name: Notify on hard failure
-        if: failure()   # only fires if the job is still red after the step above (e.g. Resend itself is down)
+        if: failure()
+        working-directory: .
         run: |
           curl -fsS -X POST https://api.resend.com/emails \
             -H "Authorization: Bearer ${{ secrets.RESEND_API_KEY }}" \
             -H "Content-Type: application/json" \
             -d "{\"from\":\"onboarding@resend.dev\",\"to\":[\"${{ secrets.MY_EMAIL }}\"],\"subject\":\"Repo Trend Tracker FAILED\",\"html\":\"<p>The workflow run failed. Check the Actions log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}</p>\"}" \
-            || true   # best-effort — don't let the notifier itself fail the job a second time
+            || true
