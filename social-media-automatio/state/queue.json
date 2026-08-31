@@ -1,54 +1,51 @@
 {
-  "date": "2026-08-30",
+  "date": "2026-08-31",
   "thoughts": [
     {
       "id": "t1",
       "slides": [
-        "Your muscles don't grow while you lift.",
-        "They rebuild during the quiet hours.",
-        "Sleep is the true weight room for fibers.",
-        "Skipping rest is like lifting with a broken hinge.",
-        "Prioritize recovery and the gains will lift you."
+        "Your morning feels like a low\u2011battery phone.",
+        "Every 30\u2011minute walk adds a charge to the cellular battery.",
+        "Movement triggers mitochondria to produce ATP faster.",
+        "Even light steps raise heart\u2011rate variability, improving recovery.",
+        "Start with a 10\u2011minute stroll; the rest of the day will run on higher voltage."
       ],
       "posted": true,
-      "media_id": "ig:18033500792838968"
+      "media_id": "ig:17940859350350832"
     },
     {
       "id": "t2",
       "slides": [
-        "Discipline is the bridge between intent and outcome.",
-        "Intent is a spark; outcome is the fire.",
-        "The bridge is built one small decision at a time.",
-        "Each ignored urge removes a plank.",
-        "Keep laying planks and the bridge never collapses."
+        "A calendar is a map; your actions are the terrain.",
+        "When you plot tasks by impact, you see the elevation.",
+        "High\u2011impact items create a steeper slope toward goals.",
+        "Low\u2011impact chores become flat ground\u2014easy to bypass.",
+        "Schedule by impact, not by convenience, and watch progress climb."
       ],
-      "posted": true,
-      "media_id": "ig:18051249599585001"
+      "posted": false
     },
     {
       "id": "t3",
       "slides": [
-        "Morning fatigue is a signal, not a flaw.",
-        "Your body is low on glycogen after sleep.",
-        "A quick protein\u2011carb combo resets the engine.",
-        "Stabilized blood sugar sustains focus for hours.",
-        "Fuel right at rise and the day runs smoother."
+        "Longevity isn\u2019t about avoiding work; it\u2019s about training the joints.",
+        "Controlled eccentric loading strengthens tendons more than pure lifts.",
+        "Eccentric stress signals fibroblasts to thicken collagen fibers.",
+        "Stronger tendons reduce joint wear and keep you moving longer.",
+        "Add a 3\u2011minute slow\u2011lower set each workout; your joints will thank you."
       ],
-      "posted": true,
-      "media_id": "ig:18442933096127656"
+      "posted": false
     },
     {
       "id": "t4",
       "slides": [
-        "Momentum loves a clear direction.",
-        "Direction is a line you\u2019ve already drawn.",
-        "If the line shifts, momentum stalls.",
-        "Align daily actions with that line.",
-        "Stay aligned, and the forward push becomes effortless."
+        "Momentum is a friction\u2011reducing groove you carve.",
+        "A habit loop is cue \u2192 routine \u2192 reward; repeat it and the groove deepens.",
+        "Each repetition lowers the activation energy needed to start.",
+        "When the groove is deep, even a tired brain slides into action.",
+        "Identify one tiny cue today; let the groove do the heavy lifting tomorrow."
       ],
-      "posted": true,
-      "media_id": "ig:18115269818467253"
+      "posted": false
     }
   ],
-  "posted_count": 4
+  "posted_count": 1
 }
