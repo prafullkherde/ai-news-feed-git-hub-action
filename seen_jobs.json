@@ -666,10 +666,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/sticker-mule-software-engineer-3": {
     "title": "Sticker Mule: Software engineer",
     "score": 0,
-    "why": "",
-    "gap": "",
-    "first_seen": "2026-07-31",
-    "suppress_until": "2026-08-14"
+    "why": "The Sticker Mule software engineer posting is generic and does not mention Angular or TypeScript, so it fails the mandatory technology criterion.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-08-31",
+    "suppress_until": "2026-09-14"
   },
   "WWR::https://weworkremotely.com/remote-jobs/aguru-uk-ltd-senior-full-stack-engineer": {
     "title": "Aguru UK Ltd: Senior Full Stack Engineer",
@@ -2574,5 +2574,21 @@
     "gap": "No Angular/TypeScript experience required",
     "first_seen": "2026-08-29",
     "suppress_until": "2026-09-12"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-python-backend-development-talent-with-rag-and-agentic-ai-experience": {
+    "title": "Toptal: Python Backend Development Talent with RAG and Agentic AI Experience",
+    "score": 0,
+    "why": "The role is a pure Python backend position focused on RAG and Agentic AI, with no Angular or TypeScript component, which violates the hard eligibility rule.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-08-31",
+    "suppress_until": "2026-09-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-senior-software-engineer-for-ai-powered-banking-platform": {
+    "title": "Toptal: Senior Software Engineer for AI-Powered Banking Platform",
+    "score": 0,
+    "why": "Although senior, the AI\u2011powered banking platform role does not explicitly require Angular or TypeScript and is likely backend\u2011centric, triggering the exclusion rule.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-08-31",
+    "suppress_until": "2026-09-14"
   }
 }
