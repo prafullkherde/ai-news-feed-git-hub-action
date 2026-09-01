@@ -2590,5 +2590,21 @@
     "gap": "No Angular/TypeScript requirement",
     "first_seen": "2026-08-31",
     "suppress_until": "2026-09-14"
+  },
+  "WN::https://www.workingnomads.com/job/go/1826864/": {
+    "title": "Agentic Python Engineer @ Evaboot",
+    "score": 0,
+    "why": "The role is a Python/backend engineering position with no mention of Angular or TypeScript.",
+    "gap": "Lack of Angular/TypeScript requirement",
+    "first_seen": "2026-09-01",
+    "suppress_until": "2026-09-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1826325/": {
+    "title": "Senior Solutions Engineer @ Lemon.io",
+    "score": 0,
+    "why": "The position is a Senior Solutions Engineer role, which is not a frontend Angular/TypeScript job and aligns more with sales/solutions engineering.",
+    "gap": "No explicit Angular/TypeScript focus",
+    "first_seen": "2026-09-01",
+    "suppress_until": "2026-09-15"
   }
 }
