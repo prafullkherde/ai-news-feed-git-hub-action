@@ -2010,10 +2010,10 @@
   "WN::https://www.workingnomads.com/job/go/1797731/": {
     "title": "Senior AI Engineer @ Lemon.io",
     "score": 0,
-    "why": "The position is a Senior AI Engineer role centered on machine\u2011learning/backend work, not a frontend/Angular or TypeScript position.",
-    "gap": "Lack of AI/ML and backend expertise (None of the required skills align with the candidate\u2019s UI/Angular focus)",
-    "first_seen": "2026-08-18",
-    "suppress_until": "2026-09-01"
+    "why": "The Senior AI Engineer role centers on AI/ML work and lacks any frontend Angular or TypeScript responsibilities, making the candidate ineligible.",
+    "gap": "No frontend (Angular/TS) responsibilities",
+    "first_seen": "2026-09-02",
+    "suppress_until": "2026-09-16"
   },
   "WN::https://www.workingnomads.com/job/go/1800514/": {
     "title": "Senior React Native Developer @ Lemon.io",
@@ -2606,5 +2606,13 @@
     "gap": "No explicit Angular/TypeScript focus",
     "first_seen": "2026-09-01",
     "suppress_until": "2026-09-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-python-9": {
+    "title": "Proxify AB: Senior Backend Developer (Python)",
+    "score": 0,
+    "why": "The role is a pure backend Python position with no Angular or TypeScript requirements, which disqualifies the candidate under the scoring rules.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-09-02",
+    "suppress_until": "2026-09-16"
   }
 }
