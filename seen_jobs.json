@@ -2017,27 +2017,27 @@
   },
   "WN::https://www.workingnomads.com/job/go/1800514/": {
     "title": "Senior React Native Developer @ Lemon.io",
-    "score": 55,
-    "why": "The role requires senior React\u202fNative expertise, which is outside the candidate\u2019s Angular/TypeScript focus, capping the score at the React\u2011only limit.",
-    "gap": "React\u202f/\u202fReact\u202fNative experience",
-    "first_seen": "2026-08-19",
-    "suppress_until": "2026-09-02"
+    "score": 60,
+    "why": "The position requires senior React\u202fNative expertise, a stack different from the candidate\u2019s Angular/TypeScript specialization, so the score is capped at 60.",
+    "gap": "Lack of React\u202fNative experience",
+    "first_seen": "2026-09-03",
+    "suppress_until": "2026-09-17"
   },
   "WN::https://www.workingnomads.com/job/go/1800264/": {
     "title": "Senior Vue Developer @ Lemon.io",
-    "score": 55,
-    "why": "The position calls for senior Vue development, a stack not covered by the candidate\u2019s Angular/TypeScript background, so the score is limited to the Vue\u2011only cap.",
-    "gap": "Vue experience",
-    "first_seen": "2026-08-19",
-    "suppress_until": "2026-09-02"
+    "score": 60,
+    "why": "The role is for a senior Vue developer; since the candidate\u2019s primary expertise is Angular/TypeScript, the score is limited to 60 per the rules.",
+    "gap": "Lack of Vue experience",
+    "first_seen": "2026-09-03",
+    "suppress_until": "2026-09-17"
   },
   "WN::https://www.workingnomads.com/job/go/1799726/": {
     "title": "Looking For Online ESL Teachers - Remote- Joining Rewards of up to USD $100 @ Polly English",
     "score": 0,
-    "why": "The listing is for an online ESL teaching role, not a frontend or UI engineering position, thus it is excluded by the hard rules.",
-    "gap": "Not a UI/Frontend role",
-    "first_seen": "2026-08-19",
-    "suppress_until": "2026-09-02"
+    "why": "This listing is for online ESL teaching, not a software development or UI engineering role, thus it is excluded.",
+    "gap": "Not a development position",
+    "first_seen": "2026-09-03",
+    "suppress_until": "2026-09-17"
   },
   "WN::https://www.workingnomads.com/job/go/1802649/": {
     "title": "Senior Golang Developer @ Lemon.io",
@@ -2614,5 +2614,13 @@
     "gap": "No Angular/TypeScript focus",
     "first_seen": "2026-09-02",
     "suppress_until": "2026-09-16"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-ruby-on-rails-developer-ai-augmented-engineering": {
+    "title": "Proxify AB: Senior Ruby on Rails Developer (AI-Augmented Engineering)",
+    "score": 0,
+    "why": "The role is a senior Ruby on Rails backend position with no frontend requirements, which the candidate does not meet.",
+    "gap": "Backend\u2011only focus",
+    "first_seen": "2026-09-03",
+    "suppress_until": "2026-09-17"
   }
 }
