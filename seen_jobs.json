@@ -2042,18 +2042,18 @@
   "WN::https://www.workingnomads.com/job/go/1802649/": {
     "title": "Senior Golang Developer @ Lemon.io",
     "score": 0,
-    "why": "The role is a Senior Golang Developer focused on backend development with no Angular or TypeScript requirements.",
-    "gap": "No frontend/Angular/TypeScript focus",
-    "first_seen": "2026-08-20",
-    "suppress_until": "2026-09-03"
+    "why": "Senior Golang Developer is a backend\u2011only position with no Angular/TypeScript or frontend responsibilities.",
+    "gap": "No frontend/UI focus",
+    "first_seen": "2026-09-04",
+    "suppress_until": "2026-09-18"
   },
   "WN::https://www.workingnomads.com/job/go/1801137/": {
     "title": "Account Manager \u2013 Client Services @ Integrated Hire",
     "score": 0,
-    "why": "The position is an Account Manager \u2013 Client Services, a non\u2011technical sales/relationship role unrelated to UI architecture.",
-    "gap": "Not a technical UI role",
-    "first_seen": "2026-08-20",
-    "suppress_until": "2026-09-03"
+    "why": "Account Manager \u2013 Client Services is a non\u2011technical, client\u2011facing role, not a software development position.",
+    "gap": "Not a development role",
+    "first_seen": "2026-09-04",
+    "suppress_until": "2026-09-18"
   },
   "WWR::https://weworkremotely.com/remote-jobs/twilio-machine-learning-engineer": {
     "title": "Twilio: Machine Learning Engineer",
@@ -2622,5 +2622,69 @@
     "gap": "Backend\u2011only focus",
     "first_seen": "2026-09-03",
     "suppress_until": "2026-09-17"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/collaboration-ai-senior-software-ai-engineer": {
+    "title": "Collaboration.Ai: Senior Software AI Engineer",
+    "score": 0,
+    "why": "The role is a Senior Software AI Engineer focused on AI/backend work, with no frontend or Angular/TypeScript requirements.",
+    "gap": "Lack of UI/Angular focus",
+    "first_seen": "2026-09-04",
+    "suppress_until": "2026-09-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/collaboration-ai-senior-software-engineer": {
+    "title": "Collaboration.Ai: Senior Software Engineer",
+    "score": 0,
+    "why": "The Senior Software Engineer position is generic and likely backend\u2011centric; it does not explicitly require Angular or frontend expertise.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-09-04",
+    "suppress_until": "2026-09-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/vercel-member-of-the-technical-staff-internal-agent": {
+    "title": "Vercel: Member of the Technical Staff, Internal Agent",
+    "score": 0,
+    "why": "Vercel\u2019s Internal Agent role is an internal tooling position that does not specify Angular/TypeScript or a frontend focus.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-09-04",
+    "suppress_until": "2026-09-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/vercel-grc-analyst": {
+    "title": "Vercel: GRC Analyst",
+    "score": 0,
+    "why": "GRC Analyst is a governance, risk, and compliance role, not a software development position.",
+    "gap": "Not a development role",
+    "first_seen": "2026-09-04",
+    "suppress_until": "2026-09-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/hightouch-application-security-lead": {
+    "title": "Hightouch: Application Security Lead",
+    "score": 0,
+    "why": "Application Security Lead is a security\u2011focused position, not a UI/Angular development role.",
+    "gap": "Not a UI development role",
+    "first_seen": "2026-09-04",
+    "suppress_until": "2026-09-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/okx-affiliate-bd-manager-taiwan": {
+    "title": "OKX: Affiliate BD Manager (Taiwan)",
+    "score": 0,
+    "why": "Affiliate BD Manager is a business\u2011development role, unrelated to software engineering.",
+    "gap": "Not a technical development role",
+    "first_seen": "2026-09-04",
+    "suppress_until": "2026-09-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/zoominfo-technologies-llc-principal-business-intelligence-analyst": {
+    "title": "ZoomInfo Technologies LLC: Principal Business Intelligence Analyst",
+    "score": 0,
+    "why": "Principal Business Intelligence Analyst is a data\u2011analysis role with no frontend or Angular requirements.",
+    "gap": "No UI/Angular focus",
+    "first_seen": "2026-09-04",
+    "suppress_until": "2026-09-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-fullstack-developer-react-js-node-js-3": {
+    "title": "Proxify AB: Senior Fullstack Developer (React.js / Node.js)",
+    "score": 60,
+    "why": "The Senior Fullstack Developer role is React\u2011only, which caps the score at 60 despite the senior level.",
+    "gap": "Lack of React expertise (candidate\u2019s strength is Angular/TypeScript)",
+    "first_seen": "2026-09-04",
+    "suppress_until": "2026-09-18"
   }
 }
