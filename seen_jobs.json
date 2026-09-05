@@ -2074,26 +2074,26 @@
   "WN::https://www.workingnomads.com/job/go/1804593/": {
     "title": "Quality Assurance Rater - French (FR) @ TELUS Digital",
     "score": 0,
-    "why": "This is a Quality Assurance Rater role focused on testing, not on UI/Frontend architecture or development.",
-    "gap": "Not a UI/Frontend role",
-    "first_seen": "2026-08-21",
-    "suppress_until": "2026-09-04"
+    "why": "Quality Assurance Rater is a QA position, excluded by the scoring rules.",
+    "gap": "QA role",
+    "first_seen": "2026-09-05",
+    "suppress_until": "2026-09-19"
   },
   "WN::https://www.workingnomads.com/job/go/1804594/": {
     "title": "Quality Assurance Rater - Spanish (ES) @ TELUS Digital",
     "score": 0,
-    "why": "This is a Quality Assurance Rater role focused on testing, not on UI/Frontend architecture or development.",
-    "gap": "Not a UI/Frontend role",
-    "first_seen": "2026-08-21",
-    "suppress_until": "2026-09-04"
+    "why": "Quality Assurance Rater is a QA position, excluded by the scoring rules.",
+    "gap": "QA role",
+    "first_seen": "2026-09-05",
+    "suppress_until": "2026-09-19"
   },
   "WN::https://www.workingnomads.com/job/go/1804584/": {
     "title": "Quality Assurance Rater - German (DE) @ TELUS Digital",
     "score": 0,
-    "why": "This is a Quality Assurance Rater role focused on testing, not on UI/Frontend architecture or development.",
-    "gap": "Not a UI/Frontend role",
-    "first_seen": "2026-08-21",
-    "suppress_until": "2026-09-04"
+    "why": "Quality Assurance Rater is a QA position, excluded by the scoring rules.",
+    "gap": "QA role",
+    "first_seen": "2026-09-05",
+    "suppress_until": "2026-09-19"
   },
   "WWR::https://weworkremotely.com/remote-jobs/coinbase-senior-software-engineer-backend-consumer-risk": {
     "title": "Coinbase: Senior Software Engineer, Backend (Consumer - Risk)",
@@ -2686,5 +2686,69 @@
     "gap": "Lack of React expertise (candidate\u2019s strength is Angular/TypeScript)",
     "first_seen": "2026-09-04",
     "suppress_until": "2026-09-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/edfinity-senior-software-engineer-remote": {
+    "title": "Edfinity: Senior Software Engineer, remote",
+    "score": 70,
+    "why": "Senior Software Engineer role is senior\u2011level and remote but does not explicitly require Angular or TypeScript.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-09-05",
+    "suppress_until": "2026-09-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-ai-ml-engineer-for-an-ai-driven-e-commerce-platform": {
+    "title": "Toptal: AI/ML Engineer for an AI-Driven E-Commerce Platform",
+    "score": 0,
+    "why": "Position is an AI/ML Engineer, which is a pure backend/ML role not aligned with UI expertise.",
+    "gap": "Role is AI/ML, not UI",
+    "first_seen": "2026-09-05",
+    "suppress_until": "2026-09-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/samsara-staff-software-engineer": {
+    "title": "Samsara: Staff Software Engineer",
+    "score": 0,
+    "why": "Staff Software Engineer title lacks any UI focus and likely targets backend or full\u2011stack work without Angular/TS emphasis.",
+    "gap": "No UI focus / Angular requirement",
+    "first_seen": "2026-09-05",
+    "suppress_until": "2026-09-19"
+  },
+  "WN::https://www.workingnomads.com/job/go/1835309/": {
+    "title": "AI Content Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "AI Content Analyst is a non\u2011technical analyst role, unrelated to UI development.",
+    "gap": "Not a UI position",
+    "first_seen": "2026-09-05",
+    "suppress_until": "2026-09-19"
+  },
+  "WN::https://www.workingnomads.com/job/go/1835307/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "Data Analyst role is purely analytical and does not involve UI/frontend work.",
+    "gap": "Not a UI position",
+    "first_seen": "2026-09-05",
+    "suppress_until": "2026-09-19"
+  },
+  "WN::https://www.workingnomads.com/job/go/1835291/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "Data Analyst role is analytical, with no UI or frontend responsibilities.",
+    "gap": "Not a UI position",
+    "first_seen": "2026-09-05",
+    "suppress_until": "2026-09-19"
+  },
+  "WN::https://www.workingnomads.com/job/go/1834974/": {
+    "title": "Senior React.js Full-stack Developer @ Lemon.io",
+    "score": 60,
+    "why": "Senior React.js Full\u2011stack Developer requires React only, which caps the score at 60 per the rules.",
+    "gap": "Stack is React\u2011only (no Angular/TS)",
+    "first_seen": "2026-09-05",
+    "suppress_until": "2026-09-19"
+  },
+  "WN::https://www.workingnomads.com/job/go/1833624/": {
+    "title": "Software engineer @ Sticker Mule",
+    "score": 65,
+    "why": "Software Engineer role is senior\u2011level and remote but does not specify Angular/TypeScript, so a moderate score is given.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-09-05",
+    "suppress_until": "2026-09-19"
   }
 }
