@@ -574,6 +574,24 @@
       "Risk": "Low volatility (2.29%) limits upside potential; high leverage increases downside risk if earnings falter."
     },
     "corrections_made": "Adjusted technical interpretation of RSI (oversold can lead to rebound, not decline); corrected valuation assessment of P/B by citing high ROE and growth; removed unrealistic trade size proposal that exceeded portfolio limits; noted that MACD remains negative, weakening bullish momentum.",
+    "verified_next_day": {
+      "actual_price": 45.55,
+      "direction_correct": false,
+      "error_pct": 1.0
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-07",
+    "price_at_prediction": 45.55,
+    "recommendation": "PARSE_ERROR",
+    "confidence": "Low",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {},
+    "corrections_made": "BA response could not be parsed as JSON",
     "verified_next_day": null,
     "verified_next_week": null
   }
