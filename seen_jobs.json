@@ -1186,18 +1186,18 @@
   "RemoteOK::1135285": {
     "title": "Junior Front End Developer @ PULSE (MENA)",
     "score": 0,
-    "why": "The role is explicitly a **Junior** Front End Developer, which is below the senior\u2011level experience threshold.",
-    "gap": "Junior\u2011level expectation",
-    "first_seen": "2026-08-23",
-    "suppress_until": "2026-09-06"
+    "why": "The role is a junior front\u2011end position, which is below the senior\u2011level experience of the candidate.",
+    "gap": "Seniority level mismatch",
+    "first_seen": "2026-09-07",
+    "suppress_until": "2026-09-21"
   },
   "RemoteOK::1135269": {
     "title": "Front End Developer @ Acro Commerce",
     "score": 70,
-    "why": "The position is a generic Front End Developer role with no explicit Angular/TypeScript requirement, so the candidate\u2019s fit is capped at 75.",
-    "gap": "None (no explicit Angular/TS mention)",
-    "first_seen": "2026-08-23",
-    "suppress_until": "2026-09-06"
+    "why": "The position is a generic front\u2011end developer role without explicit Angular/TypeScript requirements, so the candidate\u2019s score is capped below the maximum.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-09-07",
+    "suppress_until": "2026-09-21"
   },
   "WN::https://www.workingnomads.com/job/go/1746261/": {
     "title": "Account Manager, Creative Operations @ Storm Ideas",
@@ -2750,5 +2750,21 @@
     "gap": "No explicit Angular/TypeScript requirement",
     "first_seen": "2026-09-05",
     "suppress_until": "2026-09-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/charisma-tec-junior-devops-engineer-ci-cd-developer-tooling-remote-m-f-d": {
+    "title": "Charisma-tec: Junior DevOps Engineer (CI/CD & Developer Tooling) remote (m/f/d)",
+    "score": 0,
+    "why": "This is a junior DevOps engineering role, unrelated to the candidate\u2019s UI/frontend expertise.",
+    "gap": "Wrong domain (DevOps)",
+    "first_seen": "2026-09-07",
+    "suppress_until": "2026-09-21"
+  },
+  "WN::https://www.workingnomads.com/job/go/1837431/": {
+    "title": "AI Image Evaluation Analyst @ iMerit Technology",
+    "score": 0,
+    "why": "The role focuses on AI image evaluation analysis, not on UI or frontend development.",
+    "gap": "Wrong domain (AI image evaluation)",
+    "first_seen": "2026-09-07",
+    "suppress_until": "2026-09-21"
   }
 }
