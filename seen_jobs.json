@@ -2766,5 +2766,157 @@
     "gap": "Wrong domain (AI image evaluation)",
     "first_seen": "2026-09-07",
     "suppress_until": "2026-09-21"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coderio-devops-senior": {
+    "title": "Coderio: DevOps Senior",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/summa-linguae-technologies-digital-design-diagram-creators": {
+    "title": "Summa Linguae Technologies: Digital Design Diagram Creators",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/myneva-senior-devops-engineer-m-f-d": {
+    "title": "Myneva: Senior DevOps Engineer (m/f/d)",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843257/": {
+    "title": "Senior SAP S/4HANA Developer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843256/": {
+    "title": "Senior Business Central Developer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843255/": {
+    "title": "Senior Data Engineer (Azure) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843253/": {
+    "title": "Senior Platform Engineer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843252/": {
+    "title": "Senior Cloud Engineer (Azure) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843250/": {
+    "title": "Senior Backend Developer (Python) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843248/": {
+    "title": "Senior Backend Developer (Node.js / Nest.js) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843246/": {
+    "title": "Senior Python Developer (Fullstack, BE-Heavy) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843242/": {
+    "title": "Senior QA Automation Engineer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843241/": {
+    "title": "Senior Salesforce Developer @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843239/": {
+    "title": "Senior Adobe Commerce Developer (Magento) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843237/": {
+    "title": "Senior Python Developer (Flask) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843235/": {
+    "title": "Senior Python Developer (FastAPI) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843234/": {
+    "title": "Senior Fullstack Developer (React.js / Node.js) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1843227/": {
+    "title": "Senior DevOps Engineer (Azure) @ Proxify",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1842849/": {
+    "title": "Senior .NET Full-stack Developer @ Lemon.io",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-09-08",
+    "suppress_until": "2026-09-22"
   }
 }
