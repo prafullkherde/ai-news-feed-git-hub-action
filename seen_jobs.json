@@ -2918,5 +2918,45 @@
     "gap": "",
     "first_seen": "2026-09-08",
     "suppress_until": "2026-09-22"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/zeta-global-senior-product-designer-ai": {
+    "title": "Zeta Global: Senior Product Designer, AI",
+    "score": 0,
+    "why": "The role is a Senior Product Designer focused on AI, not a frontend development position.",
+    "gap": "No frontend/Angular/TypeScript requirement.",
+    "first_seen": "2026-09-09",
+    "suppress_until": "2026-09-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/zeta-global-senior-product-designer-agentic-ai-applications": {
+    "title": "Zeta Global: Senior Product Designer, Agentic AI Applications",
+    "score": 0,
+    "why": "This Senior Product Designer role centers on AI applications and design, not on coding with Angular or TypeScript.",
+    "gap": "No frontend/Angular/TypeScript requirement.",
+    "first_seen": "2026-09-09",
+    "suppress_until": "2026-09-23"
+  },
+  "WN::https://www.workingnomads.com/job/go/1845130/": {
+    "title": "Client Success Manager @ Bask Health",
+    "score": 0,
+    "why": "Client Success Manager is a non\u2011technical, customer\u2011facing role, unrelated to UI development.",
+    "gap": "Not a frontend/Angular/TypeScript position.",
+    "first_seen": "2026-09-09",
+    "suppress_until": "2026-09-23"
+  },
+  "WN::https://www.workingnomads.com/job/go/1844412/": {
+    "title": "Video Creator (100% remote) @ Marker Video",
+    "score": 0,
+    "why": "Video Creator is a content\u2011production role with no relevance to software development or Angular.",
+    "gap": "Not a frontend/Angular/TypeScript position.",
+    "first_seen": "2026-09-09",
+    "suppress_until": "2026-09-23"
+  },
+  "WN::https://www.workingnomads.com/job/go/1844110/": {
+    "title": "Senior Java & React Developer @ Lemon.io",
+    "score": 60,
+    "why": "The Senior Java & React Developer role matches the candidate\u2019s Java experience but requires React, and the job does not list Angular/TypeScript, so the score is capped at 60.",
+    "gap": "Lack of React experience (candidate\u2019s expertise is Angular/TypeScript).",
+    "first_seen": "2026-09-09",
+    "suppress_until": "2026-09-23"
   }
 }
