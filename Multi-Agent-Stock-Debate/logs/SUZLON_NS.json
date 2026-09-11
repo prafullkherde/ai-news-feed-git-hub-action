@@ -579,7 +579,11 @@
       "direction_correct": false,
       "error_pct": 1.0
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 44.12,
+      "direction_correct": false,
+      "error_pct": -4.5
+    }
   },
   {
     "date": "2026-09-07",
@@ -626,6 +630,20 @@
   {
     "date": "2026-09-10",
     "price_at_prediction": 44.22,
+    "recommendation": "PARSE_ERROR",
+    "confidence": "Low",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {},
+    "corrections_made": "BA response could not be parsed as JSON",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-11",
+    "price_at_prediction": 44.12,
     "recommendation": "PARSE_ERROR",
     "confidence": "Low",
     "predicted_next_day_price": null,
