@@ -2958,5 +2958,29 @@
     "gap": "Lack of React experience (candidate\u2019s expertise is Angular/TypeScript).",
     "first_seen": "2026-09-09",
     "suppress_until": "2026-09-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/aker-systems-principal-software-engineer-product-team": {
+    "title": "Aker Systems: Principal Software Engineer - Product team",
+    "score": 70,
+    "why": "Senior full\u2011stack experience aligns with a product engineering role, but the posting does not explicitly require Angular or TypeScript, so the score is capped below 80.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-09-11",
+    "suppress_until": "2026-09-25"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/happyco-senior-product-designer-mobile-experience": {
+    "title": "Happyco: Senior Product Designer, Mobile Experience",
+    "score": 0,
+    "why": "The position is a senior product designer role focused on mobile experience, not a software development or UI engineering role.",
+    "gap": "Design\u2011only focus, no engineering responsibilities",
+    "first_seen": "2026-09-11",
+    "suppress_until": "2026-09-25"
+  },
+  "WN::https://www.workingnomads.com/job/go/1850911/": {
+    "title": "Senior Google Ads Account Manager - Remote (Work From Home) @ StubGroup",
+    "score": 0,
+    "why": "This is a senior Google Ads account manager role, which is a non\u2011technical sales/marketing position.",
+    "gap": "Non\u2011technical, account\u2011management focus",
+    "first_seen": "2026-09-11",
+    "suppress_until": "2026-09-25"
   }
 }
