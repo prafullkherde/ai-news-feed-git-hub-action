@@ -2982,5 +2982,37 @@
     "gap": "Non\u2011technical, account\u2011management focus",
     "first_seen": "2026-09-11",
     "suppress_until": "2026-09-25"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stadium-aws-devops-engineer": {
+    "title": "Stadium: AWS DevOps Engineer",
+    "score": 0,
+    "why": "The position is an AWS DevOps Engineer role with no frontend, Angular, or TypeScript responsibilities.",
+    "gap": "No frontend/Angular focus",
+    "first_seen": "2026-09-12",
+    "suppress_until": "2026-09-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/confluent-senior-product-manager-cluster-linking": {
+    "title": "Confluent: Senior Product Manager, Cluster Linking",
+    "score": 0,
+    "why": "This is a Senior Product Manager role focused on cluster linking, unrelated to UI development.",
+    "gap": "No frontend/Angular focus",
+    "first_seen": "2026-09-12",
+    "suppress_until": "2026-09-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/supportyourapp-native-finnish-customer-support-consultant-future-openings-remotely": {
+    "title": "Supportyourapp: (Native Finnish) Customer Support Consultant (Future Openings, remotely)",
+    "score": 0,
+    "why": "The job is a Customer Support Consultant position, not a software development or UI role.",
+    "gap": "No frontend/Angular focus",
+    "first_seen": "2026-09-12",
+    "suppress_until": "2026-09-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/zowie-devops-engineer": {
+    "title": "Zowie: DevOps Engineer",
+    "score": 0,
+    "why": "The listing is for a DevOps Engineer, which does not involve Angular, TypeScript, or UI architecture.",
+    "gap": "No frontend/Angular focus",
+    "first_seen": "2026-09-12",
+    "suppress_until": "2026-09-26"
   }
 }
