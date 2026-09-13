@@ -1858,10 +1858,10 @@
   "WN::https://www.workingnomads.com/job/go/1785901/": {
     "title": "Face Deduplication Collection @ TELUS Digital",
     "score": 0,
-    "why": "Face Deduplication Collection is a computer\u2011vision/ML task, not a frontend UI role.",
-    "gap": "No Angular/TypeScript focus",
-    "first_seen": "2026-08-27",
-    "suppress_until": "2026-09-10"
+    "why": "The role appears to focus on backend/ML data processing for face deduplication with no UI responsibilities, which disqualifies the candidate under the hard rules.",
+    "gap": "Lack of UI responsibilities",
+    "first_seen": "2026-09-13",
+    "suppress_until": "2026-09-27"
   },
   "WN::https://www.workingnomads.com/job/go/1785860/": {
     "title": "Content Reviewer - United States @ TELUS Digital",
@@ -3014,5 +3014,13 @@
     "gap": "No frontend/Angular focus",
     "first_seen": "2026-09-12",
     "suppress_until": "2026-09-26"
+  },
+  "WN::https://www.workingnomads.com/job/go/1857010/": {
+    "title": "Product Lead (Strategy + Full Stack) @ Optimizee Group",
+    "score": 70,
+    "why": "Senior UI expertise aligns but the posting does not explicitly require Angular or TypeScript, so the candidate is capped below the top tier.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-09-13",
+    "suppress_until": "2026-09-27"
   }
 }
