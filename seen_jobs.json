@@ -3022,5 +3022,29 @@
     "gap": "No explicit Angular/TypeScript requirement",
     "first_seen": "2026-09-13",
     "suppress_until": "2026-09-27"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/holafly-finance-business-partner-marketing-product": {
+    "title": "Holafly: Finance Business Partner (Marketing & Product)",
+    "score": 0,
+    "why": "The role is a Finance Business Partner focused on marketing and product finance, not a frontend development position.",
+    "gap": "No frontend/Angular/TypeScript responsibilities (Pure finance role)",
+    "first_seen": "2026-09-14",
+    "suppress_until": "2026-09-28"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/trafilea-product-manager-ai-personalization": {
+    "title": "Trafilea: Product Manager AI Personalization",
+    "score": 0,
+    "why": "This is a Product Manager role for AI personalization, which does not involve hands\u2011on UI development.",
+    "gap": "Lacks required UI/Angular/TypeScript duties (Product management, not engineering)",
+    "first_seen": "2026-09-14",
+    "suppress_until": "2026-09-28"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/wing-assistant-full-stack-developer-1": {
+    "title": "Wing Assistant: Full Stack Developer",
+    "score": 70,
+    "why": "The position is a Full Stack Developer role that likely includes frontend work, but without an explicit Angular/TypeScript requirement the score is capped at 75; the candidate\u2019s seniority and Angular expertise make it a strong fit.",
+    "gap": "No explicit Angular/TypeScript requirement in the job description (generic full\u2011stack)",
+    "first_seen": "2026-09-14",
+    "suppress_until": "2026-09-28"
   }
 }
