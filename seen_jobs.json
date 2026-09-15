@@ -3046,5 +3046,29 @@
     "gap": "No explicit Angular/TypeScript requirement in the job description (generic full\u2011stack)",
     "first_seen": "2026-09-14",
     "suppress_until": "2026-09-28"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/huzzle-full-stack-developer-python-react-ai": {
+    "title": "Huzzle: Full-Stack Developer (Python, React, AI)",
+    "score": 55,
+    "why": "The role calls for React and Python expertise, which are not in the candidate\u2019s primary Angular/TypeScript skill set.",
+    "gap": "Lack of React/Python experience",
+    "first_seen": "2026-09-15",
+    "suppress_until": "2026-09-29"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ci-t-job-26953-senior-full-stack-developer-react-net": {
+    "title": "Ci&t: [Job -26953] Senior Full Stack Developer (React/.Net)",
+    "score": 50,
+    "why": "This senior full\u2011stack position focuses on React/.Net, a stack that does not align with the candidate\u2019s Angular/TypeScript background.",
+    "gap": "Lack of React/.Net experience",
+    "first_seen": "2026-09-15",
+    "suppress_until": "2026-09-29"
+  },
+  "WN::https://www.workingnomads.com/job/go/1860630/": {
+    "title": "QA Testers Wanted (No experience needed) @ Tester Work",
+    "score": 0,
+    "why": "The position is a pure QA testing role, which falls outside the candidate\u2019s senior UI architecture expertise.",
+    "gap": "QA focus (no relevance to UI architecture)",
+    "first_seen": "2026-09-15",
+    "suppress_until": "2026-09-29"
   }
 }
