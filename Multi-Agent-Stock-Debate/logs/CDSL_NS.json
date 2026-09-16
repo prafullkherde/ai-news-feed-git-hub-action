@@ -672,6 +672,31 @@
       "Risk": "Portfolio constraints limit position size; low conviction and high uncertainty in next\u2011day/next\u2011week direction (18%/36% accuracy)."
     },
     "corrections_made": "Corrected trade sizing error (152 shares \u2248 \u20b9200k exceeds 5% cap); adjusted recommendation to HOLD due to weak conviction and low track record accuracy.",
+    "verified_next_day": {
+      "actual_price": 1299.0,
+      "direction_correct": true,
+      "error_pct": -0.46
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-16",
+    "price_at_prediction": 1299.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1295.0,
+    "predicted_next_week_price": 1300.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong profitability and low leverage but high valuation multiples suggest limited upside; earnings growth modest.",
+      "Technical": "Deeply oversold RSI and price below both 20\u2011 and 50\u2011day SMAs indicate potential downside risk; low volatility limits sharp moves.",
+      "Sentiment": "Mixed headlines with a regulatory penalty offsetting earnings optimism; overall neutral to slightly negative sentiment.",
+      "Bull": "Potential rebound to 20\u2011day SMA if earnings beat, but valuation premium may temper gains.",
+      "Bear": "High P/E and P/B, weak upside from earnings growth, regulatory risk; oversold condition may be a false signal.",
+      "Risk": "Past prediction accuracy low; risk of further downside if support fails; stop\u2011loss at 1,286.1 may not protect against rapid moves."
+    },
+    "corrections_made": "Corrected position size calculation (2% of 100,000 is 2,000, not 200,000); clarified that target 1,375.2 is 5.9% above current close, not below; adjusted trade proposal to reflect realistic capital allocation.",
     "verified_next_day": null,
     "verified_next_week": null
   }

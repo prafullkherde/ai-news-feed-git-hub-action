@@ -679,6 +679,31 @@
       "Risk": "Past accuracy low (36% next\u2011day, 45% next\u2011week); portfolio constraint allows position but technicals suggest caution."
     },
     "corrections_made": "none",
+    "verified_next_day": {
+      "actual_price": 326.77,
+      "direction_correct": true,
+      "error_pct": -0.62
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-16",
+    "price_at_prediction": 326.77,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 324.5,
+    "predicted_next_week_price": 332.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing PE high at 32.79 with no other metrics; insufficient data to support growth; risk of overvaluation.",
+      "Technical": "Price below 20\u2011day and 50\u2011day SMAs, MACD below signal, neutral RSI; bearish momentum outweighs recent 3\u2011month gain.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Strong 3\u2011month return and low volatility could support a rebound, but current technicals are weak.",
+      "Bear": "High PE, bearish MACD, price below key averages, low volatility suggests a correction is likely; risk premium low.",
+      "Risk": "Limited upside cushion, potential for rapid reversal; portfolio constraints allow small position but risk\u2011reward not compelling."
+    },
+    "corrections_made": "None",
     "verified_next_day": null,
     "verified_next_week": null
   }

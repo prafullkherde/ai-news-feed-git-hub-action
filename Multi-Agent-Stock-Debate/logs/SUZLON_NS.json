@@ -687,6 +687,31 @@
       "Risk": "The high debt load and regulatory risk increase downside exposure. With a low track record accuracy (50% next\u2011day, 33% next\u2011week) the probability of a profitable move is uncertain."
     },
     "corrections_made": "Overstated bullish potential by ignoring high debt and valuation; corrected recommendation to HOLD and adjusted price forecasts to reflect modest downside risk.",
+    "verified_next_day": {
+      "actual_price": 42.15,
+      "direction_correct": true,
+      "error_pct": -1.29
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-16",
+    "price_at_prediction": 42.15,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 42.0,
+    "predicted_next_week_price": 41.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong revenue growth and high profitability offset by high debt-to-equity; valuation modest but not compelling for a new position.",
+      "Technical": "Price below both 20\u2011 and 50\u2011day SMAs, deep oversold RSI, negative MACD; signals weak momentum and possible further downside.",
+      "Sentiment": "Mixed headlines: order wins are positive but regulatory fine and cautious analyst commentary temper enthusiasm.",
+      "Bull": "Order backlog could support future earnings, but current technicals and high leverage reduce upside probability.",
+      "Bear": "High leverage, overvaluation, and weak technicals raise risk of further decline; regulatory risk adds uncertainty.",
+      "Risk": "Portfolio constraints limit position size; recent track record shows low directional accuracy for this ticker."
+    },
+    "corrections_made": "Removed the short\u2011sell proposal that exceeded portfolio limits; adjusted confidence to Medium based on mixed signals and past accuracy.",
     "verified_next_day": null,
     "verified_next_week": null
   }

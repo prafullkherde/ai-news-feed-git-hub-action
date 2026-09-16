@@ -672,6 +672,31 @@
       "Risk": "Portfolio constraints limit position size; historical next\u2011week accuracy is only 55%, suggesting higher uncertainty for medium\u2011term moves."
     },
     "corrections_made": "Adjusted trade size to comply with 5% portfolio limit; removed unrealistic target levels; corrected next\u2011day/next\u2011week price predictions to reflect modest downward bias based on technical and fundamental assessment.",
+    "verified_next_day": {
+      "actual_price": 2769.7,
+      "direction_correct": false,
+      "error_pct": 1.64
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-16",
+    "price_at_prediction": 2769.7,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 2760.0,
+    "predicted_next_week_price": 2800.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Valuation remains high with trailing P/E 81.8 and forward P/E 54.4; revenue growth 17.8% is solid but margin 8.6% is modest; debt-to-equity 36% is acceptable but dividend yield negligible. Overall fundamentals do not justify a bullish stance.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, MACD negative, RSI near 35 (just above oversold). Technicals suggest continued downside risk rather than a rebound.",
+      "Sentiment": "Mixed headlines with more negative than positive; concerns about slowing demand outweigh profit upticks. Sentiment leans bearish.",
+      "Bull": "Bull case overstates upside potential by assuming a 10% gain to \u20b93,050; ignores high valuation and weak technicals. The 15.7% 3\u2011month return is not a reliable indicator of near\u2011term rally.",
+      "Bear": "Bear case correctly highlights high valuation, technical weakness, and negative headlines, but it overstates the immediacy of a decline by citing a 5% stop\u2011loss below SMA. The stock could still trade within a range.",
+      "Risk": "High valuation, weak technicals, negative sentiment, and modest volatility (2.28%) increase downside risk. Portfolio constraints allow a 5% position but the risk/reward profile is unfavorable."
+    },
+    "corrections_made": "Overstated bullish target and stop\u2011loss in trade proposal; removed unsupported claim of near\u2011term rebound; adjusted recommendation to HOLD with low confidence due to mixed signals and past prediction accuracy.",
     "verified_next_day": null,
     "verified_next_week": null
   }
