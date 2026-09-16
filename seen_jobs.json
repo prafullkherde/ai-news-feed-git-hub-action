@@ -3070,5 +3070,69 @@
     "gap": "QA focus (no relevance to UI architecture)",
     "first_seen": "2026-09-15",
     "suppress_until": "2026-09-29"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/intellectsoft-senior-shopify-full-stack-developer-ir-471": {
+    "title": "Intellectsoft: Senior Shopify Full-stack Developer (IR-471)",
+    "score": 20,
+    "why": "The role is a Shopify full\u2011stack position that does not require Angular or TypeScript, which are the candidate\u2019s core strengths.",
+    "gap": "No Angular/TypeScript focus; primarily Shopify/Liquid and backend work.",
+    "first_seen": "2026-09-16",
+    "suppress_until": "2026-09-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/huzzle-full-stack-developer-python-react-ai-1": {
+    "title": "Huzzle: Full-Stack Developer (Python, React, AI)",
+    "score": 45,
+    "why": "The position centers on React (cap\u202f60) while the candidate\u2019s expertise is Angular/TypeScript, making the fit moderate but not ideal.",
+    "gap": "Lack of proven React experience.",
+    "first_seen": "2026-09-16",
+    "suppress_until": "2026-09-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/performyard-vp-of-product": {
+    "title": "Performyard: VP of Product",
+    "score": 0,
+    "why": "A VP of Product role is a senior product leadership position, not a frontend/Angular technical role.",
+    "gap": "None (role excluded by scoring rules).",
+    "first_seen": "2026-09-16",
+    "suppress_until": "2026-09-30"
+  },
+  "WN::https://www.workingnomads.com/job/go/1864884/": {
+    "title": "Account Manager - Dental - International @ Clipboard Health",
+    "score": 0,
+    "why": "Account Manager is a sales/relationship role, not a frontend development position.",
+    "gap": "None (role excluded by scoring rules).",
+    "first_seen": "2026-09-16",
+    "suppress_until": "2026-09-30"
+  },
+  "WN::https://www.workingnomads.com/job/go/1864883/": {
+    "title": "Account Executive - Dental - International @ Clipboard Health",
+    "score": 0,
+    "why": "Account Executive is a sales role with no relevance to Angular/TypeScript development.",
+    "gap": "None (role excluded by scoring rules).",
+    "first_seen": "2026-09-16",
+    "suppress_until": "2026-09-30"
+  },
+  "WN::https://www.workingnomads.com/job/go/1864882/": {
+    "title": "Lead Generation Specialist - Dental - International @ Clipboard Health",
+    "score": 0,
+    "why": "Lead Generation Specialist is a marketing/sales role, not a technical UI position.",
+    "gap": "None (role excluded by scoring rules).",
+    "first_seen": "2026-09-16",
+    "suppress_until": "2026-09-30"
+  },
+  "WN::https://www.workingnomads.com/job/go/1864402/": {
+    "title": "Content Reviewer - United States @ TELUS Digital",
+    "score": 0,
+    "why": "Content Reviewer is a non\u2011technical role unrelated to frontend architecture.",
+    "gap": "None (role excluded by scoring rules).",
+    "first_seen": "2026-09-16",
+    "suppress_until": "2026-09-30"
+  },
+  "WN::https://www.workingnomads.com/job/go/1864351/": {
+    "title": "Personalized Internet Assessor - Hindi (IN) - Remote @ TELUS Digital",
+    "score": 0,
+    "why": "Personalized Internet Assessor is a data\u2011annotation type role, not a frontend development position.",
+    "gap": "None (role excluded by scoring rules).",
+    "first_seen": "2026-09-16",
+    "suppress_until": "2026-09-30"
   }
 }
