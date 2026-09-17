@@ -3134,5 +3134,77 @@
     "gap": "None (role excluded by scoring rules).",
     "first_seen": "2026-09-16",
     "suppress_until": "2026-09-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/alphorm-formateur-it-independant-cybersecurite-ia-cloud-devops-et-reseaux": {
+    "title": "Alphorm: Formateur IT Ind\u00e9pendant  Cybers\u00e9curit\u00e9, IA, Cloud, DevOps et R\u00e9seaux ...",
+    "score": 0,
+    "why": "The role is a freelance IT trainer focused on cybersecurity, AI, cloud and DevOps, with no UI development responsibilities.",
+    "gap": "Pure training / DevOps focus",
+    "first_seen": "2026-09-17",
+    "suppress_until": "2026-10-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/endava-senior-product-architect": {
+    "title": "Endava: Senior Product Architect",
+    "score": 70,
+    "why": "Senior Product Architect matches the seniority and architectural experience, but the posting does not explicitly require Angular or TypeScript.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-09-17",
+    "suppress_until": "2026-10-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/mechanical-orchard-head-of-product-support": {
+    "title": "Mechanical Orchard: Head of Product Support",
+    "score": 0,
+    "why": "Head of Product Support is a leadership/support role, not a hands\u2011on UI development position.",
+    "gap": "Non\u2011development, support focus",
+    "first_seen": "2026-09-17",
+    "suppress_until": "2026-10-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/infomediji-senior-growth-product-manager": {
+    "title": "Infomediji .: Senior Growth Product Manager",
+    "score": 0,
+    "why": "Senior Growth Product Manager is a product management role without any frontend development responsibilities.",
+    "gap": "No frontend development required",
+    "first_seen": "2026-09-17",
+    "suppress_until": "2026-10-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/sigma-software-data-engineer-interior-design": {
+    "title": "Sigma Software: Data Engineer (Interior Design)",
+    "score": 0,
+    "why": "Data Engineer (Interior Design) is a data\u2011focused position, unrelated to UI/Angular work.",
+    "gap": "Pure backend/data engineering",
+    "first_seen": "2026-09-17",
+    "suppress_until": "2026-10-01"
+  },
+  "WN::https://www.workingnomads.com/job/go/1867649/": {
+    "title": "Senior SEO & Organic Growth Strategist @ Powered by search",
+    "score": 0,
+    "why": "Senior SEO & Organic Growth Strategist is a marketing/SEO role, not a UI development position.",
+    "gap": "Non\u2011technical marketing focus",
+    "first_seen": "2026-09-17",
+    "suppress_until": "2026-10-01"
+  },
+  "WN::https://www.workingnomads.com/job/go/1867456/": {
+    "title": "Senior Performance Marketing Strategist @ Powered by search",
+    "score": 0,
+    "why": "Senior Performance Marketing Strategist is a marketing role with no UI or frontend development duties.",
+    "gap": "Non\u2011technical marketing focus",
+    "first_seen": "2026-09-17",
+    "suppress_until": "2026-10-01"
+  },
+  "WN::https://www.workingnomads.com/job/go/1867454/": {
+    "title": "Personalized Internet Ads Assessor - English - Remote @ TELUS Digital",
+    "score": 0,
+    "why": "Personalized Internet Ads Assessor is an evaluation/quality\u2011control role, not a software development position.",
+    "gap": "No development work",
+    "first_seen": "2026-09-17",
+    "suppress_until": "2026-10-01"
+  },
+  "WN::https://www.workingnomads.com/job/go/1867268/": {
+    "title": "Senior Data Scientist @ Lemon.io",
+    "score": 0,
+    "why": "Senior Data Scientist is a data\u2011science role, unrelated to UI/Angular development.",
+    "gap": "Pure data science focus",
+    "first_seen": "2026-09-17",
+    "suppress_until": "2026-10-01"
   }
 }
