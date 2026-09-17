@@ -1,6 +1,6 @@
 {
   "angular/angular": {
-    "phase": "Early Signal",
+    "phase": "Popular",
     "history": [
       {
         "date": "2026-08-30",
@@ -33,6 +33,10 @@
       {
         "date": "2026-09-14",
         "stars": 101002
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 101007
       }
     ],
     "contributors": [
@@ -42,11 +46,11 @@
       "devversion",
       "crisbeto"
     ],
-    "velocity": 1.8,
-    "snapshots": 8
+    "velocity": 1.7,
+    "snapshots": 9
   },
   "spring-projects/spring-boot": {
-    "phase": "Early Signal",
+    "phase": "Breakout",
     "history": [
       {
         "date": "2026-08-30",
@@ -79,6 +83,10 @@
       {
         "date": "2026-09-14",
         "stars": 81423
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 81454
       }
     ],
     "contributors": [
@@ -88,8 +96,8 @@
       "mhalbritter",
       "mbhave"
     ],
-    "velocity": 2.5,
-    "snapshots": 8
+    "velocity": 10.3,
+    "snapshots": 9
   },
   "vercel/next.js": {
     "phase": "Popularizing",
@@ -125,6 +133,10 @@
       {
         "date": "2026-09-14",
         "stars": 142279
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 142328
       }
     ],
     "contributors": [
@@ -134,8 +146,8 @@
       "vercel-release-bot",
       "huozhi"
     ],
-    "velocity": 15.2,
-    "snapshots": 8
+    "velocity": 16.3,
+    "snapshots": 9
   },
   "HKUDS/Vibe-Trading": {
     "phase": "Popularizing",
@@ -171,17 +183,21 @@
       {
         "date": "2026-09-14",
         "stars": 33400
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 33583
       }
     ],
     "contributors": [
       "warren618",
       "santhreal",
-      "shadowinlife",
       "cgycorey",
+      "shadowinlife",
       "Shizoqua"
     ],
-    "velocity": 60.5,
-    "snapshots": 8
+    "velocity": 61.0,
+    "snapshots": 9
   },
   "blader/humanizer": {
     "phase": "Popularizing",
@@ -217,6 +233,10 @@
       {
         "date": "2026-09-14",
         "stars": 47852
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 49350
       }
     ],
     "contributors": [
@@ -226,8 +246,8 @@
       "MackDing",
       "Ftgn-dpA"
     ],
-    "velocity": 425.5,
-    "snapshots": 8
+    "velocity": 499.3,
+    "snapshots": 9
   },
   "herdrdev/herdr": {
     "phase": "Popularizing",
@@ -263,17 +283,21 @@
       {
         "date": "2026-09-14",
         "stars": 38329
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 39102
       }
     ],
     "contributors": [
       "ogulcancelik",
       "akbash-bot",
-      "kangal-bot",
       "JJLiebig",
-      "caner-akca"
+      "kangal-bot",
+      "minatoaquaMK2"
     ],
-    "velocity": 271.5,
-    "snapshots": 8
+    "velocity": 257.7,
+    "snapshots": 9
   },
   "block/buzz": {
     "phase": "Popularizing",
@@ -309,6 +333,10 @@
       {
         "date": "2026-09-14",
         "stars": 32679
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 33563
       }
     ],
     "contributors": [
@@ -318,11 +346,11 @@
       "klopez4212",
       "tellaho"
     ],
-    "velocity": 46.2,
-    "snapshots": 8
+    "velocity": 294.7,
+    "snapshots": 9
   },
   "google-antigravity/antigravity-sdk-python": {
-    "phase": "Popular",
+    "phase": "Breakout",
     "history": [
       {
         "date": "2026-08-30",
@@ -355,6 +383,10 @@
       {
         "date": "2026-09-14",
         "stars": 3380
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 3422
       }
     ],
     "contributors": [
@@ -362,10 +394,10 @@
       "abhipatel12",
       "allenhutchison",
       "kibergus",
-      "leehagoodjames"
+      "whhone"
     ],
-    "velocity": 9.0,
-    "snapshots": 8
+    "velocity": 14.0,
+    "snapshots": 9
   },
   "KKKKhazix/human-writing": {
     "phase": "Popularizing",
@@ -401,13 +433,17 @@
       {
         "date": "2026-09-14",
         "stars": 3623
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 3678
       }
     ],
     "contributors": [
       "KKKKhazix"
     ],
-    "velocity": 13.0,
-    "snapshots": 8
+    "velocity": 18.3,
+    "snapshots": 9
   },
   "dataelement/dsh-desktop": {
     "phase": "Popularizing",
@@ -443,6 +479,10 @@
       {
         "date": "2026-09-14",
         "stars": 6167
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 7093
       }
     ],
     "contributors": [
@@ -452,11 +492,11 @@
       "Fairy-happy",
       "HuangLeijiana"
     ],
-    "velocity": 339.5,
-    "snapshots": 8
+    "velocity": 308.7,
+    "snapshots": 9
   },
   "kubernetes/kubernetes": {
-    "phase": "Breakout",
+    "phase": "Popularizing",
     "history": [
       {
         "date": "2026-08-30",
@@ -489,6 +529,10 @@
       {
         "date": "2026-09-14",
         "stars": 127692
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 127850
       }
     ],
     "contributors": [
@@ -498,8 +542,8 @@
       "wojtek-t",
       "brendandburns"
     ],
-    "velocity": 204.0,
-    "snapshots": 8
+    "velocity": 52.7,
+    "snapshots": 9
   },
   "pathwaycom/arc-task-gen": {
     "phase": "Maintenance",
@@ -535,13 +579,17 @@
       {
         "date": "2026-09-14",
         "stars": 11218
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 11196
       }
     ],
     "contributors": [
       "ludovicPathway"
     ],
-    "velocity": -5.2,
-    "snapshots": 8
+    "velocity": -7.3,
+    "snapshots": 9
   },
   "plannotator/effective-html": {
     "phase": "Popularizing",
@@ -577,15 +625,21 @@
       {
         "date": "2026-09-14",
         "stars": 3146
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 3202
       }
     ],
     "contributors": [
       "backnotprop",
       "velaswami",
-      "jkklee"
+      "ll88762543-dotcom",
+      "jkklee",
+      "yotamleo"
     ],
-    "velocity": 18.5,
-    "snapshots": 8
+    "velocity": 18.7,
+    "snapshots": 9
   },
   "MadsLorentzen/ai-job-search": {
     "phase": "Popularizing",
@@ -621,20 +675,24 @@
       {
         "date": "2026-09-14",
         "stars": 42484
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 43158
       }
     ],
     "contributors": [
       "MadsLorentzen",
       "ayobamiseun",
       "oscarbol09",
-      "LeoWinston-9596",
-      "erikpr1994"
+      "jakob1379",
+      "LeoWinston-9596"
     ],
-    "velocity": 212.0,
-    "snapshots": 8
+    "velocity": 224.7,
+    "snapshots": 9
   },
   "mreflow/control-center": {
-    "phase": "Birth",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
@@ -667,13 +725,17 @@
       {
         "date": "2026-09-14",
         "stars": 218
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 219
       }
     ],
     "contributors": [
       "mreflow"
     ],
-    "velocity": 1.8,
-    "snapshots": 8
+    "velocity": 0.3,
+    "snapshots": 9
   },
   "abi/screenshot-to-code": {
     "phase": "Popularizing",
@@ -709,6 +771,10 @@
       {
         "date": "2026-09-14",
         "stars": 78763
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 79102
       }
     ],
     "contributors": [
@@ -718,11 +784,11 @@
       "kachbit",
       "justindhillon"
     ],
-    "velocity": 83.0,
-    "snapshots": 8
+    "velocity": 113.0,
+    "snapshots": 9
   },
   "holaboss-ai/holaOS": {
-    "phase": "Breakout",
+    "phase": "Popularizing",
     "history": [
       {
         "date": "2026-08-30",
@@ -755,6 +821,10 @@
       {
         "date": "2026-09-14",
         "stars": 11255
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 11310
       }
     ],
     "contributors": [
@@ -764,11 +834,11 @@
       "wakqasahmed",
       "QinXi-ai"
     ],
-    "velocity": 17.0,
-    "snapshots": 8
+    "velocity": 18.3,
+    "snapshots": 9
   },
   "denoland/deno": {
-    "phase": "Early Signal",
+    "phase": "Breakout",
     "history": [
       {
         "date": "2026-08-30",
@@ -801,6 +871,10 @@
       {
         "date": "2026-09-14",
         "stars": 108424
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 108455
       }
     ],
     "contributors": [
@@ -810,8 +884,8 @@
       "littledivy",
       "nayeemrmn"
     ],
-    "velocity": 7.2,
-    "snapshots": 8
+    "velocity": 10.3,
+    "snapshots": 9
   },
   "eternityspring/shuohao-skills": {
     "phase": "Popularizing",
@@ -847,6 +921,10 @@
       {
         "date": "2026-09-14",
         "stars": 3327
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 3504
       }
     ],
     "contributors": [
@@ -855,8 +933,8 @@
       "zqyhimself",
       "chudongvip"
     ],
-    "velocity": 39.5,
-    "snapshots": 8
+    "velocity": 59.0,
+    "snapshots": 9
   },
   "HKUDS/DeepTutor": {
     "phase": "Popularizing",
@@ -892,6 +970,10 @@
       {
         "date": "2026-09-14",
         "stars": 39553
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 39847
       }
     ],
     "contributors": [
@@ -901,8 +983,8 @@
       "ZQR1101",
       "tusharkhatriofficial"
     ],
-    "velocity": 98.2,
-    "snapshots": 8
+    "velocity": 98.0,
+    "snapshots": 9
   },
   "aquasecurity/trivy": {
     "phase": "Popularizing",
@@ -938,6 +1020,10 @@
       {
         "date": "2026-09-14",
         "stars": 37900
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 37954
       }
     ],
     "contributors": [
@@ -947,8 +1033,8 @@
       "simar7",
       "afdesk"
     ],
-    "velocity": 12.0,
-    "snapshots": 8
+    "velocity": 18.0,
+    "snapshots": 9
   },
   "MudCosmetologist/Autocad-Software": {
     "phase": "Maintenance",
@@ -1018,6 +1104,10 @@
       {
         "date": "2026-09-14",
         "stars": 3580
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 3633
       }
     ],
     "contributors": [
@@ -1027,8 +1117,8 @@
       "Zzy-min",
       "wang-kaopu"
     ],
-    "velocity": 25.5,
-    "snapshots": 8
+    "velocity": 17.7,
+    "snapshots": 9
   },
   "multica-ai/multica": {
     "phase": "Popularizing",
@@ -1064,6 +1154,10 @@
       {
         "date": "2026-09-14",
         "stars": 49769
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 50212
       }
     ],
     "contributors": [
@@ -1073,11 +1167,11 @@
       "ldnvnbl",
       "multica-eve"
     ],
-    "velocity": 78.2,
-    "snapshots": 8
+    "velocity": 147.7,
+    "snapshots": 9
   },
   "agentscope-ai/QwenPaw": {
-    "phase": "Breakout",
+    "phase": "Popularizing",
     "history": [
       {
         "date": "2026-08-30",
@@ -1110,6 +1204,10 @@
       {
         "date": "2026-09-14",
         "stars": 34916
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 35045
       }
     ],
     "contributors": [
@@ -1119,8 +1217,8 @@
       "hongxicheng",
       "xieyxclack"
     ],
-    "velocity": 46.8,
-    "snapshots": 8
+    "velocity": 43.0,
+    "snapshots": 9
   },
   "Tianyu199509/DeskBox": {
     "phase": "Popularizing",
@@ -1156,16 +1254,20 @@
       {
         "date": "2026-09-14",
         "stars": 4383
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 4668
       }
     ],
     "contributors": [
       "Tianyu199509"
     ],
-    "velocity": 133.0,
-    "snapshots": 8
+    "velocity": 95.0,
+    "snapshots": 9
   },
   "kaifcodec/user-scanner": {
-    "phase": "Popular",
+    "phase": "Breakout",
     "history": [
       {
         "date": "2026-08-30",
@@ -1198,6 +1300,10 @@
       {
         "date": "2026-09-14",
         "stars": 4778
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 4813
       }
     ],
     "contributors": [
@@ -1207,8 +1313,8 @@
       "VamatoHD",
       "json-hunter07"
     ],
-    "velocity": 8.8,
-    "snapshots": 8
+    "velocity": 11.7,
+    "snapshots": 9
   },
   "deeplethe/utopia": {
     "phase": "Popularizing",
@@ -1244,6 +1350,10 @@
       {
         "date": "2026-09-14",
         "stars": 7367
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 7959
       }
     ],
     "contributors": [
@@ -1251,13 +1361,13 @@
       "rollroyces",
       "Floating-Y",
       "ousamabenyounes",
-      "lml2468"
+      "mayakid"
     ],
-    "velocity": 207.2,
-    "snapshots": 8
+    "velocity": 197.3,
+    "snapshots": 9
   },
   "IBM/mcp-context-forge": {
-    "phase": "Popular",
+    "phase": "Early Signal",
     "history": [
       {
         "date": "2026-08-30",
@@ -1290,6 +1400,10 @@
       {
         "date": "2026-09-14",
         "stars": 4467
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 4483
       }
     ],
     "contributors": [
@@ -1299,8 +1413,8 @@
       "rakdutta",
       "jonpspri"
     ],
-    "velocity": 4.2,
-    "snapshots": 8
+    "velocity": 5.3,
+    "snapshots": 9
   },
   "walkinglabs/learn-harness-engineering": {
     "phase": "Popularizing",
@@ -1336,6 +1450,10 @@
       {
         "date": "2026-09-14",
         "stars": 15196
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 15309
       }
     ],
     "contributors": [
@@ -1345,11 +1463,11 @@
       "luojiyin1987",
       "ozzgurr"
     ],
-    "velocity": 40.2,
-    "snapshots": 8
+    "velocity": 37.7,
+    "snapshots": 9
   },
   "jhipster/generator-jhipster": {
-    "phase": "Early Signal",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
@@ -1382,6 +1500,10 @@
       {
         "date": "2026-09-14",
         "stars": 22449
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 22451
       }
     ],
     "contributors": [
@@ -1391,8 +1513,8 @@
       "deepu105",
       "pascalgrimaud"
     ],
-    "velocity": 1.0,
-    "snapshots": 8
+    "velocity": 0.7,
+    "snapshots": 9
   },
   "rohitg00/ai-engineering-from-scratch": {
     "phase": "Popularizing",
@@ -1428,6 +1550,10 @@
       {
         "date": "2026-09-14",
         "stars": 54506
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 54850
       }
     ],
     "contributors": [
@@ -1437,11 +1563,11 @@
       "thejesh23",
       "ismet"
     ],
-    "velocity": 142.8,
-    "snapshots": 8
+    "velocity": 114.7,
+    "snapshots": 9
   },
   "agentconnect-md/agentconnect": {
-    "phase": "Popular",
+    "phase": "Early Signal",
     "history": [
       {
         "date": "2026-08-30",
@@ -1474,6 +1600,10 @@
       {
         "date": "2026-09-14",
         "stars": 1366
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 1387
       }
     ],
     "contributors": [
@@ -1483,8 +1613,8 @@
       "frozenluo",
       "jupiterv2"
     ],
-    "velocity": 3.8,
-    "snapshots": 8
+    "velocity": 7.0,
+    "snapshots": 9
   },
   "Zeejay0/gathered-scenes-zine-skill": {
     "phase": "Popularizing",
@@ -1520,13 +1650,17 @@
       {
         "date": "2026-09-14",
         "stars": 4998
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 5063
       }
     ],
     "contributors": [
       "Zeejay0"
     ],
-    "velocity": 17.5,
-    "snapshots": 8
+    "velocity": 21.7,
+    "snapshots": 9
   },
   "ZzzLc0405/photo-abstract-editorial": {
     "phase": "Popularizing",
@@ -1562,13 +1696,17 @@
       {
         "date": "2026-09-14",
         "stars": 5597
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 5652
       }
     ],
     "contributors": [
       "ZzzLc0405"
     ],
-    "velocity": 19.0,
-    "snapshots": 8
+    "velocity": 18.3,
+    "snapshots": 9
   },
   "immich-app/immich": {
     "phase": "Popularizing",
@@ -1604,6 +1742,10 @@
       {
         "date": "2026-09-14",
         "stars": 114082
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 114481
       }
     ],
     "contributors": [
@@ -1613,8 +1755,8 @@
       "mertalev",
       "danieldietzler"
     ],
-    "velocity": 89.0,
-    "snapshots": 8
+    "velocity": 133.0,
+    "snapshots": 9
   },
   "addyosmani/agent-skills": {
     "phase": "Popularizing",
@@ -1650,6 +1792,10 @@
       {
         "date": "2026-09-14",
         "stars": 94159
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 95682
       }
     ],
     "contributors": [
@@ -1659,11 +1805,11 @@
       "HMAKT99",
       "ayobamiseun"
     ],
-    "velocity": 217.8,
-    "snapshots": 8
+    "velocity": 507.7,
+    "snapshots": 9
   },
   "rocketride-org/rocketride-server": {
-    "phase": "Maintenance",
+    "phase": "Breakout",
     "history": [
       {
         "date": "2026-08-30",
@@ -1696,6 +1842,10 @@
       {
         "date": "2026-09-14",
         "stars": 8421
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 8458
       }
     ],
     "contributors": [
@@ -1705,8 +1855,8 @@
       "ryan-t-christensen",
       "anandray"
     ],
-    "velocity": -4.0,
-    "snapshots": 8
+    "velocity": 12.3,
+    "snapshots": 9
   },
   "volcengine/OpenViking": {
     "phase": "Popularizing",
@@ -1742,6 +1892,10 @@
       {
         "date": "2026-09-14",
         "stars": 37120
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 37837
       }
     ],
     "contributors": [
@@ -1751,11 +1905,11 @@
       "r266-tech",
       "t0saki"
     ],
-    "velocity": 183.5,
-    "snapshots": 8
+    "velocity": 239.0,
+    "snapshots": 9
   },
   "fabric8io/kubernetes-client": {
-    "phase": "Early Signal",
+    "phase": "Maintenance",
     "history": [
       {
         "date": "2026-08-30",
@@ -1788,6 +1942,10 @@
       {
         "date": "2026-09-14",
         "stars": 3677
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 3677
       }
     ],
     "contributors": [
@@ -1797,8 +1955,8 @@
       "rohanKanojia",
       "shawkins"
     ],
-    "velocity": 0.8,
-    "snapshots": 8
+    "velocity": 0.0,
+    "snapshots": 9
   },
   "conorbronsdon/avoid-ai-writing": {
     "phase": "Popularizing",
@@ -1834,6 +1992,10 @@
       {
         "date": "2026-09-14",
         "stars": 4369
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 4431
       }
     ],
     "contributors": [
@@ -1843,8 +2005,8 @@
       "UniversePeak",
       "shudhanshu002"
     ],
-    "velocity": 25.0,
-    "snapshots": 8
+    "velocity": 20.7,
+    "snapshots": 9
   },
   "apolloconfig/apollo": {
     "phase": "Maintenance",
@@ -1880,6 +2042,10 @@
       {
         "date": "2026-09-14",
         "stars": 29806
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 29806
       }
     ],
     "contributors": [
@@ -1889,8 +2055,8 @@
       "klboke",
       "Anilople"
     ],
-    "velocity": 0.2,
-    "snapshots": 8
+    "velocity": 0.0,
+    "snapshots": 9
   },
   "cactus-compute/needle": {
     "phase": "Popularizing",
@@ -1926,6 +2092,10 @@
       {
         "date": "2026-09-14",
         "stars": 10996
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 11075
       }
     ],
     "contributors": [
@@ -1935,8 +2105,8 @@
       "kar-m",
       "justinl66"
     ],
-    "velocity": 69.0,
-    "snapshots": 8
+    "velocity": 26.3,
+    "snapshots": 9
   },
   "langchain-ai/langchain": {
     "phase": "Popularizing",
@@ -1972,6 +2142,10 @@
       {
         "date": "2026-09-14",
         "stars": 146274
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 146499
       }
     ],
     "contributors": [
@@ -1981,8 +2155,8 @@
       "mdrxy",
       "eyurtsev"
     ],
-    "velocity": 56.2,
-    "snapshots": 8
+    "velocity": 75.0,
+    "snapshots": 9
   },
   "firecrawl/anydoc": {
     "phase": "Popularizing",
@@ -2018,6 +2192,10 @@
       {
         "date": "2026-09-14",
         "stars": 21400
+      },
+      {
+        "date": "2026-09-17",
+        "stars": 21646
       }
     ],
     "contributors": [
@@ -2027,7 +2205,7 @@
       "Andsu-dev",
       "ericciarla"
     ],
-    "velocity": 98.5,
-    "snapshots": 8
+    "velocity": 82.0,
+    "snapshots": 9
   }
 }
