@@ -737,6 +737,31 @@
       "Risk": "Given the low next\u2011day (50%) and next\u2011week (33%) direction accuracy for this ticker, the risk of a mis\u2011timed trade is significant. The portfolio constraints allow a small position, but a HOLD is prudent until clearer upside emerges."
     },
     "corrections_made": "Overstated bullish case by implying a guaranteed rebound to the 20\u2011day SMA; corrected to reflect that the technicals still show a downtrend and the high leverage and valuation risks outweigh the order\u2011win upside. Adjusted confidence to Medium and set position to 0%.",
+    "verified_next_day": {
+      "actual_price": 43.14,
+      "direction_correct": true,
+      "error_pct": 1.27
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-18",
+    "price_at_prediction": 43.14,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 44.0,
+    "predicted_next_week_price": 45.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong profitability and revenue growth but high debt-to-equity (2.81) and forward PE higher than trailing PE suggest potential earnings slowdown; valuation not overly attractive.",
+      "Technical": "Price below 20\u2011day and 50\u2011day SMAs, RSI deeply oversold but no recent rebound, MACD negative; overall bearish short\u2011term trend.",
+      "Sentiment": "Positive order wins offset by regulatory fine; sentiment cautiously optimistic but not strong enough to override technical weakness.",
+      "Bull": "Oversold RSI and order book growth could support a rebound, but high leverage and weak momentum reduce conviction.",
+      "Bear": "High leverage, price below key SMAs, negative momentum, and regulatory risk support a cautious stance.",
+      "Risk": "Stop\u2011loss design flawed (above current price) and high volatility relative to upside potential; portfolio constraints allow small position but risk\u2011reward profile is unfavorable."
+    },
+    "corrections_made": "Revised trade proposal stop\u2011loss logic, adjusted confidence to Medium due to mixed signals, and set HOLD recommendation based on recent track record and technical bearishness.",
     "verified_next_day": null,
     "verified_next_week": null
   }
