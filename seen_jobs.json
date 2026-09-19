@@ -114,18 +114,18 @@
   "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-ai-engineer-architect": {
     "title": "A.Team: Senior Independent AI Engineer / Architect",
     "score": 0,
-    "why": "Senior Independent AI Engineer/Architect is an AI\u2011only role, unrelated to UI work.",
-    "gap": "Role is AI\u2011centric, no frontend responsibilities.",
-    "first_seen": "2026-08-24",
-    "suppress_until": "2026-09-07"
+    "why": "AI Engineer/Architect role focuses on machine\u2011learning, not UI development.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
   },
   "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-software-developer-90-170-hr": {
     "title": "A.Team: Senior Independent Software Developer ($90-$170/hr)",
-    "score": 0,
-    "why": "Senior Independent Software Developer is a broad software role with no clear UI focus.",
-    "gap": "No explicit frontend or Angular/TypeScript requirement.",
-    "first_seen": "2026-08-24",
-    "suppress_until": "2026-09-07"
+    "score": 70,
+    "why": "Senior Software Developer is senior\u2011level and fits the candidate\u2019s experience, but the description lacks Angular/TS specifics.",
+    "gap": "Unspecified technology stack (likely non\u2011Angular)",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
   },
   "WWR::https://weworkremotely.com/remote-jobs/memora-aps-founding-engineer": {
     "title": "Memora ApS: Founding Engineer",
@@ -2305,11 +2305,11 @@
   },
   "WWR::https://weworkremotely.com/remote-jobs/storetasker-senior-shopify-developer-remote-flexible-3": {
     "title": "Storetasker: Senior Shopify Developer (Remote + Flexible)",
-    "score": 70,
-    "why": "Senior Shopify Developer is a front\u2011end role focused on Shopify/Liquid, not Angular/TypeScript, thus capped at 75.",
-    "gap": "No Angular/TS requirement",
-    "first_seen": "2026-08-23",
-    "suppress_until": "2026-09-06"
+    "score": 65,
+    "why": "Senior Shopify Developer is a frontend role but does not require Angular/TS, capping at 75; candidate lacks Shopify/Liquid experience.",
+    "gap": "No Shopify/Liquid experience",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
   },
   "WWR::https://weworkremotely.com/remote-jobs/superplane-product-engineer-1": {
     "title": "SuperPlane: Product Engineer",
@@ -2418,10 +2418,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/yooli-full-time-software-engineer-position-react-and-rest-1": {
     "title": "Yooli: FULL TIME: Software Engineer Position - React and Rest",
     "score": 60,
-    "why": "React\u2011only front\u2011end role caps the score at 60 per the rules; candidate\u2019s expertise is Angular/TS.",
-    "gap": "React\u2011only stack, no Angular/TypeScript experience required.",
-    "first_seen": "2026-08-24",
-    "suppress_until": "2026-09-07"
+    "why": "React\u202f+\u202fREST job is React\u2011only, triggering the 60\u2011point cap.",
+    "gap": "Lack of React experience",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
   },
   "WWR::https://weworkremotely.com/remote-jobs/thehivecareers-co-web-developer-remote-1": {
     "title": "thehivecareers.co: Web Developer (Remote)",
@@ -3366,5 +3366,189 @@
     "gap": "",
     "first_seen": "2026-09-18",
     "suppress_until": "2026-10-02"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/legion-chief-architect": {
+    "title": "Legion: Chief Architect",
+    "score": 70,
+    "why": "Senior Chief Architect role aligns with the candidate\u2019s extensive leadership experience, but the posting does not call for Angular/TypeScript.",
+    "gap": "Broader architecture responsibilities beyond UI",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/track-it-forward-lead-developer-rebuild-modernize-scale-social-good-saas-remote": {
+    "title": "Track it Forward: Lead Developer \u2014 Rebuild, Modernize, & Scale (Social Good SaaS, Remote)",
+    "score": 65,
+    "why": "Lead Developer for a SaaS rebuild is a senior position matching experience level, yet the job lists no Angular/TS requirement.",
+    "gap": "Potential need for React/Node expertise",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer-1": {
+    "title": "Lemon.io: Senior React Native Developer",
+    "score": 60,
+    "why": "React\u202fNative position is React\u2011only, capping the score per rules.",
+    "gap": "No React\u202fNative mobile experience",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/fin-senior-solutions-engineer-latam": {
+    "title": "Fin: Senior Solutions Engineer- LATAM",
+    "score": 0,
+    "why": "Solutions Engineer role is more sales\u2011technical and not a pure UI position.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/prove-director-channel-partnerships": {
+    "title": "Prove: Director, Channel & Partnerships",
+    "score": 0,
+    "why": "Director, Channel & Partnerships is a non\u2011technical leadership role.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/princeton-university-senior-peoplesoft-developer-analyst-ii": {
+    "title": "Princeton University: Senior PeopleSoft Developer/Analyst II",
+    "score": 0,
+    "why": "PeopleSoft development is an enterprise ERP role, not a UI\u2011focused position.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/airbnb-senior-data-scientist-guest-host": {
+    "title": "Airbnb: Senior Data Scientist, Guest & Host",
+    "score": 0,
+    "why": "Senior Data Scientist is a data\u2011science role, unrelated to UI/Angular.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/expel-managed-siem-detection-engineer": {
+    "title": "Expel: Managed SIEM Detection Engineer",
+    "score": 0,
+    "why": "Managed SIEM Detection Engineer is a security\u2011operations role, not UI development.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-smartsheet-expert-for-integrated-project-planning": {
+    "title": "Toptal: Smartsheet Expert for Integrated Project Planning",
+    "score": 0,
+    "why": "Smartsheet Expert is a niche product specialist role, not a UI architect position.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-power-platform-solutions-architect-for-global-pharmaceutical-company": {
+    "title": "Toptal: Power Platform Solutions Architect for Global Pharmaceutical Company",
+    "score": 0,
+    "why": "Power Platform Solutions Architect focuses on Microsoft low\u2011code tools, not Angular/TS.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/cribl-customer-support-manager": {
+    "title": "Cribl: Customer Support Manager",
+    "score": 0,
+    "why": "Customer Support Manager is a non\u2011technical management role.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/reddit-backend-software-engineer-pdp-experience": {
+    "title": "Reddit: Backend Software Engineer, PDP Experience",
+    "score": 0,
+    "why": "Backend Software Engineer is a pure backend position, excluded by the rules.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/evident-change-senior-full-stack-software-engineer": {
+    "title": "Evident Change: Senior Full-Stack Software Engineer",
+    "score": 70,
+    "why": "Senior Full\u2011Stack Engineer is senior\u2011level and matches experience, yet the posting does not specify Angular/TS.",
+    "gap": "Unspecified tech stack (likely non\u2011Angular)",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-pt-ft-senior-roblox-developer-game-designer": {
+    "title": "Toptal: [PT/FT] Senior Roblox Developer & Game Designer",
+    "score": 0,
+    "why": "Roblox Developer & Game Designer is a game\u2011dev role, not UI/Angular.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toggl-senior-full-stack": {
+    "title": "Toggl: Senior Full Stack",
+    "score": 70,
+    "why": "Senior Full\u2011Stack at Toggl is senior\u2011level and aligns with the candidate\u2019s breadth, but lacks Angular/TS mention.",
+    "gap": "Unspecified technology stack (likely non\u2011Angular)",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-react-full-stack-developer-6": {
+    "title": "Lemon.io: Senior React Full-stack Developer",
+    "score": 60,
+    "why": "Senior React Full\u2011Stack Developer is React\u2011only, triggering the 60\u2011point cap.",
+    "gap": "No React experience",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/1874420/": {
+    "title": "Phone Sales Agent - Restock @ Sun Coast Sciences",
+    "score": 0,
+    "why": "Phone Sales Agent is a sales role, not a technical UI position.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/1874422/": {
+    "title": "Phone Sales Recovery Agent @ Sun Coast Sciences",
+    "score": 0,
+    "why": "Phone Sales Recovery Agent is a sales role, excluded by the rules.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/1874418/": {
+    "title": "Appointment Setting Representative @ Sun Coast Sciences",
+    "score": 0,
+    "why": "Appointment Setting Representative is a sales/administrative role, not UI.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/1874416/": {
+    "title": "Protocol Review Specialist @ Sun Coast Sciences",
+    "score": 0,
+    "why": "Protocol Review Specialist is a compliance role, not UI development.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/1873858/": {
+    "title": "Quality Assurance Rater - Spanish (Spain) @ TELUS Digital",
+    "score": 0,
+    "why": "Quality Assurance Rater \u2013 Spanish is a QA role, excluded.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/1873836/": {
+    "title": "Quality Assurance Rater - French (FR) @ TELUS Digital",
+    "score": 0,
+    "why": "Quality Assurance Rater \u2013 French is a QA role, excluded.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/1873579/": {
+    "title": "Quality Assurance Rater - German (DE) @ TELUS Digital",
+    "score": 0,
+    "why": "Quality Assurance Rater \u2013 German is a QA role, excluded.",
+    "gap": "None",
+    "first_seen": "2026-09-19",
+    "suppress_until": "2026-10-03"
   }
 }
