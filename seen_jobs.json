@@ -3550,5 +3550,21 @@
     "gap": "None",
     "first_seen": "2026-09-19",
     "suppress_until": "2026-10-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/legion-director-of-production-engineering": {
+    "title": "Legion: Director of Production Engineering",
+    "score": 0,
+    "why": "The Director of Production Engineering role is a senior ops/engineering leadership position with no explicit Angular or TypeScript UI focus.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-09-21",
+    "suppress_until": "2026-10-05"
+  },
+  "WN::https://www.workingnomads.com/job/go/1878435/": {
+    "title": "Head of Engineering @ Lemon.io",
+    "score": 0,
+    "why": "The Head of Engineering position is a broad engineering leadership role that does not specifically call for Angular or TypeScript expertise.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-09-21",
+    "suppress_until": "2026-10-05"
   }
 }
