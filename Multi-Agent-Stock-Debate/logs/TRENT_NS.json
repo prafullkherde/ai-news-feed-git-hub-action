@@ -747,6 +747,31 @@
       "Risk": "Potential for short\u2011term pullback but overall risk of further decline; position size limited by portfolio constraints."
     },
     "corrections_made": "Overrode the executor\u2019s short\u2011sell recommendation due to portfolio position limit; adjusted price targets to conservative levels based on recent performance and technical indicators.",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-21",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 2800.0,
+    "predicted_next_week_price": 3000.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation (PE 83, forward 55) and modest profit margin (8.6%) with slowing revenue growth (17.8%) suggest limited upside; no clear earnings catalyst.",
+      "Technical": "MACD below signal indicates bearish bias but lack of SMA/RSI data limits trend confirmation; volatility is low (2.2%) implying limited movement.",
+      "Sentiment": "Headline sentiment is neutral\u2011to\u2011bearish with equal positive/negative signals; negative headlines emphasize revenue slowdown.",
+      "Bull": "Scale and modest debt give some upside potential if earnings accelerate, but current data does not support a bullish case.",
+      "Bear": "High multiples, weak growth, low dividend, and limited volatility support a bearish stance, yet shorting carries higher risk.",
+      "Risk": "Portfolio constraints allow only 5% exposure; shorting would require margin and higher risk; holding preserves capital and limits downside."
+    },
+    "corrections_made": "Adjusted trade proposal to comply with portfolio limits; removed unsupported assumptions about last close; clarified that technical data is incomplete; set recommendation to HOLD based on mixed signals and high valuation.",
     "verified_next_day": null,
     "verified_next_week": null
   }

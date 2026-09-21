@@ -762,6 +762,31 @@
       "Risk": "Stop\u2011loss design flawed (above current price) and high volatility relative to upside potential; portfolio constraints allow small position but risk\u2011reward profile is unfavorable."
     },
     "corrections_made": "Revised trade proposal stop\u2011loss logic, adjusted confidence to Medium due to mixed signals, and set HOLD recommendation based on recent track record and technical bearishness.",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": false,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-21",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Suzlon\u2019s high debt\u2011to\u2011equity (2.81) and regulatory fine raise liquidity concerns; revenue growth is strong but valuation (P/E 20.48) already prices in much of that upside.",
+      "Technical": "All key technical indicators (last close, SMA, RSI) are unavailable; MACD is negative but without price context this is insufficient for a trade signal.",
+      "Sentiment": "Order book growth is positive, yet governance risk and mixed analyst commentary suggest cautious sentiment.",
+      "Bull": "Strong margins and ROE could support earnings, but high leverage limits upside.",
+      "Bear": "Debt load, valuation stretch, and compliance issues could trigger downside; lack of technical confirmation adds uncertainty.",
+      "Risk": "Limited data and recent track record (50% next\u2011day, 33% next\u2011week accuracy) warrant a conservative stance."
+    },
+    "corrections_made": "Removed unsupported price assumptions, acknowledged missing price data, downgraded confidence due to poor historical accuracy, and set position to 0%.",
     "verified_next_day": null,
     "verified_next_week": null
   }
