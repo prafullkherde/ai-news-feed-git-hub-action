@@ -1186,18 +1186,18 @@
   "RemoteOK::1135285": {
     "title": "Junior Front End Developer @ PULSE (MENA)",
     "score": 0,
-    "why": "The role is a junior front\u2011end position, which is below the senior\u2011level experience of the candidate.",
-    "gap": "Seniority level mismatch",
-    "first_seen": "2026-09-07",
-    "suppress_until": "2026-09-21"
+    "why": "The role is explicitly junior level, which falls below the 7\u2011year experience threshold required for eligibility.",
+    "gap": "Seniority level (junior)",
+    "first_seen": "2026-09-22",
+    "suppress_until": "2026-10-06"
   },
   "RemoteOK::1135269": {
     "title": "Front End Developer @ Acro Commerce",
     "score": 70,
-    "why": "The position is a generic front\u2011end developer role without explicit Angular/TypeScript requirements, so the candidate\u2019s score is capped below the maximum.",
+    "why": "The position is a generic Front End Developer role without an explicit Angular/TypeScript requirement, so the candidate\u2019s strong Angular background is relevant but capped at 75, and the lack of a specific Angular focus reduces the fit.",
     "gap": "No explicit Angular/TypeScript requirement",
-    "first_seen": "2026-09-07",
-    "suppress_until": "2026-09-21"
+    "first_seen": "2026-09-22",
+    "suppress_until": "2026-10-06"
   },
   "WN::https://www.workingnomads.com/job/go/1746261/": {
     "title": "Account Manager, Creative Operations @ Storm Ideas",
@@ -3566,5 +3566,13 @@
     "gap": "No Angular/TypeScript requirement",
     "first_seen": "2026-09-21",
     "suppress_until": "2026-10-05"
+  },
+  "WN::https://www.workingnomads.com/job/go/1879612/": {
+    "title": "Content Reviewer - United States @ TELUS Digital",
+    "score": 0,
+    "why": "The role is a Content Reviewer, which does not involve UI/Frontend development and therefore does not match the candidate\u2019s expertise.",
+    "gap": "Role is not UI/Frontend related",
+    "first_seen": "2026-09-22",
+    "suppress_until": "2026-10-06"
   }
 }
