@@ -692,7 +692,11 @@
       "direction_correct": true,
       "error_pct": -1.29
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 43.0,
+      "direction_correct": false,
+      "error_pct": 3.61
+    }
   },
   {
     "date": "2026-09-16",
@@ -787,6 +791,27 @@
       "Risk": "Limited data and recent track record (50% next\u2011day, 33% next\u2011week accuracy) warrant a conservative stance."
     },
     "corrections_made": "Removed unsupported price assumptions, acknowledged missing price data, downgraded confidence due to poor historical accuracy, and set position to 0%.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-22",
+    "price_at_prediction": 43.0,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 42.5,
+    "predicted_next_week_price": 42.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High debt-to-equity (2.81) and price-to-book (6.05) raise leverage and valuation concerns; profitability is strong but earnings growth may not sustain if order wins stall.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, negative MACD, RSI near oversold but still weak; low volatility (2.21%) suggests limited upside.",
+      "Sentiment": "Positive contract news offset by regulatory fine; overall sentiment mixed.",
+      "Bull": "Order wins and revenue growth could support future earnings; low volatility may allow a rebound.",
+      "Bear": "High leverage, valuation premium, negative momentum, and regulatory risk could trigger further downside.",
+      "Risk": "Portfolio exposure limited to 5% but past accuracy for this ticker is poor (50% next\u2011day, 31% next\u2011week); conservative stance advised."
+    },
+    "corrections_made": "Replaced the Executor\u2019s bullish trade proposal with a HOLD recommendation due to weak technicals, high leverage, and poor historical prediction accuracy for SUZLON.NS.",
     "verified_next_day": null,
     "verified_next_week": null
   }

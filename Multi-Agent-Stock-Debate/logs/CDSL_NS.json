@@ -677,7 +677,11 @@
       "direction_correct": true,
       "error_pct": -0.46
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1348.0,
+      "direction_correct": false,
+      "error_pct": 5.31
+    }
   },
   {
     "date": "2026-09-16",
@@ -772,6 +776,31 @@
       "Risk": "Low confidence due to poor track record and high valuation; portfolio constraints allow small position but risk outweighs potential return."
     },
     "corrections_made": "Overrode Executor\u2019s bullish trade proposal and high confidence; adjusted predictions to reflect weak momentum and high valuation; set HOLD recommendation due to low past accuracy.",
+    "verified_next_day": {
+      "actual_price": 1348.0,
+      "direction_correct": true,
+      "error_pct": -0.88
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-22",
+    "price_at_prediction": 1348.0,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 1335.0,
+    "predicted_next_week_price": 1320.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples (P/E 59.7 trailing, 45.1 forward, P/B 14.4) and lack of recent earnings surprise suggest limited upside; low leverage and strong margins are positive but may not offset premium.",
+      "Technical": "Price below 20\u2011day and 50\u2011day SMAs, negative MACD and RSI below 50 indicate bearish bias; modest volatility limits sharp moves.",
+      "Sentiment": "Headlines largely neutral with one regulatory penalty; overall sentiment cautiously negative.",
+      "Bull": "Strong margins and revenue growth could support future earnings, but current price is high relative to fundamentals.",
+      "Bear": "Valuation stretch, negative technical indicators, and regulatory penalty increase downside risk.",
+      "Risk": "Low portfolio exposure but high conviction needed; past prediction accuracy for this ticker is poor (31% next\u2011day, 33% next\u2011week)."
+    },
+    "corrections_made": "Overrode EXECUTOR\u2019s short trade proposal and bullish case; noted that technicals and fundamentals do not support a clear directional bet; adjusted price predictions to reflect a slight decline based on recent bearish signals.",
     "verified_next_day": null,
     "verified_next_week": null
   }

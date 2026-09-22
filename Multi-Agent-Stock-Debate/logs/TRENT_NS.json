@@ -677,7 +677,11 @@
       "direction_correct": false,
       "error_pct": 1.64
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 2782.9,
+      "direction_correct": false,
+      "error_pct": 3.07
+    }
   },
   {
     "date": "2026-09-16",
@@ -772,6 +776,31 @@
       "Risk": "Portfolio constraints allow only 5% exposure; shorting would require margin and higher risk; holding preserves capital and limits downside."
     },
     "corrections_made": "Adjusted trade proposal to comply with portfolio limits; removed unsupported assumptions about last close; clarified that technical data is incomplete; set recommendation to HOLD based on mixed signals and high valuation.",
+    "verified_next_day": {
+      "actual_price": 2782.9,
+      "direction_correct": true,
+      "error_pct": -0.61
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-22",
+    "price_at_prediction": 2782.9,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 2760.0,
+    "predicted_next_week_price": 2700.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples (trailing PE 82.36, forward PE 54.62) and slowing revenue growth reduce upside potential; moderate debt and low dividend yield add to risk.",
+      "Technical": "Stock trades below both 20\u2011day and 50\u2011day SMAs, RSI below 50, and MACD below signal line, all indicating bearish momentum; volatility is low, so any reversal would need a clear breakout.",
+      "Sentiment": "Mixed headlines with more negative coverage; market sentiment leans cautious.",
+      "Bull": "Limited upside due to high valuation and weak technicals; any bullish case would require a significant reversal above the 20\u2011day SMA.",
+      "Bear": "Strong bearish technicals, high valuation, and slowing growth support a cautious stance; a short may be considered but risk is high.",
+      "Risk": "Potential for short squeeze if a breakout occurs; current volatility low, so stop\u2011losses may be hit quickly; portfolio constraints allow small position but overall risk is elevated."
+    },
+    "corrections_made": "Fixed incorrect calculation of 20\u2011day SMA reference (should be 2825.16, not 2825.9); clarified that 50\u2011day SMA is 2907.34; noted that the proposed short position size in shares was mis\u2011stated (should be ~360 shares for a \u20b92,000 notional, not 7,200).",
     "verified_next_day": null,
     "verified_next_week": null
   }

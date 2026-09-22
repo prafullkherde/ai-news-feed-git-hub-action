@@ -779,6 +779,31 @@
       "Risk": "Positioning a short would expose the portfolio to unexpected rallies; given the data gaps and low track record accuracy, the risk outweighs potential reward."
     },
     "corrections_made": "Overrode the Executor\u2019s short trade proposal and bullish stance due to insufficient data and low historical prediction accuracy; opted for a conservative HOLD recommendation.",
+    "verified_next_day": {
+      "actual_price": 324.95,
+      "direction_correct": true,
+      "error_pct": -2.12
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-22",
+    "price_at_prediction": 324.95,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 326.5,
+    "predicted_next_week_price": 330.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing PE of 28.6 is moderate; lack of other data limits assessment; no clear upside catalyst.",
+      "Technical": "Price below 20\u2011 and 50\u2011day SMAs, negative MACD, RSI near neutral; weak short\u2011term bias.",
+      "Sentiment": "No recent news; technical signals dominate; sentiment unclear.",
+      "Bull": "Strong 3\u2011month return and proximity to SMAs could support a rebound, but evidence is limited.",
+      "Bear": "Below SMAs, negative MACD, low volatility suggest potential pullback; valuation may be stretched.",
+      "Risk": "Portfolio constraint prohibits large position; risk of over\u2011exposure is high."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }
