@@ -1538,10 +1538,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/wonderdog-full-stack-product-engineer-agentic-first": {
     "title": "Wonderdog: Full-Stack Product Engineer - Agentic First",
     "score": 70,
-    "why": "The Full\u2011Stack Product Engineer role is generic and does not call for Angular/TypeScript, so the candidate\u2019s expertise is only partially aligned.",
-    "gap": "Lack of Angular/TypeScript focus in the job description",
-    "first_seen": "2026-08-26",
-    "suppress_until": "2026-09-09"
+    "why": "The position is a generic full\u2011stack product engineer role without an explicit Angular/TypeScript requirement, so the candidate\u2019s fit is capped below the maximum.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-09-23",
+    "suppress_until": "2026-10-07"
   },
   "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-react-full-stack-developer-5": {
     "title": "Lemon.io: Senior React Full-stack Developer",
@@ -3574,5 +3574,29 @@
     "gap": "Role is not UI/Frontend related",
     "first_seen": "2026-09-22",
     "suppress_until": "2026-10-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-net-full-stack-developer-1": {
+    "title": "Lemon.io: Senior .NET Full-stack Developer",
+    "score": 0,
+    "why": "The role is a .NET full\u2011stack developer position with no mention of Angular or TypeScript, which are the candidate\u2019s primary expertise.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-09-23",
+    "suppress_until": "2026-10-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-java-react-developer": {
+    "title": "Lemon.io: Senior Java & React Developer",
+    "score": 60,
+    "why": "The job focuses on Java and React development; React\u2011only stacks are capped at 60 per the scoring rules.",
+    "gap": "React focus, not Angular/TypeScript",
+    "first_seen": "2026-09-23",
+    "suppress_until": "2026-10-07"
+  },
+  "WN::https://www.workingnomads.com/job/go/1880339/": {
+    "title": "Virtual Bookkeeper @ Strong Roots Accounting",
+    "score": 0,
+    "why": "The role is a virtual bookkeeping position, unrelated to UI/Frontend development.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-09-23",
+    "suppress_until": "2026-10-07"
   }
 }
