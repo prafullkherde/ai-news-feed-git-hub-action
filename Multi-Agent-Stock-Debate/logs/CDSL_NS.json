@@ -706,7 +706,11 @@
       "direction_correct": false,
       "error_pct": 4.2
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1351.1,
+      "direction_correct": true,
+      "error_pct": 3.93
+    }
   },
   {
     "date": "2026-09-17",
@@ -801,6 +805,31 @@
       "Risk": "Low portfolio exposure but high conviction needed; past prediction accuracy for this ticker is poor (31% next\u2011day, 33% next\u2011week)."
     },
     "corrections_made": "Overrode EXECUTOR\u2019s short trade proposal and bullish case; noted that technicals and fundamentals do not support a clear directional bet; adjusted price predictions to reflect a slight decline based on recent bearish signals.",
+    "verified_next_day": {
+      "actual_price": 1351.1,
+      "direction_correct": false,
+      "error_pct": 1.21
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-23",
+    "price_at_prediction": 1351.1,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1345.0,
+    "predicted_next_week_price": 1330.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High trailing and forward P/E (60.02/45.22) and high price\u2011to\u2011book (14.41) suggest valuation is stretched; profit margin and revenue growth are solid but may not justify the premium.",
+      "Technical": "Price below 20\u2011day and 50\u2011day SMAs, negative MACD and RSI below 50 indicate weak momentum; volatility is low, reducing likelihood of a sharp reversal.",
+      "Sentiment": "Mixed headlines \u2013 record earnings hint at strength but regulator penalty introduces compliance risk; overall sentiment neutral to slightly negative.",
+      "Bull": "Potential upside if price recovers to 20\u2011day SMA, but high valuation and weak momentum limit upside probability.",
+      "Bear": "Price below key SMAs, negative MACD, high PE, and regulatory risk support a bearish view; however, recent 3\u2011month gain and low volatility reduce downside risk.",
+      "Risk": "Shorting would expose to unlimited loss if price rallies; stop\u2011loss at 20\u2011day SMA still allows ~1.5% move; given low conviction and past low accuracy, a neutral stance is safer."
+    },
+    "corrections_made": "Overrode Executor\u2019s short recommendation due to high valuation and low conviction; corrected predicted prices to reflect moderate downside expectation.",
     "verified_next_day": null,
     "verified_next_week": null
   }

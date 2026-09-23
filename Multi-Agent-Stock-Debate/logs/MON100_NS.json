@@ -684,7 +684,11 @@
       "direction_correct": true,
       "error_pct": -0.62
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 327.37,
+      "direction_correct": true,
+      "error_pct": 4.39
+    }
   },
   {
     "date": "2026-09-16",
@@ -804,6 +808,31 @@
       "Risk": "Portfolio constraint prohibits large position; risk of over\u2011exposure is high."
     },
     "corrections_made": "none",
+    "verified_next_day": {
+      "actual_price": 327.37,
+      "direction_correct": true,
+      "error_pct": 0.27
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-23",
+    "price_at_prediction": 327.37,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 325.8,
+    "predicted_next_week_price": 322.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 28.8 is moderate but no other fundamentals available; cannot assess growth or profitability; risk of overvaluation if earnings stagnate.",
+      "Technical": "Price below 20\u2011day SMA and MACD below signal line indicate short\u2011term bearish bias; RSI near neutral; volatility low suggests limited upside cushion.",
+      "Sentiment": "No recent news; sentiment unclear.",
+      "Bull": "Strong 3\u2011month return and proximity to 50\u2011day SMA could support a rebound, but technical signals are weak.",
+      "Bear": "Price below short\u2011term trend, MACD bearish divergence, and high recent return may precede a correction; low volatility increases risk of sharp move.",
+      "Risk": "Portfolio constraints prohibit large position; past accuracy for this ticker is only ~50%; conservative stance advised."
+    },
+    "corrections_made": "Adjusted trade size to comply with 5% portfolio limit; corrected predicted prices to reflect bearish technicals and limited upside; omitted unsupported forward metrics.",
     "verified_next_day": null,
     "verified_next_week": null
   }

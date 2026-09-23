@@ -721,7 +721,11 @@
       "direction_correct": false,
       "error_pct": 1.29
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 42.39,
+      "direction_correct": false,
+      "error_pct": 2.14
+    }
   },
   {
     "date": "2026-09-17",
@@ -812,6 +816,31 @@
       "Risk": "Portfolio exposure limited to 5% but past accuracy for this ticker is poor (50% next\u2011day, 31% next\u2011week); conservative stance advised."
     },
     "corrections_made": "Replaced the Executor\u2019s bullish trade proposal with a HOLD recommendation due to weak technicals, high leverage, and poor historical prediction accuracy for SUZLON.NS.",
+    "verified_next_day": {
+      "actual_price": 42.39,
+      "direction_correct": true,
+      "error_pct": -0.26
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-23",
+    "price_at_prediction": 42.39,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 42.3,
+    "predicted_next_week_price": 43.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong profitability but high leverage and modest valuation; recent order wins offset by regulatory fine; overall fundamentals are mixed.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, oversold RSI but negative MACD; low volatility suggests limited upside in short term.",
+      "Sentiment": "Mixed news \u2013 large wind\u2011turbine contracts vs. regulatory fine; sentiment not strongly bullish.",
+      "Bull": "Potential upside to 20\u2011day SMA if reversal occurs, but high debt and low valuation limit upside.",
+      "Bear": "Continued downside risk due to weak technicals and high leverage; regulatory concerns add downside pressure.",
+      "Risk": "Portfolio constraint limits position size; past accuracy low, so conservative stance advised."
+    },
+    "corrections_made": "Overrode Executor\u2019s buy recommendation due to portfolio cap and low historical accuracy; adjusted target prices to reflect conservative outlook.",
     "verified_next_day": null,
     "verified_next_week": null
   }

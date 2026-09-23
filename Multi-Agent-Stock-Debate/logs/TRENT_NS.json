@@ -706,7 +706,11 @@
       "direction_correct": false,
       "error_pct": 1.05
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 2774.0,
+      "direction_correct": true,
+      "error_pct": -0.93
+    }
   },
   {
     "date": "2026-09-17",
@@ -801,6 +805,31 @@
       "Risk": "Potential for short squeeze if a breakout occurs; current volatility low, so stop\u2011losses may be hit quickly; portfolio constraints allow small position but overall risk is elevated."
     },
     "corrections_made": "Fixed incorrect calculation of 20\u2011day SMA reference (should be 2825.16, not 2825.9); clarified that 50\u2011day SMA is 2907.34; noted that the proposed short position size in shares was mis\u2011stated (should be ~360 shares for a \u20b92,000 notional, not 7,200).",
+    "verified_next_day": {
+      "actual_price": 2774.0,
+      "direction_correct": true,
+      "error_pct": 0.51
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-23",
+    "price_at_prediction": 2774.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 2765.0,
+    "predicted_next_week_price": 2730.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation (PE 81.7) versus modest earnings growth; moderate debt; low dividend; overall neutral fundamentals.",
+      "Technical": "Price below 20\u2011 and 50\u2011day SMAs, RSI 44.2, MACD below signal; weak bullish crossover; trend remains bearish.",
+      "Sentiment": "Mixed headlines with slight tilt to growth concerns; no strong positive catalyst.",
+      "Bull": "Recent 3\u2011month return 24% and low volatility suggest some upside potential, but not enough to offset valuation risk.",
+      "Bear": "Valuation stretched, revenue growth slowing, price below key SMAs, weak momentum; risk of further decline.",
+      "Risk": "Position size constraint limits exposure; shorting would exceed 5% cap; potential for volatility but limited upside."
+    },
+    "corrections_made": "Fixed the proposed position size error (72 shares \u2248 \u20b9200k) which far exceeded the 5% portfolio limit; adjusted recommendation to HOLD instead of short sell.",
     "verified_next_day": null,
     "verified_next_week": null
   }
