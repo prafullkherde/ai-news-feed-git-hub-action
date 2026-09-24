@@ -3598,5 +3598,21 @@
     "gap": "Not a UI/Frontend role",
     "first_seen": "2026-09-23",
     "suppress_until": "2026-10-07"
+  },
+  "WN::https://www.workingnomads.com/job/go/1885527/": {
+    "title": "Senior back-end Engineer @ Lemon.io",
+    "score": 0,
+    "why": "The role is a pure back\u2011end engineering position with no frontend or Angular/TypeScript responsibilities.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-09-24",
+    "suppress_until": "2026-10-08"
+  },
+  "WN::https://www.workingnomads.com/job/go/1884997/": {
+    "title": "Looking For Online ESL Teachers - Remote- Joining Rewards of up to USD $100 @ Polly English",
+    "score": 0,
+    "why": "The posting is for an online ESL teaching role, unrelated to UI/Angular development.",
+    "gap": "Not a software development role",
+    "first_seen": "2026-09-24",
+    "suppress_until": "2026-10-08"
   }
 }
