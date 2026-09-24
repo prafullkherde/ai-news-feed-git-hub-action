@@ -735,7 +735,11 @@
       "direction_correct": true,
       "error_pct": 2.96
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1320.0,
+      "direction_correct": false,
+      "error_pct": -3.3
+    }
   },
   {
     "date": "2026-09-18",
@@ -830,6 +834,31 @@
       "Risk": "Shorting would expose to unlimited loss if price rallies; stop\u2011loss at 20\u2011day SMA still allows ~1.5% move; given low conviction and past low accuracy, a neutral stance is safer."
     },
     "corrections_made": "Overrode Executor\u2019s short recommendation due to high valuation and low conviction; corrected predicted prices to reflect moderate downside expectation.",
+    "verified_next_day": {
+      "actual_price": 1320.0,
+      "direction_correct": true,
+      "error_pct": -1.86
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-24",
+    "price_at_prediction": 1320.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1315.0,
+    "predicted_next_week_price": 1300.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong margins and low debt but valuation (P/E 58.5, P/B 14) is high relative to sector; earnings growth modest; no clear upside catalyst.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, bearish MACD, RSI 38.1 not yet oversold; volatility low so reversal unlikely without clear support.",
+      "Sentiment": "Mixed headlines; earnings positive but regulatory penalty introduces risk; overall sentiment neutral.",
+      "Bull": "Pullback could be a short\u2011term correction but high valuation limits upside potential.",
+      "Bear": "High valuation, bearish momentum, regulatory risk; downside risk modest but present.",
+      "Risk": "Portfolio constraint mis\u2011calculated in proposal; exposure would far exceed 5% if executed as described; risk of over\u2011leveraging and mis\u2011pricing of stop/target."
+    },
+    "corrections_made": "Recalculated portfolio exposure: 5% of \u20b9100,000 = \u20b95,000; proposed 2% = \u20b92,000, but 151 shares at \u20b91,320 would cost ~\u20b9199,320, far exceeding the 5% limit. Adjusted to HOLD and noted the miscalculation.",
     "verified_next_day": null,
     "verified_next_week": null
   }

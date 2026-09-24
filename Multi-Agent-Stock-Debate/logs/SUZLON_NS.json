@@ -750,7 +750,11 @@
       "direction_correct": true,
       "error_pct": 1.27
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 40.74,
+      "direction_correct": false,
+      "error_pct": -5.69
+    }
   },
   {
     "date": "2026-09-18",
@@ -841,6 +845,31 @@
       "Risk": "Portfolio constraint limits position size; past accuracy low, so conservative stance advised."
     },
     "corrections_made": "Overrode Executor\u2019s buy recommendation due to portfolio cap and low historical accuracy; adjusted target prices to reflect conservative outlook.",
+    "verified_next_day": {
+      "actual_price": 40.74,
+      "direction_correct": true,
+      "error_pct": -3.69
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-24",
+    "price_at_prediction": 40.74,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 40.5,
+    "predicted_next_week_price": 41.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High debt\u2011to\u2011equity (2.81) and elevated P/B (5.73) raise leverage and valuation concerns; profit margin and ROE are strong but may not offset financial risk.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs; RSI deep oversold but MACD remains negative; low volatility limits upside potential.",
+      "Sentiment": "Positive order flow is offset by regulatory fine and overall weak market trend; sentiment is mixed.",
+      "Bull": "Order flow could support revenue growth, but technical and balance\u2011sheet risks temper upside expectations.",
+      "Bear": "High leverage, overvaluation, negative momentum, and regulatory risk suggest downside risk; recent 3\u2011month return is negative.",
+      "Risk": "Portfolio constraints allow small position, but risk\u2011adjusted return is uncertain; conservative stance advised."
+    },
+    "corrections_made": "Overstated bullish case by ignoring debt\u2011to\u2011equity and P/B concerns; corrected technical assessment to reflect negative MACD and low volatility; adjusted recommendation to HOLD based on weak next\u2011week direction accuracy and recent call performance.",
     "verified_next_day": null,
     "verified_next_week": null
   }

@@ -713,7 +713,11 @@
       "direction_correct": true,
       "error_pct": -0.64
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 322.8,
+      "direction_correct": false,
+      "error_pct": -2.77
+    }
   },
   {
     "date": "2026-09-17",
@@ -833,6 +837,31 @@
       "Risk": "Portfolio constraints prohibit large position; past accuracy for this ticker is only ~50%; conservative stance advised."
     },
     "corrections_made": "Adjusted trade size to comply with 5% portfolio limit; corrected predicted prices to reflect bearish technicals and limited upside; omitted unsupported forward metrics.",
+    "verified_next_day": {
+      "actual_price": 322.8,
+      "direction_correct": true,
+      "error_pct": -0.92
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-24",
+    "price_at_prediction": 322.8,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 321.5,
+    "predicted_next_week_price": 328.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 28.41 is high relative to typical value range; lack of other fundamentals limits confidence in earnings sustainability.",
+      "Technical": "Price below both 20\u2011 and 50\u2011day SMAs; MACD negative below signal; RSI near neutral; weak short\u2011term momentum suggests no clear upside.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Strong 3\u2011month return but low volatility and bearish indicators dampen bullish case.",
+      "Bear": "Price below key moving averages and negative MACD support a cautious stance.",
+      "Risk": "Limited upside cushion, high valuation, and recent bearish technicals increase downside risk."
+    },
+    "corrections_made": "Adjusted recommendation to HOLD based on bearish technicals and low track record accuracy; removed unsupported bullish claims about near\u2011term reversal.",
     "verified_next_day": null,
     "verified_next_week": null
   }
