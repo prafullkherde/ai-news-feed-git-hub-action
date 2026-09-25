@@ -764,7 +764,11 @@
       "direction_correct": true,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 2669.3,
+      "direction_correct": true,
+      "error_pct": -2.93
+    }
   },
   {
     "date": "2026-09-21",
@@ -859,6 +863,31 @@
       "Risk": "Shorting would exceed portfolio limits; a long position would expose the portfolio to a highly overvalued asset with limited upside and high downside risk."
     },
     "corrections_made": "Corrected the trade proposal to respect portfolio constraints and adjusted the recommendation to HOLD based on the high valuation, negative sentiment, and technical bearish signals. Removed the unrealistic short\u2011sell size and clarified that the previous bullish and bearish arguments were balanced but the overall risk profile favors a neutral stance.",
+    "verified_next_day": {
+      "actual_price": 2669.3,
+      "direction_correct": true,
+      "error_pct": -0.4
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-25",
+    "price_at_prediction": 2669.3,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 2660.0,
+    "predicted_next_week_price": 2700.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation (P/E 78.46) and modest dividend yield suggest limited upside; revenue growth has stalled to a four\u2011year low, raising concerns about sustaining earnings growth.",
+      "Technical": "Price is below both 20\u2011 and 50\u2011day SMAs and MACD is bearish; RSI at 31.19 is near oversold but not below 30, so a rebound is uncertain.",
+      "Sentiment": "More negative headlines than positive; market sentiment appears bearish.",
+      "Bull": "Potential upside if a positive catalyst (e.g., tax\u2011cut driven consumer spending) materialises, but current fundamentals and technicals do not strongly support a bullish move.",
+      "Bear": "Valuation is high, momentum is weak, and recent revenue slowdown could continue; downside risk exists if price fails to recover to SMA levels.",
+      "Risk": "Low volatility (2.18%) limits large swings, but the high valuation and weak momentum increase risk of further decline."
+    },
+    "corrections_made": "Corrected RSI interpretation \u2013 31.19 is not below the 30 oversold threshold; noted that the bullish case overstates oversold strength.",
     "verified_next_day": null,
     "verified_next_week": null
   }

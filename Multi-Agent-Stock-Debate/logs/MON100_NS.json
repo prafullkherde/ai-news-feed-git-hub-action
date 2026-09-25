@@ -742,7 +742,11 @@
       "direction_correct": false,
       "error_pct": 2.91
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 324.11,
+      "direction_correct": false,
+      "error_pct": 1.6
+    }
   },
   {
     "date": "2026-09-18",
@@ -862,6 +866,31 @@
       "Risk": "Limited upside cushion, high valuation, and recent bearish technicals increase downside risk."
     },
     "corrections_made": "Adjusted recommendation to HOLD based on bearish technicals and low track record accuracy; removed unsupported bullish claims about near\u2011term reversal.",
+    "verified_next_day": {
+      "actual_price": 324.11,
+      "direction_correct": false,
+      "error_pct": 0.81
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-25",
+    "price_at_prediction": 324.11,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 322.0,
+    "predicted_next_week_price": 310.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 28.5 is high relative to market averages, but lack of other metrics (market cap, growth, margins) prevents a clear valuation assessment. The company may be overvalued or have limited growth prospects.",
+      "Technical": "Price is below both 20\u2011day and 50\u2011day SMAs, MACD is negative and below signal, RSI is near neutral. These indicators suggest a short\u2011term bearish bias rather than a clear bullish reversal.",
+      "Sentiment": "No recent news or sentiment data available; cannot infer positive or negative catalysts.",
+      "Bull": "Bull case overstates the sustainability of the 3\u2011month rally and underestimates the risk of a reversal given weak momentum signals.",
+      "Bear": "Bear case correctly notes weak momentum but may overstate the lack of upside by ignoring potential mean\u2011reversion to SMAs.",
+      "Risk": "Given the low track record accuracy (53% next\u2011day, 43% next\u2011week) and the neutral technical picture, the risk of a short\u2011term decline outweighs potential gains. Portfolio constraints allow a small position, but a HOLD is prudent to avoid unnecessary exposure."
+    },
+    "corrections_made": "Overstated bullish potential; corrected next\u2011day/next\u2011week price predictions to reflect bearish bias; adjusted confidence to Low; removed unsupported claims about rapid SMA convergence and implied upside.",
     "verified_next_day": null,
     "verified_next_week": null
   }

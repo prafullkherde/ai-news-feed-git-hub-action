@@ -779,7 +779,11 @@
       "direction_correct": false,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 40.8,
+      "direction_correct": false,
+      "error_pct": -10.33
+    }
   },
   {
     "date": "2026-09-21",
@@ -870,6 +874,31 @@
       "Risk": "Portfolio constraints allow small position, but risk\u2011adjusted return is uncertain; conservative stance advised."
     },
     "corrections_made": "Overstated bullish case by ignoring debt\u2011to\u2011equity and P/B concerns; corrected technical assessment to reflect negative MACD and low volatility; adjusted recommendation to HOLD based on weak next\u2011week direction accuracy and recent call performance.",
+    "verified_next_day": {
+      "actual_price": 40.8,
+      "direction_correct": false,
+      "error_pct": 0.74
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-25",
+    "price_at_prediction": 40.8,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 40.7,
+    "predicted_next_week_price": 40.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Suzlon\u2019s high debt\u2011to\u2011equity (2.81) and recent regulatory fine suggest financial strain; earnings growth is already priced in, limiting upside.",
+      "Technical": "Price below both 20\u2011 and 50\u2011day SMAs and MACD remains below signal, indicating continued bearish momentum; oversold RSI may be a false signal given the weak trend.",
+      "Sentiment": "Positive order\u2011flow headlines are offset by compliance risk and a modest 3\u2011month decline; overall sentiment is neutral.",
+      "Bull": "The bullish case overestimates the impact of new contracts and ignores the strong bearish technicals and high leverage.",
+      "Bear": "The bearish case is accurate but does not consider potential short\u2011term rebound from oversold RSI; however, the risk of further decline remains.",
+      "Risk": "High debt, low volatility, and weak trend increase downside risk; portfolio constraints allow no position."
+    },
+    "corrections_made": "Overstated bullish upside, ignored bearish technicals and debt risk; adjusted recommendation to HOLD.",
     "verified_next_day": null,
     "verified_next_week": null
   }

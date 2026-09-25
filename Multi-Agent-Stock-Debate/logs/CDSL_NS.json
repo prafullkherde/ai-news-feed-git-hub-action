@@ -764,7 +764,11 @@
       "direction_correct": false,
       "error_pct": -2.44
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1318.0,
+      "direction_correct": false,
+      "error_pct": -5.86
+    }
   },
   {
     "date": "2026-09-21",
@@ -859,6 +863,31 @@
       "Risk": "Portfolio constraint mis\u2011calculated in proposal; exposure would far exceed 5% if executed as described; risk of over\u2011leveraging and mis\u2011pricing of stop/target."
     },
     "corrections_made": "Recalculated portfolio exposure: 5% of \u20b9100,000 = \u20b95,000; proposed 2% = \u20b92,000, but 151 shares at \u20b91,320 would cost ~\u20b9199,320, far exceeding the 5% limit. Adjusted to HOLD and noted the miscalculation.",
+    "verified_next_day": {
+      "actual_price": 1318.0,
+      "direction_correct": true,
+      "error_pct": 0.23
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-25",
+    "price_at_prediction": 1318.0,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 1315.0,
+    "predicted_next_week_price": 1300.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Valuation multiples are high (P/E 58.4, P/B 14) and margin/earnings growth are moderate; no clear upside justification.",
+      "Technical": "Price below 20\u2011 and 50\u2011day SMAs, RSI in oversold but still below 30, MACD negative; overall bearish momentum.",
+      "Sentiment": "Mixed headlines; regulatory penalty may dampen sentiment.",
+      "Bull": "Overvaluation and weak technicals outweigh potential rebound.",
+      "Bear": "High valuation, negative momentum, regulatory risk support a cautious stance.",
+      "Risk": "Past prediction accuracy is low; portfolio constraints limit position size."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }
