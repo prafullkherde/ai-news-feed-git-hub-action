@@ -26,10 +26,10 @@
   "RemoteOK::1131509": {
     "title": "Tech Lead @ Zensurance",
     "score": 70,
-    "why": "Senior \u201cTech Lead\u201d aligns with experience level, but the posting does not explicitly require Angular/TypeScript, so the score is capped below the 80\u2011point threshold.",
+    "why": "The role is a Tech Lead position that likely involves frontend work but does not explicitly require Angular or TypeScript, so the candidate\u2019s senior UI expertise is relevant but not a perfect match.",
     "gap": "No explicit Angular/TypeScript requirement",
-    "first_seen": "2026-09-10",
-    "suppress_until": "2026-09-24"
+    "first_seen": "2026-09-25",
+    "suppress_until": "2026-10-09"
   },
   "RemoteOK::1131370": {
     "title": "Front End Full Stack Developer @ Honor Foods",
@@ -42,10 +42,10 @@
   "RemoteOK::1131610": {
     "title": "Sr Solution Architect Consultant Sales Engineer @ Cyara",
     "score": 0,
-    "why": "The role is framed as a \u201cSolution Architect Consultant Sales Engineer,\u201d which falls under the excluded sales\u2011engineer category.",
-    "gap": "Sales\u2011engineer focus (excluded)",
-    "first_seen": "2026-09-10",
-    "suppress_until": "2026-09-24"
+    "why": "The position is a Sales Engineer / Solution Architect consultant role, which falls under the excluded \u201csales engineer\u201d category.",
+    "gap": "Pure sales\u2011engineer focus",
+    "first_seen": "2026-09-25",
+    "suppress_until": "2026-10-09"
   },
   "RemoteOK::1132446": {
     "title": "Junior Front End Developer @ PulseMediaNL",
@@ -58,10 +58,10 @@
   "RemoteOK::1131588": {
     "title": "Staff Engineer Platform Engineering @ HighLevel",
     "score": 0,
-    "why": "\u201cStaff Engineer Platform Engineering\u201d is a backend/platform role with no UI focus, thus excluded.",
-    "gap": "Lack of UI/Frontend focus (excluded)",
-    "first_seen": "2026-09-10",
-    "suppress_until": "2026-09-24"
+    "why": "\u201cStaff Engineer Platform Engineering\u201d is a backend/infrastructure\u2011focused role, excluded by the pure\u2011backend rule.",
+    "gap": "Backend\u2011only focus",
+    "first_seen": "2026-09-25",
+    "suppress_until": "2026-10-09"
   },
   "RemoteOK::1130892": {
     "title": "Principal Solution Architect Professional Services Finance @ Anaplan",
@@ -3614,5 +3614,13 @@
     "gap": "Not a software development role",
     "first_seen": "2026-09-24",
     "suppress_until": "2026-10-08"
+  },
+  "WN::https://www.workingnomads.com/job/go/1889808/": {
+    "title": "Stack .NET Developer / Algorithm Engineer \u2013 Backend Focus. @ CloudGeometry",
+    "score": 0,
+    "why": "The listing is a .NET Developer / Algorithm Engineer with a backend focus, which is excluded.",
+    "gap": "Backend\u2011only focus",
+    "first_seen": "2026-09-25",
+    "suppress_until": "2026-10-09"
   }
 }
