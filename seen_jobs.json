@@ -3622,5 +3622,45 @@
     "gap": "Backend\u2011only focus",
     "first_seen": "2026-09-25",
     "suppress_until": "2026-10-09"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/fin-solutions-architect-spanish-speaking": {
+    "title": "Fin: Solutions Architect -Spanish Speaking",
+    "score": 0,
+    "why": "The role is a generic Solutions Architect (Spanish\u2011speaking) with no explicit Angular or TypeScript requirement and is not a UI\u2011focused position.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-09-26",
+    "suppress_until": "2026-10-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-power-platform-solutions-architect": {
+    "title": "Toptal: Power Platform Solutions Architect",
+    "score": 0,
+    "why": "The position is a Power Platform Solutions Architect, which centers on Microsoft low\u2011code tools and does not require Angular or TypeScript expertise.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-09-26",
+    "suppress_until": "2026-10-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/flexport-senior-systems-engineer-identity-and-access": {
+    "title": "Flexport: Senior Systems Engineer (Identity and Access)",
+    "score": 0,
+    "why": "Senior Systems Engineer (Identity and Access) is a security\u2011focused engineering role, unrelated to frontend Angular/TypeScript work.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-09-26",
+    "suppress_until": "2026-10-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/salesloft-commercial-account-manager": {
+    "title": "Salesloft: Commercial Account Manager",
+    "score": 0,
+    "why": "Commercial Account Manager is a sales role, not a technical UI or frontend position.",
+    "gap": "Role is non\u2011technical (sales)",
+    "first_seen": "2026-09-26",
+    "suppress_until": "2026-10-10"
+  },
+  "WN::https://www.workingnomads.com/job/go/1891955/": {
+    "title": "Beekman Social - Account Manager @ Beekman Social",
+    "score": 0,
+    "why": "Account Manager at Beekman Social is a client\u2011facing sales position, with no relevance to Angular or TypeScript development.",
+    "gap": "Role is non\u2011technical (sales)",
+    "first_seen": "2026-09-26",
+    "suppress_until": "2026-10-10"
   }
 }
