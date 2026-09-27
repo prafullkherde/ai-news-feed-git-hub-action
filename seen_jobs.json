@@ -666,10 +666,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/sticker-mule-software-engineer-3": {
     "title": "Sticker Mule: Software engineer",
     "score": 0,
-    "why": "The Sticker Mule software engineer posting is generic and does not mention Angular or TypeScript, so it fails the mandatory technology criterion.",
+    "why": "The listing does not explicitly require Angular or TypeScript nor specify a frontend focus, so the candidate is ineligible.",
     "gap": "No Angular/TypeScript requirement",
-    "first_seen": "2026-08-31",
-    "suppress_until": "2026-09-14"
+    "first_seen": "2026-09-27",
+    "suppress_until": "2026-10-11"
   },
   "WWR::https://weworkremotely.com/remote-jobs/aguru-uk-ltd-senior-full-stack-engineer": {
     "title": "Aguru UK Ltd: Senior Full Stack Engineer",
