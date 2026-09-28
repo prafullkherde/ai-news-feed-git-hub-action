@@ -899,6 +899,31 @@
       "Risk": "High debt, low volatility, and weak trend increase downside risk; portfolio constraints allow no position."
     },
     "corrections_made": "Overstated bullish upside, ignored bearish technicals and debt risk; adjusted recommendation to HOLD.",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-28",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 42.0,
+    "predicted_next_week_price": 45.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong revenue growth and high margins but very high leverage (D/E 2.81) and regulatory fine raise risk; valuation modest but not attractive given debt risk.",
+      "Technical": "Missing price data; MACD slightly below signal suggests weak bearish bias; cannot rely on trend due to data gaps.",
+      "Sentiment": "Mixed news: large order backlog boosts upside, but regulatory fine and cyclical concerns dampen sentiment.",
+      "Bull": "Order pipeline could support revenue, but leverage and valuation limits upside.",
+      "Bear": "High debt, premium valuation, and governance issues could trigger downside; recent fine indicates potential for further scrutiny.",
+      "Risk": "Portfolio constraints limit position; historical accuracy low (next\u2011day 55%, next\u2011week 25%) warrants conservative stance."
+    },
+    "corrections_made": "Overrode Executor\u2019s bullish trade proposal and position size; corrected technical assessment to reflect missing data; adjusted sentiment to balanced view; set HOLD recommendation due to weak predictive track record.",
     "verified_next_day": null,
     "verified_next_week": null
   }

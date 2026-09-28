@@ -793,7 +793,11 @@
       "direction_correct": true,
       "error_pct": -0.88
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": false,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-09-22",
@@ -888,6 +892,31 @@
       "Risk": "Past prediction accuracy is low; portfolio constraints limit position size."
     },
     "corrections_made": "none",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-28",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1315.0,
+    "predicted_next_week_price": 1320.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples (PE 57x, P/B 13.7) and modest dividend yield suggest limited upside; strong margins and low debt provide stability but do not offset premium.",
+      "Technical": "MACD is deeply negative and below signal, indicating bearish momentum; lack of SMA data and missing RSI prevent trend confirmation; low volatility (1.88%) limits both upside and downside potential.",
+      "Sentiment": "Earnings\u2011call headlines dominate but regulatory penalty introduces a negative factor; overall sentiment is neutral to slightly negative.",
+      "Bull": "Strong profit margin and revenue growth could support earnings improvement, but valuation remains a hurdle.",
+      "Bear": "High PE/PB, low dividend, negative MACD, and regulatory risk point to potential downside; historical accuracy for this ticker is low, so caution is warranted.",
+      "Risk": "Portfolio constraints allow only 5% exposure; shorting would breach limits; volatility is low, so potential loss is limited but upside is also limited."
+    },
+    "corrections_made": "Overrode the Executor\u2019s short\u2011sell recommendation due to portfolio exposure limits and low historical accuracy; corrected the implied next\u2011day target to match the verified call (1315.0) and set a conservative next\u2011week target of 1320.0 based on current price context.",
     "verified_next_day": null,
     "verified_next_week": null
   }

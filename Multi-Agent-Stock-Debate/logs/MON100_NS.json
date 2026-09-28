@@ -771,7 +771,11 @@
       "direction_correct": true,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 324.11,
+      "direction_correct": false,
+      "error_pct": -3.25
+    }
   },
   {
     "date": "2026-09-21",
@@ -796,7 +800,11 @@
       "direction_correct": true,
       "error_pct": -2.12
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-09-22",
@@ -891,6 +899,31 @@
       "Risk": "Given the low track record accuracy (53% next\u2011day, 43% next\u2011week) and the neutral technical picture, the risk of a short\u2011term decline outweighs potential gains. Portfolio constraints allow a small position, but a HOLD is prudent to avoid unnecessary exposure."
     },
     "corrections_made": "Overstated bullish potential; corrected next\u2011day/next\u2011week price predictions to reflect bearish bias; adjusted confidence to Low; removed unsupported claims about rapid SMA convergence and implied upside.",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-28",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 323.0,
+    "predicted_next_week_price": 320.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing\u2011PE of 28.5 is moderate but no other fundamentals are available, making it impossible to assess growth or profitability. The lack of market\u2011cap, revenue, or balance\u2011sheet data prevents any meaningful valuation beyond the PE figure.",
+      "Technical": "MACD is negative and below its signal line, indicating bearish momentum, yet all other technical indicators (price, SMA, RSI) are missing. Volatility is low at 1.51%, suggesting a flat price range but not enough to justify a decisive trade. The negative MACD alone is insufficient for a confident directional bet.",
+      "Sentiment": "No recent headlines or sentiment data were retrieved, so there is no evidence of positive or negative catalysts. The absence of news reduces the likelihood of a sudden move.",
+      "Bull": "The PE is not extreme and volatility is low, but without earnings growth or other fundamentals, the bullish case is speculative. The lack of price trend data weakens any accumulation thesis.",
+      "Bear": "The negative MACD and lack of positive catalysts support a bearish view, but the missing price data and low volatility make it unclear whether a short is warranted. The bearish case relies heavily on a single indicator.",
+      "Risk": "The proposed short would use the full 5% allocation, which is within portfolio limits, but the lack of price data and the low confidence in the signal make the risk higher than the potential reward. A conservative approach would be to avoid taking a position until more data is available."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }
