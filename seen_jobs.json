@@ -3662,5 +3662,21 @@
     "gap": "Role is non\u2011technical (sales)",
     "first_seen": "2026-09-26",
     "suppress_until": "2026-10-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/pinterest-data-scientist-ii-ml-infrastructure": {
+    "title": "Pinterest: Data Scientist II, ML Infrastructure",
+    "score": 0,
+    "why": "The role is a Data Scientist position focused on ML infrastructure, which does not match the candidate\u2019s UI/Angular expertise.",
+    "gap": "Data Science / ML expertise",
+    "first_seen": "2026-09-28",
+    "suppress_until": "2026-10-12"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/pinterest-data-scientist-ii-infrastructure": {
+    "title": "Pinterest: Data Scientist II, Infrastructure",
+    "score": 0,
+    "why": "This position is a Data Scientist role centered on infrastructure, unrelated to the candidate\u2019s frontend/Angular background.",
+    "gap": "Data Science / ML expertise",
+    "first_seen": "2026-09-28",
+    "suppress_until": "2026-10-12"
   }
 }
