@@ -3678,5 +3678,37 @@
     "gap": "Data Science / ML expertise",
     "first_seen": "2026-09-28",
     "suppress_until": "2026-10-12"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-python-10": {
+    "title": "Proxify AB: Senior Backend Developer (Python)",
+    "score": 0,
+    "why": "The role is a pure backend Python position with no frontend requirements, which disqualifies the candidate.",
+    "gap": "Pure backend focus",
+    "first_seen": "2026-09-29",
+    "suppress_until": "2026-10-13"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-fullstack-developer-react-js-node-js-4": {
+    "title": "Proxify AB: Senior Fullstack Developer (React.js / Node.js)",
+    "score": 55,
+    "why": "The position is a senior full\u2011stack role centered on React.js/Node.js; while the candidate is senior, the stack does not include Angular/TypeScript, limiting the score to the React\u2011only cap.",
+    "gap": "Lack of React experience (candidate specializes in Angular/TS)",
+    "first_seen": "2026-09-29",
+    "suppress_until": "2026-10-13"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/reddit-backend-engineer-iam": {
+    "title": "Reddit: Backend Engineer, IAM",
+    "score": 0,
+    "why": "This is a backend engineering role (IAM) with no frontend component, which the candidate\u2019s profile does not match.",
+    "gap": "Pure backend focus",
+    "first_seen": "2026-09-29",
+    "suppress_until": "2026-10-13"
+  },
+  "WN::https://www.workingnomads.com/job/go/1899188/": {
+    "title": "Storyteller: Freelance B2B Interviewer and Writer @ Elite Editing",
+    "score": 0,
+    "why": "The job is a freelance interviewing/writing position, not a technical UI/frontend development role.",
+    "gap": "Non\u2011technical, non\u2011development role",
+    "first_seen": "2026-09-29",
+    "suppress_until": "2026-10-13"
   }
 }
