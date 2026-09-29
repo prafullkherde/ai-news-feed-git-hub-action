@@ -822,7 +822,11 @@
       "direction_correct": true,
       "error_pct": 0.51
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-09-23",
@@ -917,6 +921,31 @@
       "Risk": "Short position carries unlimited downside risk; however, a 3% stop and 8% target provide a reasonable risk\u2011reward ratio given the current volatility; portfolio constraints allow a 5% allocation."
     },
     "corrections_made": "Replaced unsupported entry price assumption with a neutral entry at current market price; removed volume\u2011based position sizing (volume data not provided); acknowledged missing last_close and SMA/RSI data; adjusted target/stop to reflect realistic volatility; corrected over\u2011optimistic bullish claims. | Position forced to 0% by code \u2014 recommendation was SELL, not BUY.",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-29",
+    "price_at_prediction": NaN,
+    "recommendation": "SELL",
+    "confidence": "Medium",
+    "predicted_next_day_price": 2600.0,
+    "predicted_next_week_price": 2500.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples (P/E 77.8, forward P/E 51.7) and modest profit margin (8.6%) suggest limited upside; revenue growth (17.8%) is insufficient to justify current price.",
+      "Technical": "MACD strongly negative (\u201157.7 vs. signal \u201148.7) indicates bearish momentum; low volatility (2.17%) limits upside potential.",
+      "Sentiment": "No recent news; market sentiment appears cautious due to premium valuation and weak momentum.",
+      "Bull": "None identified as outweighing bearish signals.",
+      "Bear": "High valuation, thin margins, negative MACD, low volatility support a bearish stance.",
+      "Risk": "Position limited to 5% of portfolio, stop\u2011loss 4% above entry to cap upside risk; volatility suggests stop may be hit if price reverses."
+    },
+    "corrections_made": "none | Position forced to 0% by code \u2014 recommendation was SELL, not BUY.",
     "verified_next_day": null,
     "verified_next_week": null
   }

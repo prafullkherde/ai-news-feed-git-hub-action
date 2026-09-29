@@ -829,7 +829,11 @@
       "direction_correct": true,
       "error_pct": -0.26
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-09-23",
@@ -924,6 +928,31 @@
       "Risk": "Portfolio constraints limit position; historical accuracy low (next\u2011day 55%, next\u2011week 25%) warrants conservative stance."
     },
     "corrections_made": "Overrode Executor\u2019s bullish trade proposal and position size; corrected technical assessment to reflect missing data; adjusted sentiment to balanced view; set HOLD recommendation due to weak predictive track record.",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-29",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong profitability and revenue growth but high leverage and elevated price-to-book raise valuation concerns; no clear upside justification.",
+      "Technical": "MACD below signal indicates bearish momentum; lack of SMA/RSI data limits trend confirmation; volatility is modest.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Positive earnings metrics and growth potential could support a buy if valuation improves.",
+      "Bear": "High debt, high P/B, and bearish MACD suggest caution; potential downside if earnings falter.",
+      "Risk": "Portfolio constraints prohibit large positions; current exposure is zero, but any trade would need to fit within 5% limit."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }

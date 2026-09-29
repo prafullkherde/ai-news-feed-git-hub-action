@@ -822,7 +822,11 @@
       "direction_correct": false,
       "error_pct": 1.21
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1261.9,
+      "direction_correct": true,
+      "error_pct": -4.4
+    }
   },
   {
     "date": "2026-09-23",
@@ -917,6 +921,31 @@
       "Risk": "Portfolio constraints allow only 5% exposure; shorting would breach limits; volatility is low, so potential loss is limited but upside is also limited."
     },
     "corrections_made": "Overrode the Executor\u2019s short\u2011sell recommendation due to portfolio exposure limits and low historical accuracy; corrected the implied next\u2011day target to match the verified call (1315.0) and set a conservative next\u2011week target of 1320.0 based on current price context.",
+    "verified_next_day": {
+      "actual_price": 1261.9,
+      "direction_correct": true,
+      "error_pct": -4.04
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-29",
+    "price_at_prediction": 1261.9,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1240.5,
+    "predicted_next_week_price": 1275.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation (forward P/E 42.24, trailing 55.94) and modest dividend yield (0.99%) reduce upside potential; strong profitability but no clear earnings catalyst.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, RSI 32.5 indicates oversold but MACD strongly negative; overall bearish momentum.",
+      "Sentiment": "No recent headlines; market sentiment appears cautious due to technical weakness.",
+      "Bull": "Oversold RSI and 3\u2011month return suggest possible short\u2011term rebound, but high multiples temper enthusiasm.",
+      "Bear": "Strongly bearish technicals, high valuation, low volatility imply limited room for upside and potential for a corrective pullback.",
+      "Risk": "Limited upside, high downside risk if price stays below SMAs; portfolio constraints allow no new position."
+    },
+    "corrections_made": "None",
     "verified_next_day": null,
     "verified_next_week": null
   }
