@@ -858,7 +858,11 @@
       "direction_correct": true,
       "error_pct": -3.69
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 39.49,
+      "direction_correct": false,
+      "error_pct": -8.16
+    }
   },
   {
     "date": "2026-09-24",
@@ -953,6 +957,27 @@
       "Risk": "Portfolio constraints prohibit large positions; current exposure is zero, but any trade would need to fit within 5% limit."
     },
     "corrections_made": "none",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-30",
+    "price_at_prediction": 39.49,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 39.3,
+    "predicted_next_week_price": 39.1,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong revenue growth and profit margins but high debt-to-equity (2.81) raises solvency concerns; forward P/E modest but price-to-book at 5.55 suggests valuation not overly cheap.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, RSI deeply oversold but flat 3\u2011month return and low volatility imply limited upside; MACD negative confirms weak momentum.",
+      "Sentiment": "Mixed news: large order wins offset by regulator fine and cautious analyst commentary; overall sentiment not strongly bullish.",
+      "Bull": "Overstated potential upside; oversold signals may not trigger rebound given weak fundamentals and high leverage.",
+      "Bear": "High leverage and regulatory risk are valid concerns; technical weakness supports caution.",
+      "Risk": "Portfolio constraints allow only 5% exposure; high financial risk and low historical directional accuracy (28% weekly) warrant conservative stance."
+    },
+    "corrections_made": "Adjusted bullish case to reflect high debt risk and weak technicals; removed unrealistic 15% upside target; set recommendation to HOLD due to low confidence and portfolio limits.",
     "verified_next_day": null,
     "verified_next_week": null
   }

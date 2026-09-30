@@ -829,7 +829,11 @@
       "direction_correct": true,
       "error_pct": 0.27
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 321.08,
+      "direction_correct": false,
+      "error_pct": -2.7
+    }
   },
   {
     "date": "2026-09-23",
@@ -949,6 +953,27 @@
       "Risk": "High uncertainty due to lack of data and poor historical accuracy; risk\u2011reward profile is unfavorable."
     },
     "corrections_made": "Overrode the Executor\u2019s short trade proposal and recommendation; acknowledged data gaps and past low prediction accuracy to justify a HOLD stance.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-30",
+    "price_at_prediction": 321.08,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 320.5,
+    "predicted_next_week_price": 318.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 28.26 is moderate but lack of other fundamentals and market cap data limits assessment; no clear upside or downside signal from fundamentals.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, negative MACD below signal, RSI in oversold zone but combined bearish momentum suggests limited short\u2011term rebound potential; volatility is low (1.5%) reducing upside reach.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Bull case relies on oversold RSI and 3\u2011month gain, but bearish indicators outweigh potential bounce.",
+      "Bear": "Bear case highlights persistent downside pressure, negative MACD, and tight volatility; recent rally may be exhausted.",
+      "Risk": "Past next\u2011day accuracy 57% and next\u2011week 41% suggest moderate prediction uncertainty; portfolio constraints allow small position but risk of further decline exists."
+    },
+    "corrections_made": "None",
     "verified_next_day": null,
     "verified_next_week": null
   }

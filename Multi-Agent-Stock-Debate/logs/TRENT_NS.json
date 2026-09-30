@@ -851,7 +851,11 @@
       "direction_correct": true,
       "error_pct": -2.35
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 2621.6,
+      "direction_correct": true,
+      "error_pct": -3.97
+    }
   },
   {
     "date": "2026-09-24",
@@ -946,6 +950,31 @@
       "Risk": "Position limited to 5% of portfolio, stop\u2011loss 4% above entry to cap upside risk; volatility suggests stop may be hit if price reverses."
     },
     "corrections_made": "none | Position forced to 0% by code \u2014 recommendation was SELL, not BUY.",
+    "verified_next_day": {
+      "actual_price": 2621.6,
+      "direction_correct": true,
+      "error_pct": 0.83
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-30",
+    "price_at_prediction": 2621.6,
+    "recommendation": "SELL",
+    "confidence": "Medium",
+    "predicted_next_day_price": 2600.0,
+    "predicted_next_week_price": 2550.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High forward P/E (51.5) and trailing P/E (77) far above sector peers (~30-40) suggest overvaluation; modest profit margins (8.6%) and slowing revenue growth raise concerns about earnings sustainability.",
+      "Technical": "Stock is below both 20\u2011day and 50\u2011day SMAs and has a very low RSI (25.5) indicating oversold but also potential for a downtrend; MACD is strongly negative. Recent 3\u2011month return (19.5%) is a one\u2011off and does not guarantee continuation.",
+      "Sentiment": "Mixed headlines with more negative coverage (4/7) about demand and revenue slowdown; positive earnings growth mentions are limited.",
+      "Bull": "Bull case overstates valuation advantage by comparing forward P/E to sector average without accounting for high current P/E; ignores recent demand weakness and high debt\u2011to\u2011equity.",
+      "Bear": "Bear case accurately highlights valuation, technical weakness, and demand concerns but may overstate downside by ignoring potential short\u2011term rebound from oversold RSI.",
+      "Risk": "High valuation, weak momentum, and limited dividend yield increase downside risk; portfolio constraints allow small position but risk/reward ratio is unfavorable."
+    },
+    "corrections_made": "Overstated bullish valuation advantage; omitted realistic downside risk from high P/E and weak demand; adjusted recommendation to SELL with conservative price targets.",
     "verified_next_day": null,
     "verified_next_week": null
   }

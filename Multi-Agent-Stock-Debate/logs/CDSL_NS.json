@@ -851,7 +851,11 @@
       "direction_correct": true,
       "error_pct": -1.86
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1264.0,
+      "direction_correct": true,
+      "error_pct": -4.96
+    }
   },
   {
     "date": "2026-09-24",
@@ -946,6 +950,31 @@
       "Risk": "Limited upside, high downside risk if price stays below SMAs; portfolio constraints allow no new position."
     },
     "corrections_made": "None",
+    "verified_next_day": {
+      "actual_price": 1264.0,
+      "direction_correct": false,
+      "error_pct": 1.89
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-09-30",
+    "price_at_prediction": 1264.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1245.0,
+    "predicted_next_week_price": 1270.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Solid profitability but high valuation (P/E 55.96, P/B 13.48) and modest dividend yield (1.01%) suggest limited upside; no ROE data limits assessment.",
+      "Technical": "Price below 20\u2011 and 50\u2011day SMAs, bearish MACD, oversold RSI borderline; overall trend remains downwards.",
+      "Sentiment": "Mixed news with earnings updates but regulatory penalty introduces risk; sentiment not strongly bullish.",
+      "Bull": "Forward P/E lower than trailing indicates potential earnings improvement; oversold RSI could trigger a short bounce.",
+      "Bear": "High valuation, bearish MACD, price below trend lines, regulatory risk; downside risk persists.",
+      "Risk": "Portfolio constraints allow only 5% exposure; recent trade proposal exceeded limits; volatility low but trend negative."
+    },
+    "corrections_made": "Adjusted technical assessment to emphasize bearish MACD and price below SMAs; corrected trade proposal exposure to comply with 5% cap; updated predictions based on recent price movement and low track\u2011record accuracy.",
     "verified_next_day": null,
     "verified_next_week": null
   }
