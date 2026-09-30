@@ -3710,5 +3710,53 @@
     "gap": "Non\u2011technical, non\u2011development role",
     "first_seen": "2026-09-29",
     "suppress_until": "2026-10-13"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-senior-data-engineer-aws-data-lake-pipeline-architecture": {
+    "title": "Toptal: Senior Data Engineer \u2013 AWS Data Lake & Pipeline Architecture",
+    "score": 0,
+    "why": "The role is a Senior Data Engineer focused on AWS data lake and pipelines, which is a pure backend/data\u2011engineering position and does not require Angular or TypeScript.",
+    "gap": "None",
+    "first_seen": "2026-09-30",
+    "suppress_until": "2026-10-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-node-js-nest-js-3": {
+    "title": "Proxify AB: Senior Backend Developer (Node.js / Nest.js)",
+    "score": 0,
+    "why": "This is a Senior Backend Developer role (Node.js / Nest.js) with no frontend or Angular/TypeScript requirements.",
+    "gap": "None",
+    "first_seen": "2026-09-30",
+    "suppress_until": "2026-10-14"
+  },
+  "WN::https://www.workingnomads.com/job/go/1901972/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "The position is a junior\u2011level Data Analyst (no experience required), far below the senior UI architect experience required.",
+    "gap": "None",
+    "first_seen": "2026-09-30",
+    "suppress_until": "2026-10-14"
+  },
+  "WN::https://www.workingnomads.com/job/go/1901964/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "Same as above \u2013 a junior Data Analyst role that does not involve UI development or Angular/TypeScript.",
+    "gap": "None",
+    "first_seen": "2026-09-30",
+    "suppress_until": "2026-10-14"
+  },
+  "WN::https://www.workingnomads.com/job/go/1901953/": {
+    "title": "AI Content Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "An entry\u2011level AI Content Analyst role, not a senior UI/frontend position and does not require Angular/TypeScript.",
+    "gap": "None",
+    "first_seen": "2026-09-30",
+    "suppress_until": "2026-10-14"
+  },
+  "WN::https://www.workingnomads.com/job/go/1901331/": {
+    "title": "Senior UI & UX / Graphic Designer @ Lemon.io",
+    "score": 65,
+    "why": "The job is a Senior UI & UX / Graphic Designer role that emphasizes design rather than Angular/TypeScript development, so the candidate\u2019s deep UI\u2011architect expertise is only partially relevant.",
+    "gap": "Lack of dedicated UI/UX design and graphic design experience.",
+    "first_seen": "2026-09-30",
+    "suppress_until": "2026-10-14"
   }
 }
