@@ -30,7 +30,7 @@ env:
 jobs:
   control:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90   # raised: deploy now polls instead of blocking, but still needs real room for a 45-70GB download on a mediocre host
 
     steps:
       - name: Checkout repo
@@ -58,11 +58,14 @@ jobs:
         id: create
         run: |
           set -e
+          # inet_down>200 (Mbps): rules out the class of host that caused
+          # the last two deploy failures BEFORE we ever rent it — this is
+          # the permanent fix, not a bigger timeout number.
           if [ "${{ github.event.inputs.gpu_tier }}" == "rtx3090" ]; then
-            QUERY='reliability>0.95 num_gpus=1 gpu_name=RTX_3090 disk_space>80 direct_port_count>=1 verified=true geolocation notin [CN]'
+            QUERY='reliability>0.95 num_gpus=1 gpu_name=RTX_3090 disk_space>80 direct_port_count>=1 inet_down>200 verified=true geolocation notin [CN]'
             DISK=80
           else
-            QUERY='reliability>0.95 num_gpus=1 disk_space>20 direct_port_count>=1 verified=true geolocation notin [CN]'
+            QUERY='reliability>0.95 num_gpus=1 disk_space>20 direct_port_count>=1 inet_down>200 verified=true geolocation notin [CN]'
             DISK=20
           fi
 
@@ -149,18 +152,71 @@ jobs:
           PORT=$(echo "$INFO" | python3 -c "import json,sys; d=json.load(sys.stdin); p=d.get('ports',{}).get('22/tcp'); print(p[0]['HostPort'] if p else d['ssh_port'])")
           echo "SSH target: $HOST:$PORT"
 
+          SSH="ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p $PORT root@$HOST"
+
           scp -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -P "$PORT" \
             "$PROJECT_DIR"/scripts/preflight.sh "$PROJECT_DIR"/scripts/bootstrap.sh "$PROJECT_DIR"/scripts/start.sh \
             root@"$HOST":~/
 
-          printf '%s' "${{ secrets.LTX2_GPU_HF_TOKEN }}" | \
-            ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p "$PORT" root@"$HOST" \
-            'cat > ~/.hf_token && chmod 600 ~/.hf_token'
+          printf '%s' "${{ secrets.LTX2_GPU_HF_TOKEN }}" | $SSH 'cat > ~/.hf_token && chmod 600 ~/.hf_token'
 
-          timeout 1800 ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p "$PORT" root@"$HOST" \
-            "export HF_TOKEN=\$(cat ~/.hf_token) && bash preflight.sh && bash bootstrap.sh && nohup bash start.sh > wgp.log 2>&1 &" < /dev/null
+          # --- Fire-and-forget launch ---
+          # Runs on the box, detached from this SSH session entirely.
+          # A network blip, a slow host, or GitHub Actions itself
+          # restarting no longer kills the install — it just keeps
+          # running on the GPU box regardless. We poll separately below.
+          $SSH "export HF_TOKEN=\$(cat ~/.hf_token) && \
+            nohup bash -c 'bash preflight.sh && bash bootstrap.sh && bash start.sh' \
+            > ~/deploy.log 2>&1 < /dev/null & disown; echo LAUNCHED" < /dev/null
 
-          echo "### Deployed to $HOST:$PORT — run health_check next to get the callable URL" >> "$GITHUB_STEP_SUMMARY"
+          echo "Install launched in background. Polling ~/deploy.log for progress..."
+
+          # --- Idle-based polling, not a total-duration guess ---
+          # Fails only if deploy.log stops GROWING for ~5 min straight —
+          # a true hang — never just because the whole thing is slow.
+          # 160 attempts x 15s = up to 40 min of real polling time.
+          PREV_SIZE=-1
+          STALL_COUNT=0
+          for i in $(seq 1 160); do
+            REMOTE_LOG=$($SSH 'wc -c < ~/deploy.log 2>/dev/null || echo 0' < /dev/null)
+            CUR_SIZE=$(echo "$REMOTE_LOG" | tr -dc '0-9')
+            [ -z "$CUR_SIZE" ] && CUR_SIZE=0
+
+            if [ "$CUR_SIZE" -gt "$PREV_SIZE" ]; then
+              STALL_COUNT=0
+            else
+              STALL_COUNT=$((STALL_COUNT + 1))
+            fi
+            PREV_SIZE=$CUR_SIZE
+            echo "Attempt $i: deploy.log = ${CUR_SIZE} bytes (stall count: $STALL_COUNT)"
+
+            TAIL=$($SSH 'tail -n 5 ~/deploy.log 2>/dev/null' < /dev/null || true)
+
+            if echo "$TAIL" | grep -q "Starting Wan2GP"; then
+              echo "SUCCESS: start.sh reached, Wan2GP launching."
+              echo "### Deployed to $HOST:$PORT — run health_check next" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            if echo "$TAIL" | grep -q "^FAIL:"; then
+              echo "FAILED: preflight.sh or bootstrap.sh reported a FAIL line:"
+              echo "$TAIL"
+              echo "### Deploy FAILED — see deploy.log on the instance for details" >> "$GITHUB_STEP_SUMMARY"
+              exit 1
+            fi
+            if [ "$STALL_COUNT" -ge 20 ]; then
+              echo "FAILED: deploy.log has not grown in ~5 minutes — real hang, not just slow."
+              echo "Last lines:"
+              echo "$TAIL"
+              echo "### Deploy FAILED — stalled with no progress for 5 min. Check ~/deploy.log on the instance." >> "$GITHUB_STEP_SUMMARY"
+              exit 1
+            fi
+            sleep 15
+          done
+
+          echo "FAILED: still running after 40 minutes of polling, no success/fail marker seen yet."
+          echo "Not necessarily broken — may just be a very large download still in progress."
+          echo "Re-run action: deploy with the same instance_id to resume polling (install keeps running regardless)."
+          exit 1
 
       - name: Health check
         if: ${{ github.event.inputs.action == 'health_check' }}
