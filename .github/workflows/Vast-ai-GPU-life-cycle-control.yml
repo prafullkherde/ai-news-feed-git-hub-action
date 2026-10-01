@@ -1,4 +1,4 @@
-name: LTX2 Video GPU — Lifecycle Control
+run-name: "${{ inputs.action }} on #${{ inputs.instance_id || 'auto' }} (${{ inputs.gpu_tier }})"
 
 on:
   workflow_dispatch:
