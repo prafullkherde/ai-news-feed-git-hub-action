@@ -135,12 +135,7 @@ jobs:
           # and less reliable for large transfers (torch/cuDNN wheels) —
           # this is what caused the earlier dropped connection.
           HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['public_ipaddr'])")
-          PORT=$(echo "$INFO" | python3 -c "
-import json,sys
-d = json.load(sys.stdin)
-p = d.get('ports', {}).get('22/tcp')
-print(p[0]['HostPort'] if p else d['ssh_port'])
-")
+          PORT=$(echo "$INFO" | python3 -c "import json,sys; d=json.load(sys.stdin); p=d.get('ports',{}).get('22/tcp'); print(p[0]['HostPort'] if p else d['ssh_port'])")
           echo "SSH target: $HOST:$PORT"
 
           scp -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -P "$PORT" \
