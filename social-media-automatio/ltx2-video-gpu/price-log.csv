@@ -5,3 +5,5 @@ timestamp,action,offer_id,gpu,price_per_hr
 2026-10-01T11:51:15Z,create,26586933,RTX 3090,$0.14712962962962964/hr
 timestamp,action,offer_id,gpu,price_per_hr
 2026-10-01T12:09:37Z,create,44527578,RTX 3090,$0.1660185185185185/hr
+timestamp,action,offer_id,gpu,price_per_hr
+2026-10-01T14:24:36Z,create,53644725,RTX 3090,$0.13935185185185184/hr
