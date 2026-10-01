@@ -1,3 +1,4 @@
+name: LTX2 Video GPU — Lifecycle Control
 run-name: "${{ inputs.action }} on #${{ inputs.instance_id || 'auto' }} (${{ inputs.gpu_tier }})"
 
 on:
@@ -7,7 +8,7 @@ on:
         description: "Run in order: 1) create  2) deploy  3) health_check — then stop/start anytime — 4) destroy when fully done"
         required: true
         type: choice
-        options: [create, deploy, start, health_check, stop, destroy]
+        options: [create, deploy, health_check, stop, start, destroy]
       instance_id:
         description: "Leave blank to auto-use your most recent instance."
         required: false
@@ -58,10 +59,10 @@ jobs:
         run: |
           set -e
           if [ "${{ github.event.inputs.gpu_tier }}" == "rtx3090" ]; then
-            QUERY='reliability>0.95 num_gpus=1 gpu_name=RTX_3090 disk_space>80 verified=true geolocation notin [CN]'
+            QUERY='reliability>0.95 num_gpus=1 gpu_name=RTX_3090 disk_space>80 direct_port_count>=1 verified=true geolocation notin [CN]'
             DISK=80
           else
-            QUERY='reliability>0.95 num_gpus=1 disk_space>20 verified=true geolocation notin [CN]'
+            QUERY='reliability>0.95 num_gpus=1 disk_space>20 direct_port_count>=1 verified=true geolocation notin [CN]'
             DISK=20
           fi
 
@@ -128,13 +129,29 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
 
           INFO=$(vastai show instance ${{ steps.resolve.outputs.iid }} --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
-          HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['ssh_host'])")
-          PORT=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['ssh_port'])")
+
+          # Direct SSH, not proxy: public_ipaddr + the real mapped port for
+          # 22/tcp. ssh_host/ssh_port are always the proxy address, slower
+          # and less reliable for large transfers (torch/cuDNN wheels) —
+          # this is what caused the earlier dropped connection.
+          HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['public_ipaddr'])")
+          PORT=$(echo "$INFO" | python3 -c "
+import json,sys
+d = json.load(sys.stdin)
+p = d.get('ports', {}).get('22/tcp')
+print(p[0]['HostPort'] if p else d['ssh_port'])
+")
           echo "SSH target: $HOST:$PORT"
 
           scp -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -P "$PORT" \
             "$PROJECT_DIR"/scripts/preflight.sh "$PROJECT_DIR"/scripts/bootstrap.sh "$PROJECT_DIR"/scripts/start.sh \
             root@"$HOST":~/
+
+          # Deliver the Hugging Face token bootstrap.sh needs to download
+          # the gated LTX-2 weights — see explanation above this file.
+          printf '%s' "${{ secrets.LTX2_GPU_HF_TOKEN }}" | \
+            ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p "$PORT" root@"$HOST" \
+            'cat > ~/.hf_token && chmod 600 ~/.hf_token'
 
           # LAYER 2 on the remote side: </dev/null means if anything
           # inside preflight/bootstrap/start still prompts, it gets
@@ -142,7 +159,7 @@ jobs:
           # LAYER 3 locally too: 'timeout' kills this step if the
           # remote side still hangs for some reason stdin didn't catch.
           timeout 1800 ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p "$PORT" root@"$HOST" \
-            "bash preflight.sh && bash bootstrap.sh && nohup bash start.sh > wgp.log 2>&1 &" < /dev/null
+            "export HF_TOKEN=\$(cat ~/.hf_token) && bash preflight.sh && bash bootstrap.sh && nohup bash start.sh > wgp.log 2>&1 &" < /dev/null
 
           echo "### Deployed to $HOST:$PORT — run health_check next to get the callable URL" >> "$GITHUB_STEP_SUMMARY"
 
