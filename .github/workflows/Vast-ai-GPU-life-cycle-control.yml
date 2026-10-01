@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: "create | stop | start | destroy | deploy | health_check"
+        description: "Run in order: 1) create  2) deploy  3) health_check — then stop/start anytime — 4) destroy when fully done"
         required: true
         type: choice
-        options: [create, stop, start, destroy, deploy, health_check]
+        options: [create, deploy, start, health_check, stop, destroy]
       instance_id:
         description: "Leave blank to auto-use your most recent instance."
         required: false
