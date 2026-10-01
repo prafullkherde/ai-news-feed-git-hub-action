@@ -858,7 +858,11 @@
       "direction_correct": true,
       "error_pct": -0.92
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-09-24",
@@ -974,6 +978,31 @@
       "Risk": "Past next\u2011day accuracy 57% and next\u2011week 41% suggest moderate prediction uncertainty; portfolio constraints allow small position but risk of further decline exists."
     },
     "corrections_made": "None",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-10-01",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 320.5,
+    "predicted_next_week_price": 330.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 28.29 is above typical value levels and no other fundamental data is available, limiting confidence in upside potential.",
+      "Technical": "Negative MACD with no SMA or RSI data suggests bearish momentum but lack of price history prevents trend confirmation.",
+      "Sentiment": "No recent news; sentiment appears neutral to slightly bearish based on technicals.",
+      "Bull": "No clear upside catalyst; low volatility and high valuation reduce upside probability.",
+      "Bear": "High valuation and negative MACD indicate potential downside but no strong bearish catalyst.",
+      "Risk": "Limited data and low track\u2011record accuracy increase uncertainty; holding preserves capital."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }

@@ -880,7 +880,11 @@
       "direction_correct": true,
       "error_pct": 0.23
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-09-25",
@@ -975,6 +979,31 @@
       "Risk": "Portfolio constraints allow only 5% exposure; recent trade proposal exceeded limits; volatility low but trend negative."
     },
     "corrections_made": "Adjusted technical assessment to emphasize bearish MACD and price below SMAs; corrected trade proposal exposure to comply with 5% cap; updated predictions based on recent price movement and low track\u2011record accuracy.",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-10-01",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1250.0,
+    "predicted_next_week_price": 1240.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation (PE 55.22, P/B 13.25) relative to sector, modest revenue growth (15.4%) and strong margins, but no recent earnings beat or dividend growth to justify premium.",
+      "Technical": "MACD below signal indicates bearish momentum; lack of SMA/RSI data limits trend assessment; low volatility (1.82%) suggests limited upside potential.",
+      "Sentiment": "Mixed headlines: two earnings\u2011call highlights vs one regulatory penalty; overall sentiment cautiously neutral.",
+      "Bull": "Forward PE lower than trailing suggests potential earnings acceleration, but valuation remains high and technicals are weak.",
+      "Bear": "Negative MACD, high valuation, regulatory risk, low dividend yield; combined factors point to downside risk.",
+      "Risk": "Portfolio constraints allow only 5% exposure; given high valuation and weak technicals, a conservative stance is warranted."
+    },
+    "corrections_made": "Overrode Executor\u2019s bullish trade proposal and Bear case emphasis on valuation; adjusted price predictions to reflect modest expected decline based on negative MACD and high PE.",
     "verified_next_day": null,
     "verified_next_week": null
   }

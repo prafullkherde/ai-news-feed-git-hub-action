@@ -880,7 +880,11 @@
       "direction_correct": true,
       "error_pct": -0.4
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-09-25",
@@ -975,6 +979,31 @@
       "Risk": "High valuation, weak momentum, and limited dividend yield increase downside risk; portfolio constraints allow small position but risk/reward ratio is unfavorable."
     },
     "corrections_made": "Overstated bullish valuation advantage; omitted realistic downside risk from high P/E and weak demand; adjusted recommendation to SELL with conservative price targets.",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-10-01",
+    "price_at_prediction": NaN,
+    "recommendation": "SELL",
+    "confidence": "Medium",
+    "predicted_next_day_price": 2600.0,
+    "predicted_next_week_price": 2550.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation (forward P/E 50.64) versus modest earnings growth and thin margins; weak revenue momentum and subdued demand headlines.",
+      "Technical": "Negative MACD with no SMA support; low volatility suggests limited upside but potential downside if sentiment worsens.",
+      "Sentiment": "More negative headlines (3 vs 2 positive); overall cautious market mood.",
+      "Bull": "None justified given valuation and growth concerns.",
+      "Bear": "Strong; valuation mismatch, weak growth, modest volatility.",
+      "Risk": "Potential for short squeeze if earnings beat; limited upside but short position capped at 5% portfolio."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }

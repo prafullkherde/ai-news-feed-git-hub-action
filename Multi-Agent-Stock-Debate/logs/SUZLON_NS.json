@@ -887,7 +887,11 @@
       "direction_correct": false,
       "error_pct": 0.74
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": false,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-09-25",
@@ -978,6 +982,31 @@
       "Risk": "Portfolio constraints allow only 5% exposure; high financial risk and low historical directional accuracy (28% weekly) warrant conservative stance."
     },
     "corrections_made": "Adjusted bullish case to reflect high debt risk and weak technicals; removed unrealistic 15% upside target; set recommendation to HOLD due to low confidence and portfolio limits.",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-10-01",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 39.5,
+    "predicted_next_week_price": 40.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong earnings and growth but high debt-to-equity raises leverage risk; valuation modest but not clearly attractive.",
+      "Technical": "Negative MACD indicates bearish momentum; lack of SMA data limits confirmation; volatility modest.",
+      "Sentiment": "Positive order wins offset by regulatory fine; overall sentiment neutral to slightly bullish but not compelling.",
+      "Bull": "Pipeline of wind projects could support revenue; high ROE and profit margin are positive.",
+      "Bear": "High leverage and lack of dividend yield increase risk; valuation at 5.47 P/B may be stretched; regulatory issues add uncertainty.",
+      "Risk": "Leverage sensitivity to interest rates and potential governance scrutiny; limited downside protection due to lack of clear support levels."
+    },
+    "corrections_made": "Adjusted recommendation from BUY to HOLD due to high debt, bearish MACD, and low next\u2011week accuracy; set position to 0%.",
     "verified_next_day": null,
     "verified_next_week": null
   }
