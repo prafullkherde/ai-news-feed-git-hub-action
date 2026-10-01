@@ -30,7 +30,7 @@ env:
 jobs:
   control:
     runs-on: ubuntu-latest
-    timeout-minutes: 45   # LAYER 3: hard backstop — job self-kills no matter what hangs
+    timeout-minutes: 45
 
     steps:
       - name: Checkout repo
@@ -97,6 +97,7 @@ jobs:
       - name: Poll until running
         if: ${{ github.event.inputs.action == 'create' }}
         run: |
+          STATUS="none"
           for i in $(seq 1 20); do
             STATUS=$(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
               | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[-1]['actual_status'] if d else 'none')")
@@ -105,9 +106,23 @@ jobs:
             sleep 15
           done
 
-      # LAYER 2 applied to all three below: `yes |` feeds a y to any
-      # confirmation prompt the CLI shows now or adds later. Harmless
-      # if no prompt appears — unread input is just ignored.
+          if [ "$STATUS" != "running" ]; then
+            echo "FAIL: instance never reached 'running' after 20 attempts (last status: $STATUS)."
+            echo "This is usually a HOST-SIDE failure (e.g. 'docker_build() error writing dockerfile')"
+            echo "that never shows up here — check the instance card on cloud.vast.ai/instances"
+            echo "for the real reason, then destroy and re-run create to try a different host."
+            IID=$(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
+              | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[-1]['id'] if d else '')")
+            if [ -n "$IID" ]; then
+              echo "Destroying broken instance $IID so it stops billing..."
+              yes | vastai destroy instance "$IID" --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" || true
+            fi
+            echo "### Create FAILED — instance never started (last status: $STATUS). Broken instance auto-destroyed. See vast.ai instance card for the host-side reason." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+          echo "### Instance running — ready for deploy" >> "$GITHUB_STEP_SUMMARY"
+
       - name: Stop instance
         if: ${{ github.event.inputs.action == 'stop' }}
         run: yes | vastai stop instance ${{ steps.resolve.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
@@ -130,10 +145,6 @@ jobs:
 
           INFO=$(vastai show instance ${{ steps.resolve.outputs.iid }} --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
 
-          # Direct SSH, not proxy: public_ipaddr + the real mapped port for
-          # 22/tcp. ssh_host/ssh_port are always the proxy address, slower
-          # and less reliable for large transfers (torch/cuDNN wheels) —
-          # this is what caused the earlier dropped connection.
           HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['public_ipaddr'])")
           PORT=$(echo "$INFO" | python3 -c "import json,sys; d=json.load(sys.stdin); p=d.get('ports',{}).get('22/tcp'); print(p[0]['HostPort'] if p else d['ssh_port'])")
           echo "SSH target: $HOST:$PORT"
@@ -142,17 +153,10 @@ jobs:
             "$PROJECT_DIR"/scripts/preflight.sh "$PROJECT_DIR"/scripts/bootstrap.sh "$PROJECT_DIR"/scripts/start.sh \
             root@"$HOST":~/
 
-          # Deliver the Hugging Face token bootstrap.sh needs to download
-          # the gated LTX-2 weights — see explanation above this file.
           printf '%s' "${{ secrets.LTX2_GPU_HF_TOKEN }}" | \
             ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p "$PORT" root@"$HOST" \
             'cat > ~/.hf_token && chmod 600 ~/.hf_token'
 
-          # LAYER 2 on the remote side: </dev/null means if anything
-          # inside preflight/bootstrap/start still prompts, it gets
-          # instant EOF instead of hanging — fails loud, not silent.
-          # LAYER 3 locally too: 'timeout' kills this step if the
-          # remote side still hangs for some reason stdin didn't catch.
           timeout 1800 ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p "$PORT" root@"$HOST" \
             "export HF_TOKEN=\$(cat ~/.hf_token) && bash preflight.sh && bash bootstrap.sh && nohup bash start.sh > wgp.log 2>&1 &" < /dev/null
 
