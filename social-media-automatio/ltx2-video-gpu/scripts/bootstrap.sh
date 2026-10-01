@@ -30,15 +30,13 @@ source venv/bin/activate
 
 echo ""
 echo "=================================================="
-echo "STEP 4/7 — PyTorch — READ docs/INSTALLATION.md FIRST"
+echo "STEP 4/7 — PyTorch (pinned, not read from docs live)"
 echo "=================================================="
-echo "!! Do not skip this — open the line below and read the"
-echo "!! ACTUAL current pip command before running it blind:"
-echo "!! https://github.com/deepbeepmeep/Wan2GP/blob/main/docs/INSTALLATION.md"
-echo ""
-echo "Paste today's real command here, e.g.:"
-echo "  pip install torch torchvision torchaudio --index-url <URL from docs>"
-read -p "Press Enter once you've run that command manually, to continue: "
+# Verified against docs/INSTALLATION.md as of 2026-09 for cu124.
+# Trade-off vs the original "read docs fresh" step: this can't catch
+# an upstream change automatically. Re-check manually every so often —
+# not every run, but don't assume this stays correct forever.
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 
 echo ""
 echo "=================================================="
@@ -50,10 +48,19 @@ echo ""
 echo "=================================================="
 echo "STEP 6/7 — Download model weights (~45-70GB, resumes if interrupted)"
 echo "=================================================="
+# LTX-2 is a GATED repo — HF_TOKEN required, and the license must have
+# been accepted once, manually, on the model's huggingface.co page.
+# No script can do that click for you.
+if [ -z "$HF_TOKEN" ]; then
+  echo "FAIL: HF_TOKEN not set — cannot download gated LTX-2 weights."
+  exit 1
+fi
 pip install -U "huggingface_hub[cli]"
 huggingface-cli download Lightricks/LTX-2 \
-  --include "ltx-2-19b-distilled.safetensors" --local-dir ckpts/
-huggingface-cli download google/gemma-3-12b-it --local-dir ckpts/gemma3/
+  --include "ltx-2-19b-distilled.safetensors" --local-dir ckpts/ \
+  --token "$HF_TOKEN"
+huggingface-cli download google/gemma-3-12b-it --local-dir ckpts/gemma3/ \
+  --token "$HF_TOKEN"
 
 echo ""
 echo "=================================================="
