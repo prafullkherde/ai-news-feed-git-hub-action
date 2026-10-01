@@ -23,11 +23,14 @@ permissions:
   contents: write
 
 env:
-  LOG_FILE: ltx2-video-gpu/price-log.csv
+  PROJECT_DIR: social-media-automatio/ltx2-video-gpu
+  LOG_FILE: social-media-automatio/ltx2-video-gpu/price-log.csv
 
 jobs:
   control:
     runs-on: ubuntu-latest
+    timeout-minutes: 45   # LAYER 3: hard backstop — job self-kills no matter what hangs
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -73,13 +76,10 @@ jobs:
             --disk $DISK --env '-p 7860:7860' --ssh --direct \
             --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
-          # Remaining credit — field name not independently confirmed,
-          # printed raw so you can see the real key and I can fix this
-          # line if it's wrong, rather than silently showing junk
           echo "---- raw 'show user' output, for credit field confirmation ----"
           vastai show user --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
-          mkdir -p ltx2-video-gpu
+          mkdir -p "$PROJECT_DIR"
           echo "timestamp,action,offer_id,gpu,price_per_hr" >> "$LOG_FILE" 2>/dev/null || true
           echo "$(date -u +%FT%TZ),create,$OFFER_ID,$GPU,\$${PRICE}/hr" >> "$LOG_FILE"
           echo "### Created: $GPU at \$${PRICE}/hr (offer $OFFER_ID)" >> "$GITHUB_STEP_SUMMARY"
@@ -104,17 +104,20 @@ jobs:
             sleep 15
           done
 
+      # LAYER 2 applied to all three below: `yes |` feeds a y to any
+      # confirmation prompt the CLI shows now or adds later. Harmless
+      # if no prompt appears — unread input is just ignored.
       - name: Stop instance
         if: ${{ github.event.inputs.action == 'stop' }}
-        run: vastai stop instance ${{ steps.resolve.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+        run: yes | vastai stop instance ${{ steps.resolve.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
       - name: Start instance
         if: ${{ github.event.inputs.action == 'start' }}
-        run: vastai start instance ${{ steps.resolve.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+        run: yes | vastai start instance ${{ steps.resolve.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
       - name: Destroy instance
         if: ${{ github.event.inputs.action == 'destroy' }}
-        run: vastai destroy instance ${{ steps.resolve.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+        run: yes | vastai destroy instance ${{ steps.resolve.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
       - name: Deploy
         if: ${{ github.event.inputs.action == 'deploy' }}
@@ -130,11 +133,16 @@ jobs:
           echo "SSH target: $HOST:$PORT"
 
           scp -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -P "$PORT" \
-            ltx2-video-gpu/scripts/preflight.sh ltx2-video-gpu/scripts/bootstrap.sh ltx2-video-gpu/scripts/start.sh \
+            "$PROJECT_DIR"/scripts/preflight.sh "$PROJECT_DIR"/scripts/bootstrap.sh "$PROJECT_DIR"/scripts/start.sh \
             root@"$HOST":~/
 
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p "$PORT" root@"$HOST" \
-            "bash preflight.sh && bash bootstrap.sh && nohup bash start.sh > wgp.log 2>&1 &"
+          # LAYER 2 on the remote side: </dev/null means if anything
+          # inside preflight/bootstrap/start still prompts, it gets
+          # instant EOF instead of hanging — fails loud, not silent.
+          # LAYER 3 locally too: 'timeout' kills this step if the
+          # remote side still hangs for some reason stdin didn't catch.
+          timeout 1800 ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p "$PORT" root@"$HOST" \
+            "bash preflight.sh && bash bootstrap.sh && nohup bash start.sh > wgp.log 2>&1 &" < /dev/null
 
           echo "### Deployed to $HOST:$PORT — run health_check next to get the callable URL" >> "$GITHUB_STEP_SUMMARY"
 
@@ -146,8 +154,6 @@ jobs:
           echo "---- raw instance info, for port-field confirmation ----"
           echo "$INFO" | python3 -m json.tool
           HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['public_ipaddr'])")
-          # ⚠️ placeholder port extraction — confirm the real key from the
-          # raw dump printed above, this line is not yet verified
           PORT=$(echo "$INFO" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('ports',{}).get('7860/tcp',[{}])[0].get('HostPort','7860'))")
           URL="http://$HOST:$PORT/"
           curl -sSf -m 15 "$URL" && echo "Health check PASSED: $URL" || echo "Health check FAILED: $URL"
