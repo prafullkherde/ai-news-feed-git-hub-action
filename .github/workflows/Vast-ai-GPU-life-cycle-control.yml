@@ -1,29 +1,29 @@
-name: Vast GPU Lifecycle Control
+name: LTX2 Video GPU — Lifecycle Control
 
-# Manual trigger only — deliberate, same reasoning as "terminate is never
-# scripted/automatic" from earlier: a cost-incurring action should always
-# need a human to press the button, not fire on a schedule or a push.
 on:
   workflow_dispatch:
     inputs:
       action:
-        description: "create | stop | start | destroy"
+        description: "create | stop | start | destroy | deploy | health_check"
         required: true
         type: choice
-        options: [create, stop, start, destroy]
+        options: [create, stop, start, destroy, deploy, health_check]
       instance_id:
-        description: "Required for stop / start / destroy. Leave blank for create."
+        description: "Leave blank to auto-use your most recent instance."
         required: false
         type: string
       gpu_tier:
-        description: "create only: 'cheapest' for lifecycle testing (any GPU, low VRAM, low cost), or 'rtx3090' for the real 24GB deploy target"
+        description: "create only: 'rtx3090' = real target, 'cheapest' = lifecycle testing"
         required: false
         type: choice
-        options: [cheapest, rtx3090]
-        default: cheapest
+        options: [rtx3090, cheapest]
+        default: rtx3090
 
 permissions:
-  contents: write   # needed to commit price-log.csv back to the repo
+  contents: write
+
+env:
+  LOG_FILE: ltx2-video-gpu/price-log.csv
 
 jobs:
   control:
@@ -33,85 +33,122 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install vast CLI
-        run: |
-          wget https://raw.githubusercontent.com/vast-ai/vast-cli/master/vast.py -O vastai
-          chmod +x vastai
-          sudo mv vastai /usr/local/bin/vastai
+        run: pip install vastai
 
-      - name: Create instance (search + rent)
+      - name: Resolve instance ID
+        if: ${{ github.event.inputs.action != 'create' }}
+        id: resolve
+        run: |
+          if [ -n "${{ github.event.inputs.instance_id }}" ]; then
+            IID="${{ github.event.inputs.instance_id }}"
+          else
+            IID=$(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
+              | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[-1]['id'] if d else '')")
+            [ -z "$IID" ] && { echo "No active instance found."; exit 1; }
+            echo "Auto-detected instance: $IID"
+          fi
+          echo "iid=$IID" >> "$GITHUB_OUTPUT"
+
+      - name: Create instance
         if: ${{ github.event.inputs.action == 'create' }}
+        id: create
         run: |
           set -e
-
           if [ "${{ github.event.inputs.gpu_tier }}" == "rtx3090" ]; then
-            echo "Searching for the real deploy target: RTX 3090, 24GB, 80GB disk..."
             QUERY='reliability>0.95 num_gpus=1 gpu_name=RTX_3090 disk_space>80 verified=true geolocation notin [CN]'
             DISK=80
           else
-            echo "Searching for the CHEAPEST available card — lifecycle testing only, no VRAM requirement..."
             QUERY='reliability>0.95 num_gpus=1 disk_space>20 verified=true geolocation notin [CN]'
             DISK=20
           fi
-          # China-hosted machines excluded deliberately — the earlier
-          # Yunnan host showed NVIDIA/HuggingFace reachability problems.
 
-          OFFER_JSON=$(vastai search offers "$QUERY" -o 'dph_total' --raw --api-key "${{ secrets.VAST_API_KEY }}")
-
-          OFFER_ID=$(echo "$OFFER_JSON" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[0]['id'])")
-          PRICE=$(echo "$OFFER_JSON" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[0]['dph_total'])")
-          GPU=$(echo "$OFFER_JSON" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[0]['gpu_name'])")
+          OFFER_JSON=$(vastai search offers "$QUERY" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          OFFER_ID=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
+          PRICE=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['dph_total'])")
+          GPU=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['gpu_name'])")
           echo "Selected offer $OFFER_ID: $GPU at \$${PRICE}/hr"
 
           vastai create instance "$OFFER_ID" \
             --image vastai/base-image:cuda-12.8.1-auto \
-            --disk $DISK \
-            --ssh --direct \
-            --api-key "${{ secrets.VAST_API_KEY }}"
+            --disk $DISK --env '-p 7860:7860' --ssh --direct \
+            --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
-          echo "Instance created — check the log above for its ID, or run:"
-          echo "  vastai show instances --api-key <key>"
+          # Remaining credit — field name not independently confirmed,
+          # printed raw so you can see the real key and I can fix this
+          # line if it's wrong, rather than silently showing junk
+          echo "---- raw 'show user' output, for credit field confirmation ----"
+          vastai show user --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
-          # Price history — appended and committed, so price drops across
-          # sessions are visible in git history / diffs, not just one run's log
-          echo "$(date -u +%FT%TZ),$OFFER_ID,\$${PRICE}/hr" >> price-log.csv
-          echo "### Price this session: \$${PRICE}/hr (offer $OFFER_ID)" >> "$GITHUB_STEP_SUMMARY"
+          mkdir -p ltx2-video-gpu
+          echo "timestamp,action,offer_id,gpu,price_per_hr" >> "$LOG_FILE" 2>/dev/null || true
+          echo "$(date -u +%FT%TZ),create,$OFFER_ID,$GPU,\$${PRICE}/hr" >> "$LOG_FILE"
+          echo "### Created: $GPU at \$${PRICE}/hr (offer $OFFER_ID)" >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Commit price log
+      - name: Commit log
         if: ${{ github.event.inputs.action == 'create' }}
         run: |
-          git config user.name "vast-gpu-control-bot"
+          git config user.name "ltx2-gpu-bot"
           git config user.email "actions@github.com"
-          git add price-log.csv
-          git commit -m "Log vast.ai price: $(tail -1 price-log.csv)" || echo "Nothing to commit"
+          git add "$LOG_FILE"
+          git commit -m "Log: $(tail -1 $LOG_FILE)" || echo "Nothing to commit"
           git push
 
       - name: Poll until running
         if: ${{ github.event.inputs.action == 'create' }}
         run: |
-          echo "Polling instance status (every 15s, to respect rate limits)..."
           for i in $(seq 1 20); do
-            STATUS=$(vastai show instances --raw --api-key "${{ secrets.VAST_API_KEY }}" \
+            STATUS=$(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
               | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[-1]['actual_status'] if d else 'none')")
             echo "Attempt $i: status = $STATUS"
-            if [ "$STATUS" == "running" ]; then
-              echo "Instance is running."
-              vastai show instances --api-key "${{ secrets.VAST_API_KEY }}"
-              break
-            fi
+            [ "$STATUS" == "running" ] && { vastai show instances --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"; break; }
             sleep 15
           done
 
       - name: Stop instance
         if: ${{ github.event.inputs.action == 'stop' }}
-        run: vastai stop instance ${{ github.event.inputs.instance_id }} --api-key "${{ secrets.VAST_API_KEY }}"
+        run: vastai stop instance ${{ steps.resolve.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
       - name: Start instance
         if: ${{ github.event.inputs.action == 'start' }}
-        # Confirm the exact command name once yourself (see chat note) —
-        # this is the one line in this file I have not seen verbatim
-        # in vast.ai's own docs.
-        run: vastai start instance ${{ github.event.inputs.instance_id }} --api-key "${{ secrets.VAST_API_KEY }}"
+        run: vastai start instance ${{ steps.resolve.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
       - name: Destroy instance
         if: ${{ github.event.inputs.action == 'destroy' }}
-        run: vastai destroy instance ${{ github.event.inputs.instance_id }} --api-key "${{ secrets.VAST_API_KEY }}"
+        run: vastai destroy instance ${{ steps.resolve.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+
+      - name: Deploy
+        if: ${{ github.event.inputs.action == 'deploy' }}
+        run: |
+          set -e
+          mkdir -p ~/.ssh
+          echo "${{ secrets.LTX2_GPU_SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          INFO=$(vastai show instance ${{ steps.resolve.outputs.iid }} --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['ssh_host'])")
+          PORT=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['ssh_port'])")
+          echo "SSH target: $HOST:$PORT"
+
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -P "$PORT" \
+            ltx2-video-gpu/scripts/preflight.sh ltx2-video-gpu/scripts/bootstrap.sh ltx2-video-gpu/scripts/start.sh \
+            root@"$HOST":~/
+
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p "$PORT" root@"$HOST" \
+            "bash preflight.sh && bash bootstrap.sh && nohup bash start.sh > wgp.log 2>&1 &"
+
+          echo "### Deployed to $HOST:$PORT — run health_check next to get the callable URL" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Health check
+        if: ${{ github.event.inputs.action == 'health_check' }}
+        run: |
+          set -e
+          INFO=$(vastai show instance ${{ steps.resolve.outputs.iid }} --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          echo "---- raw instance info, for port-field confirmation ----"
+          echo "$INFO" | python3 -m json.tool
+          HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['public_ipaddr'])")
+          # ⚠️ placeholder port extraction — confirm the real key from the
+          # raw dump printed above, this line is not yet verified
+          PORT=$(echo "$INFO" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('ports',{}).get('7860/tcp',[{}])[0].get('HostPort','7860'))")
+          URL="http://$HOST:$PORT/"
+          curl -sSf -m 15 "$URL" && echo "Health check PASSED: $URL" || echo "Health check FAILED: $URL"
+          echo "### Callable URL: $URL" >> "$GITHUB_STEP_SUMMARY"
