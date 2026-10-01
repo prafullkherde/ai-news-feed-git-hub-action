@@ -2706,10 +2706,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/samsara-staff-software-engineer": {
     "title": "Samsara: Staff Software Engineer",
     "score": 0,
-    "why": "Staff Software Engineer title lacks any UI focus and likely targets backend or full\u2011stack work without Angular/TS emphasis.",
-    "gap": "No UI focus / Angular requirement",
-    "first_seen": "2026-09-05",
-    "suppress_until": "2026-09-19"
+    "why": "The role is a generic Staff Software Engineer position with no explicit Angular or TypeScript requirement and appears to be backend/full\u2011stack rather than UI\u2011focused.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-10-01",
+    "suppress_until": "2026-10-15"
   },
   "WN::https://www.workingnomads.com/job/go/1835309/": {
     "title": "AI Content Analyst (No Experience Required) @ Peroptyx",
@@ -3758,5 +3758,29 @@
     "gap": "Lack of dedicated UI/UX design and graphic design experience.",
     "first_seen": "2026-09-30",
     "suppress_until": "2026-10-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/sticker-mule-ai-agent-engineer": {
+    "title": "Sticker Mule: AI agent engineer",
+    "score": 0,
+    "why": "The AI Agent Engineer role is centered on artificial\u2011intelligence/ML work and does not involve UI development with Angular or TypeScript.",
+    "gap": "No UI/Angular/TypeScript responsibilities",
+    "first_seen": "2026-10-01",
+    "suppress_until": "2026-10-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/acculynx-senior-software-engineer": {
+    "title": "AccuLynx: Senior Software Engineer",
+    "score": 0,
+    "why": "The Senior Software Engineer posting does not specify Angular, TypeScript, or a frontend\u2011only focus, suggesting it may be backend or full\u2011stack.",
+    "gap": "Absence of Angular/TypeScript requirement",
+    "first_seen": "2026-10-01",
+    "suppress_until": "2026-10-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1906010/": {
+    "title": "Quality Assurance Rater - Spanish (ES) @ TELUS Digital",
+    "score": 0,
+    "why": "This is a Quality Assurance Rater position, a pure QA role with no UI development duties.",
+    "gap": "Pure QA role, no UI/Angular/TS work",
+    "first_seen": "2026-10-01",
+    "suppress_until": "2026-10-15"
   }
 }
