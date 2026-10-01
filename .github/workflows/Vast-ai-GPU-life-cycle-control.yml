@@ -1,0 +1,117 @@
+name: Vast GPU Lifecycle Control
+
+# Manual trigger only — deliberate, same reasoning as "terminate is never
+# scripted/automatic" from earlier: a cost-incurring action should always
+# need a human to press the button, not fire on a schedule or a push.
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "create | stop | start | destroy"
+        required: true
+        type: choice
+        options: [create, stop, start, destroy]
+      instance_id:
+        description: "Required for stop / start / destroy. Leave blank for create."
+        required: false
+        type: string
+      gpu_tier:
+        description: "create only: 'cheapest' for lifecycle testing (any GPU, low VRAM, low cost), or 'rtx3090' for the real 24GB deploy target"
+        required: false
+        type: choice
+        options: [cheapest, rtx3090]
+        default: cheapest
+
+permissions:
+  contents: write   # needed to commit price-log.csv back to the repo
+
+jobs:
+  control:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install vast CLI
+        run: |
+          wget https://raw.githubusercontent.com/vast-ai/vast-cli/master/vast.py -O vastai
+          chmod +x vastai
+          sudo mv vastai /usr/local/bin/vastai
+
+      - name: Create instance (search + rent)
+        if: ${{ github.event.inputs.action == 'create' }}
+        run: |
+          set -e
+
+          if [ "${{ github.event.inputs.gpu_tier }}" == "rtx3090" ]; then
+            echo "Searching for the real deploy target: RTX 3090, 24GB, 80GB disk..."
+            QUERY='reliability>0.95 num_gpus=1 gpu_name=RTX_3090 disk_space>80 verified=true geolocation notin [CN]'
+            DISK=80
+          else
+            echo "Searching for the CHEAPEST available card — lifecycle testing only, no VRAM requirement..."
+            QUERY='reliability>0.95 num_gpus=1 disk_space>20 verified=true geolocation notin [CN]'
+            DISK=20
+          fi
+          # China-hosted machines excluded deliberately — the earlier
+          # Yunnan host showed NVIDIA/HuggingFace reachability problems.
+
+          OFFER_JSON=$(vastai search offers "$QUERY" -o 'dph_total' --raw --api-key "${{ secrets.VAST_API_KEY }}")
+
+          OFFER_ID=$(echo "$OFFER_JSON" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[0]['id'])")
+          PRICE=$(echo "$OFFER_JSON" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[0]['dph_total'])")
+          GPU=$(echo "$OFFER_JSON" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[0]['gpu_name'])")
+          echo "Selected offer $OFFER_ID: $GPU at \$${PRICE}/hr"
+
+          vastai create instance "$OFFER_ID" \
+            --image vastai/base-image:cuda-12.8.1-auto \
+            --disk $DISK \
+            --ssh --direct \
+            --api-key "${{ secrets.VAST_API_KEY }}"
+
+          echo "Instance created — check the log above for its ID, or run:"
+          echo "  vastai show instances --api-key <key>"
+
+          # Price history — appended and committed, so price drops across
+          # sessions are visible in git history / diffs, not just one run's log
+          echo "$(date -u +%FT%TZ),$OFFER_ID,\$${PRICE}/hr" >> price-log.csv
+          echo "### Price this session: \$${PRICE}/hr (offer $OFFER_ID)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit price log
+        if: ${{ github.event.inputs.action == 'create' }}
+        run: |
+          git config user.name "vast-gpu-control-bot"
+          git config user.email "actions@github.com"
+          git add price-log.csv
+          git commit -m "Log vast.ai price: $(tail -1 price-log.csv)" || echo "Nothing to commit"
+          git push
+
+      - name: Poll until running
+        if: ${{ github.event.inputs.action == 'create' }}
+        run: |
+          echo "Polling instance status (every 15s, to respect rate limits)..."
+          for i in $(seq 1 20); do
+            STATUS=$(vastai show instances --raw --api-key "${{ secrets.VAST_API_KEY }}" \
+              | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[-1]['actual_status'] if d else 'none')")
+            echo "Attempt $i: status = $STATUS"
+            if [ "$STATUS" == "running" ]; then
+              echo "Instance is running."
+              vastai show instances --api-key "${{ secrets.VAST_API_KEY }}"
+              break
+            fi
+            sleep 15
+          done
+
+      - name: Stop instance
+        if: ${{ github.event.inputs.action == 'stop' }}
+        run: vastai stop instance ${{ github.event.inputs.instance_id }} --api-key "${{ secrets.VAST_API_KEY }}"
+
+      - name: Start instance
+        if: ${{ github.event.inputs.action == 'start' }}
+        # Confirm the exact command name once yourself (see chat note) —
+        # this is the one line in this file I have not seen verbatim
+        # in vast.ai's own docs.
+        run: vastai start instance ${{ github.event.inputs.instance_id }} --api-key "${{ secrets.VAST_API_KEY }}"
+
+      - name: Destroy instance
+        if: ${{ github.event.inputs.action == 'destroy' }}
+        run: vastai destroy instance ${{ github.event.inputs.instance_id }} --api-key "${{ secrets.VAST_API_KEY }}"
