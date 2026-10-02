@@ -10,7 +10,7 @@ on:
         type: choice
         options: [create, deploy, health_check, stop, start, destroy]
       instance_id:
-        description: "instance_id Leave blank to auto-use your most recent instance."
+        description: "Leave blank to auto-use your most recent instance."
         required: false
         type: string
       gpu_tier:
@@ -26,13 +26,15 @@ permissions:
 env:
   PROJECT_DIR: social-media-automatio/ltx2-video-gpu
   LOG_FILE: social-media-automatio/ltx2-video-gpu/price-log.csv
-  IMAGE: ghcr.io/prafullkherde/ltx2-video:latest
-  VOLUME_NAME: ltx2-weights   # confirm actual attach flag with `vastai create instance --help` before first real use
+  # Readymade image — verify the current tag at hub.docker.com/r/robatvastai/wan2gp/tags
+  # before relying on this; the exact tag drifts frequently (near-daily updates).
+  WAN2GP_IMAGE: robatvastai/wan2gp:5582327-2026-07-11-cuda-12.9-amd64
+  VOLUME_NAME: ltx2-weights   # confirm attach flag with `vastai create instance --help`
 
 jobs:
   control:
     runs-on: ubuntu-latest
-    timeout-minutes: 45   # can drop back down from 90 — the baked image removes the long variable-duration step
+    timeout-minutes: 45
 
     steps:
       - name: Checkout repo
@@ -70,10 +72,8 @@ jobs:
 
           if [ "${{ github.event.inputs.gpu_tier }}" == "rtx3090" ]; then
             QUERY='reliability>0.97 num_gpus=1 gpu_name=RTX_3090 disk_space>20 direct_port_count>=1 inet_down>500 verified=true geolocation notin [CN]'
-            DISK=20
           else
             QUERY='reliability>0.97 num_gpus=1 disk_space>20 direct_port_count>=1 inet_down>500 verified=true geolocation notin [CN]'
-            DISK=20
           fi
 
           OFFER_JSON=$(vastai search offers "$QUERY" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
@@ -82,13 +82,10 @@ jobs:
           GPU=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['gpu_name'])")
           echo "Selected offer $OFFER_ID: $GPU at \$${PRICE}/hr"
 
-          # NOTE: disk space dropped to 20GB — weights live on the Volume now,
-          # not container storage. Volume attach flag below is UNVERIFIED —
-          # confirm with `vastai create instance --help` before first real run.
           vastai create instance "$OFFER_ID" \
-            --image "$IMAGE" \
-            --disk $DISK --env '-p 7860:7860' --ssh --direct \
-            --volume "$VOLUME_NAME:/root/Wan2GP/ckpts" \
+            --image "$WAN2GP_IMAGE" \
+            --disk 20 --env '-p 7860:7860' --ssh --direct \
+            --volume "$VOLUME_NAME:/data" \
             --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
           mkdir -p "$PROJECT_DIR"
