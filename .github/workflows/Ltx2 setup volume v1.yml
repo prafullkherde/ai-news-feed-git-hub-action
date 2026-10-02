@@ -51,12 +51,7 @@ jobs:
           VOL_JSON=$(vastai show volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
           echo "---- raw show-volumes output, for field confirmation ----"
           echo "$VOL_JSON" | python3 -m json.tool
-          VOL_ID=$(echo "$VOL_JSON" | python3 -c "
-import json,sys
-d = json.load(sys.stdin)
-match = [v for v in d if v.get('label') == 'ltx2_weights' or v.get('name') == 'ltx2_weights']
-print((match[0] if match else d[-1])['id'])
-")
+          VOL_ID=$(echo "$VOL_JSON" | python3 -c "import json,sys; d=json.load(sys.stdin); match=[v for v in d if v.get('label')=='ltx2_weights' or v.get('name')=='ltx2_weights']; print((match[0] if match else d[-1])['id'])")
           echo "Volume ID: $VOL_ID"
           echo "vol_id=$VOL_ID" >> "$GITHUB_OUTPUT"
           echo "### Volume created: ltx2_weights, id=$VOL_ID (${{ github.event.inputs.volume_size_gb }}GB), from offer ${{ steps.voloffer.outputs.offer_id }}" >> "$GITHUB_STEP_SUMMARY"
