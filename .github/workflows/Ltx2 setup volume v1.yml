@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       volume_size_gb:
-        description: "Volume size in GB (weights are ~45-70GB; leave room)"
+        description: "Volume size in GB (weights are ~45-70GB; leave room). Only used if no ltx2_weights volume exists yet."
         required: false
         type: string
         default: "80"
@@ -26,43 +26,70 @@ jobs:
       - name: Install vast CLI
         run: pip install vastai
 
-      - name: Search for a volume offer
-        id: voloffer
-        run: |
-          set -e
-          OFFERS=$(vastai search volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
-          echo "---- raw volume offers, first result shown for field confirmation ----"
-          echo "$OFFERS" | python3 -c "import json,sys; d=json.load(sys.stdin); print(json.dumps(d[0], indent=2))"
-          OFFER_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
-          MACHINE_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['machine_id'])")
-          echo "Using volume offer: $OFFER_ID on machine: $MACHINE_ID"
-          echo "offer_id=$OFFER_ID" >> "$GITHUB_OUTPUT"
-          echo "machine_id=$MACHINE_ID" >> "$GITHUB_OUTPUT"
-
-      - name: Create volume
+      - name: Find existing volume, or create the cheapest new one
         id: volume
         run: |
           set -e
-          vastai create volume ${{ steps.voloffer.outputs.offer_id }} \
+          echo "Checking for an existing ltx2_weights volume — if found, reuse it, don't touch it."
+          EXISTING=$(vastai show volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          VOL_MATCH=$(echo "$EXISTING" | python3 -c "import json,sys; d=json.load(sys.stdin); m=[v for v in d if v.get('label')=='ltx2_weights' or v.get('name')=='ltx2_weights']; print(json.dumps(m[0]) if m else '')")
+
+          if [ -n "$VOL_MATCH" ]; then
+            VOL_ID=$(echo "$VOL_MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
+            MACHINE_ID=$(echo "$VOL_MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['machine_id'])")
+            echo "Found existing volume ltx2_weights (id=$VOL_ID) on machine $MACHINE_ID — reusing as-is."
+            echo "vol_id=$VOL_ID" >> "$GITHUB_OUTPUT"
+            echo "machine_id=$MACHINE_ID" >> "$GITHUB_OUTPUT"
+            echo "### Reusing existing volume ltx2_weights, id=$VOL_ID — no new volume created" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          echo "No existing ltx2_weights volume — searching offers, cheapest first."
+          # Sort field confirmed from your own 'show volumes' dump
+          # (storage_total_cost matched the displayed $/hr exactly).
+          # Raw dump still printed below in case this offer-search
+          # endpoint uses a differently-named field.
+          OFFERS=$(vastai search volumes -o 'storage_total_cost' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          echo "---- raw volume offers, intended cheapest-first, top result shown for field confirmation ----"
+          echo "$OFFERS" | python3 -c "import json,sys; d=json.load(sys.stdin); print(json.dumps(d[0], indent=2))"
+          OFFER_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
+          MACHINE_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['machine_id'])")
+          echo "Selected offer: $OFFER_ID on machine $MACHINE_ID"
+
+          vastai create volume "$OFFER_ID" \
             --size "${{ github.event.inputs.volume_size_gb }}" \
             --name ltx2_weights --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
           VOL_JSON=$(vastai show volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
-          echo "---- raw show-volumes output, for field confirmation ----"
-          echo "$VOL_JSON" | python3 -m json.tool
           VOL_ID=$(echo "$VOL_JSON" | python3 -c "import json,sys; d=json.load(sys.stdin); match=[v for v in d if v.get('label')=='ltx2_weights' or v.get('name')=='ltx2_weights']; print((match[0] if match else d[-1])['id'])")
           echo "Volume ID: $VOL_ID"
           echo "vol_id=$VOL_ID" >> "$GITHUB_OUTPUT"
-          echo "### Volume created: ltx2_weights, id=$VOL_ID (${{ github.event.inputs.volume_size_gb }}GB), from offer ${{ steps.voloffer.outputs.offer_id }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "machine_id=$MACHINE_ID" >> "$GITHUB_OUTPUT"
+          echo "### Volume created: ltx2_weights, id=$VOL_ID (${{ github.event.inputs.volume_size_gb }}GB), from offer $OFFER_ID" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Rent a temporary instance with the volume attached
         id: rent
         run: |
           set -e
-          # Pinned to the volume's own machine — a volume only attaches
-          # to an instance on the SAME physical host.
-          QUERY="machine_id=${{ steps.voloffer.outputs.machine_id }} num_gpus=1 direct_port_count>=1"
-          OFFER_JSON=$(vastai search offers "$QUERY" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          MACHINE_ID="${{ steps.volume.outputs.machine_id }}"
+
+          echo "Trying direct SSH offers on machine $MACHINE_ID..."
+          OFFER_JSON=$(vastai search offers "machine_id=$MACHINE_ID num_gpus=1 direct_port_count>=1" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          COUNT=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "No direct-port offer on this machine right now — falling back to any offer (proxy SSH)."
+            echo "This is a ONE-TIME setup instance, not the daily pattern — proxy SSH here is an acceptable trade-off."
+            OFFER_JSON=$(vastai search offers "machine_id=$MACHINE_ID num_gpus=1" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+            COUNT=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
+          fi
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "FAIL: machine $MACHINE_ID has NO free GPU offers at all right now."
+            echo "The volume (id ${{ steps.volume.outputs.vol_id }}) still exists and is NOT lost — just retry this workflow later."
+            exit 1
+          fi
+
           echo "---- raw offers on this machine, for field confirmation ----"
           echo "$OFFER_JSON" | python3 -m json.tool
           OFFER_ID=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
