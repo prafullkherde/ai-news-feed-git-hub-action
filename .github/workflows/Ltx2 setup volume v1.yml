@@ -1,10 +1,6 @@
 name: LTX2 Setup Volume (run once)
 run-name: "setup-volume — one-time weights download"
 
-# Run this ONCE from the Actions tab (workflow_dispatch). It is safe to
-# re-run later (e.g. to re-download weights after deleting the volume),
-# but normal daily operation never touches this file again.
-
 on:
   workflow_dispatch:
     inputs:
@@ -29,17 +25,29 @@ jobs:
       - name: Install vast CLI
         run: pip install vastai
 
+      - name: Search for a volume offer
+        id: voloffer
+        run: |
+          set -e
+          echo "Searching volume offers (no filters — field names for this
+          endpoint aren't confirmed, so not risking a second wrong-syntax
+          failure by guessing a filter/sort field)..."
+          OFFERS=$(vastai search volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          echo "---- raw volume offers, first result shown for field confirmation ----"
+          echo "$OFFERS" | python3 -c "import json,sys; d=json.load(sys.stdin); print(json.dumps(d[0], indent=2))"
+          OFFER_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
+          echo "Using volume offer: $OFFER_ID"
+          echo "offer_id=$OFFER_ID" >> "$GITHUB_OUTPUT"
+
       - name: Create volume
         id: volume
         run: |
           set -e
-          echo "Creating a ${{ github.event.inputs.volume_size_gb }}GB volume..."
-          # UNVERIFIED exact flag names — confirm with:
-          #   vastai create volume --help
-          # before trusting this blindly on a fresh account.
-          vastai create volume --size "${{ github.event.inputs.volume_size_gb }}" \
+          vastai create volume ${{ steps.voloffer.outputs.offer_id }} \
+            --size "${{ github.event.inputs.volume_size_gb }}" \
             --name ltx2-weights --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
-          echo "### Volume created: ltx2-weights (${{ github.event.inputs.volume_size_gb }}GB)" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Volume created: ltx2-weights (${{ github.event.inputs.volume_size_gb }}GB), from offer ${{ steps.voloffer.outputs.offer_id }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Confirm it exists: vastai show volumes, or the Volumes tab on console.vast.ai" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Rent a temporary instance with the volume attached
         id: rent
@@ -83,7 +91,7 @@ jobs:
           SSH="ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p ${{ steps.rent.outputs.port }} root@${{ steps.rent.outputs.host }}"
 
           echo "## Discovery results" >> "$GITHUB_STEP_SUMMARY"
-          echo "Looking for wgp.py..." 
+          echo "Looking for wgp.py..."
           WGP_PATH=$($SSH "find / -maxdepth 4 -name wgp.py 2>/dev/null | head -1" < /dev/null)
           echo "wgp.py found at: ${WGP_PATH:-NOT FOUND}" | tee -a "$GITHUB_STEP_SUMMARY"
 
