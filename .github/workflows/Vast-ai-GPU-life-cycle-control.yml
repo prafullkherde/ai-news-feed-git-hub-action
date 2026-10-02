@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: "Run in order: 1) create  2) deploy  3) health_check — then stop/start anytime — 4) destroy when fully done"
+        description: "Daily: create → deploy → health_check → generate → destroy. stop/start only for mid-session pauses, not routine use."
         required: true
         type: choice
         options: [create, deploy, health_check, stop, start, destroy]
@@ -26,11 +26,13 @@ permissions:
 env:
   PROJECT_DIR: social-media-automatio/ltx2-video-gpu
   LOG_FILE: social-media-automatio/ltx2-video-gpu/price-log.csv
+  IMAGE: ghcr.io/prafullkherde/ltx2-video:latest
+  VOLUME_NAME: ltx2-weights   # confirm actual attach flag with `vastai create instance --help` before first real use
 
 jobs:
   control:
     runs-on: ubuntu-latest
-    timeout-minutes: 90   # raised: deploy now polls instead of blocking, but still needs real room for a 45-70GB download on a mediocre host
+    timeout-minutes: 45   # can drop back down from 90 — the baked image removes the long variable-duration step
 
     steps:
       - name: Checkout repo
@@ -58,14 +60,19 @@ jobs:
         id: create
         run: |
           set -e
-          # inet_down>200 (Mbps): rules out the class of host that caused
-          # the last two deploy failures BEFORE we ever rent it — this is
-          # the permanent fix, not a bigger timeout number.
+          EXISTING=$(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
+            | python3 -c "import json,sys; d=json.load(sys.stdin); print(len(d))")
+          if [ "$EXISTING" -gt 0 ]; then
+            echo "FAIL: $EXISTING instance(s) already exist. Destroy before creating another."
+            vastai show instances --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+            exit 1
+          fi
+
           if [ "${{ github.event.inputs.gpu_tier }}" == "rtx3090" ]; then
-            QUERY='reliability>0.95 num_gpus=1 gpu_name=RTX_3090 disk_space>80 direct_port_count>=1 inet_down>200 verified=true geolocation notin [CN]'
-            DISK=80
+            QUERY='reliability>0.97 num_gpus=1 gpu_name=RTX_3090 disk_space>20 direct_port_count>=1 inet_down>500 verified=true geolocation notin [CN]'
+            DISK=20
           else
-            QUERY='reliability>0.95 num_gpus=1 disk_space>20 direct_port_count>=1 inet_down>200 verified=true geolocation notin [CN]'
+            QUERY='reliability>0.97 num_gpus=1 disk_space>20 direct_port_count>=1 inet_down>500 verified=true geolocation notin [CN]'
             DISK=20
           fi
 
@@ -75,13 +82,14 @@ jobs:
           GPU=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['gpu_name'])")
           echo "Selected offer $OFFER_ID: $GPU at \$${PRICE}/hr"
 
+          # NOTE: disk space dropped to 20GB — weights live on the Volume now,
+          # not container storage. Volume attach flag below is UNVERIFIED —
+          # confirm with `vastai create instance --help` before first real run.
           vastai create instance "$OFFER_ID" \
-            --image vastai/base-image:cuda-12.8.1-auto \
+            --image "$IMAGE" \
             --disk $DISK --env '-p 7860:7860' --ssh --direct \
+            --volume "$VOLUME_NAME:/root/Wan2GP/ckpts" \
             --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
-
-          echo "---- raw 'show user' output, for credit field confirmation ----"
-          vastai show user --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
           mkdir -p "$PROJECT_DIR"
           echo "timestamp,action,offer_id,gpu,price_per_hr" >> "$LOG_FILE" 2>/dev/null || true
@@ -111,16 +119,13 @@ jobs:
 
           if [ "$STATUS" != "running" ]; then
             echo "FAIL: instance never reached 'running' after 20 attempts (last status: $STATUS)."
-            echo "This is usually a HOST-SIDE failure (e.g. 'docker_build() error writing dockerfile')"
-            echo "that never shows up here — check the instance card on cloud.vast.ai/instances"
-            echo "for the real reason, then destroy and re-run create to try a different host."
             IID=$(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
               | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[-1]['id'] if d else '')")
             if [ -n "$IID" ]; then
               echo "Destroying broken instance $IID so it stops billing..."
               yes | vastai destroy instance "$IID" --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" || true
             fi
-            echo "### Create FAILED — instance never started (last status: $STATUS). Broken instance auto-destroyed. See vast.ai instance card for the host-side reason." >> "$GITHUB_STEP_SUMMARY"
+            echo "### Create FAILED — instance never started (last status: $STATUS). Broken instance auto-destroyed." >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
 
@@ -160,21 +165,12 @@ jobs:
 
           printf '%s' "${{ secrets.LTX2_GPU_HF_TOKEN }}" | $SSH 'cat > ~/.hf_token && chmod 600 ~/.hf_token'
 
-          # --- Fire-and-forget launch ---
-          # Runs on the box, detached from this SSH session entirely.
-          # A network blip, a slow host, or GitHub Actions itself
-          # restarting no longer kills the install — it just keeps
-          # running on the GPU box regardless. We poll separately below.
           $SSH "export HF_TOKEN=\$(cat ~/.hf_token) && \
             nohup bash -c 'bash preflight.sh && bash bootstrap.sh && bash start.sh' \
             > ~/deploy.log 2>&1 < /dev/null & disown; echo LAUNCHED" < /dev/null
 
           echo "Install launched in background. Polling ~/deploy.log for progress..."
 
-          # --- Idle-based polling, not a total-duration guess ---
-          # Fails only if deploy.log stops GROWING for ~5 min straight —
-          # a true hang — never just because the whole thing is slow.
-          # 160 attempts x 15s = up to 40 min of real polling time.
           PREV_SIZE=-1
           STALL_COUNT=0
           for i in $(seq 1 160); do
@@ -198,24 +194,19 @@ jobs:
               exit 0
             fi
             if echo "$TAIL" | grep -q "^FAIL:"; then
-              echo "FAILED: preflight.sh or bootstrap.sh reported a FAIL line:"
-              echo "$TAIL"
-              echo "### Deploy FAILED — see deploy.log on the instance for details" >> "$GITHUB_STEP_SUMMARY"
+              echo "FAILED: $TAIL"
+              echo "### Deploy FAILED — see ~/deploy.log on the instance" >> "$GITHUB_STEP_SUMMARY"
               exit 1
             fi
             if [ "$STALL_COUNT" -ge 20 ]; then
-              echo "FAILED: deploy.log has not grown in ~5 minutes — real hang, not just slow."
-              echo "Last lines:"
-              echo "$TAIL"
-              echo "### Deploy FAILED — stalled with no progress for 5 min. Check ~/deploy.log on the instance." >> "$GITHUB_STEP_SUMMARY"
+              echo "FAILED: deploy.log has not grown in ~5 minutes."
+              echo "### Deploy FAILED — stalled, no progress for 5 min" >> "$GITHUB_STEP_SUMMARY"
               exit 1
             fi
             sleep 15
           done
 
-          echo "FAILED: still running after 40 minutes of polling, no success/fail marker seen yet."
-          echo "Not necessarily broken — may just be a very large download still in progress."
-          echo "Re-run action: deploy with the same instance_id to resume polling (install keeps running regardless)."
+          echo "FAILED: no success/fail marker after 40 min of polling."
           exit 1
 
       - name: Health check
@@ -223,8 +214,6 @@ jobs:
         run: |
           set -e
           INFO=$(vastai show instance ${{ steps.resolve.outputs.iid }} --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
-          echo "---- raw instance info, for port-field confirmation ----"
-          echo "$INFO" | python3 -m json.tool
           HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['public_ipaddr'])")
           PORT=$(echo "$INFO" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('ports',{}).get('7860/tcp',[{}])[0].get('HostPort','7860'))")
           URL="http://$HOST:$PORT/"
