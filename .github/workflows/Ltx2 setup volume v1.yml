@@ -9,6 +9,16 @@ on:
         required: false
         type: string
         default: "80"
+      min_days_remaining:
+        description: "Reject volume offers whose host listing ends sooner than this. Vast deletes the volume when the listing ends."
+        required: false
+        type: string
+        default: "30"
+      gpu_min_ram_gb:
+        description: "Minimum GPU VRAM (GB) on the host machine"
+        required: false
+        type: string
+        default: "24"
       wan2gp_image:
         description: "Locked default — only change after checking hub.docker.com/r/robatvastai/wan2gp/tags and deliberately deciding to move"
         required: true
@@ -26,41 +36,47 @@ jobs:
       - name: Install vast CLI
         run: pip install vastai
 
-      - name: Find existing volume, or create the cheapest new one
+      - name: Find existing volume, or create one on a GPU-available, long-lived host
         id: volume
         run: |
           set -e
+          KEY="${{ secrets.LTX2_GPU_VAST_API_KEY }}"
           echo "Checking for an existing ltx2_weights volume — if found, reuse it, don't touch it."
-          EXISTING=$(vastai show volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          EXISTING=$(vastai show volumes --raw --api-key "$KEY")
           VOL_MATCH=$(echo "$EXISTING" | python3 -c "import json,sys; d=json.load(sys.stdin); m=[v for v in d if v.get('label')=='ltx2_weights' or v.get('name')=='ltx2_weights']; print(json.dumps(m[0]) if m else '')")
 
           if [ -n "$VOL_MATCH" ]; then
             VOL_ID=$(echo "$VOL_MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
             MACHINE_ID=$(echo "$VOL_MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['machine_id'])")
             echo "Found existing volume ltx2_weights (id=$VOL_ID) on machine $MACHINE_ID — reusing as-is."
+            echo "---- existing volume record (check expiry fields) ----"
+            echo "$VOL_MATCH" | python3 -m json.tool
             echo "vol_id=$VOL_ID" >> "$GITHUB_OUTPUT"
             echo "machine_id=$MACHINE_ID" >> "$GITHUB_OUTPUT"
             echo "### Reusing existing volume ltx2_weights, id=$VOL_ID — no new volume created" >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
 
-          echo "No existing ltx2_weights volume — searching offers, cheapest first."
-          # Sort field confirmed from your own 'show volumes' dump
-          # (storage_total_cost matched the displayed $/hr exactly).
-          # Raw dump still printed below in case this offer-search
-          # endpoint uses a differently-named field.
-          OFFERS=$(vastai search volumes -o 'storage_total_cost' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
-          echo "---- raw volume offers, intended cheapest-first, top result shown for field confirmation ----"
-          echo "$OFFERS" | python3 -c "import json,sys; d=json.load(sys.stdin); print(json.dumps(d[0], indent=2))"
-          OFFER_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
-          MACHINE_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['machine_id'])")
+          echo "No existing ltx2_weights volume — finding machines with a free GPU first."
+          # A volume is pinned to one machine; the setup instance must run on that same machine.
+          GPU_MACHINES=$(vastai search offers "num_gpus=1 direct_port_count>=1 gpu_ram>=${{ github.event.inputs.gpu_min_ram_gb }} disk_space>=20" --raw --api-key "$KEY" | python3 -c "import json,sys; print(json.dumps(sorted({o['machine_id'] for o in json.load(sys.stdin)})))")
+          echo "Machines with a free GPU right now: $GPU_MACHINES"
+
+          OFFERS=$(vastai search volumes -o 'storage_total_cost' --raw --api-key "$KEY")
+          PICK=$(echo "$OFFERS" | GPU_MACHINES="$GPU_MACHINES" MIN_DAYS="${{ github.event.inputs.min_days_remaining }}" python3 -c "import json,sys,os,time; ok=set(json.loads(os.environ['GPU_MACHINES'])); need=time.time()+int(os.environ['MIN_DAYS'])*86400; m=[o for o in json.load(sys.stdin) if o['machine_id'] in ok and (o.get('end_date') is None or o['end_date']>=need)]; print(json.dumps(m[0]) if m else '')")
+          [ -z "$PICK" ] && { echo "FAIL: no volume offer on a GPU-available machine with >= ${{ github.event.inputs.min_days_remaining }} days remaining. Retry later or lower min_days_remaining."; exit 1; }
+
+          echo "---- selected volume offer (verify end_date / expiry field name) ----"
+          echo "$PICK" | python3 -m json.tool
+          OFFER_ID=$(echo "$PICK" | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
+          MACHINE_ID=$(echo "$PICK" | python3 -c "import json,sys; print(json.load(sys.stdin)['machine_id'])")
           echo "Selected offer: $OFFER_ID on machine $MACHINE_ID"
 
           vastai create volume "$OFFER_ID" \
             --size "${{ github.event.inputs.volume_size_gb }}" \
-            --name ltx2_weights --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+            --name ltx2_weights --api-key "$KEY"
 
-          VOL_JSON=$(vastai show volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          VOL_JSON=$(vastai show volumes --raw --api-key "$KEY")
           VOL_ID=$(echo "$VOL_JSON" | python3 -c "import json,sys; d=json.load(sys.stdin); match=[v for v in d if v.get('label')=='ltx2_weights' or v.get('name')=='ltx2_weights']; print((match[0] if match else d[-1])['id'])")
           echo "Volume ID: $VOL_ID"
           echo "vol_id=$VOL_ID" >> "$GITHUB_OUTPUT"
@@ -71,16 +87,17 @@ jobs:
         id: rent
         run: |
           set -e
+          KEY="${{ secrets.LTX2_GPU_VAST_API_KEY }}"
           MACHINE_ID="${{ steps.volume.outputs.machine_id }}"
 
           echo "Trying direct SSH offers on machine $MACHINE_ID..."
-          OFFER_JSON=$(vastai search offers "machine_id=$MACHINE_ID num_gpus=1 direct_port_count>=1" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          OFFER_JSON=$(vastai search offers "machine_id=$MACHINE_ID num_gpus=1 direct_port_count>=1" -o 'dph_total' --raw --api-key "$KEY")
           COUNT=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
 
           if [ "$COUNT" -eq 0 ]; then
             echo "No direct-port offer on this machine right now — falling back to any offer (proxy SSH)."
             echo "This is a ONE-TIME setup instance, not the daily pattern — proxy SSH here is an acceptable trade-off."
-            OFFER_JSON=$(vastai search offers "machine_id=$MACHINE_ID num_gpus=1" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+            OFFER_JSON=$(vastai search offers "machine_id=$MACHINE_ID num_gpus=1" -o 'dph_total' --raw --api-key "$KEY")
             COUNT=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
           fi
 
@@ -95,27 +112,29 @@ jobs:
           OFFER_ID=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
           echo "Renting offer $OFFER_ID with image ${{ github.event.inputs.wan2gp_image }}, linking volume ${{ steps.volume.outputs.vol_id }}..."
 
-          vastai create instance "$OFFER_ID" \
+          CREATE_OUT=$(vastai create instance "$OFFER_ID" \
             --image "${{ github.event.inputs.wan2gp_image }}" \
             --disk 20 --env '-p 7860:7860' --ssh --direct \
             --link-volume ${{ steps.volume.outputs.vol_id }} --mount-path /data \
-            --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+            --raw --api-key "$KEY")
+          echo "$CREATE_OUT"
 
+          # Exact contract ID of the instance we just created — never index into the account-wide list.
+          IID=$(echo "$CREATE_OUT" | python3 -c "import json,sys; print(json.load(sys.stdin)['new_contract'])")
+          echo "iid=$IID" >> "$GITHUB_OUTPUT"
+
+          STATUS=none
           for i in $(seq 1 20); do
-            STATUS=$(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
-              | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[-1]['actual_status'] if d else 'none')")
+            STATUS=$(vastai show instance "$IID" --raw --api-key "$KEY" | python3 -c "import json,sys; print(json.load(sys.stdin).get('actual_status') or 'none')")
             echo "Attempt $i: status = $STATUS"
             [ "$STATUS" == "running" ] && break
             sleep 15
           done
           [ "$STATUS" != "running" ] && { echo "FAIL: temp instance never started"; exit 1; }
 
-          INFO=$(vastai show instance --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
-            $(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" | python3 -c "import json,sys; print(json.load(sys.stdin)[-1]['id'])"))
-          IID=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
+          INFO=$(vastai show instance "$IID" --raw --api-key "$KEY")
           HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['public_ipaddr'])")
-          PORT=$(echo "$INFO" | python3 -c "import json,sys; d=json.load(sys.stdin); p=d.get('ports',{}).get('22/tcp'); print(p[0]['HostPort'] if p else d['ssh_port'])")
-          echo "iid=$IID" >> "$GITHUB_OUTPUT"
+          PORT=$(echo "$INFO" | python3 -c "import json,sys; d=json.load(sys.stdin); p=(d.get('ports') or {}).get('22/tcp'); print(p[0]['HostPort'] if p else d['ssh_port'])")
           echo "host=$HOST" >> "$GITHUB_OUTPUT"
           echo "port=$PORT" >> "$GITHUB_OUTPUT"
 
@@ -148,7 +167,7 @@ jobs:
             huggingface-cli download Lightricks/LTX-2 --include 'ltx-2-19b-distilled.safetensors' --local-dir /data --token \$HF_TOKEN && \
             huggingface-cli download google/gemma-3-12b-it --local-dir /data/gemma3 --token \$HF_TOKEN && \
             echo WEIGHTS_DOWNLOADED" < /dev/null
-          echo "### Weights downloaded to volume ltx2_weights:/data — persists forever, reused by every future deploy" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Weights downloaded to volume ltx2_weights:/data — lives until the host's listing ends (see end_date in the volume offer log)" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Destroy the temporary instance (volume survives)
         if: always()
@@ -159,4 +178,4 @@ jobs:
           else
             yes | vastai destroy instance "$IID" --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" || true
           fi
-          echo "### Temp instance destroyed (if one was created). Volume ltx2_weights persists — setup complete." >> "$GITHUB_STEP_SUMMARY"
+          echo "### Temp instance destroyed (if one was created). Volume ltx2_weights persists until its host listing expires." >> "$GITHUB_STEP_SUMMARY"
