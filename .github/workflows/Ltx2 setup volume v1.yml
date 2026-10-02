@@ -1,0 +1,115 @@
+name: LTX2 Setup Volume (run once)
+run-name: "setup-volume — one-time weights download"
+
+# Run this ONCE from the Actions tab (workflow_dispatch). It is safe to
+# re-run later (e.g. to re-download weights after deleting the volume),
+# but normal daily operation never touches this file again.
+
+on:
+  workflow_dispatch:
+    inputs:
+      volume_size_gb:
+        description: "Volume size in GB (weights are ~45-70GB; leave room)"
+        required: false
+        type: string
+        default: "80"
+      wan2gp_image:
+        description: "Readymade image to verify + use. Check hub.docker.com/r/robatvastai/wan2gp/tags for the current tag before running — do not trust a stale default."
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Install vast CLI
+        run: pip install vastai
+
+      - name: Create volume
+        id: volume
+        run: |
+          set -e
+          echo "Creating a ${{ github.event.inputs.volume_size_gb }}GB volume..."
+          # UNVERIFIED exact flag names — confirm with:
+          #   vastai create volume --help
+          # before trusting this blindly on a fresh account.
+          vastai create volume --size "${{ github.event.inputs.volume_size_gb }}" \
+            --name ltx2-weights --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+          echo "### Volume created: ltx2-weights (${{ github.event.inputs.volume_size_gb }}GB)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Rent a temporary instance with the volume attached
+        id: rent
+        run: |
+          set -e
+          QUERY='reliability>0.97 num_gpus=1 disk_space>20 direct_port_count>=1 inet_down>500 verified=true geolocation notin [CN]'
+          OFFER_JSON=$(vastai search offers "$QUERY" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          OFFER_ID=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
+          echo "Renting offer $OFFER_ID with image ${{ github.event.inputs.wan2gp_image }}..."
+
+          vastai create instance "$OFFER_ID" \
+            --image "${{ github.event.inputs.wan2gp_image }}" \
+            --disk 20 --env '-p 7860:7860' --ssh --direct \
+            --volume "ltx2-weights:/data" \
+            --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+
+          for i in $(seq 1 20); do
+            STATUS=$(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
+              | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[-1]['actual_status'] if d else 'none')")
+            echo "Attempt $i: status = $STATUS"
+            [ "$STATUS" == "running" ] && break
+            sleep 15
+          done
+          [ "$STATUS" != "running" ] && { echo "FAIL: temp instance never started"; exit 1; }
+
+          INFO=$(vastai show instance --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
+            $(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" | python3 -c "import json,sys; print(json.load(sys.stdin)[-1]['id'])"))
+          IID=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
+          HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['public_ipaddr'])")
+          PORT=$(echo "$INFO" | python3 -c "import json,sys; d=json.load(sys.stdin); p=d.get('ports',{}).get('22/tcp'); print(p[0]['HostPort'] if p else d['ssh_port'])")
+          echo "iid=$IID" >> "$GITHUB_OUTPUT"
+          echo "host=$HOST" >> "$GITHUB_OUTPUT"
+          echo "port=$PORT" >> "$GITHUB_OUTPUT"
+
+      - name: Discover the image's real layout (don't trust assumptions)
+        run: |
+          set -e
+          mkdir -p ~/.ssh
+          echo "${{ secrets.LTX2_GPU_SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          SSH="ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p ${{ steps.rent.outputs.port }} root@${{ steps.rent.outputs.host }}"
+
+          echo "## Discovery results" >> "$GITHUB_STEP_SUMMARY"
+          echo "Looking for wgp.py..." 
+          WGP_PATH=$($SSH "find / -maxdepth 4 -name wgp.py 2>/dev/null | head -1" < /dev/null)
+          echo "wgp.py found at: ${WGP_PATH:-NOT FOUND}" | tee -a "$GITHUB_STEP_SUMMARY"
+
+          echo "Checking ffmpeg..."
+          FFMPEG=$($SSH "command -v ffmpeg || echo MISSING" < /dev/null)
+          echo "ffmpeg: $FFMPEG" | tee -a "$GITHUB_STEP_SUMMARY"
+
+          echo "Checking python/torch..."
+          $SSH "python3 -c 'import torch; print(torch.__version__, torch.cuda.is_available())' || echo 'torch check failed'" < /dev/null | tee -a "$GITHUB_STEP_SUMMARY"
+
+          echo "### ACTION NEEDED: copy the wgp.py path above into start.sh if it differs from the current assumption (~/Wan2GP/wgp.py)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Download weights onto the volume
+        run: |
+          set -e
+          SSH="ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p ${{ steps.rent.outputs.port }} root@${{ steps.rent.outputs.host }}"
+          printf '%s' "${{ secrets.LTX2_GPU_HF_TOKEN }}" | $SSH 'cat > ~/.hf_token && chmod 600 ~/.hf_token'
+          $SSH "export HF_TOKEN=\$(cat ~/.hf_token) && \
+            pip install -U 'huggingface_hub[cli]' -q && \
+            huggingface-cli download Lightricks/LTX-2 --include 'ltx-2-19b-distilled.safetensors' --local-dir /data --token \$HF_TOKEN && \
+            huggingface-cli download google/gemma-3-12b-it --local-dir /data/gemma3 --token \$HF_TOKEN && \
+            echo WEIGHTS_DOWNLOADED" < /dev/null
+          echo "### Weights downloaded to volume ltx2-weights:/data — persists forever, reused by every future deploy" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Destroy the temporary instance (volume survives)
+        if: always()
+        run: |
+          yes | vastai destroy instance ${{ steps.rent.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" || true
+          echo "### Temp instance destroyed. Volume ltx2-weights persists — setup complete." >> "$GITHUB_STEP_SUMMARY"
