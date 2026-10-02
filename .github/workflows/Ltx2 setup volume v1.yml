@@ -36,8 +36,16 @@ jobs:
           echo "---- raw volume offers, first result shown for field confirmation ----"
           echo "$OFFERS" | python3 -c "import json,sys; d=json.load(sys.stdin); print(json.dumps(d[0], indent=2))"
           OFFER_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
-          echo "Using volume offer: $OFFER_ID"
+          # machine_id is captured here so the instance search later can be
+          # pinned to this SAME physical host — a volume is confirmed
+          # host-pinned (docs.vast.ai), so an independent instance search
+          # can land on the wrong machine entirely (this is what caused the
+          # 403 "access denied" error). If the raw JSON above shows a
+          # different key than 'machine_id', that's the one thing to correct.
+          MACHINE_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['machine_id'])")
+          echo "Using volume offer: $OFFER_ID on machine: $MACHINE_ID"
           echo "offer_id=$OFFER_ID" >> "$GITHUB_OUTPUT"
+          echo "machine_id=$MACHINE_ID" >> "$GITHUB_OUTPUT"
 
       - name: Create volume
         id: volume
@@ -60,8 +68,15 @@ jobs:
         id: rent
         run: |
           set -e
-          QUERY='reliability>0.97 num_gpus=1 disk_space>20 direct_port_count>=1 inet_down>500 verified=true geolocation notin [CN]'
+          # Pinned to the volume's own machine — a volume can only attach
+          # to an instance on the SAME physical host (confirmed root cause
+          # of the earlier 403). Dropping reliability/bandwidth filters
+          # here deliberately: this machine is already fixed by the
+          # volume, there is nothing left to choose between.
+          QUERY="machine_id=${{ steps.voloffer.outputs.machine_id }} num_gpus=1 direct_port_count>=1"
           OFFER_JSON=$(vastai search offers "$QUERY" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          echo "---- raw offers on this machine, for field confirmation ----"
+          echo "$OFFER_JSON" | python3 -m json.tool
           OFFER_ID=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
           echo "Renting offer $OFFER_ID with image ${{ github.event.inputs.wan2gp_image }}, linking volume ${{ steps.volume.outputs.vol_id }}..."
 
