@@ -1,0 +1,36 @@
+name: LTX2 Build and Push Custom Image
+run-name: "build-image — only needed if the readymade image is insufficient"
+
+# OPTIONAL FALLBACK. Only run this if LTX2-Setup-Volume.yml's discovery
+# step showed the readymade robatvastai/wan2gp image is missing
+# something. Builds the Dockerfile in this repo and pushes it to GHCR
+# (free for public packages). Re-run only when Wan2GP/torch needs to
+# change — not part of the daily cycle.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: social-media-automatio/ltx2-video-gpu/docker
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/ltx2-video:latest
+            ghcr.io/${{ github.repository_owner }}/ltx2-video:run-${{ github.run_number }}
