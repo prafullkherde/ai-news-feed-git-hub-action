@@ -1009,5 +1009,26 @@
     "corrections_made": "Adjusted recommendation from BUY to HOLD due to high debt, bearish MACD, and low next\u2011week accuracy; set position to 0%.",
     "verified_next_day": null,
     "verified_next_week": null
+  },
+  {
+    "date": "2026-10-02",
+    "price_at_prediction": 38.91,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 38.5,
+    "predicted_next_week_price": 37.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong earnings and revenue growth but high debt-to-equity raises cash\u2011flow risk; valuation is modest but not compelling enough to offset leverage concerns.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, deep oversold RSI, negative MACD; overall bearish trend with limited upside potential.",
+      "Sentiment": "No recent positive news; technical indicators suggest potential for a short\u2011term pullback but not a sustained rally.",
+      "Bull": "Oversold RSI could trigger a temporary rebound, but price remains far below moving averages and debt risk limits upside.",
+      "Bear": "Persistent downtrend, negative momentum, low volatility indicates limited room for recovery; debt burden adds downside risk.",
+      "Risk": "Portfolio constraints preclude significant position; high leverage and low volatility increase risk of further decline."
+    },
+    "corrections_made": "None",
+    "verified_next_day": null,
+    "verified_next_week": null
   }
 ]
