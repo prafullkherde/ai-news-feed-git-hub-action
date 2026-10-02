@@ -3782,5 +3782,21 @@
     "gap": "Pure QA role, no UI/Angular/TS work",
     "first_seen": "2026-10-01",
     "suppress_until": "2026-10-15"
+  },
+  "WN::https://www.workingnomads.com/job/go/1907122/": {
+    "title": "Live Photo Collection Study in India @ TELUS Digital",
+    "score": 0,
+    "why": "The Live Photo Collection Study is a research/UX participation role with no frontend development responsibilities or Angular/TypeScript requirements.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-10-02",
+    "suppress_until": "2026-10-16"
+  },
+  "WN::https://www.workingnomads.com/job/go/1907058/": {
+    "title": "Content Reviewer United States - English-speaking @ TELUS Digital",
+    "score": 0,
+    "why": "The Content Reviewer position is a content moderation role that does not involve any software development or Angular/TypeScript work.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-10-02",
+    "suppress_until": "2026-10-16"
   }
 }
