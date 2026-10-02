@@ -10,7 +10,7 @@ on:
         type: choice
         options: [create, deploy, health_check, stop, start, destroy]
       instance_id:
-        description: "Leave blank to auto-use your most recent instance."
+        description: "instance_id Leave blank to auto-use your most recent instance."
         required: false
         type: string
       gpu_tier:
