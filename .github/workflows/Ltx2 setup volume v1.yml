@@ -10,9 +10,10 @@ on:
         type: string
         default: "80"
       wan2gp_image:
-        description: "Readymade image to verify + use. Check hub.docker.com/r/robatvastai/wan2gp/tags for the current tag before running — do not trust a stale default."
+        description: "Locked default — only change after checking hub.docker.com/r/robatvastai/wan2gp/tags and deliberately deciding to move"
         required: true
         type: string
+        default: "robatvastai/wan2gp:b8b18f8-2026-10-01-cuda-12.9-amd64"
 
 permissions:
   contents: read
@@ -29,19 +30,10 @@ jobs:
         id: voloffer
         run: |
           set -e
-          echo "Searching volume offers (no filters — field names for this
-          endpoint aren't confirmed, so not risking a second wrong-syntax
-          failure by guessing a filter/sort field)..."
           OFFERS=$(vastai search volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
           echo "---- raw volume offers, first result shown for field confirmation ----"
           echo "$OFFERS" | python3 -c "import json,sys; d=json.load(sys.stdin); print(json.dumps(d[0], indent=2))"
           OFFER_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
-          # machine_id is captured here so the instance search later can be
-          # pinned to this SAME physical host — a volume is confirmed
-          # host-pinned (docs.vast.ai), so an independent instance search
-          # can land on the wrong machine entirely (this is what caused the
-          # 403 "access denied" error). If the raw JSON above shows a
-          # different key than 'machine_id', that's the one thing to correct.
           MACHINE_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['machine_id'])")
           echo "Using volume offer: $OFFER_ID on machine: $MACHINE_ID"
           echo "offer_id=$OFFER_ID" >> "$GITHUB_OUTPUT"
@@ -55,7 +47,6 @@ jobs:
             --size "${{ github.event.inputs.volume_size_gb }}" \
             --name ltx2_weights --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
-          echo "Looking up the new volume's real ID via show volumes..."
           VOL_JSON=$(vastai show volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
           echo "---- raw show-volumes output, for field confirmation ----"
           echo "$VOL_JSON" | python3 -m json.tool
@@ -68,11 +59,8 @@ jobs:
         id: rent
         run: |
           set -e
-          # Pinned to the volume's own machine — a volume can only attach
-          # to an instance on the SAME physical host (confirmed root cause
-          # of the earlier 403). Dropping reliability/bandwidth filters
-          # here deliberately: this machine is already fixed by the
-          # volume, there is nothing left to choose between.
+          # Pinned to the volume's own machine — a volume only attaches
+          # to an instance on the SAME physical host.
           QUERY="machine_id=${{ steps.voloffer.outputs.machine_id }} num_gpus=1 direct_port_count>=1"
           OFFER_JSON=$(vastai search offers "$QUERY" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
           echo "---- raw offers on this machine, for field confirmation ----"
@@ -113,18 +101,15 @@ jobs:
           SSH="ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p ${{ steps.rent.outputs.port }} root@${{ steps.rent.outputs.host }}"
 
           echo "## Discovery results" >> "$GITHUB_STEP_SUMMARY"
-          echo "Looking for wgp.py..."
           WGP_PATH=$($SSH "find / -maxdepth 4 -name wgp.py 2>/dev/null | head -1" < /dev/null)
           echo "wgp.py found at: ${WGP_PATH:-NOT FOUND}" | tee -a "$GITHUB_STEP_SUMMARY"
 
-          echo "Checking ffmpeg..."
           FFMPEG=$($SSH "command -v ffmpeg || echo MISSING" < /dev/null)
           echo "ffmpeg: $FFMPEG" | tee -a "$GITHUB_STEP_SUMMARY"
 
-          echo "Checking python/torch..."
           $SSH "python3 -c 'import torch; print(torch.__version__, torch.cuda.is_available())' || echo 'torch check failed'" < /dev/null | tee -a "$GITHUB_STEP_SUMMARY"
 
-          echo "### ACTION NEEDED: copy the wgp.py path above into start.sh if it differs from the current assumption (~/Wan2GP/wgp.py)" >> "$GITHUB_STEP_SUMMARY"
+          echo "### ACTION NEEDED: copy the wgp.py path above into bootstrap-v2.sh / start-v2.sh's WAN2GP_DIR if it differs from /root/Wan2GP" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Download weights onto the volume
         run: |
@@ -136,7 +121,7 @@ jobs:
             huggingface-cli download Lightricks/LTX-2 --include 'ltx-2-19b-distilled.safetensors' --local-dir /data --token \$HF_TOKEN && \
             huggingface-cli download google/gemma-3-12b-it --local-dir /data/gemma3 --token \$HF_TOKEN && \
             echo WEIGHTS_DOWNLOADED" < /dev/null
-          echo "### Weights downloaded to volume ltx2-weights:/data — persists forever, reused by every future deploy" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Weights downloaded to volume ltx2_weights:/data — persists forever, reused by every future deploy" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Destroy the temporary instance (volume survives)
         if: always()
