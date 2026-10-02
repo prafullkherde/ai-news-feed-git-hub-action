@@ -1,0 +1,29 @@
+# OPTIONAL FALLBACK — only build this if LTX2-Setup-Volume.yml's discovery
+# step shows the readymade robatvastai/wan2gp image is missing something
+# (e.g. no ffmpeg, wrong CUDA version). Otherwise skip this file entirely
+# and point --image directly at robatvastai/wan2gp:<tag> — no build needed.
+#
+# This bakes OS tools, torch/CUDA, and Wan2GP into one image. Model
+# weights are deliberately NOT baked in — too large, licensed, and live
+# on the persistent Volume instead.
+FROM vastai/base-image:cuda-12.8.1-auto
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential python3.10 python3-pip git ffmpeg curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /root
+RUN git clone https://github.com/deepbeepmeep/Wan2GP.git
+WORKDIR /root/Wan2GP
+
+RUN python3 -m venv venv
+ENV PATH="/root/Wan2GP/venv/bin:$PATH"
+
+RUN pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -U "huggingface_hub[cli]"
+
+EXPOSE 7860
+# Deliberately no CMD/ENTRYPOINT override — keep the base image's own
+# SSH-server startup so the existing SSH-driven deploy flow (scp
+# scripts, run start.sh) keeps working unchanged.
