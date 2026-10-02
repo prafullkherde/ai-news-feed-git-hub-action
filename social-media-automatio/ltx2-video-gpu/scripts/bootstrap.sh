@@ -1,70 +1,51 @@
 #!/bin/bash
-# bootstrap.sh — only run after preflight.sh has passed.
+# bootstrap.sh — runs on an instance booted from the pre-baked
+# ghcr.io/.../ltx2-video image. OS tools, torch, and Wan2GP are
+# already IN THE IMAGE — this script only handles what the image
+# deliberately does NOT contain: the model weights, which live on
+# the persistent Volume instead.
 set -e
 
 echo "=================================================="
-echo "STEP 0/7 — Re-verify preflight (don't trust a stale pass)"
+echo "STEP 0/3 — Re-verify preflight (don't trust a stale pass)"
 echo "=================================================="
 bash preflight.sh
 
 echo ""
 echo "=================================================="
-echo "STEP 1/7 — OS tools"
+echo "STEP 1/3 — Weights: check volume first, download only if missing"
 echo "=================================================="
-apt-get update
-apt-get install -y build-essential python3.10 python3-pip git ffmpeg
-
-echo ""
-echo "=================================================="
-echo "STEP 2/7 — Clone Wan2GP"
-echo "=================================================="
-git clone https://github.com/deepbeepmeep/Wan2GP.git
 cd Wan2GP
-
-echo ""
-echo "=================================================="
-echo "STEP 3/7 — Isolated environment"
-echo "=================================================="
-python3 -m venv venv
 source venv/bin/activate
 
-echo ""
-echo "=================================================="
-echo "STEP 4/7 — PyTorch (pinned, not read from docs live)"
-echo "=================================================="
-# Verified against docs/INSTALLATION.md as of 2026-09 for cu124.
-# Trade-off vs the original "read docs fresh" step: this can't catch
-# an upstream change automatically. Re-check manually every so often —
-# not every run, but don't assume this stays correct forever.
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+if [ -f "ckpts/ltx-2-19b-distilled.safetensors" ] && [ -f "ckpts/gemma3/config.json" ]; then
+  echo "Weights already present on volume — skipping download entirely."
+else
+  if [ -z "$HF_TOKEN" ]; then
+    echo "FAIL: weights missing AND HF_TOKEN not set — cannot download gated LTX-2 weights."
+    exit 1
+  fi
+  echo "Weights not found on volume — downloading (one-time; persists for every future run)..."
+  huggingface-cli download Lightricks/LTX-2 \
+    --include "ltx-2-19b-distilled.safetensors" --local-dir ckpts/ \
+    --token "$HF_TOKEN"
+  huggingface-cli download google/gemma-3-12b-it --local-dir ckpts/gemma3/ \
+    --token "$HF_TOKEN"
+fi
 
 echo ""
 echo "=================================================="
-echo "STEP 5/7 — App dependencies"
+echo "STEP 2/3 — Defensive check: confirm image is the baked one"
 echo "=================================================="
-pip install -r requirements.txt
-
-echo ""
-echo "=================================================="
-echo "STEP 6/7 — Download model weights (~45-70GB, resumes if interrupted)"
-echo "=================================================="
-# LTX-2 is a GATED repo — HF_TOKEN required, and the license must have
-# been accepted once, manually, on the model's huggingface.co page.
-# No script can do that click for you.
-if [ -z "$HF_TOKEN" ]; then
-  echo "FAIL: HF_TOKEN not set — cannot download gated LTX-2 weights."
+# Should always pass — only fails if this ever runs on the wrong image by mistake.
+if [ ! -d ".git" ]; then
+  echo "FAIL: Wan2GP not found where expected — wrong image?"
   exit 1
 fi
-pip install -U "huggingface_hub[cli]"
-huggingface-cli download Lightricks/LTX-2 \
-  --include "ltx-2-19b-distilled.safetensors" --local-dir ckpts/ \
-  --token "$HF_TOKEN"
-huggingface-cli download google/gemma-3-12b-it --local-dir ckpts/gemma3/ \
-  --token "$HF_TOKEN"
 
 echo ""
 echo "=================================================="
-echo "STEP 7/7 — Confirm the whole stack actually connects"
+echo "STEP 3/3 — Confirm the whole stack actually connects"
 echo "=================================================="
 python3 -c "import torch; print('torch:', torch.__version__, '| CUDA available:', torch.cuda.is_available())"
 
