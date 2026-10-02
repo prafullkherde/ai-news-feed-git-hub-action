@@ -45,9 +45,21 @@ jobs:
           set -e
           vastai create volume ${{ steps.voloffer.outputs.offer_id }} \
             --size "${{ github.event.inputs.volume_size_gb }}" \
-            --name ltx2-weights --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
-          echo "### Volume created: ltx2-weights (${{ github.event.inputs.volume_size_gb }}GB), from offer ${{ steps.voloffer.outputs.offer_id }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "Confirm it exists: vastai show volumes, or the Volumes tab on console.vast.ai" >> "$GITHUB_STEP_SUMMARY"
+            --name ltx2_weights --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+
+          echo "Looking up the new volume's real ID via show volumes..."
+          VOL_JSON=$(vastai show volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          echo "---- raw show-volumes output, for field confirmation ----"
+          echo "$VOL_JSON" | python3 -m json.tool
+          VOL_ID=$(echo "$VOL_JSON" | python3 -c "
+import json,sys
+d = json.load(sys.stdin)
+match = [v for v in d if v.get('label') == 'ltx2_weights' or v.get('name') == 'ltx2_weights']
+print((match[0] if match else d[-1])['id'])
+")
+          echo "Volume ID: $VOL_ID"
+          echo "vol_id=$VOL_ID" >> "$GITHUB_OUTPUT"
+          echo "### Volume created: ltx2_weights, id=$VOL_ID (${{ github.event.inputs.volume_size_gb }}GB), from offer ${{ steps.voloffer.outputs.offer_id }}" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Rent a temporary instance with the volume attached
         id: rent
@@ -56,12 +68,12 @@ jobs:
           QUERY='reliability>0.97 num_gpus=1 disk_space>20 direct_port_count>=1 inet_down>500 verified=true geolocation notin [CN]'
           OFFER_JSON=$(vastai search offers "$QUERY" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
           OFFER_ID=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
-          echo "Renting offer $OFFER_ID with image ${{ github.event.inputs.wan2gp_image }}..."
+          echo "Renting offer $OFFER_ID with image ${{ github.event.inputs.wan2gp_image }}, linking volume ${{ steps.volume.outputs.vol_id }}..."
 
           vastai create instance "$OFFER_ID" \
             --image "${{ github.event.inputs.wan2gp_image }}" \
             --disk 20 --env '-p 7860:7860' --ssh --direct \
-            --volume "ltx2-weights:/data" \
+            --link-volume ${{ steps.volume.outputs.vol_id }} --mount-path /data \
             --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
           for i in $(seq 1 20); do
@@ -119,5 +131,10 @@ jobs:
       - name: Destroy the temporary instance (volume survives)
         if: always()
         run: |
-          yes | vastai destroy instance ${{ steps.rent.outputs.iid }} --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" || true
-          echo "### Temp instance destroyed. Volume ltx2-weights persists — setup complete." >> "$GITHUB_STEP_SUMMARY"
+          IID="${{ steps.rent.outputs.iid }}"
+          if [ -z "$IID" ]; then
+            echo "No instance ID captured (an earlier step likely failed first) — nothing to destroy."
+          else
+            yes | vastai destroy instance "$IID" --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" || true
+          fi
+          echo "### Temp instance destroyed (if one was created). Volume ltx2_weights persists — setup complete." >> "$GITHUB_STEP_SUMMARY"
