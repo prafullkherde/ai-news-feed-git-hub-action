@@ -46,13 +46,33 @@ jobs:
             exit 0
           fi
 
-          echo "No existing ltx2_weights volume — searching offers, cheapest first."
+          echo "No existing ltx2_weights volume — searching for a CHEAP volume offer"
+          echo "whose machine ALSO has free GPU capacity right now. Picking a volume"
+          echo "offer without checking this is what left us with an unusable volume"
+          echo "on a GPU-less host last run — checking combined this time."
           OFFERS=$(vastai search volumes -o 'storage_total_cost' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
-          echo "---- raw volume offers, top result shown for field confirmation ----"
-          echo "$OFFERS" | python3 -c "import json,sys; d=json.load(sys.stdin); print(json.dumps(d[0], indent=2))"
-          OFFER_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
-          MACHINE_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['machine_id'])")
-          echo "Selected offer: $OFFER_ID on machine $MACHINE_ID"
+
+          OFFER_ID=""
+          MACHINE_ID=""
+          for idx in 0 1 2 3 4 5 6 7 8 9; do
+            CANDIDATE=$(echo "$OFFERS" | python3 -c "import json,sys; d=json.load(sys.stdin); print(json.dumps(d[$idx]) if len(d) > $idx else '')")
+            [ -z "$CANDIDATE" ] && break
+            C_ID=$(echo "$CANDIDATE" | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
+            C_MACHINE=$(echo "$CANDIDATE" | python3 -c "import json,sys; print(json.load(sys.stdin)['machine_id'])")
+            GPU_COUNT=$(vastai search offers "machine_id=$C_MACHINE num_gpus=1" --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
+            echo "Checked volume offer $C_ID on machine $C_MACHINE — free GPU offers there: $GPU_COUNT"
+            if [ "$GPU_COUNT" -gt 0 ]; then
+              OFFER_ID="$C_ID"
+              MACHINE_ID="$C_MACHINE"
+              echo "Using this one — machine $MACHINE_ID has GPU capacity right now."
+              break
+            fi
+          done
+
+          if [ -z "$OFFER_ID" ]; then
+            echo "FAIL: checked the 10 cheapest volume offers, none currently have a free GPU on the same machine. Try again shortly."
+            exit 1
+          fi
 
           vastai create volume "$OFFER_ID" \
             --size "${{ github.event.inputs.volume_size_gb }}" \
