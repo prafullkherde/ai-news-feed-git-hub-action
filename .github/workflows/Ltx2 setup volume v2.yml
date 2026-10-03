@@ -57,8 +57,9 @@ jobs:
           echo "No existing ltx2_weights volume — searching GPU-first (scarce"
           echo "resource), then checking if that machine also offers volume storage."
           vastai search offers 'reliability>0.95 num_gpus=1 direct_port_count>=1 inet_down>500 verified=true geolocation notin [CN]' \
-            -o 'dph_total' --raw --curl --explain --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" > /tmp/gpu_offers.json
-          vastai search volumes -o 'storage_total_cost' --raw --curl --explain --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" > /tmp/vol_offers.json
+            -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" > /tmp/gpu_offers.json
+
+          vastai search volumes -o 'storage_total_cost' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" > /tmp/vol_offers.json
 
           # Logic lives in a real committed .py file now, not embedded in this
           # YAML — three separate YAML syntax breaks from embedded multi-line
