@@ -56,6 +56,7 @@ jobs:
 
           echo "No existing ltx2_weights volume — searching GPU-first (scarce"
           echo "resource), then checking if that machine also offers volume storage."
+
           vastai search offers 'reliability>0.95 num_gpus=1 direct_port_count>=1 inet_down>500 verified=true geolocation notin [CN]' \
             -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" > /tmp/gpu_offers.json
 
@@ -65,7 +66,6 @@ jobs:
           # YAML — three separate YAML syntax breaks from embedded multi-line
           # Python/heredocs is the reason, see commit history.
           MATCH=$(python3 "$PROJECT_DIR"/scripts/find_gpu_volume_match.py) || { echo "FAIL: no GPU+volume match available right now. Try again shortly."; exit 1; }
-
           OFFER_ID=$(echo "$MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['gpu_offer_id'])")
           MACHINE_ID=$(echo "$MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['machine_id'])")
           VOL_OFFER_ID=$(echo "$MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['vol_offer_id'])")
@@ -87,7 +87,6 @@ jobs:
         run: |
           set -e
           MACHINE_ID="${{ steps.volume.outputs.machine_id }}"
-
           OFFER_JSON=$(vastai search offers "machine_id=$MACHINE_ID num_gpus=1 direct_port_count>=1" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
           COUNT=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
 
@@ -138,18 +137,12 @@ jobs:
           SSH="ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p ${{ steps.rent.outputs.port }} root@${{ steps.rent.outputs.host }}"
 
           echo "## Discovery results" >> "$GITHUB_STEP_SUMMARY"
-
           WGP_PATH=$($SSH "find / -maxdepth 5 -name wgp.py 2>/dev/null | head -1" < /dev/null)
           echo "wgp.py found at: ${WGP_PATH:-NOT FOUND}" | tee -a "$GITHUB_STEP_SUMMARY"
 
           FFMPEG=$($SSH "command -v ffmpeg || echo MISSING" < /dev/null)
           echo "ffmpeg: $FFMPEG" | tee -a "$GITHUB_STEP_SUMMARY"
 
-          # Last run's torch/huggingface-cli failures were almost certainly
-          # a non-interactive-SSH issue: `ssh host "cmd"` does NOT source
-          # .bashrc, so any conda/venv activation an image does there is
-          # invisible to us. Explicitly sourcing it here instead of
-          # trusting default PATH.
           echo "Checking torch WITH .bashrc sourced..."
           $SSH "source /root/.bashrc 2>/dev/null; source /etc/profile 2>/dev/null; python3 -c 'import torch; print(torch.__version__, torch.cuda.is_available())' || echo 'torch check failed even with .bashrc sourced'" < /dev/null | tee -a "$GITHUB_STEP_SUMMARY"
 
@@ -159,24 +152,24 @@ jobs:
           echo "Checking for a conda env or venv near Wan2GP..."
           $SSH "find /opt /root -maxdepth 3 -iname 'activate' 2>/dev/null; conda env list 2>/dev/null || echo 'no conda'" < /dev/null | tee -a "$GITHUB_STEP_SUMMARY"
 
+          echo "Checking miniforge base python + listing named envs directly..."
+          $SSH "ls -la /opt/miniforge3/envs/ 2>/dev/null || echo 'no envs dir'; /opt/miniforge3/bin/python3 -c 'import torch; print(torch.__version__, torch.cuda.is_available())' 2>&1 || echo 'base miniforge python also lacks torch'" < /dev/null | tee -a "$GITHUB_STEP_SUMMARY"
+
           echo "### ACTION NEEDED: if torch still fails above, copy the 'which python3' path into PYTHON_BIN in bootstrap-v2.sh / start-v2.sh" >> "$GITHUB_STEP_SUMMARY"
           echo "### wgp.py real path confirmed at: ${WGP_PATH:-NOT FOUND} — update WAN2GP_DIR if it differs from /opt/workspace-internal/Wan2GP" >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Download weights onto the volume (with .bashrc sourced)
+      - name: Download weights onto the volume
         run: |
           set -e
           SSH="ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p ${{ steps.rent.outputs.port }} root@${{ steps.rent.outputs.host }}"
           printf '%s' "${{ secrets.LTX2_GPU_HF_TOKEN }}" | $SSH 'cat > ~/.hf_token && chmod 600 ~/.hf_token'
 
-          $SSH "source /root/.bashrc 2>/dev/null; source /etc/profile 2>/dev/null; \
-            export HF_TOKEN=\$(cat ~/.hf_token) && \
-            python3 -m pip install -U 'huggingface_hub[cli]' -q && \
-            python3 -m huggingface_hub.commands.huggingface_cli download Lightricks/LTX-2 --include 'ltx-2-19b-distilled.safetensors' --local-dir /data --token \$HF_TOKEN && \
-            python3 -m huggingface_hub.commands.huggingface_cli download google/gemma-3-12b-it --local-dir /data/gemma3 --token \$HF_TOKEN && \
-            ls -la /data && \
-            echo WEIGHTS_DOWNLOADED" < /dev/null
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -P ${{ steps.rent.outputs.port }} \
+            "$PROJECT_DIR"/scripts/download_weights.py root@${{ steps.rent.outputs.host }}:~/
 
-          echo "### Weights download attempted — verify the 'ls -la /data' output above actually shows the .safetensors file and real file sizes, not just WEIGHTS_DOWNLOADED" >> "$GITHUB_STEP_SUMMARY"
+          $SSH "source /root/.bashrc 2>/dev/null; source /etc/profile 2>/dev/null; python3 -m pip install -U huggingface_hub -q && export HF_TOKEN=\$(cat ~/.hf_token) && python3 ~/download_weights.py && ls -la /data" < /dev/null
+
+          echo "### Weights download attempted — verify the 'ls -la /data' output above shows the real .safetensors file and real file sizes" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Destroy the temporary instance (volume survives)
         if: always()
