@@ -18,11 +18,19 @@ on:
 permissions:
   contents: read
 
+env:
+  PROJECT_DIR: social-media-automatio/ltx2-video-gpu
+
 jobs:
   setup:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        # NEW — needed now that find_gpu_volume_match.py is a real file
+        # this workflow calls, instead of embedded YAML Python/heredocs.
+
       - name: Install vast CLI
         run: pip install vastai
 
@@ -46,44 +54,16 @@ jobs:
             exit 0
           fi
 
-          echo "No existing ltx2_weights volume. GPU capacity is the scarce,"
-          echo "fast-moving resource — volume-offering hosts and GPU-available-"
-          echo "right-now hosts are largely separate populations. Last run proved"
-          echo "this directly: volume-first picked 10/10 machines with zero GPUs."
-          echo "Searching GPU-first instead, then checking if that machine happens"
-          echo "to also offer volume storage."
-
+          echo "No existing ltx2_weights volume — searching GPU-first (scarce"
+          echo "resource), then checking if that machine also offers volume storage."
           vastai search offers 'reliability>0.95 num_gpus=1 direct_port_count>=1 inet_down>500 verified=true geolocation notin [CN]' \
-            -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" > /tmp/gpu_offers.json
-          vastai search volumes -o 'storage_total_cost' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" > /tmp/vol_offers.json
+            -o 'dph_total' --raw --curl --explain --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" > /tmp/gpu_offers.json
+          vastai search volumes -o 'storage_total_cost' --raw --curl --explain --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" > /tmp/vol_offers.json
 
-          python3 > /tmp/match.json <<'PYEOF'
-import json
-with open('/tmp/gpu_offers.json') as f:
-    gpu = json.load(f)
-with open('/tmp/vol_offers.json') as f:
-    vol = json.load(f)
-vol_by_machine = {}
-for v in vol:
-    vol_by_machine.setdefault(v['machine_id'], v)
-match = None
-for g in gpu:
-    mid = g['machine_id']
-    if mid in vol_by_machine:
-        match = {
-            'gpu_offer_id': g['id'],
-            'machine_id': mid,
-            'vol_offer_id': vol_by_machine[mid]['id'],
-        }
-        break
-print(json.dumps(match) if match else '')
-PYEOF
-
-          MATCH=$(cat /tmp/match.json)
-          if [ -z "$MATCH" ]; then
-            echo "FAIL: checked $(python3 -c "import json;print(len(json.load(open('/tmp/gpu_offers.json'))))") available GPU offers — none are on a machine that currently also offers volume storage. Try again shortly, availability shifts constantly."
-            exit 1
-          fi
+          # Logic lives in a real committed .py file now, not embedded in this
+          # YAML — three separate YAML syntax breaks from embedded multi-line
+          # Python/heredocs is the reason, see commit history.
+          MATCH=$(python3 "$PROJECT_DIR"/scripts/find_gpu_volume_match.py) || { echo "FAIL: no GPU+volume match available right now. Try again shortly."; exit 1; }
 
           OFFER_ID=$(echo "$MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['gpu_offer_id'])")
           MACHINE_ID=$(echo "$MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['machine_id'])")
