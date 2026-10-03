@@ -1,0 +1,173 @@
+name: LTX2 Setup Volume 2 (run once)
+run-name: "setup-volume 2 — one-time weights download"
+
+on:
+  workflow_dispatch:
+    inputs:
+      volume_size_gb:
+        description: "Volume size in GB (weights are ~45-70GB; leave room). Only used if no ltx2_weights volume exists yet."
+        required: false
+        type: string
+        default: "80"
+      wan2gp_image:
+        description: "Locked default — only change after checking hub.docker.com/r/robatvastai/wan2gp/tags and deliberately deciding to move"
+        required: true
+        type: string
+        default: "robatvastai/wan2gp:b8b18f8-2026-10-01-cuda-12.9-amd64"
+
+permissions:
+  contents: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Install vast CLI
+        run: pip install vastai
+
+      - name: Find existing volume, or create the cheapest new one
+        id: volume
+        run: |
+          set -e
+          echo "Checking for an existing ltx2_weights volume — if found, reuse it, don't touch it."
+          EXISTING=$(vastai show volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          VOL_MATCH=$(echo "$EXISTING" | python3 -c "import json,sys; d=json.load(sys.stdin); match=[v for v in d if v.get('label')=='ltx2_weights' or v.get('name')=='ltx2_weights']; print(json.dumps(match[0]) if match else '')")
+
+          if [ -n "$VOL_MATCH" ]; then
+            VOL_ID=$(echo "$VOL_MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
+            MACHINE_ID=$(echo "$VOL_MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['machine_id'])")
+            EXPIRES=$(echo "$VOL_MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin).get('end_date', 'unknown'))")
+            echo "Found existing volume ltx2_weights (id=$VOL_ID) on machine $MACHINE_ID — reusing as-is."
+            echo "vol_id=$VOL_ID" >> "$GITHUB_OUTPUT"
+            echo "machine_id=$MACHINE_ID" >> "$GITHUB_OUTPUT"
+            echo "### Reusing existing volume ltx2_weights, id=$VOL_ID — no new volume created" >> "$GITHUB_STEP_SUMMARY"
+            echo "### Volume expiry (raw field, confirm against UI): $EXPIRES — renew/recreate before this date or weights are lost" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          echo "No existing ltx2_weights volume — searching offers, cheapest first."
+          OFFERS=$(vastai search volumes -o 'storage_total_cost' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          echo "---- raw volume offers, top result shown for field confirmation ----"
+          echo "$OFFERS" | python3 -c "import json,sys; d=json.load(sys.stdin); print(json.dumps(d[0], indent=2))"
+          OFFER_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
+          MACHINE_ID=$(echo "$OFFERS" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['machine_id'])")
+          echo "Selected offer: $OFFER_ID on machine $MACHINE_ID"
+
+          vastai create volume "$OFFER_ID" \
+            --size "${{ github.event.inputs.volume_size_gb }}" \
+            --name ltx2_weights --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+
+          VOL_JSON=$(vastai show volumes --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          VOL_ID=$(echo "$VOL_JSON" | python3 -c "import json,sys; d=json.load(sys.stdin); match=[v for v in d if v.get('label')=='ltx2_weights' or v.get('name')=='ltx2_weights']; print((match[0] if match else d[-1])['id'])")
+          echo "Volume ID: $VOL_ID"
+          echo "vol_id=$VOL_ID" >> "$GITHUB_OUTPUT"
+          echo "machine_id=$MACHINE_ID" >> "$GITHUB_OUTPUT"
+          echo "### Volume created: ltx2_weights, id=$VOL_ID (${{ github.event.inputs.volume_size_gb }}GB), from offer $OFFER_ID" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Rent a temporary instance with the volume attached
+        id: rent
+        run: |
+          set -e
+          MACHINE_ID="${{ steps.volume.outputs.machine_id }}"
+
+          OFFER_JSON=$(vastai search offers "machine_id=$MACHINE_ID num_gpus=1 direct_port_count>=1" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          COUNT=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "No direct-port offer on this machine right now — falling back to any offer (proxy SSH, acceptable for this one-time job)."
+            OFFER_JSON=$(vastai search offers "machine_id=$MACHINE_ID num_gpus=1" -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+            COUNT=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
+          fi
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "FAIL: machine $MACHINE_ID has no free GPU offers right now. Volume ${{ steps.volume.outputs.vol_id }} is safe — retry later."
+            exit 1
+          fi
+
+          OFFER_ID=$(echo "$OFFER_JSON" | python3 -c "import json,sys; print(json.load(sys.stdin)[0]['id'])")
+          echo "Renting offer $OFFER_ID with image ${{ github.event.inputs.wan2gp_image }}, linking volume ${{ steps.volume.outputs.vol_id }}..."
+
+          vastai create instance "$OFFER_ID" \
+            --image "${{ github.event.inputs.wan2gp_image }}" \
+            --disk 20 --env '-p 7860:7860' --ssh --direct \
+            --link-volume ${{ steps.volume.outputs.vol_id }} --mount-path /data \
+            --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
+
+          for i in $(seq 1 20); do
+            STATUS=$(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
+              | python3 -c "import json,sys; d=json.load(sys.stdin); print(d[-1]['actual_status'] if d else 'none')")
+            echo "Attempt $i: status = $STATUS"
+            [ "$STATUS" == "running" ] && break
+            sleep 15
+          done
+          [ "$STATUS" != "running" ] && { echo "FAIL: temp instance never started"; exit 1; }
+
+          INFO=$(vastai show instance --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" \
+            $(vastai show instances --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" | python3 -c "import json,sys; print(json.load(sys.stdin)[-1]['id'])"))
+          IID=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
+          HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['public_ipaddr'])")
+          PORT=$(echo "$INFO" | python3 -c "import json,sys; d=json.load(sys.stdin); p=d.get('ports',{}).get('22/tcp'); print(p[0]['HostPort'] if p else d['ssh_port'])")
+          echo "iid=$IID" >> "$GITHUB_OUTPUT"
+          echo "host=$HOST" >> "$GITHUB_OUTPUT"
+          echo "port=$PORT" >> "$GITHUB_OUTPUT"
+
+      - name: Discover the image's real layout, INCLUDING how it activates python
+        run: |
+          set -e
+          mkdir -p ~/.ssh
+          echo "${{ secrets.LTX2_GPU_SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          SSH="ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p ${{ steps.rent.outputs.port }} root@${{ steps.rent.outputs.host }}"
+
+          echo "## Discovery results" >> "$GITHUB_STEP_SUMMARY"
+
+          WGP_PATH=$($SSH "find / -maxdepth 5 -name wgp.py 2>/dev/null | head -1" < /dev/null)
+          echo "wgp.py found at: ${WGP_PATH:-NOT FOUND}" | tee -a "$GITHUB_STEP_SUMMARY"
+
+          FFMPEG=$($SSH "command -v ffmpeg || echo MISSING" < /dev/null)
+          echo "ffmpeg: $FFMPEG" | tee -a "$GITHUB_STEP_SUMMARY"
+
+          # Last run's torch/huggingface-cli failures were almost certainly
+          # a non-interactive-SSH issue: `ssh host "cmd"` does NOT source
+          # .bashrc, so any conda/venv activation an image does there is
+          # invisible to us. Explicitly sourcing it here instead of
+          # trusting default PATH.
+          echo "Checking torch WITH .bashrc sourced..."
+          $SSH "source /root/.bashrc 2>/dev/null; source /etc/profile 2>/dev/null; python3 -c 'import torch; print(torch.__version__, torch.cuda.is_available())' || echo 'torch check failed even with .bashrc sourced'" < /dev/null | tee -a "$GITHUB_STEP_SUMMARY"
+
+          echo "Locating the real python3 / pip (may be a conda env, not system python)..."
+          $SSH "source /root/.bashrc 2>/dev/null; which python3; which pip; echo PATH=\$PATH" < /dev/null | tee -a "$GITHUB_STEP_SUMMARY"
+
+          echo "Checking for a conda env or venv near Wan2GP..."
+          $SSH "find /opt /root -maxdepth 3 -iname 'activate' 2>/dev/null; conda env list 2>/dev/null || echo 'no conda'" < /dev/null | tee -a "$GITHUB_STEP_SUMMARY"
+
+          echo "### ACTION NEEDED: if torch still fails above, copy the 'which python3' path into PYTHON_BIN in bootstrap-v2.sh / start-v2.sh" >> "$GITHUB_STEP_SUMMARY"
+          echo "### wgp.py real path confirmed at: ${WGP_PATH:-NOT FOUND} — update WAN2GP_DIR if it differs from /opt/workspace-internal/Wan2GP" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Download weights onto the volume (with .bashrc sourced)
+        run: |
+          set -e
+          SSH="ssh -o StrictHostKeyChecking=no -i ~/.ssh/deploy_key -p ${{ steps.rent.outputs.port }} root@${{ steps.rent.outputs.host }}"
+          printf '%s' "${{ secrets.LTX2_GPU_HF_TOKEN }}" | $SSH 'cat > ~/.hf_token && chmod 600 ~/.hf_token'
+
+          $SSH "source /root/.bashrc 2>/dev/null; source /etc/profile 2>/dev/null; \
+            export HF_TOKEN=\$(cat ~/.hf_token) && \
+            python3 -m pip install -U 'huggingface_hub[cli]' -q && \
+            python3 -m huggingface_hub.commands.huggingface_cli download Lightricks/LTX-2 --include 'ltx-2-19b-distilled.safetensors' --local-dir /data --token \$HF_TOKEN && \
+            python3 -m huggingface_hub.commands.huggingface_cli download google/gemma-3-12b-it --local-dir /data/gemma3 --token \$HF_TOKEN && \
+            ls -la /data && \
+            echo WEIGHTS_DOWNLOADED" < /dev/null
+
+          echo "### Weights download attempted — verify the 'ls -la /data' output above actually shows the .safetensors file and real file sizes, not just WEIGHTS_DOWNLOADED" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Destroy the temporary instance (volume survives)
+        if: always()
+        run: |
+          IID="${{ steps.rent.outputs.iid }}"
+          if [ -z "$IID" ]; then
+            echo "No instance ID captured (an earlier step likely failed first) — nothing to destroy."
+          else
+            yes | vastai destroy instance "$IID" --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" || true
+          fi
+          echo "### Temp instance destroyed (if one was created). Volume ltx2_weights persists." >> "$GITHUB_STEP_SUMMARY"
