@@ -46,35 +46,51 @@ jobs:
             exit 0
           fi
 
-          echo "No existing ltx2_weights volume — searching for a CHEAP volume offer"
-          echo "whose machine ALSO has free GPU capacity right now. Picking a volume"
-          echo "offer without checking this is what left us with an unusable volume"
-          echo "on a GPU-less host last run — checking combined this time."
-          OFFERS=$(vastai search volumes -o 'storage_total_cost' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}")
+          echo "No existing ltx2_weights volume. GPU capacity is the scarce,"
+          echo "fast-moving resource — volume-offering hosts and GPU-available-"
+          echo "right-now hosts are largely separate populations. Last run proved"
+          echo "this directly: volume-first picked 10/10 machines with zero GPUs."
+          echo "Searching GPU-first instead, then checking if that machine happens"
+          echo "to also offer volume storage."
 
-          OFFER_ID=""
-          MACHINE_ID=""
-          for idx in 0 1 2 3 4 5 6 7 8 9; do
-            CANDIDATE=$(echo "$OFFERS" | python3 -c "import json,sys; d=json.load(sys.stdin); print(json.dumps(d[$idx]) if len(d) > $idx else '')")
-            [ -z "$CANDIDATE" ] && break
-            C_ID=$(echo "$CANDIDATE" | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
-            C_MACHINE=$(echo "$CANDIDATE" | python3 -c "import json,sys; print(json.load(sys.stdin)['machine_id'])")
-            GPU_COUNT=$(vastai search offers "machine_id=$C_MACHINE num_gpus=1" --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" | python3 -c "import json,sys; print(len(json.load(sys.stdin)))")
-            echo "Checked volume offer $C_ID on machine $C_MACHINE — free GPU offers there: $GPU_COUNT"
-            if [ "$GPU_COUNT" -gt 0 ]; then
-              OFFER_ID="$C_ID"
-              MACHINE_ID="$C_MACHINE"
-              echo "Using this one — machine $MACHINE_ID has GPU capacity right now."
-              break
-            fi
-          done
+          vastai search offers 'reliability>0.95 num_gpus=1 direct_port_count>=1 inet_down>500 verified=true geolocation notin [CN]' \
+            -o 'dph_total' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" > /tmp/gpu_offers.json
+          vastai search volumes -o 'storage_total_cost' --raw --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}" > /tmp/vol_offers.json
 
-          if [ -z "$OFFER_ID" ]; then
-            echo "FAIL: checked the 10 cheapest volume offers, none currently have a free GPU on the same machine. Try again shortly."
+          python3 > /tmp/match.json <<'PYEOF'
+import json
+with open('/tmp/gpu_offers.json') as f:
+    gpu = json.load(f)
+with open('/tmp/vol_offers.json') as f:
+    vol = json.load(f)
+vol_by_machine = {}
+for v in vol:
+    vol_by_machine.setdefault(v['machine_id'], v)
+match = None
+for g in gpu:
+    mid = g['machine_id']
+    if mid in vol_by_machine:
+        match = {
+            'gpu_offer_id': g['id'],
+            'machine_id': mid,
+            'vol_offer_id': vol_by_machine[mid]['id'],
+        }
+        break
+print(json.dumps(match) if match else '')
+PYEOF
+
+          MATCH=$(cat /tmp/match.json)
+          if [ -z "$MATCH" ]; then
+            echo "FAIL: checked $(python3 -c "import json;print(len(json.load(open('/tmp/gpu_offers.json'))))") available GPU offers — none are on a machine that currently also offers volume storage. Try again shortly, availability shifts constantly."
             exit 1
           fi
 
-          vastai create volume "$OFFER_ID" \
+          OFFER_ID=$(echo "$MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['gpu_offer_id'])")
+          MACHINE_ID=$(echo "$MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['machine_id'])")
+          VOL_OFFER_ID=$(echo "$MATCH" | python3 -c "import json,sys; print(json.load(sys.stdin)['vol_offer_id'])")
+          echo "Match found: GPU offer $OFFER_ID on machine $MACHINE_ID, which also offers volume storage (offer $VOL_OFFER_ID)."
+
+          vastai create volume "$VOL_OFFER_ID" \
             --size "${{ github.event.inputs.volume_size_gb }}" \
             --name ltx2_weights --api-key "${{ secrets.LTX2_GPU_VAST_API_KEY }}"
 
