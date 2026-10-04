@@ -2689,11 +2689,11 @@
   },
   "WWR::https://weworkremotely.com/remote-jobs/edfinity-senior-software-engineer-remote": {
     "title": "Edfinity: Senior Software Engineer, remote",
-    "score": 70,
-    "why": "Senior Software Engineer role is senior\u2011level and remote but does not explicitly require Angular or TypeScript.",
-    "gap": "No explicit Angular/TypeScript requirement",
-    "first_seen": "2026-09-05",
-    "suppress_until": "2026-09-19"
+    "score": 0,
+    "why": "The title \u201cSenior Software Engineer\u201d is generic and does not explicitly require Angular or TypeScript.",
+    "gap": "No explicit Angular/TypeScript requirement.",
+    "first_seen": "2026-10-04",
+    "suppress_until": "2026-10-18"
   },
   "WWR::https://weworkremotely.com/remote-jobs/toptal-ai-ml-engineer-for-an-ai-driven-e-commerce-platform": {
     "title": "Toptal: AI/ML Engineer for an AI-Driven E-Commerce Platform",
@@ -3369,19 +3369,19 @@
   },
   "WWR::https://weworkremotely.com/remote-jobs/legion-chief-architect": {
     "title": "Legion: Chief Architect",
-    "score": 70,
-    "why": "Senior Chief Architect role aligns with the candidate\u2019s extensive leadership experience, but the posting does not call for Angular/TypeScript.",
-    "gap": "Broader architecture responsibilities beyond UI",
-    "first_seen": "2026-09-19",
-    "suppress_until": "2026-10-03"
+    "score": 0,
+    "why": "\u201cChief Architect\u201d is a broad architecture role without a stated Angular/TypeScript focus.",
+    "gap": "No explicit Angular/TypeScript requirement.",
+    "first_seen": "2026-10-04",
+    "suppress_until": "2026-10-18"
   },
   "WWR::https://weworkremotely.com/remote-jobs/track-it-forward-lead-developer-rebuild-modernize-scale-social-good-saas-remote": {
     "title": "Track it Forward: Lead Developer \u2014 Rebuild, Modernize, & Scale (Social Good SaaS, Remote)",
-    "score": 65,
-    "why": "Lead Developer for a SaaS rebuild is a senior position matching experience level, yet the job lists no Angular/TS requirement.",
-    "gap": "Potential need for React/Node expertise",
-    "first_seen": "2026-09-19",
-    "suppress_until": "2026-10-03"
+    "score": 0,
+    "why": "Lead Developer for a SaaS rebuild is unspecified; no mention of Angular or TypeScript.",
+    "gap": "No explicit Angular/TypeScript requirement.",
+    "first_seen": "2026-10-04",
+    "suppress_until": "2026-10-18"
   },
   "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer-1": {
     "title": "Lemon.io: Senior React Native Developer",
@@ -3498,50 +3498,50 @@
   "WN::https://www.workingnomads.com/job/go/1874420/": {
     "title": "Phone Sales Agent - Restock @ Sun Coast Sciences",
     "score": 0,
-    "why": "Phone Sales Agent is a sales role, not a technical UI position.",
-    "gap": "None",
-    "first_seen": "2026-09-19",
-    "suppress_until": "2026-10-03"
+    "why": "Phone Sales Agent is a sales position, not a UI/frontend role.",
+    "gap": "Pure sales \u2013 not a UI/frontend role.",
+    "first_seen": "2026-10-04",
+    "suppress_until": "2026-10-18"
   },
   "WN::https://www.workingnomads.com/job/go/1874422/": {
     "title": "Phone Sales Recovery Agent @ Sun Coast Sciences",
     "score": 0,
-    "why": "Phone Sales Recovery Agent is a sales role, excluded by the rules.",
-    "gap": "None",
-    "first_seen": "2026-09-19",
-    "suppress_until": "2026-10-03"
+    "why": "Phone Sales Recovery Agent is a sales role, unrelated to UI development.",
+    "gap": "Pure sales \u2013 not a UI/frontend role.",
+    "first_seen": "2026-10-04",
+    "suppress_until": "2026-10-18"
   },
   "WN::https://www.workingnomads.com/job/go/1874418/": {
     "title": "Appointment Setting Representative @ Sun Coast Sciences",
     "score": 0,
-    "why": "Appointment Setting Representative is a sales/administrative role, not UI.",
-    "gap": "None",
-    "first_seen": "2026-09-19",
-    "suppress_until": "2026-10-03"
+    "why": "Appointment Setting Representative is a sales/administrative role, not a UI/frontend position.",
+    "gap": "Pure sales \u2013 not a UI/frontend role.",
+    "first_seen": "2026-10-04",
+    "suppress_until": "2026-10-18"
   },
   "WN::https://www.workingnomads.com/job/go/1874416/": {
     "title": "Protocol Review Specialist @ Sun Coast Sciences",
     "score": 0,
-    "why": "Protocol Review Specialist is a compliance role, not UI development.",
-    "gap": "None",
-    "first_seen": "2026-09-19",
-    "suppress_until": "2026-10-03"
+    "why": "Protocol Review Specialist is a non\u2011technical, non\u2011frontend role.",
+    "gap": "Not a UI/frontend position.",
+    "first_seen": "2026-10-04",
+    "suppress_until": "2026-10-18"
   },
   "WN::https://www.workingnomads.com/job/go/1873858/": {
     "title": "Quality Assurance Rater - Spanish (Spain) @ TELUS Digital",
     "score": 0,
-    "why": "Quality Assurance Rater \u2013 Spanish is a QA role, excluded.",
-    "gap": "None",
-    "first_seen": "2026-09-19",
-    "suppress_until": "2026-10-03"
+    "why": "Quality Assurance Rater is a QA role, not a UI/frontend development position.",
+    "gap": "Pure QA \u2013 not a UI/frontend role.",
+    "first_seen": "2026-10-04",
+    "suppress_until": "2026-10-18"
   },
   "WN::https://www.workingnomads.com/job/go/1873836/": {
     "title": "Quality Assurance Rater - French (FR) @ TELUS Digital",
     "score": 0,
-    "why": "Quality Assurance Rater \u2013 French is a QA role, excluded.",
-    "gap": "None",
-    "first_seen": "2026-09-19",
-    "suppress_until": "2026-10-03"
+    "why": "Quality Assurance Rater (French) is a QA role, unrelated to UI/frontend work.",
+    "gap": "Pure QA \u2013 not a UI/frontend role.",
+    "first_seen": "2026-10-04",
+    "suppress_until": "2026-10-18"
   },
   "WN::https://www.workingnomads.com/job/go/1873579/": {
     "title": "Quality Assurance Rater - German (DE) @ TELUS Digital",
@@ -3798,5 +3798,13 @@
     "gap": "No Angular/TypeScript requirement",
     "first_seen": "2026-10-02",
     "suppress_until": "2026-10-16"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/twikey-senior-java-developer": {
+    "title": "Twikey: Senior Java Developer",
+    "score": 0,
+    "why": "The role is a Senior Java Developer, a pure backend position with no frontend focus.",
+    "gap": "No Angular/TypeScript requirement (backend\u2011only).",
+    "first_seen": "2026-10-04",
+    "suppress_until": "2026-10-18"
   }
 }
