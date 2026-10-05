@@ -3806,5 +3806,53 @@
     "gap": "No Angular/TypeScript requirement (backend\u2011only).",
     "first_seen": "2026-10-04",
     "suppress_until": "2026-10-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/steuart-nutrition-software-developer-ai-coding": {
+    "title": "STEUART NUTRITION: Software Developer AI Coding",
+    "score": 0,
+    "why": "The role focuses on AI coding and does not mention any frontend or UI responsibilities.",
+    "gap": "Not a frontend/UI position",
+    "first_seen": "2026-10-05",
+    "suppress_until": "2026-10-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/glean-application-security-engineer": {
+    "title": "Glean: Application Security Engineer",
+    "score": 0,
+    "why": "This is an application security engineering role with no indication of UI or frontend work.",
+    "gap": "Not a frontend/UI position",
+    "first_seen": "2026-10-05",
+    "suppress_until": "2026-10-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/adventure-travel-365-senior-full-stack-developer-marketplace-web-mobile-platform": {
+    "title": "Adventure Travel 365: Senior Full-Stack Developer - Marketplace Web & Mobile Platform",
+    "score": 65,
+    "why": "The position is a senior full\u2011stack developer role; while the candidate\u2019s extensive Angular/TypeScript UI expertise is valuable, the job does not explicitly require Angular/TS and also expects broader full\u2011stack (including mobile) skills.",
+    "gap": "Mobile platform experience",
+    "first_seen": "2026-10-05",
+    "suppress_until": "2026-10-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/hex-technologies-cloud-security-engineer": {
+    "title": "Hex Technologies: Cloud Security Engineer",
+    "score": 0,
+    "why": "A cloud security engineer role, unrelated to UI or frontend development.",
+    "gap": "Not a frontend/UI position",
+    "first_seen": "2026-10-05",
+    "suppress_until": "2026-10-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-senior-integration-engineer-for-enterprise-api-integration-products": {
+    "title": "Toptal: Senior Integration Engineer for Enterprise API & Integration Products",
+    "score": 0,
+    "why": "The senior integration engineer position centers on API and integration work, not on UI/Angular development.",
+    "gap": "Not a frontend/UI position",
+    "first_seen": "2026-10-05",
+    "suppress_until": "2026-10-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/collibra-cps-account-program-manager": {
+    "title": "Collibra: CPS Account Program Manager",
+    "score": 0,
+    "why": "This is a program\u2011manager role, not a technical UI or development position.",
+    "gap": "Not a frontend/UI position",
+    "first_seen": "2026-10-05",
+    "suppress_until": "2026-10-19"
   }
 }
