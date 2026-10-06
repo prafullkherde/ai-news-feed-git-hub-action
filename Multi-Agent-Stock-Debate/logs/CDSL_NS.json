@@ -909,7 +909,11 @@
       "direction_correct": true,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1242.5,
+      "direction_correct": true,
+      "error_pct": -4.42
+    }
   },
   {
     "date": "2026-09-28",
@@ -934,7 +938,11 @@
       "direction_correct": true,
       "error_pct": -4.04
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1250.0,
+      "direction_correct": true,
+      "error_pct": -5.3
+    }
   },
   {
     "date": "2026-09-29",
@@ -959,7 +967,11 @@
       "direction_correct": false,
       "error_pct": 1.89
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": false,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-09-30",
@@ -1004,7 +1016,11 @@
       "Risk": "Portfolio constraints allow only 5% exposure; given high valuation and weak technicals, a conservative stance is warranted."
     },
     "corrections_made": "Overrode Executor\u2019s bullish trade proposal and Bear case emphasis on valuation; adjusted price predictions to reflect modest expected decline based on negative MACD and high PE.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1242.5,
+      "direction_correct": true,
+      "error_pct": -0.6
+    },
     "verified_next_week": null
   },
   {
@@ -1025,6 +1041,31 @@
       "Risk": "Portfolio constraints preclude any position; high valuation and bearish technicals increase risk of further decline."
     },
     "corrections_made": "none",
+    "verified_next_day": {
+      "actual_price": 1250.0,
+      "direction_correct": true,
+      "error_pct": 0.4
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-10-06",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1235.0,
+    "predicted_next_week_price": 1240.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples (trailing PE 56, forward PE 41) relative to sector and modest growth (15.4%) suggest limited upside; low debt and strong margins provide stability but do not offset premium.",
+      "Technical": "MACD is well below its signal line, indicating bearish momentum; missing SMA/close data limits trend assessment; low volatility (1.82%) means price moves are small.",
+      "Sentiment": "No recent news or sentiment data available; neutral stance.",
+      "Bull": "Bull case overstates value by comparing to sector averages that are higher than typical; does not account for high valuation risk.",
+      "Bear": "Bear case accurately highlights valuation premium and weak momentum; however, it may overstate downside potential given low volatility and strong balance sheet.",
+      "Risk": "Given the low track record accuracy (48% next-day, 45% next-week) and lack of clear entry point, the risk of a misstep outweighs potential gain; holding preserves capital while awaiting clearer signals."
+    },
+    "corrections_made": "Overstated bullish bias in executor\u2019s bull case; corrected recommendation to HOLD based on valuation and technical weakness, and adjusted price predictions to reflect modest bearish bias.",
     "verified_next_day": null,
     "verified_next_week": null
   }

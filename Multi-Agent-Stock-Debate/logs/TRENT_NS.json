@@ -909,7 +909,11 @@
       "direction_correct": true,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 2580.0,
+      "direction_correct": false,
+      "error_pct": -4.44
+    }
   },
   {
     "date": "2026-09-28",
@@ -934,7 +938,11 @@
       "direction_correct": true,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 2580.0,
+      "direction_correct": true,
+      "error_pct": 1.18
+    }
   },
   {
     "date": "2026-09-29",
@@ -959,7 +967,11 @@
       "direction_correct": true,
       "error_pct": 0.83
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-09-30",
@@ -1004,7 +1016,11 @@
       "Risk": "Potential for short squeeze if earnings beat; limited upside but short position capped at 5% portfolio."
     },
     "corrections_made": "none",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 2580.0,
+      "direction_correct": true,
+      "error_pct": -0.77
+    },
     "verified_next_week": null
   },
   {
@@ -1025,6 +1041,31 @@
       "Risk": "Portfolio constraints allow only 5% exposure; a short position would expose to unlimited loss if price rallies."
     },
     "corrections_made": "Fixed incorrect position sizing (2% of \u20b9100,000 is \u20b92,000, not \u20b95,000,000); corrected share count to ~0.78 shares; removed unrealistic target price of \u20b92,451; clarified that stop at 20\u2011day SMA limits loss to ~\u20b9171 per share, not 6.6% of price; noted that executor\u2019s risk\u2011reward ratio claim was inaccurate; acknowledged that technical oversold RSI may signal a rebound rather than a continuation of a decline.",
+    "verified_next_day": {
+      "actual_price": 2580.0,
+      "direction_correct": false,
+      "error_pct": 0.39
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-10-06",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 2575.0,
+    "predicted_next_week_price": 2600.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation metrics (trailing PE 85.7, forward PE 56.9, P/B 22.2) suggest limited upside; modest profit margin (8.6%) and low dividend yield (0.16%) reduce income appeal.",
+      "Technical": "MACD below signal indicates bearish momentum, but lack of SMA/RSI data limits trend confirmation; volatility is low (1.95%) implying limited price swings.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Bull case overstated by claiming undervaluation based on forward PE; forward PE still steep and revenue growth may not be sustainable in cyclical sector.",
+      "Bear": "Bear case accurate on valuation concerns and MACD bearishness; however, debt-to-equity is moderate and revenue growth is solid, mitigating some downside risk.",
+      "Risk": "Short position would expose to margin risk; volatility low but MACD signal may not be reliable without additional indicators; past accuracy suggests cautious stance."
+    },
+    "corrections_made": "Overstated bullish claims regarding forward PE undervaluation and revenue sustainability; omitted unverified sentiment; adjusted recommendation to HOLD based on conservative interpretation of weak technicals and high valuation.",
     "verified_next_day": null,
     "verified_next_week": null
   }

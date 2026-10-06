@@ -916,7 +916,11 @@
       "direction_correct": true,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 38.91,
+      "direction_correct": true,
+      "error_pct": -3.93
+    }
   },
   {
     "date": "2026-09-28",
@@ -941,7 +945,11 @@
       "direction_correct": true,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 38.92,
+      "direction_correct": true,
+      "error_pct": -13.51
+    }
   },
   {
     "date": "2026-09-29",
@@ -1007,7 +1015,11 @@
       "Risk": "Leverage sensitivity to interest rates and potential governance scrutiny; limited downside protection due to lack of clear support levels."
     },
     "corrections_made": "Adjusted recommendation from BUY to HOLD due to high debt, bearish MACD, and low next\u2011week accuracy; set position to 0%.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 38.91,
+      "direction_correct": true,
+      "error_pct": -1.49
+    },
     "verified_next_week": null
   },
   {
@@ -1028,6 +1040,31 @@
       "Risk": "Portfolio constraints preclude significant position; high leverage and low volatility increase risk of further decline."
     },
     "corrections_made": "None",
+    "verified_next_day": {
+      "actual_price": 38.92,
+      "direction_correct": false,
+      "error_pct": 1.09
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-10-06",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 38.8,
+    "predicted_next_week_price": 38.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong earnings and growth but high leverage and premium valuation may limit upside; no dividend to offset risk.",
+      "Technical": "Negative MACD spread and lack of SMA data suggest bearish momentum; volatility is modest but insufficient to justify a trade.",
+      "Sentiment": "No recent news or catalysts; sentiment neutral to slightly negative.",
+      "Bull": "Solid ROE and revenue growth could support a rebound if leverage concerns ease.",
+      "Bear": "High debt-to-equity and premium valuation could lead to downside if earnings falter.",
+      "Risk": "Portfolio constraints prohibit any position; prior predictions have been inaccurate, so conservative stance advised."
+    },
+    "corrections_made": "Overrode the executor\u2019s short trade proposal and the unrealistic position sizing; corrected the confidence level to Medium given mixed signals and past accuracy.",
     "verified_next_day": null,
     "verified_next_week": null
   }

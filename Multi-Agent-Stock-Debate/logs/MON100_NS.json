@@ -887,7 +887,11 @@
       "direction_correct": false,
       "error_pct": 0.81
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 321.46,
+      "direction_correct": false,
+      "error_pct": -1.99
+    }
   },
   {
     "date": "2026-09-25",
@@ -912,7 +916,11 @@
       "direction_correct": true,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 321.46,
+      "direction_correct": true,
+      "error_pct": 3.7
+    }
   },
   {
     "date": "2026-09-28",
@@ -937,7 +945,11 @@
       "direction_correct": true,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-09-29",
@@ -1003,7 +1015,11 @@
       "Risk": "Limited data and low track\u2011record accuracy increase uncertainty; holding preserves capital."
     },
     "corrections_made": "none",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 321.46,
+      "direction_correct": true,
+      "error_pct": 0.3
+    },
     "verified_next_week": null
   },
   {
@@ -1024,6 +1040,31 @@
       "Risk": "Portfolio constraints allow small position, but technical indicators suggest higher risk than reward; conservative stance advised."
     },
     "corrections_made": "None",
+    "verified_next_day": {
+      "actual_price": NaN,
+      "direction_correct": false,
+      "error_pct": NaN
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-10-06",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 29.08 is high relative to typical market averages, but absence of forward P/E, revenue growth, profitability, and balance\u2011sheet data prevents a meaningful valuation assessment. The lack of market\u2011cap and sector context further limits fundamental insight.",
+      "Technical": "Key trend indicators (SMA, RSI, last close) are missing; only MACD is available and shows a bearish divergence. However, with volatility at 1.49\u202f% and no recent price data, the MACD signal alone is insufficient to justify a directional trade.",
+      "Sentiment": "No news headlines were retrieved, so sentiment analysis is unavailable. The elevated P/E may reflect a premium for expected growth, but without supporting fundamentals or catalysts, sentiment remains uncertain.",
+      "Bull": "The argument that low volatility and a high P/E imply a safe long position is unsupported; low volatility does not compensate for an over\u2011valued price or lack of growth evidence.",
+      "Bear": "The claim that a bearish MACD and high P/E warrant a short position ignores the absence of price data and the low historical accuracy of predictions for this ticker. A short trade would expose the portfolio to liquidity risk without clear justification.",
+      "Risk": "Given the limited data, the potential for mispricing or liquidity issues is high. The portfolio\u2019s 5\u202f% exposure limit is respected, but the lack of concrete evidence suggests a conservative stance."
+    },
+    "corrections_made": "Overstated bullish case by implying low volatility guarantees safety; overstated bearish case by treating MACD alone as decisive; omitted acknowledgment of missing price data and low prediction accuracy; removed unsupported claims of clean news slate; clarified that predictions for next day/next week are unavailable due to missing data.",
     "verified_next_day": null,
     "verified_next_week": null
   }
