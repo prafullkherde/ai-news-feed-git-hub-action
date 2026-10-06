@@ -3562,10 +3562,10 @@
   "WN::https://www.workingnomads.com/job/go/1878435/": {
     "title": "Head of Engineering @ Lemon.io",
     "score": 0,
-    "why": "The Head of Engineering position is a broad engineering leadership role that does not specifically call for Angular or TypeScript expertise.",
-    "gap": "No Angular/TypeScript requirement",
-    "first_seen": "2026-09-21",
-    "suppress_until": "2026-10-05"
+    "why": "Head of Engineering is a broad leadership role without explicit Angular or TypeScript focus, thus not aligned with the candidate\u2019s UI\u2011specific expertise.",
+    "gap": "No Angular/TS focus",
+    "first_seen": "2026-10-06",
+    "suppress_until": "2026-10-20"
   },
   "WN::https://www.workingnomads.com/job/go/1879612/": {
     "title": "Content Reviewer - United States @ TELUS Digital",
@@ -3854,5 +3854,29 @@
     "gap": "Not a frontend/UI position",
     "first_seen": "2026-10-05",
     "suppress_until": "2026-10-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-salesforce-platform-lead-for-global-industrial-company": {
+    "title": "Toptal: Salesforce Platform Lead for Global Industrial Company",
+    "score": 0,
+    "why": "The role is a Salesforce Platform Lead, which centers on Salesforce development rather than Angular/TypeScript UI work.",
+    "gap": "No Angular/TS requirement",
+    "first_seen": "2026-10-06",
+    "suppress_until": "2026-10-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1915664/": {
+    "title": "AI Content Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "The AI Content Analyst position is entry\u2011level with \u201cNo Experience Required,\u201d far below the senior UI architect profile.",
+    "gap": "Junior\u2011level requirement",
+    "first_seen": "2026-10-06",
+    "suppress_until": "2026-10-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1915662/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "The Data Analyst role is a non\u2011technical, entry\u2011level position unrelated to UI/Frontend development.",
+    "gap": "Junior\u2011level / non\u2011frontend",
+    "first_seen": "2026-10-06",
+    "suppress_until": "2026-10-20"
   }
 }
