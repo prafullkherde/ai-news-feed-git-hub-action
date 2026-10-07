@@ -1186,18 +1186,18 @@
   "RemoteOK::1135285": {
     "title": "Junior Front End Developer @ PULSE (MENA)",
     "score": 0,
-    "why": "The role is explicitly junior level, which falls below the 7\u2011year experience threshold required for eligibility.",
-    "gap": "Seniority level (junior)",
-    "first_seen": "2026-09-22",
-    "suppress_until": "2026-10-06"
+    "why": "The role is a **Junior Front End Developer**, which expects <\u202f7\u202fyears experience, while the candidate has 17+\u202fyears.",
+    "gap": "Seniority level",
+    "first_seen": "2026-10-07",
+    "suppress_until": "2026-10-21"
   },
   "RemoteOK::1135269": {
     "title": "Front End Developer @ Acro Commerce",
     "score": 70,
-    "why": "The position is a generic Front End Developer role without an explicit Angular/TypeScript requirement, so the candidate\u2019s strong Angular background is relevant but capped at 75, and the lack of a specific Angular focus reduces the fit.",
+    "why": "The position is a generic **Front End Developer** role without explicit Angular/TypeScript requirements, so the candidate\u2019s expertise is relevant but not a perfect match.",
     "gap": "No explicit Angular/TypeScript requirement",
-    "first_seen": "2026-09-22",
-    "suppress_until": "2026-10-06"
+    "first_seen": "2026-10-07",
+    "suppress_until": "2026-10-21"
   },
   "WN::https://www.workingnomads.com/job/go/1746261/": {
     "title": "Account Manager, Creative Operations @ Storm Ideas",
@@ -3570,10 +3570,10 @@
   "WN::https://www.workingnomads.com/job/go/1879612/": {
     "title": "Content Reviewer - United States @ TELUS Digital",
     "score": 0,
-    "why": "The role is a Content Reviewer, which does not involve UI/Frontend development and therefore does not match the candidate\u2019s expertise.",
-    "gap": "Role is not UI/Frontend related",
-    "first_seen": "2026-09-22",
-    "suppress_until": "2026-10-06"
+    "why": "The position is a **Content Reviewer**, unrelated to UI architecture or development.",
+    "gap": "Role mismatch (non\u2011frontend)",
+    "first_seen": "2026-10-07",
+    "suppress_until": "2026-10-21"
   },
   "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-net-full-stack-developer-1": {
     "title": "Lemon.io: Senior .NET Full-stack Developer",
@@ -3878,5 +3878,21 @@
     "gap": "Junior\u2011level / non\u2011frontend",
     "first_seen": "2026-10-06",
     "suppress_until": "2026-10-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1920476/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "This is a **Data Analyst** role (no experience required) and does not involve UI/Frontend work.",
+    "gap": "Role mismatch (non\u2011frontend)",
+    "first_seen": "2026-10-07",
+    "suppress_until": "2026-10-21"
+  },
+  "WN::https://www.workingnomads.com/job/go/1920195/": {
+    "title": "Senior React Full-stack Developer @ Lemon.io",
+    "score": 60,
+    "why": "The job is a **Senior React Full\u2011stack Developer**; the candidate\u2019s stack is Angular/TypeScript, so the fit is limited to the 60\u2011point cap for React\u2011only positions.",
+    "gap": "Stack mismatch (React vs Angular/TS)",
+    "first_seen": "2026-10-07",
+    "suppress_until": "2026-10-21"
   }
 }
