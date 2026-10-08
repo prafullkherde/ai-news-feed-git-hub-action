@@ -1025,7 +1025,11 @@
       "direction_correct": true,
       "error_pct": -0.77
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": NaN,
+      "direction_correct": true,
+      "error_pct": NaN
+    }
   },
   {
     "date": "2026-10-02",
@@ -1095,6 +1099,27 @@
       "Risk": "Insufficient price data and lack of trend confirmation make any trade risky; portfolio constraints allow a small position but current evidence does not support entry."
     },
     "corrections_made": "Revised interpretation of MACD (above signal indicates bullish bias); acknowledged lack of price data and incomplete technicals; decided to HOLD instead of shorting due to insufficient evidence.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-10-08",
+    "price_at_prediction": NaN,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "The company\u2019s trailing P/E of 84.8 and forward P/E of 56.4 are markedly above consumer\u2011cyclical peers, indicating a valuation premium that may not be sustainable. Profit margins are modest (8.6%) and revenue growth (17.8%) is not translating into strong earnings expansion. Debt\u2011to\u2011equity is low (36%) and dividend yield is negligible (0.14%), providing little income cushion. Overall, fundamentals suggest a high\u2011risk, high\u2011valuation scenario.",
+      "Technical": "MACD is above its signal line (\u201133.07 vs \u201151.34) but both values are negative, which is a weak bullish signal at best. SMA and RSI data are missing, preventing trend confirmation. Volatility is low (2.24%), but without recent price data the technical picture is incomplete.",
+      "Sentiment": "No recent headlines or news sentiment data are available, so sentiment cannot be assessed.",
+      "Bull": "Bull case relies heavily on forward earnings expectations and a weak MACD crossover, both of which are insufficient to justify a bullish stance given the high valuation multiples.",
+      "Bear": "Bear case correctly identifies over\u2011valuation and weak profitability, but the MACD bearish argument is overstated because both lines are negative and the crossover is marginal. A short position would expose the portfolio to significant downside risk with limited upside potential.",
+      "Risk": "A short position would consume the entire 5% allocation and expose the portfolio to a 2\u00d7 volatility stop\u2011loss (~4.5%) and a 8% target, which is aggressive given the lack of concrete price data. The high valuation risk and lack of technical confirmation make a short too risky."
+    },
+    "corrections_made": "Overstated bullish inference from MACD; omitted unsupported price targets; clarified that no price data is available; adjusted recommendation to HOLD and removed proposed position.",
     "verified_next_day": null,
     "verified_next_week": null
   }
