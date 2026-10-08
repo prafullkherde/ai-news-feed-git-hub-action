@@ -3481,11 +3481,11 @@
   },
   "WWR::https://weworkremotely.com/remote-jobs/toggl-senior-full-stack": {
     "title": "Toggl: Senior Full Stack",
-    "score": 70,
-    "why": "Senior Full\u2011Stack at Toggl is senior\u2011level and aligns with the candidate\u2019s breadth, but lacks Angular/TS mention.",
-    "gap": "Unspecified technology stack (likely non\u2011Angular)",
-    "first_seen": "2026-09-19",
-    "suppress_until": "2026-10-03"
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-10-08",
+    "suppress_until": "2026-10-22"
   },
   "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-react-full-stack-developer-6": {
     "title": "Lemon.io: Senior React Full-stack Developer",
@@ -3894,5 +3894,29 @@
     "gap": "Stack mismatch (React vs Angular/TS)",
     "first_seen": "2026-10-07",
     "suppress_until": "2026-10-21"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/dremio-senior-staff-software-engineer-query-execution": {
+    "title": "Dremio: Senior Staff Software Engineer - Query Execution",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-10-08",
+    "suppress_until": "2026-10-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1923073/": {
+    "title": "Senior Vue Developer @ Lemon.io",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-10-08",
+    "suppress_until": "2026-10-22"
+  },
+  "WN::https://www.workingnomads.com/job/go/1922550/": {
+    "title": "Outbound SDR \u2014 Technology Advisory (Self-Employed, Remote) @ CTO Samurai",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-10-08",
+    "suppress_until": "2026-10-22"
   }
 }
