@@ -9,7 +9,7 @@
   "HKUDS/Vibe-Trading": "Popularizing",
   "blader/humanizer": "Popularizing",
   "block/buzz": "Popularizing",
-  "KKKKhazix/human-writing": "Popularizing",
+  "KKKKhazix/human-writing": "Breakout",
   "kubernetes/kubernetes": "Popularizing",
   "pathwaycom/arc-task-gen": "Popularizing",
   "plannotator/effective-html": "Popularizing",
@@ -36,5 +36,5 @@
   "google-antigravity/antigravity-sdk-python": "Popularizing",
   "dataelement/dsh-desktop": "Popularizing",
   "spring-projects/spring-boot": "Breakout",
-  "denoland/deno": "Breakout"
+  "denoland/deno": "Popularizing"
 }
