@@ -4054,5 +4054,13 @@
     "gap": "ERP/backend focus",
     "first_seen": "2026-10-09",
     "suppress_until": "2026-10-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/air-apps-framer-website-designer-1": {
+    "title": "Air Apps: Framer Website Designer",
+    "score": 20,
+    "why": "The position is a Framer\u2011focused website designer role that does not require Angular or TypeScript, which are the candidate\u2019s primary expertise.",
+    "gap": "No Framer/UX design experience",
+    "first_seen": "2026-10-11",
+    "suppress_until": "2026-10-25"
   }
 }
