@@ -4062,5 +4062,21 @@
     "gap": "No Framer/UX design experience",
     "first_seen": "2026-10-11",
     "suppress_until": "2026-10-25"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/zoominfo-technologies-llc-director-applied-ai": {
+    "title": "ZoomInfo Technologies LLC: Director, Applied AI",
+    "score": 0,
+    "why": "The Director, Applied AI role centers on AI strategy and leadership, not on frontend development with Angular or TypeScript.",
+    "gap": "No UI/Angular responsibilities required.",
+    "first_seen": "2026-10-12",
+    "suppress_until": "2026-10-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/postscript-client-strategist": {
+    "title": "Postscript: Client Strategist",
+    "score": 0,
+    "why": "The Client Strategist position is a client\u2011facing, non\u2011technical role with no focus on UI engineering or Angular/TypeScript.",
+    "gap": "Lack of relevant frontend/UI duties.",
+    "first_seen": "2026-10-12",
+    "suppress_until": "2026-10-26"
   }
 }
