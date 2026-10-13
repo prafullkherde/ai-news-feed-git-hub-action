@@ -4078,5 +4078,29 @@
     "gap": "Lack of relevant frontend/UI duties.",
     "first_seen": "2026-10-12",
     "suppress_until": "2026-10-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/bondex-fullstack-web3-engineer-solidity-rust-typescript": {
+    "title": "bondex: Fullstack Web3 Engineer (Solidity / Rust / Typescript)",
+    "score": 82,
+    "why": "The role explicitly requires TypeScript, which aligns with the candidate\u2019s 17+\u202fyears of TS/Angular experience, but it also demands Solidity/Rust Web3 expertise the candidate does not possess.",
+    "gap": "Lack of Solidity/Rust/Web3 experience",
+    "first_seen": "2026-10-13",
+    "suppress_until": "2026-10-27"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/discord-engineering-manager-machine-learning-safety": {
+    "title": "Discord: Engineering Manager, Machine Learning (Safety)",
+    "score": 0,
+    "why": "The position is an Engineering Manager for Machine Learning safety, a pure ML/leadership role with no frontend, Angular, or TypeScript requirements.",
+    "gap": "Not a frontend/Angular/TypeScript role",
+    "first_seen": "2026-10-13",
+    "suppress_until": "2026-10-27"
+  },
+  "WN::https://www.workingnomads.com/job/go/1936318/": {
+    "title": "Remote Financial Services Agent (Independent Contractor) \u2013 Inbound Card & Account Support @ ShyftOff",
+    "score": 0,
+    "why": "This is a Financial Services support agent role, unrelated to software development or UI architecture.",
+    "gap": "Not a development or UI\u2011focused position",
+    "first_seen": "2026-10-13",
+    "suppress_until": "2026-10-27"
   }
 }
