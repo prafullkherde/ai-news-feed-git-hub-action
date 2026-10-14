@@ -33,11 +33,11 @@
   },
   "RemoteOK::1131370": {
     "title": "Front End Full Stack Developer @ Honor Foods",
-    "score": 68,
-    "why": "The position is a front\u2011end/full\u2011stack developer role, suitable for a senior UI architect, yet it lacks a specific Angular/TS requirement, capping the score.",
+    "score": 78,
+    "why": "Senior remote front\u2011end/full\u2011stack role that matches the candidate\u2019s experience level, but the posting does not explicitly require Angular or TypeScript, so the score is capped below the maximum.",
     "gap": "No explicit Angular/TypeScript requirement",
-    "first_seen": "2026-07-16",
-    "suppress_until": "2026-07-30"
+    "first_seen": "2026-10-14",
+    "suppress_until": "2026-10-28"
   },
   "RemoteOK::1131610": {
     "title": "Sr Solution Architect Consultant Sales Engineer @ Cyara",
@@ -4102,5 +4102,37 @@
     "gap": "Not a development or UI\u2011focused position",
     "first_seen": "2026-10-13",
     "suppress_until": "2026-10-27"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/sticker-mule-si-agent-engineer": {
+    "title": "Sticker Mule: SI agent engineer",
+    "score": 0,
+    "why": "The role is an \u201cSI agent engineer\u201d focused on systems integration/backend work, not a UI/frontend position, which disqualifies the candidate per the hard rules.",
+    "gap": "Not a UI/frontend role",
+    "first_seen": "2026-10-14",
+    "suppress_until": "2026-10-28"
+  },
+  "WN::https://www.workingnomads.com/job/go/1939844/": {
+    "title": "Language specialist @ iMerit Technology",
+    "score": 0,
+    "why": "\u201cLanguage specialist\u201d is a linguistic/annotation role with no frontend development responsibilities, violating the hard exclusion criteria.",
+    "gap": "Not a UI/frontend role",
+    "first_seen": "2026-10-14",
+    "suppress_until": "2026-10-28"
+  },
+  "WN::https://www.workingnomads.com/job/go/1939843/": {
+    "title": "AI Trainer @ iMerit Technology",
+    "score": 0,
+    "why": "\u201cAI Trainer\u201d is a data\u2011annotation/training\u2011model position, not a UI/frontend engineering role, thus excluded by the hard rules.",
+    "gap": "Not a UI/frontend role",
+    "first_seen": "2026-10-14",
+    "suppress_until": "2026-10-28"
+  },
+  "WN::https://www.workingnomads.com/job/go/1938564/": {
+    "title": "Senior Full-stack PHP Developer @ Lemon.io",
+    "score": 70,
+    "why": "Senior full\u2011stack PHP position aligns with the candidate\u2019s seniority and remote preference, but the stack is PHP\u2011centric and does not call for Angular/TypeScript, so the score is capped below the 80\u2011point threshold.",
+    "gap": "Stack is PHP, not Angular/TypeScript",
+    "first_seen": "2026-10-14",
+    "suppress_until": "2026-10-28"
   }
 }
