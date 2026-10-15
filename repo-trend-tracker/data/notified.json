@@ -24,7 +24,7 @@
   "walkinglabs/learn-harness-engineering": "Popularizing",
   "agentconnect-md/agentconnect": "Popularizing",
   "Zeejay0/gathered-scenes-zine-skill": "Popularizing",
-  "ZzzLc0405/photo-abstract-editorial": "Popularizing",
+  "ZzzLc0405/photo-abstract-editorial": "Breakout",
   "immich-app/immich": "Popularizing",
   "addyosmani/agent-skills": "Popularizing",
   "rocketride-org/rocketride-server": "Popularizing",
@@ -33,8 +33,9 @@
   "cactus-compute/needle": "Popularizing",
   "langchain-ai/langchain": "Popularizing",
   "firecrawl/anydoc": "Popularizing",
-  "google-antigravity/antigravity-sdk-python": "Popularizing",
+  "google-antigravity/antigravity-sdk-python": "Breakout",
   "dataelement/dsh-desktop": "Popularizing",
   "spring-projects/spring-boot": "Breakout",
-  "denoland/deno": "Popularizing"
+  "denoland/deno": "Popularizing",
+  "IBM/mcp-context-forge": "Breakout"
 }
