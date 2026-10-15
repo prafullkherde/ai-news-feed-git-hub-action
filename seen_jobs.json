@@ -4134,5 +4134,13 @@
     "gap": "Stack is PHP, not Angular/TypeScript",
     "first_seen": "2026-10-14",
     "suppress_until": "2026-10-28"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/hr-plus-web-developer-fresh-graduate-welcome-wfh-policy-on-job-training": {
+    "title": "HR Plus: Web Developer (Fresh graduate welcome, WFH policy, on-job-training)",
+    "score": 0,
+    "why": "The role targets fresh graduates and junior developers, which conflicts with the candidate\u2019s senior\u2011level experience.",
+    "gap": "Junior\u2011level requirement",
+    "first_seen": "2026-10-15",
+    "suppress_until": "2026-10-29"
   }
 }
