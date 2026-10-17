@@ -4182,5 +4182,29 @@
     "gap": "Pure AI/ML focus",
     "first_seen": "2026-10-16",
     "suppress_until": "2026-10-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/doximity-commercial-data-scientist": {
+    "title": "Doximity: Commercial Data Scientist",
+    "score": 0,
+    "why": "The role is a Commercial Data Scientist position with no mention of Angular or frontend work, which falls outside the candidate\u2019s UI/Angular expertise.",
+    "gap": "Data science / analytics experience",
+    "first_seen": "2026-10-17",
+    "suppress_until": "2026-10-31"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/hex-technologies-legal-ops": {
+    "title": "Hex Technologies: Legal Ops",
+    "score": 0,
+    "why": "The Legal Ops role focuses on legal operations and does not require Angular, TypeScript, or any frontend development skills.",
+    "gap": "Legal operations experience",
+    "first_seen": "2026-10-17",
+    "suppress_until": "2026-10-31"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lithic-senior-risk-associate": {
+    "title": "Lithic: Senior Risk Associate",
+    "score": 0,
+    "why": "The Senior Risk Associate position is centered on risk management, not on UI/Angular development, making the candidate\u2019s skill set irrelevant.",
+    "gap": "Risk management experience",
+    "first_seen": "2026-10-17",
+    "suppress_until": "2026-10-31"
   }
 }
