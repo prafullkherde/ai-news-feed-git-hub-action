@@ -4206,5 +4206,13 @@
     "gap": "Risk management experience",
     "first_seen": "2026-10-17",
     "suppress_until": "2026-10-31"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/humane-world-for-animals-web-designer-ecrm-1": {
+    "title": "Humane World for Animals: Web Designer, eCRM",
+    "score": 60,
+    "why": "The role is a Web Designer/eCRM position that does not explicitly require Angular or TypeScript, so the candidate\u2019s Angular expertise is only partially relevant.",
+    "gap": "Lack of explicit Angular/TS requirements (None)",
+    "first_seen": "2026-10-18",
+    "suppress_until": "2026-11-01"
   }
 }
