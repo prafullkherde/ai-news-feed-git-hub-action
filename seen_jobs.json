@@ -4214,5 +4214,13 @@
     "gap": "Lack of explicit Angular/TS requirements (None)",
     "first_seen": "2026-10-18",
     "suppress_until": "2026-11-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stripe-abuse-research-engineer": {
+    "title": "Stripe: Abuse Research Engineer",
+    "score": 0,
+    "why": "The role is an Abuse Research Engineer focused on security/abuse detection, with no frontend, Angular, or TypeScript requirements.",
+    "gap": "No relevant UI/Angular responsibilities.",
+    "first_seen": "2026-10-20",
+    "suppress_until": "2026-11-03"
   }
 }
