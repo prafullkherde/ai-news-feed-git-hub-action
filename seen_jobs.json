@@ -4222,5 +4222,37 @@
     "gap": "No relevant UI/Angular responsibilities.",
     "first_seen": "2026-10-20",
     "suppress_until": "2026-11-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/1958438/": {
+    "title": "Senior DevOps Engineer @ Lemon.io",
+    "score": 0,
+    "why": "The role is a Senior DevOps Engineer, which falls under pure DevOps and does not involve Angular or TypeScript frontend work.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-10-21",
+    "suppress_until": "2026-11-04"
+  },
+  "WN::https://www.workingnomads.com/job/go/1957823/": {
+    "title": "Quality Assurance Rater - Spanish speakers in Spain @ TELUS Digital",
+    "score": 0,
+    "why": "The position is a Quality Assurance Rater, a QA role unrelated to UI/Angular development.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-10-21",
+    "suppress_until": "2026-11-04"
+  },
+  "WN::https://www.workingnomads.com/job/go/1957803/": {
+    "title": "Quality Assurance Rater - French speakers in France @ TELUS Digital",
+    "score": 0,
+    "why": "This is a Quality Assurance Rater role, lacking any Angular or TypeScript responsibilities.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-10-21",
+    "suppress_until": "2026-11-04"
+  },
+  "WN::https://www.workingnomads.com/job/go/1957776/": {
+    "title": "Quality Assurance Rater - German speakers in Germany @ TELUS Digital",
+    "score": 0,
+    "why": "The job is a Quality Assurance Rater, which does not match the candidate\u2019s UI Solution Architect expertise.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-10-21",
+    "suppress_until": "2026-11-04"
   }
 }
