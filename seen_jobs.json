@@ -3898,10 +3898,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/dremio-senior-staff-software-engineer-query-execution": {
     "title": "Dremio: Senior Staff Software Engineer - Query Execution",
     "score": 0,
-    "why": "",
-    "gap": "",
-    "first_seen": "2026-10-08",
-    "suppress_until": "2026-10-22"
+    "why": "The position is a backend\u2011focused Senior Staff Software Engineer role for query execution, which does not require Angular or TypeScript UI expertise.",
+    "gap": "Lack of backend query\u2011execution experience.",
+    "first_seen": "2026-10-23",
+    "suppress_until": "2026-11-06"
   },
   "WN::https://www.workingnomads.com/job/go/1923073/": {
     "title": "Senior Vue Developer @ Lemon.io",
