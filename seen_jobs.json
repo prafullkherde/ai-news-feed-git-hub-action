@@ -114,10 +114,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-ai-engineer-architect": {
     "title": "A.Team: Senior Independent AI Engineer / Architect",
     "score": 0,
-    "why": "AI Engineer/Architect role focuses on machine\u2011learning, not UI development.",
+    "why": "This is an AI engineering/architecture role that does not involve UI or Angular/TypeScript work.",
     "gap": "None",
-    "first_seen": "2026-09-19",
-    "suppress_until": "2026-10-03"
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   },
   "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-software-developer-90-170-hr": {
     "title": "A.Team: Senior Independent Software Developer ($90-$170/hr)",
@@ -3922,10 +3922,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/wisevu-web-development-project-manager": {
     "title": "Wisevu: Web Development Project Manager",
     "score": 0,
-    "why": "The role is a Web Development Project Manager, which is a non\u2011technical, management\u2011focused position and does not require Angular or TypeScript development.",
-    "gap": "Role is project management, not UI development",
-    "first_seen": "2026-10-09",
-    "suppress_until": "2026-10-23"
+    "why": "The position is a project\u2011management role for web development, not a hands\u2011on UI engineering role.",
+    "gap": "None",
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   },
   "WWR::https://weworkremotely.com/remote-jobs/dremio-software-engineer-developer-experience": {
     "title": "Dremio: Software Engineer - Developer Experience",
@@ -3938,74 +3938,74 @@
   "WN::https://www.workingnomads.com/job/go/1925654/": {
     "title": "Senior Backend Developer (Node.js / Nest.js) @ Proxify",
     "score": 0,
-    "why": "This is a pure backend role (Node.js/Nest.js) with no frontend focus, which the candidate\u2019s UI\u2011only background does not satisfy.",
-    "gap": "Backend\u2011only focus",
-    "first_seen": "2026-10-09",
-    "suppress_until": "2026-10-23"
+    "why": "It is a senior **backend** developer role (Node.js/Nest.js) with no frontend focus.",
+    "gap": "None",
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   },
   "WN::https://www.workingnomads.com/job/go/1925652/": {
     "title": "Senior Backend Developer (Python) @ Proxify",
     "score": 0,
-    "why": "Senior Backend Developer (Python) is a backend\u2011only position, outside the candidate\u2019s UI architecture specialization.",
-    "gap": "Backend\u2011only focus",
-    "first_seen": "2026-10-09",
-    "suppress_until": "2026-10-23"
+    "why": "The job is a senior **backend** Python developer position, unrelated to Angular/TS UI work.",
+    "gap": "None",
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   },
   "WN::https://www.workingnomads.com/job/go/1925645/": {
     "title": "Senior Business Central Developer @ Proxify",
     "score": 0,
-    "why": "Business Central development is an ERP\u2011focused role, not a frontend Angular/TypeScript position.",
-    "gap": "ERP/backend focus",
-    "first_seen": "2026-10-09",
-    "suppress_until": "2026-10-23"
+    "why": "This role centers on Business Central (ERP) development, not on UI or Angular/TypeScript.",
+    "gap": "None",
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   },
   "WN::https://www.workingnomads.com/job/go/1925640/": {
     "title": "Senior Cloud Engineer (Azure) @ Proxify",
     "score": 0,
-    "why": "Senior Cloud Engineer (Azure) is a cloud\u2011infrastructure role, not a UI development job.",
-    "gap": "Cloud\u2011infrastructure focus",
-    "first_seen": "2026-10-09",
-    "suppress_until": "2026-10-23"
+    "why": "It is a senior **cloud engineering** position, not a frontend/UI role.",
+    "gap": "None",
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   },
   "WN::https://www.workingnomads.com/job/go/1925636/": {
     "title": "Senior Data Engineer (Azure) @ Proxify",
     "score": 0,
-    "why": "Senior Data Engineer (Azure) is a data\u2011engineering role with no UI component.",
-    "gap": "Data\u2011engineering focus",
-    "first_seen": "2026-10-09",
-    "suppress_until": "2026-10-23"
+    "why": "The position is a senior **data engineering** role, with no UI or Angular/TS requirements.",
+    "gap": "None",
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   },
   "WN::https://www.workingnomads.com/job/go/1925634/": {
     "title": "Senior DevOps Engineer (Azure) @ Proxify",
     "score": 0,
-    "why": "Senior DevOps Engineer (Azure) is a DevOps/operations role, which is excluded by the scoring rules.",
-    "gap": "DevOps focus",
-    "first_seen": "2026-10-09",
-    "suppress_until": "2026-10-23"
+    "why": "This is a senior **DevOps** engineering role, unrelated to frontend development.",
+    "gap": "None",
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   },
   "WN::https://www.workingnomads.com/job/go/1925629/": {
     "title": "Senior Fullstack Developer (React.js / Node.js) @ Proxify",
-    "score": 55,
-    "why": "The role is a Fullstack Developer centered on React.js; the candidate\u2019s Angular expertise is valuable but the frontend stack does not match, capping the score at 60.",
-    "gap": "Lack of React experience",
-    "first_seen": "2026-10-09",
-    "suppress_until": "2026-10-23"
+    "score": 58,
+    "why": "The job calls for a senior full\u2011stack developer using React.js, which caps the score at 60 because the candidate\u2019s primary expertise is Angular/TypeScript.",
+    "gap": "Lack of React/TypeScript focus (candidate specializes in Angular).",
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   },
   "WN::https://www.workingnomads.com/job/go/1925623/": {
     "title": "Senior Python Developer (Fullstack, BE-Heavy) @ Proxify",
     "score": 0,
-    "why": "Senior Python Developer (Fullstack, BE\u2011Heavy) is backend\u2011heavy and does not align with the candidate\u2019s UI\u2011only expertise.",
-    "gap": "Backend\u2011heavy focus",
-    "first_seen": "2026-10-09",
-    "suppress_until": "2026-10-23"
+    "why": "The role is a senior **Python** full\u2011stack developer that is backend\u2011heavy and does not explicitly require Angular or TypeScript.",
+    "gap": "None",
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   },
   "WN::https://www.workingnomads.com/job/go/1925616/": {
     "title": "Senior Django Developer @ Proxify",
     "score": 0,
-    "why": "Senior Django Developer is a Python/web\u2011framework backend role, not a frontend Angular/TypeScript position.",
-    "gap": "Backend\u2011only focus",
-    "first_seen": "2026-10-09",
-    "suppress_until": "2026-10-23"
+    "why": "This is a senior **Django** (backend) developer position with no frontend/Angular/TS component.",
+    "gap": "None",
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   },
   "WN::https://www.workingnomads.com/job/go/1925599/": {
     "title": "Senior Fullstack Developer (.NET) @ Proxify",
@@ -4262,5 +4262,13 @@
     "gap": "None",
     "first_seen": "2026-10-22",
     "suppress_until": "2026-11-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/wrike-director-global-gtm-strategy-operations": {
+    "title": "Wrike: Director, Global GTM Strategy & Operations",
+    "score": 0,
+    "why": "The role is a senior business/strategy position with no frontend development responsibilities.",
+    "gap": "None",
+    "first_seen": "2026-10-24",
+    "suppress_until": "2026-11-07"
   }
 }
