@@ -25,11 +25,11 @@
   },
   "RemoteOK::1131509": {
     "title": "Tech Lead @ Zensurance",
-    "score": 0,
-    "why": "",
-    "gap": "",
-    "first_seen": "2026-10-10",
-    "suppress_until": "2026-10-24"
+    "score": 75,
+    "why": "The tech\u2011lead role is senior and likely involves frontend leadership, yet the posting does not specifically call for Angular or TypeScript expertise.",
+    "gap": "No explicit Angular/TS requirement",
+    "first_seen": "2026-10-25",
+    "suppress_until": "2026-11-08"
   },
   "RemoteOK::1131370": {
     "title": "Front End Full Stack Developer @ Honor Foods",
@@ -4270,5 +4270,21 @@
     "gap": "None",
     "first_seen": "2026-10-24",
     "suppress_until": "2026-11-07"
+  },
+  "RemoteOK::1137562": {
+    "title": "Senior Frontend Engineer @ B2spin",
+    "score": 75,
+    "why": "The role is a senior frontend position but does not explicitly require Angular or TypeScript, so the candidate\u2019s strong Angular/TS background is not fully leveraged.",
+    "gap": "No explicit Angular/TS requirement",
+    "first_seen": "2026-10-25",
+    "suppress_until": "2026-11-08"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/webflow-senior-infrastructure-engineer": {
+    "title": "Webflow: Senior Infrastructure Engineer",
+    "score": 0,
+    "why": "The position is for a senior infrastructure engineer, which falls outside the candidate\u2019s UI/frontend focus.",
+    "gap": "Not a frontend role",
+    "first_seen": "2026-10-25",
+    "suppress_until": "2026-11-08"
   }
 }
