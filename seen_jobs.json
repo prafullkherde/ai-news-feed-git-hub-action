@@ -4066,10 +4066,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/zoominfo-technologies-llc-director-applied-ai": {
     "title": "ZoomInfo Technologies LLC: Director, Applied AI",
     "score": 0,
-    "why": "The Director, Applied AI role centers on AI strategy and leadership, not on frontend development with Angular or TypeScript.",
-    "gap": "No UI/Angular responsibilities required.",
-    "first_seen": "2026-10-12",
-    "suppress_until": "2026-10-26"
+    "why": "The position is a director role in applied AI, unrelated to frontend/UI development and does not call for Angular or TypeScript expertise.",
+    "gap": "No Angular/TypeScript requirement (non\u2011UI AI leadership role)",
+    "first_seen": "2026-10-27",
+    "suppress_until": "2026-11-10"
   },
   "WWR::https://weworkremotely.com/remote-jobs/postscript-client-strategist": {
     "title": "Postscript: Client Strategist",
@@ -4286,5 +4286,13 @@
     "gap": "Not a frontend role",
     "first_seen": "2026-10-25",
     "suppress_until": "2026-11-08"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/pagerduty-senior-director-field-enablement": {
+    "title": "PagerDuty: Senior Director, Field Enablement",
+    "score": 0,
+    "why": "The role is a senior director position focused on field enablement, not a frontend or UI development role requiring Angular/TypeScript.",
+    "gap": "No Angular/TypeScript requirement (non\u2011UI leadership role)",
+    "first_seen": "2026-10-27",
+    "suppress_until": "2026-11-10"
   }
 }
