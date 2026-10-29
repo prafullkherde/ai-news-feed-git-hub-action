@@ -4114,26 +4114,26 @@
   "WN::https://www.workingnomads.com/job/go/1939844/": {
     "title": "Language specialist @ iMerit Technology",
     "score": 0,
-    "why": "\u201cLanguage specialist\u201d is a linguistic/annotation role with no frontend development responsibilities, violating the hard exclusion criteria.",
-    "gap": "Not a UI/frontend role",
-    "first_seen": "2026-10-14",
-    "suppress_until": "2026-10-28"
+    "why": "Language specialist is a non\u2011technical, non\u2011frontend role and is excluded by the rules.",
+    "gap": "Not a frontend/UI position",
+    "first_seen": "2026-10-29",
+    "suppress_until": "2026-11-12"
   },
   "WN::https://www.workingnomads.com/job/go/1939843/": {
     "title": "AI Trainer @ iMerit Technology",
     "score": 0,
-    "why": "\u201cAI Trainer\u201d is a data\u2011annotation/training\u2011model position, not a UI/frontend engineering role, thus excluded by the hard rules.",
-    "gap": "Not a UI/frontend role",
-    "first_seen": "2026-10-14",
-    "suppress_until": "2026-10-28"
+    "why": "AI Trainer is a data\u2011annotation/ML support role, not a frontend/UI position, and is excluded.",
+    "gap": "Not a frontend/UI position",
+    "first_seen": "2026-10-29",
+    "suppress_until": "2026-11-12"
   },
   "WN::https://www.workingnomads.com/job/go/1938564/": {
     "title": "Senior Full-stack PHP Developer @ Lemon.io",
-    "score": 70,
-    "why": "Senior full\u2011stack PHP position aligns with the candidate\u2019s seniority and remote preference, but the stack is PHP\u2011centric and does not call for Angular/TypeScript, so the score is capped below the 80\u2011point threshold.",
-    "gap": "Stack is PHP, not Angular/TypeScript",
-    "first_seen": "2026-10-14",
-    "suppress_until": "2026-10-28"
+    "score": 0,
+    "why": "Senior Full\u2011stack PHP Developer emphasizes PHP/backend work without Angular or TypeScript, so it is excluded.",
+    "gap": "No Angular/TypeScript requirement, backend\u2011centric",
+    "first_seen": "2026-10-29",
+    "suppress_until": "2026-11-12"
   },
   "WWR::https://weworkremotely.com/remote-jobs/hr-plus-web-developer-fresh-graduate-welcome-wfh-policy-on-job-training": {
     "title": "HR Plus: Web Developer (Fresh graduate welcome, WFH policy, on-job-training)",
@@ -4326,5 +4326,53 @@
     "gap": "No Swift/SwiftUI experience required",
     "first_seen": "2026-10-28",
     "suppress_until": "2026-11-11"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-react-full-stack-developer-7": {
+    "title": "Lemon.io: Senior React Full-stack Developer",
+    "score": 58,
+    "why": "The role is a Senior React Full\u2011stack Developer and does not require Angular or TypeScript, so the candidate\u2019s core expertise is only partially relevant, capping the score at 60.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-10-29",
+    "suppress_until": "2026-11-12"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-net-full-stack-developer-2": {
+    "title": "Lemon.io: Senior .NET Full-stack Developer",
+    "score": 0,
+    "why": "The position is a Senior .NET Full\u2011stack Developer with no frontend, Angular, or TypeScript focus, which falls under pure backend/stack roles excluded by the rules.",
+    "gap": "Pure backend/.NET focus, no Angular/TS",
+    "first_seen": "2026-10-29",
+    "suppress_until": "2026-11-12"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/jumio-machine-learning-engineer-iv-biometrics": {
+    "title": "Jumio: Machine Learning Engineer - IV (Biometrics)",
+    "score": 0,
+    "why": "Machine Learning Engineer role is unrelated to UI/Frontend development and is excluded by the hard rules.",
+    "gap": "Not a frontend/UI position",
+    "first_seen": "2026-10-29",
+    "suppress_until": "2026-11-12"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/jumio-machine-learning-engineer": {
+    "title": "Jumio: Machine Learning Engineer",
+    "score": 0,
+    "why": "Machine Learning Engineer role is unrelated to UI/Frontend development and is excluded by the hard rules.",
+    "gap": "Not a frontend/UI position",
+    "first_seen": "2026-10-29",
+    "suppress_until": "2026-11-12"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/abnormal-director-of-security-engineering": {
+    "title": "Abnormal: Director of Security Engineering",
+    "score": 0,
+    "why": "Director of Security Engineering is a security/leadership role, not a frontend/UI position, thus excluded.",
+    "gap": "Not a frontend/UI position",
+    "first_seen": "2026-10-29",
+    "suppress_until": "2026-11-12"
+  },
+  "WN::https://www.workingnomads.com/job/go/1978731/": {
+    "title": "Senior Back-end Developer @ Lemon.io",
+    "score": 0,
+    "why": "Senior Back\u2011end Developer role focuses on server\u2011side work with no Angular/TypeScript requirement, so it is excluded.",
+    "gap": "Pure backend focus, no Angular/TS",
+    "first_seen": "2026-10-29",
+    "suppress_until": "2026-11-12"
   }
 }
