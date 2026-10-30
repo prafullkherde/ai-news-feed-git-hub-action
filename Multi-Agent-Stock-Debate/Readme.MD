@@ -1,6 +1,6 @@
 # Multi-Agent Stock Debate — Executor / Critic / Senior BA Reviewer
 
-3 roles, 2 model providers, running over a list of tickers, with a
+3 roles using separate Groq models, running over a list of tickers, with a
 persistent per-ticker log that verifies yesterday's prediction against
 real closing prices before making today's — so right and wrong calls
 both build up an actual accuracy record, not just a fresh guess every day.
@@ -15,8 +15,8 @@ Don't trade on this before the log has weeks of verified history.
 | Role | Model | Job |
 |---|---|---|
 | Executor | Groq `openai/gpt-oss-120b` | Argues each of 7 rounds (Fundamental → Technical → Sentiment → Bull → Bear → Trade → Risk) |
-| Critic | Gemini (candidate list, see below) | Counters every round with a different data point — different vendor on purpose |
-| Senior BA Reviewer | Groq `llama-3.3-70b-versatile` (3rd, non-reasoning model) | Reads the whole transcript + yesterday's verified outcome, corrects anything wrong, issues the final BUY/SELL/HOLD + price targets |
+| Critic | Groq `qwen/qwen3.6-27b` | Counters every round with a different model's perspective |
+| Senior BA Reviewer | Groq `openai/gpt-oss-20b` | Reads the whole transcript + yesterday's verified outcome, corrects anything wrong, issues the final BUY/SELL/HOLD + price targets |
 
 ## File layout
 
@@ -28,14 +28,16 @@ Multi-Agent-Stock-Debate/
 │   └── settings.py         # every non-secret value, grouped by agent, commented with WHY
 ├── logs/
 │   └── <TICKER>.json       # one append-only file per ticker, committed back by the Action
-└── README.md                # this file
+├── tests/
+│   └── test_main.py         # offline regression tests for market-price validation
+└── Readme.MD                # this file
 ```
 
 ## Secrets vs config — why the split
 
-**Only 4 values are true secrets** (things that grant access, not things
-that tune behavior): `GROQ_API_KEY_FOR_AUTO_EMAIL`, `GEMINI_API_KEY`,
-`RESEND_API_KEY`, `MY_EMAIL`. Everything else — ticker list, portfolio
+**Only 3 values are true secrets** (things that grant access, not things
+that tune behavior): `GROQ_API_KEY_FOR_AUTO_EMAIL`, `RESEND_API_KEY`, and
+`MY_EMAIL`. Everything else — ticker list, portfolio
 size, model choice, retry timing — lives in `config/settings.py`, plain
 Python, commented, editable directly, visible in `git diff`.
 
@@ -43,21 +45,30 @@ This isn't just tidiness. Putting non-secret values into GitHub Secrets
 (as `STOCK_P_*`) caused a real, reproduced bug — see Incident 3 below.
 Moving them to a config file removes that entire failure class.
 
-To finish the cleanup: delete the now-unused `STOCK_P_TICKERS`,
+The old Gemini integration and `GEMINI_API_KEY` are no longer used. To
+finish the config cleanup, delete the now-unused `STOCK_P_TICKERS`,
 `STOCK_P_PORTFOLIO_VALUE`, `STOCK_P_MAX_POSITION_PCT`,
 `STOCK_P_CURRENT_EXPOSURE_JSON`, `STOCK_P_MAX_RETRIES`,
 `STOCK_P_BASE_BACKOFF_SECONDS`, `STOCK_P_*_REQUEST_DELAY_SECONDS`
 secrets from repo settings — they're no longer read anywhere.
 
-## Setup
+## Setup and execution
 
 ```bash
-cp Multi-Agent-Stock-Debate/stock-debate.yml .github/workflows/
-git add . && git commit -m "config-driven refactor" && git push
+pip install -r Multi-Agent-Stock-Debate/requirements.txt
+python Multi-Agent-Stock-Debate/Main.py
 ```
-Add the 4 secrets above in repo settings. Edit
-`Multi-Agent-Stock-Debate/config/settings.py` directly for anything else
-— tickers, portfolio value, position caps, model/timing tuning.
+
+The scheduled workflow already exists at
+`.github/workflows/stock-debate-workflow.yml` (weekdays at 13:00 UTC); it
+can also be run manually from the Actions tab. Add the three required
+secrets above in repository settings. Edit
+`Multi-Agent-Stock-Debate/config/settings.py` for tickers, portfolio
+assumptions, model choices, and timing.
+
+The Streamlit app is `Multi-Agent-Stock-Debate/streamlit-app.py`; its
+deployment notes are at the bottom of that file. It uses the same analysis
+engine as the scheduled workflow.
 
 ---
 
@@ -124,18 +135,19 @@ conversation.
 
 ---
 
-## What's verified vs. not
+## Testing and limitations
 
-Verified without live API keys (all in this project's test history):
-indicator math (RSI/MACD) against synthetic price series, both known
-yfinance news-schema shapes, short-history edge cases, log
-save/load/verify roundtrips, BA JSON parsing (clean, markdown-fenced,
-and malformed), the position-room clamp, the position-forced-to-zero
-rule, Gemini 404→fallback→cache behavior, 429 retry-then-succeed and
-retry-exhaustion, and reasoning-token-budget routing per model.
+The committed offline regression tests run with:
 
-Not verifiable without live keys / open internet (blocked in the
-sandbox this was built in): actual Groq/Gemini/Yahoo HTTP response
-content quality, actual git push permissions in Actions, actual Resend
-delivery. Judge those from real run output, same as the incident log
-above was built from real run output.
+```bash
+python -m unittest discover -s Multi-Agent-Stock-Debate/tests -v
+```
+
+They cover historical verification with invalid and valid prices, filtering
+bad market closes, and rejecting a price history without valid closes. They
+do not test live Yahoo Finance, Groq, Resend, Git pushes, or forecast
+quality. No repository-wide coverage measurement exists.
+
+The forecasts are LLM-generated estimates, not a statistical model. The
+verification log measures historical outcomes but is not a formal
+backtest; there is no brokerage integration or automated order execution.

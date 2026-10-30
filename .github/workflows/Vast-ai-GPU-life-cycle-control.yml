@@ -214,5 +214,9 @@ jobs:
           HOST=$(echo "$INFO" | python3 -c "import json,sys; print(json.load(sys.stdin)['public_ipaddr'])")
           PORT=$(echo "$INFO" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('ports',{}).get('7860/tcp',[{}])[0].get('HostPort','7860'))")
           URL="http://$HOST:$PORT/"
-          curl -sSf -m 15 "$URL" && echo "Health check PASSED: $URL" || echo "Health check FAILED: $URL"
+          if ! curl -sSf -m 15 "$URL"; then
+            echo "Health check FAILED: $URL"
+            exit 1
+          fi
+          echo "Health check PASSED: $URL"
           echo "### Callable URL: $URL" >> "$GITHUB_STEP_SUMMARY"
