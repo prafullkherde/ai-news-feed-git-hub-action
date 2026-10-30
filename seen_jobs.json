@@ -4374,5 +4374,53 @@
     "gap": "Pure backend focus, no Angular/TS",
     "first_seen": "2026-10-29",
     "suppress_until": "2026-11-12"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/vercel-software-engineer-data-platform": {
+    "title": "Vercel: Software Engineer - Data Platform",
+    "score": 0,
+    "why": "The role is a Data Platform Software Engineer focused on backend/data engineering, with no Angular or TypeScript requirements.",
+    "gap": "None",
+    "first_seen": "2026-10-30",
+    "suppress_until": "2026-11-13"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/vercel-software-engineer-backend": {
+    "title": "Vercel: Software Engineer, Backend",
+    "score": 0,
+    "why": "This is a Backend Software Engineer position, which falls under pure backend work excluded by the scoring rules.",
+    "gap": "None",
+    "first_seen": "2026-10-30",
+    "suppress_until": "2026-11-13"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/maven-clinic-client-success-manager": {
+    "title": "Maven Clinic: Client Success Manager",
+    "score": 0,
+    "why": "The position is a Client Success Manager, a non\u2011technical role outside the UI/frontend scope.",
+    "gap": "None",
+    "first_seen": "2026-10-30",
+    "suppress_until": "2026-11-13"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/typeform-full-stack-developer": {
+    "title": "Typeform: Full Stack Developer",
+    "score": 70,
+    "why": "The Full Stack Developer role is generic frontend/backend without an explicit Angular/TypeScript requirement, so the candidate is capped at 75 and scores slightly lower due to potential mismatch with the likely React\u2011centric stack.",
+    "gap": "Lack of demonstrated React experience",
+    "first_seen": "2026-10-30",
+    "suppress_until": "2026-11-13"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/jumio-machine-learning-engineer-iv-computer-vision": {
+    "title": "Jumio: Machine Learning Engineer - IV (Computer Vision)",
+    "score": 0,
+    "why": "This is a Machine Learning Engineer role focused on computer vision, unrelated to UI/Angular work.",
+    "gap": "None",
+    "first_seen": "2026-10-30",
+    "suppress_until": "2026-11-13"
+  },
+  "WN::https://www.workingnomads.com/job/go/1981017/": {
+    "title": "Senior Magento Developer @ Lemon.io",
+    "score": 40,
+    "why": "Senior Magento Developer is centered on PHP/Magento, not Angular/TypeScript; the candidate\u2019s expertise does not align with the core tech stack, resulting in a low score.",
+    "gap": "No Magento/PHP experience",
+    "first_seen": "2026-10-30",
+    "suppress_until": "2026-11-13"
   }
 }
