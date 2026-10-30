@@ -33,7 +33,7 @@ The latest 100 workflow runs visible on 2026-10-30 contained 55 failures: 45 Git
 1. **GitHub Pages** — runs `40892235454` and `40892107413` both configured Jekyll's source as `./docs`, but the repository had no `docs/` directory. Jekyll failed while changing into `/github/workspace/docs`. A Pages landing page now provides the missing source. This does not yet publish the nested repository-trend dashboard.
 2. **Stock Debate** — runs `40934180742`, `40747188581`, and `40561062689` all failed with `float division by zero` for all four configured tickers. Stored predictions include zero/NaN targets; the verification loop divided by the target when computing percentage error. Verification now ignores invalid/non-positive prices, and market data is cleaned before use. Regression tests cover invalid and valid prices.
 
-The local regression tests pass. The GitHub Actions workflows have not yet rerun this branch, so the remote CI results remain to be confirmed after the changes are pushed.
+The local regression tests pass. The new Stock Debate Tests workflow was triggered for the pushed branch (`41008695484`) and pull request (`41008699192`), but both runs ended `action_required` with zero jobs, so Actions did not execute the tests. Remote test and Pages-build results remain unconfirmed until Actions is allowed to run and the Pages source is built.
 
 ## Coverage
 
