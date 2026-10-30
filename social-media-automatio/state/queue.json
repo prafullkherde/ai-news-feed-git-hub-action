@@ -22,7 +22,8 @@
         "Audit your list weekly; strip any item without a value tag.",
         "Only pursue tasks that serve a declared principle; discipline becomes automatic."
       ],
-      "posted": false
+      "posted": true,
+      "media_id": "ig:18078295493737735"
     },
     {
       "id": "t3",
@@ -47,5 +48,5 @@
       "posted": false
     }
   ],
-  "posted_count": 1
+  "posted_count": 2
 }
