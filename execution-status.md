@@ -29,7 +29,7 @@ These runs were requested by the repository owner. Daily Digest, Job Radar, Repo
 | Workflow | Run | Result | Notes |
 |---|---|---|---|
 | Daily Digest | [41010986555](https://github.com/prafullkherde/ai-news-feed-git-hub-action/actions/runs/41010986555) | Success | All steps completed, including `build-send-email.py`. |
-| Job Radar | Pending | Not started | |
+| Job Radar | [41011098137](https://github.com/prafullkherde/ai-news-feed-git-hub-action/actions/runs/41011098137) | Success | Discovery and `seen_jobs.json` commit completed. |
 | Repo Trend Tracker | Pending | Not started | |
 | Stock Debate | [41009313555](https://github.com/prafullkherde/ai-news-feed-git-hub-action/actions/runs/41009313555) | Success | Existing in-progress run from this review; not duplicated. |
 | Daily Carousel Pipeline | Pending | Not started | |
