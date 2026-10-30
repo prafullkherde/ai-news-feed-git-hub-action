@@ -33,13 +33,25 @@ jobs:
           DASHBOARD_URL: ${{ vars.DASHBOARD_URL }}
         run: python track_and_notify.py
 
+      - name: Add dashboard link to run summary
+        if: always()
+        run: |
+          echo "[Open the Repo Trend Tracker dashboard](https://prafullkherde.github.io/ai-news-feed-git-hub-action/repo-trend-tracker/)" \
+            | tee -a "$GITHUB_STEP_SUMMARY"
+
       - name: Commit updated data
         if: always()
         working-directory: .                    # <-- git commands need the repo root, not the subfolder
         run: |
+          mkdir -p docs/repo-trend-tracker
+          cp repo-trend-tracker/dashboard/index.html docs/repo-trend-tracker/index.html
+          cp repo-trend-tracker/dashboard/data.json docs/repo-trend-tracker/data.json
+          if [ -f repo-trend-tracker/data/health.json ]; then
+            cp repo-trend-tracker/data/health.json docs/repo-trend-tracker/health.json
+          fi
           git config user.name "repo-trend-tracker-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add repo-trend-tracker/data/snapshots.csv repo-trend-tracker/data/notified.json repo-trend-tracker/data/health.json repo-trend-tracker/dashboard/data.json
+          git add repo-trend-tracker/data/snapshots.csv repo-trend-tracker/data/notified.json repo-trend-tracker/data/health.json repo-trend-tracker/dashboard/data.json docs/repo-trend-tracker/
           git diff --cached --quiet || git commit -m "chore: update trend snapshot [skip ci]"
           git push
 

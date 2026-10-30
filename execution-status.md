@@ -6,7 +6,11 @@
 
 ## README alignment
 
-The root README and component READMEs for Stock Debate, Repo Trend Tracker, and Carousel are broadly aligned with the workflow schedules, data paths, and current behavior. They correctly disclose that the trend dashboard is not deployed by the current Pages source, the carousel currently posts at most once per scheduled day, and Facebook is disabled. `PROJECT_REVIEW.md` also reflects the recent Pages and Stock Debate test work.
+The root README and component READMEs for Stock Debate, Repo Trend Tracker, and Carousel are broadly aligned with the workflow schedules, data paths, and current behavior. The trend dashboard is now wired for publication from `docs/repo-trend-tracker/`; the carousel currently posts at most once per scheduled day, and Facebook is disabled. `PROJECT_REVIEW.md` also reflects the recent Pages and Stock Debate test work.
+
+## Trend dashboard data audit
+
+The committed tracker data contains 974 repo snapshots across 45 repositories, spanning 2026-08-30 through 2026-10-30. `dashboard/data.json` represents all 974 rows (no repo or snapshot rows missing at this point); the graph is a repo star-snapshot timeline, not a graph of every workflow run. The separate health banner contains the latest 20 tracker-run outcomes. The dashboard is copied to the Pages source on tracker runs, linked from the Pages landing page, workflow run summary, and tracker email. Publication becomes live after the publishing change is merged and Pages deploys.
 
 Items to keep visible: two LTX-2 volume-setup workflows coexist; the lifecycle workflow may create paid Vast.ai instances; and an older, separate root-level `ltx2-video-gpu/price-log.csv` exists alongside the active log under `social-media-automatio/ltx2-video-gpu/`.
 

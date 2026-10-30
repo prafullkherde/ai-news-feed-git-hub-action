@@ -61,13 +61,13 @@ alongside the existing signals — same evidence-string pattern.
    - `MY_EMAIL` (comma-separated if multiple)
    - `GROQ_API_KEY_FOR_AUTO_EMAIL`
    - `GITHUB_TOKEN` is **not** needed — Actions injects it automatically.
-3. (Optional) Settings → Secrets and variables → Actions → Variables → add
-   `DASHBOARD_URL` once GitHub Pages is live, so the email links to it.
-4. The dashboard source is `repo-trend-tracker/dashboard/`. The parent
-   repository's current Pages build uses `docs/`, so it does not automatically
-   publish this nested dashboard. To host it, add an explicit deployment/copy
-   step into `docs/` or configure a separate Pages workflow; setting `DASHBOARD_URL`
-   only adds a link to the email and does not publish the dashboard.
+3. (Optional) Set the Actions variable `DASHBOARD_URL` to override the default
+   dashboard link used in tracker emails. The default is
+   `https://prafullkherde.github.io/ai-news-feed-git-hub-action/repo-trend-tracker/`.
+4. The dashboard source is `repo-trend-tracker/dashboard/`. The tracker workflow
+   copies its HTML, generated `data.json`, and run-health history into
+   `docs/repo-trend-tracker/`, which is published by the repository's existing
+   GitHub Pages source. The workflow run summary and digest email link to it.
 5. Edit `data/watchlist_seed.json` — two lists:
    - `always_track`: exact repos to keep tracking regardless of trending/search that week.
    - `topics_of_interest`: GitHub topics (e.g. `angular`, `kubernetes`, `llm-agents`) —
@@ -113,6 +113,9 @@ Two channels, neither depends on the other:
 ## How growth/lifecycle is computed
 - Every run appends one row per tracked repo to `data/snapshots.csv` (source of truth,
   git history = your audit trail).
+- The graph uses these tracker snapshots, not every repository Actions run. It shows
+  all available history up to 150 snapshots per repo; the health banner records the
+  last 20 tracker outcomes.
 - Velocity = Δstars / days between the last two snapshots for that repo.
 - Phase per repo (`Birth → Discovery → Early Signal → Breakout → Popularizing → Popular
   → Saturation → Maintenance → Unmaintained`) is derived from velocity trend + days since

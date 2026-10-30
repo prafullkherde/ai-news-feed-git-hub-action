@@ -8,6 +8,7 @@ This GitHub Pages site is the documentation landing page for a collection of ind
 
 - [Repository overview and setup](https://github.com/prafullkherde/ai-news-feed-git-hub-action/blob/main/README.md)
 - [Recorded architecture, CI review, coverage, and gaps](https://github.com/prafullkherde/ai-news-feed-git-hub-action/blob/main/PROJECT_REVIEW.md)
+- [Open the Repo Trend Tracker dashboard](https://prafullkherde.github.io/ai-news-feed-git-hub-action/repo-trend-tracker/)
 - [Repository-trend dashboard source](https://github.com/prafullkherde/ai-news-feed-git-hub-action/tree/main/repo-trend-tracker/dashboard)
 
-The repository-trend dashboard is not part of this Pages source yet; the links above point to its source in the repository.
+The dashboard is published from `docs/repo-trend-tracker/` and refreshed with each tracker run.
