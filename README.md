@@ -64,7 +64,7 @@ These tests cover a small part of the stock component only. There is no measured
 
 - Stock recommendations and price targets are LLM-generated decision support, not a validated strategy or statistical forecast. There is no broker integration or automatic trade execution. See [the stock-debate notes](Multi-Agent-Stock-Debate/Readme.MD).
 - The on-demand Streamlit stock app's passcode is optional; secure its deployment before exposing it publicly to avoid unintended use of configured API quota.
-- The static repository-trend dashboard lives at `repo-trend-tracker/dashboard/`. The current GitHub Pages source is `docs/`, so that dashboard is not published by the Pages build without additional deployment wiring.
+- The Repo Trend Tracker dashboard is published at [GitHub Pages](https://prafullkherde.github.io/ai-news-feed-git-hub-action/repo-trend-tracker/). Each tracker run copies the dashboard and its generated data into `docs/repo-trend-tracker/` for deployment.
 - Schedules and external services are best-effort; rate limits, credentials, data quality, or API changes can cause a run to fail.
 - State is stored in repository files and Git history. This is simple and auditable for personal use, but is not a shared database or a multi-user concurrency design.
 - The project review records known reliability and testing gaps; it is a snapshot, not a guarantee of current workflow health.

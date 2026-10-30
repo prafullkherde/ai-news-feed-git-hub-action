@@ -30,10 +30,10 @@ There is no shared runtime, database, or common application package. Each workfl
 
 The latest 100 workflow runs visible on 2026-10-30 contained 55 failures: 45 GitHub Pages builds and 10 Stock Debate runs. Logs from representative failures and prior repeated Stock Debate failures showed two recurring causes:
 
-1. **GitHub Pages** — runs `40892235454` and `40892107413` both configured Jekyll's source as `./docs`, but the repository had no `docs/` directory. Jekyll failed while changing into `/github/workspace/docs`. A Pages landing page now provides the missing source. This does not yet publish the nested repository-trend dashboard.
+1. **GitHub Pages** — runs `40892235454` and `40892107413` both configured Jekyll's source as `./docs`, but the repository had no `docs/` directory. Jekyll failed while changing into `/github/workspace/docs`. A Pages landing page now provides the missing source. The Repo Trend Tracker dashboard is now copied into `docs/repo-trend-tracker/` by its workflow for publication.
 2. **Stock Debate** — runs `40934180742`, `40747188581`, and `40561062689` all failed with `float division by zero` for all four configured tickers. Stored predictions include zero/NaN targets; the verification loop divided by the target when computing percentage error. Verification now ignores invalid/non-positive prices, and market data is cleaned before use. Regression tests cover invalid and valid prices.
 
-The local regression tests pass. The new Stock Debate Tests workflow was triggered for the pushed branch (`41008695484`) and pull request (`41008699192`), but both runs ended `action_required` with zero jobs, so Actions did not execute the tests. Remote test and Pages-build results remain unconfirmed until Actions is allowed to run and the Pages source is built.
+The local regression tests pass. Initial Stock Debate Tests runs for the pushed branch (`41008695484`) and pull request (`41008699192`) ended `action_required` with zero jobs. A later push run (`41009274015`) passed, and the Pages build/deploy run (`41009274164`) succeeded after the `docs/` landing page was added.
 
 ## Coverage
 
@@ -53,7 +53,7 @@ Before this change, there was no committed unit-test suite or coverage measureme
 
 1. **Expand tests beyond Stock Debate.** Add deterministic unit tests for job deduplication/scoring, trend lifecycle classification, carousel queue transitions, and email formatting. Keep live provider calls outside the regular test suite.
 2. **Resolve carousel cadence and behavior intentionally.** `POSTS_PER_DAY` is four, but one cron trigger is enabled, one carousel is posted per run, and Facebook publishing is commented out. Decide whether to enable more scheduled posts or keep the current lower cadence; do not infer this from the old notes.
-3. **Publish the trend dashboard deliberately.** The dashboard code/data is under `repo-trend-tracker/dashboard/`, while the configured Pages build reads `docs/`. Add a clear deployment/copy step or keep the dashboard documented as local repository content.
+3. **Verify the published trend dashboard after deployment.** The tracker workflow copies its current HTML and data into `docs/repo-trend-tracker/`; the Pages site and workflow summary link to that dashboard.
 4. **Reduce workflow drift and deployment risk.** Two manual LTX-2 setup workflows coexist; document which is current and retire the other after confirming it is no longer needed. Several workflows install unpinned dependencies and rely on external APIs that can change.
 5. **Secure the on-demand UI.** The Streamlit passcode is optional; require an access gate or otherwise restrict deployment before exposing credentials-backed analysis publicly.
 6. **Improve operational diagnostics.** Add concise runbooks for provider quota failures, credential rotation, failed publishes, and recovery of committed state. Review all network calls for timeouts and all jobs for explicit failure signaling.
