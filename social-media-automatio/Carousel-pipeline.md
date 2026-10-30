@@ -45,7 +45,8 @@ The workflow reads these GitHub Actions secrets:
   Facebook integration.
 
 The `IMAGE_HOST_BASE` Actions variable must be the public raw-content base
-ending before `/carousel-images` (for example, the branch's raw GitHub URL).
+ending in `/social-media-automatio` and before `/carousel-images` (for
+example, `https://raw.githubusercontent.com/<owner>/<repo>/<branch>/social-media-automatio`).
 The script appends `/carousel-images/<thought-id>/<file>` itself. Without
 this variable, its placeholder default is not a usable image host. The
 workflow token also needs repository write access so the pipeline can commit
