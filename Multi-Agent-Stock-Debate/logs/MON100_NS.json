@@ -995,7 +995,11 @@
       "direction_correct": true,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 325.15,
+      "direction_correct": false,
+      "error_pct": 2.25
+    }
   },
   {
     "date": "2026-10-01",
@@ -1045,7 +1049,11 @@
       "direction_correct": false,
       "error_pct": NaN
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 324.48,
+      "direction_correct": true,
+      "error_pct": -1.67
+    }
   },
   {
     "date": "2026-10-06",
@@ -1086,6 +1094,27 @@
       "Risk": "Limited data and modest track record accuracy (58% next\u2011day, 48% next\u2011week) warrant a conservative stance; no position taken to avoid overexposure."
     },
     "corrections_made": "Overrode Executor\u2019s recommendation to short; corrected confidence to Low; set predicted prices to 0.0 due to missing data; maintained portfolio constraints.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-10-30",
+    "price_at_prediction": 286.57,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 280.0,
+    "predicted_next_week_price": 275.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 28.5 is moderate but no other fundamentals available; cannot justify upside or downside based solely on this metric.",
+      "Technical": "Price is below both 20\u2011 and 50\u2011day SMAs, RSI is oversold but momentum indicators (MACD) are bearish; recent 3\u2011month decline confirms a downtrend; volatility is low, limiting rapid reversals.",
+      "Sentiment": "No recent news; technicals suggest negative sentiment; no catalyst to change trend.",
+      "Bull": "Bull case relies on mean\u2011reversion to SMAs, but the magnitude of deviation and lack of supporting momentum make this uncertain.",
+      "Bear": "Bear case is consistent with technical signals and declining trend; however, the low volatility and oversold RSI could delay a sustained decline.",
+      "Risk": "The proposed short position exceeded portfolio limits and would expose the portfolio to excessive risk; a conservative approach is to avoid taking a position until clearer signals emerge."
+    },
+    "corrections_made": "Removed the unrealistic short\u2011sell proposal that exceeded the 5% portfolio cap; adjusted price predictions to reflect a modest downward move based on current trend and low volatility; acknowledged lack of fundamental data beyond trailing P/E.",
     "verified_next_day": null,
     "verified_next_week": null
   }
