@@ -3,7 +3,7 @@ name: Daily Carousel Pipeline
 
 on:
   schedule:
-    # 4 triggers/day, ~4hr apart, IST-adjusted (UTC times below)
+    # One daily trigger is enabled; uncomment the other slots to post more often.
     # - cron: "30 3 * * *"   # 09:00 IST
     - cron: "30 7 * * *"   # 13:00 IST
     # - cron: "30 11 * * *"  # 17:00 IST

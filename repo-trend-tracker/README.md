@@ -5,30 +5,28 @@ Twice-weekly GitHub Action that finds repos gaining stars fast, cross-checks *wh
 maps contributors who show up across multiple growing repos, emails a digest, and
 feeds a static lifecycle dashboard.
 
-## Required repo layout
-This file, `track_and_notify.py`, `requirements.txt`, `data/`, and `dashboard/` must sit
-at the **repo root** — not inside a wrapping folder — because the workflow runs
-`python track_and_notify.py` from `$GITHUB_WORKSPACE` (the checkout root):
+## Repository layout
+This application lives under `repo-trend-tracker/` in the parent repository.
+The workflow `.github/workflows/Repo_Trend_Tracker.yml` sets its working
+directory to this folder before running `python track_and_notify.py`:
 
 ```
-your-repo/                       ← repo root, push these contents directly here
-├── .github/
-│   └── workflows/
-│       └── track.yml            ← the scheduled workflow
-├── track_and_notify.py
-├── requirements.txt
-├── data/
-│   ├── watchlist_seed.json
-│   ├── snapshots.csv            ← append-only history, source of truth
-│   ├── notified.json            ← last-notified phase per repo (dedupe)
-│   └── health.json              ← last 20 run outcomes, feeds the dashboard banner
-└── dashboard/
-    ├── index.html
-    └── data.json                ← generated each run, capped at MAX_HISTORY_POINTS
+ai-news-feed-git-hub-action/
+├── .github/workflows/Repo_Trend_Tracker.yml
+└── repo-trend-tracker/
+    ├── track_and_notify.py
+    ├── requirements.txt
+    ├── data/
+    │   ├── watchlist_seed.json
+    │   ├── snapshots.csv            ← append-only history, source of truth
+    │   ├── notified.json            ← last-notified phase per repo (dedupe)
+    │   └── health.json              ← last 20 run outcomes, feeds the dashboard banner
+    └── dashboard/
+        ├── index.html
+        └── data.json                ← generated each run, capped at MAX_HISTORY_POINTS
 ```
-The script itself resolves paths off `__file__`, not the working directory, so it's
-safe regardless of where the workflow's `run:` step executes from — the constraint
-above is purely about the workflow's `python track_and_notify.py` call finding the file.
+The script resolves its data paths from `__file__`; its workflow working
+directory is set so the Python entry-point is found.
 
 ## Lifecycle phases (matches the state diagram)
 `Birth → Discovery (stars<100) → Early Signal (velocity rising) → 🚨 Breakout
@@ -65,8 +63,11 @@ alongside the existing signals — same evidence-string pattern.
    - `GITHUB_TOKEN` is **not** needed — Actions injects it automatically.
 3. (Optional) Settings → Secrets and variables → Actions → Variables → add
    `DASHBOARD_URL` once GitHub Pages is live, so the email links to it.
-4. Settings → Pages → Deploy from branch → `main` → `/dashboard` (or `/docs`, adjust path)
-   to serve `dashboard/index.html` + `dashboard/data.json` for free.
+4. The dashboard source is `repo-trend-tracker/dashboard/`. The parent
+   repository's current Pages build uses `docs/`, so it does not automatically
+   publish this nested dashboard. To host it, add an explicit deployment/copy
+   step into `docs/` or configure a separate Pages workflow; setting `DASHBOARD_URL`
+   only adds a link to the email and does not publish the dashboard.
 5. Edit `data/watchlist_seed.json` — two lists:
    - `always_track`: exact repos to keep tracking regardless of trending/search that week.
    - `topics_of_interest`: GitHub topics (e.g. `angular`, `kubernetes`, `llm-agents`) —

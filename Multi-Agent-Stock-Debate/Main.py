@@ -33,6 +33,7 @@ incident log covering every bug found in this project so far.
 import os
 import sys
 import json
+import math
 import time
 import datetime
 import requests
@@ -86,6 +87,16 @@ def save_log(ticker: str, entries: list):
         json.dump(entries, f, indent=2, default=str)
 
 
+def _positive_finite_price(value):
+    if isinstance(value, bool):
+        return None
+    try:
+        price = float(value)
+    except (TypeError, ValueError):
+        return None
+    return price if math.isfinite(price) and price > 0 else None
+
+
 def verify_past_predictions(entries: list, price_hist: pd.Series):
     """price_hist: Close series indexed by date, ascending, from a wide
     enough history window to cover verification lookback. Mutates entries
@@ -98,14 +109,14 @@ def verify_past_predictions(entries: list, price_hist: pd.Series):
         except Exception:
             continue
         future = price_hist[price_hist.index > pred_date]
-        base_price = entry.get("price_at_prediction")
+        base_price = _positive_finite_price(entry.get("price_at_prediction"))
         if base_price is None:
             continue
 
         if entry.get("verified_next_day") is None and len(future) >= 1:
-            actual = float(future.iloc[0])
-            predicted = entry.get("predicted_next_day_price")
-            if predicted is not None:
+            actual = _positive_finite_price(future.iloc[0])
+            predicted = _positive_finite_price(entry.get("predicted_next_day_price"))
+            if actual is not None and predicted is not None:
                 entry["verified_next_day"] = {
                     "actual_price": round(actual, 2),
                     "direction_correct": (actual >= base_price) == (predicted >= base_price),
@@ -114,9 +125,9 @@ def verify_past_predictions(entries: list, price_hist: pd.Series):
                 checked += 1
 
         if entry.get("verified_next_week") is None and len(future) >= 5:
-            actual_w = float(future.iloc[4])
-            predicted_w = entry.get("predicted_next_week_price")
-            if predicted_w is not None:
+            actual_w = _positive_finite_price(future.iloc[4])
+            predicted_w = _positive_finite_price(entry.get("predicted_next_week_price"))
+            if actual_w is not None and predicted_w is not None:
                 entry["verified_next_week"] = {
                     "actual_price": round(actual_w, 2),
                     "direction_correct": (actual_w >= base_price) == (predicted_w >= base_price),
@@ -190,9 +201,21 @@ def get_market_data(ticker: str):
     if hist is None or hist.empty:
         raise RuntimeError(f"No price history returned for '{ticker}' — check the ticker symbol.")
 
-    close = hist["Close"]
+    close = pd.to_numeric(hist["Close"], errors="coerce")
+    close = close.replace([float("inf"), float("-inf")], float("nan")).dropna()
+    close = close[close > 0]
+    if close.empty:
+        raise RuntimeError(f"No valid positive closing prices returned for '{ticker}'.")
+
     rsi_series = compute_rsi(close)
     macd_line, signal_line = compute_macd(close)
+
+    three_month_return = None
+    if len(close) >= 64:
+        three_month_return = round(
+            (float(close.iloc[-1]) / float(close.iloc[-64]) - 1) * 100, 2
+        )
+    volatility = close.pct_change().std() if len(close) >= 2 else None
 
     technicals = {
         "last_close": round(float(close.iloc[-1]), 2),
@@ -201,8 +224,8 @@ def get_market_data(ticker: str):
         "rsi_14": round(float(rsi_series.iloc[-1]), 2) if len(close) >= 14 and pd.notna(rsi_series.iloc[-1]) else None,
         "macd": round(float(macd_line.iloc[-1]), 3) if len(close) >= 26 else None,
         "macd_signal": round(float(signal_line.iloc[-1]), 3) if len(close) >= 26 else None,
-        "3mo_return_pct": round((float(close.iloc[-1]) / float(close.iloc[0]) - 1) * 100, 2),
-        "volatility_pct": round(float(close.pct_change().std()) * 100, 2),
+        "3mo_return_pct": three_month_return,
+        "volatility_pct": round(float(volatility) * 100, 2) if pd.notna(volatility) else None,
     }
 
     try:
