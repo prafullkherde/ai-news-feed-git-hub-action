@@ -4446,5 +4446,21 @@
     "gap": "Angular/TypeScript not explicitly required (generic full\u2011stack)",
     "first_seen": "2026-10-31",
     "suppress_until": "2026-11-14"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/databricks-deployment-strategist": {
+    "title": "Databricks: Deployment Strategist",
+    "score": 0,
+    "why": "The Deployment Strategist role is centered on deployment and infrastructure strategy, with no requirement for Angular or TypeScript frontend work.",
+    "gap": "No relevant frontend responsibilities (None)",
+    "first_seen": "2026-11-01",
+    "suppress_until": "2026-11-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-applied-ai-engineers-for-telecommunications-company": {
+    "title": "Toptal: Applied AI Engineers for telecommunications company",
+    "score": 0,
+    "why": "The Applied AI Engineer position focuses on artificial\u2011intelligence engineering for a telecom client, not on Angular/TypeScript UI development.",
+    "gap": "No relevant frontend responsibilities (None)",
+    "first_seen": "2026-11-01",
+    "suppress_until": "2026-11-15"
   }
 }
