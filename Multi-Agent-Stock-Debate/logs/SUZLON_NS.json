@@ -1144,7 +1144,11 @@
       "Risk": "Portfolio constraints allow a small position, but given the mixed signals and moderate track record accuracy, a neutral stance is prudent."
     },
     "corrections_made": "Overstated bullish upside by claiming the 20\u2011day SMA is only modestly above price; corrected to acknowledge the price is below both SMAs and that the gap may not close quickly. Adjusted trade proposal from a short to a HOLD recommendation, reflecting the mixed technical and fundamental signals and the ticker\u2019s recent poor performance.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 35.25,
+      "direction_correct": false,
+      "error_pct": 7.47
+    },
     "verified_next_week": null
   },
   {
@@ -1165,7 +1169,11 @@
       "Risk": "Given the high D/E, high valuation, and weak technicals, the risk of further downside outweighs potential upside. The portfolio constraint allows a small position, but the overall risk profile suggests holding cash or a more diversified allocation."
     },
     "corrections_made": "Revised debt\u2011to\u2011equity interpretation, removed claim of low leverage, adjusted price predictions to reflect likely continuation of downside, downgraded recommendation to HOLD with low confidence.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 35.25,
+      "direction_correct": true,
+      "error_pct": -0.7
+    },
     "verified_next_week": null
   },
   {
@@ -1186,6 +1194,27 @@
       "Risk": "Portfolio constraints limit position size to 5\u202f% of a \u20b9100,000 portfolio (\u20b95,000). A short position would expose the trader to unlimited upside risk if the price rises, which is not acceptable given the current technical and fundamental uncertainties."
     },
     "corrections_made": "Corrected debt\u2011to\u2011equity description from \"low\" to \"high\"; removed erroneous claim that the trade proposal could be sized within portfolio limits; clarified that the trade proposal was rejected due to exceeding the 5\u202f% exposure cap.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-03",
+    "price_at_prediction": 35.25,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 34.8,
+    "predicted_next_week_price": 35.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong revenue growth and order pipeline but high debt-to-equity and modest valuation multiples; no clear upside justification.",
+      "Technical": "Price below 20\u2011 and 50\u2011day SMAs, RSI near oversold but MACD bearish; no clear reversal signal.",
+      "Sentiment": "Positive headlines but limited in number; overall sentiment uncertain.",
+      "Bull": "Potential upside if order wins translate to earnings, but technicals and debt risk dampen confidence.",
+      "Bear": "Persistent downside trend, high leverage, and lack of dividend; risk of further decline.",
+      "Risk": "Portfolio constraint limits position to ~142 shares; high volatility of 2.17% suggests limited upside potential."
+    },
+    "corrections_made": "Adjusted trade proposal to comply with 5% portfolio limit; removed unrealistic position sizing; set recommendation to HOLD due to weak consensus and high uncertainty.",
     "verified_next_day": null,
     "verified_next_week": null
   }
