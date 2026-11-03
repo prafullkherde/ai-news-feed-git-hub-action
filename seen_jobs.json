@@ -4462,5 +4462,21 @@
     "gap": "No relevant frontend responsibilities (None)",
     "first_seen": "2026-11-01",
     "suppress_until": "2026-11-15"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stockx-category-manager-apparel": {
+    "title": "StockX: Category Manager - Apparel",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-11-03",
+    "suppress_until": "2026-11-17"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/upgrade-ai-experience-engineer-conversational-ai": {
+    "title": "Upgrade: AI Experience Engineer (Conversational AI)",
+    "score": 0,
+    "why": "",
+    "gap": "",
+    "first_seen": "2026-11-03",
+    "suppress_until": "2026-11-17"
   }
 }
