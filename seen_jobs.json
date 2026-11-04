@@ -4478,5 +4478,29 @@
     "gap": "",
     "first_seen": "2026-11-03",
     "suppress_until": "2026-11-17"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/askable-software-engineer-ai-coding-tasks-contract": {
+    "title": "Askable: Software Engineer, AI Coding Tasks (Contract)",
+    "score": 0,
+    "why": "The role is a contract software engineer focused on AI coding tasks with no mention of Angular or TypeScript, making it a non\u2011frontend/backend\u2011centric position.",
+    "gap": "Lack of Angular/TypeScript requirement",
+    "first_seen": "2026-11-04",
+    "suppress_until": "2026-11-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/medify-engineering-manager": {
+    "title": "Medify: Engineering Manager",
+    "score": 0,
+    "why": "The Engineering Manager position is a leadership role without explicit Angular or TypeScript responsibilities, falling outside the candidate\u2019s UI\u2011focused expertise.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-11-04",
+    "suppress_until": "2026-11-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lattice-senior-software-engineer-infrastructure-platform": {
+    "title": "Lattice: Senior Software Engineer, Infrastructure Platform",
+    "score": 0,
+    "why": "This senior software engineer role targets infrastructure/platform work, not frontend development, and does not list Angular or TypeScript as required skills.",
+    "gap": "Absence of Angular/TypeScript requirement",
+    "first_seen": "2026-11-04",
+    "suppress_until": "2026-11-18"
   }
 }
