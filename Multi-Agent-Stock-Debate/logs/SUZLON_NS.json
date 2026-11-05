@@ -1219,7 +1219,11 @@
       "Risk": "Portfolio constraint limits position to ~142 shares; high volatility of 2.17% suggests limited upside potential."
     },
     "corrections_made": "Adjusted trade proposal to comply with 5% portfolio limit; removed unrealistic position sizing; set recommendation to HOLD due to weak consensus and high uncertainty.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 37.45,
+      "direction_correct": false,
+      "error_pct": 7.61
+    },
     "verified_next_week": null
   },
   {
@@ -1240,6 +1244,27 @@
       "Risk": "Portfolio constraints limit position size; historical accuracy for this ticker is modest (57% next\u2011day, 42% next\u2011week)."
     },
     "corrections_made": "Adjusted trade sizing to comply with portfolio limits; removed unrealistic 720\u2011million\u2011share proposal; acknowledged high debt and weak technicals; set HOLD recommendation instead of BUY.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-05",
+    "price_at_prediction": 37.45,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 37.3,
+    "predicted_next_week_price": 36.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong revenue growth and margins but very high debt-to-equity (6.55) raises financing risk; forward P/E modest but trailing P/E still high; no dividend income.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, RSI in neutral zone (37.69), MACD below signal \u2013 all indicating weak short\u2011term momentum; 22% 3\u2011month decline suggests ongoing downside pressure.",
+      "Sentiment": "While several new wind order headlines are positive, the overall narrative is mixed; no clear consensus of bullish reversal; sentiment cannot override technical weakness.",
+      "Bull": "Order pipeline (~652\u202fMW) could support future revenue, but current price is already discounted to SMAs and volatility is low, limiting upside.",
+      "Bear": "High leverage, lack of dividend, and sustained decline over 3\u202fmonths support caution; technicals show bearish bias.",
+      "Risk": "Portfolio exposure is limited (0%) and risk tolerance is high; however, the stock\u2019s weak momentum and high debt make a new position unattractive at present."
+    },
+    "corrections_made": "Overstated sentiment as all headlines were treated positive; corrected to acknowledge mixed market commentary and lack of clear bullish consensus.",
     "verified_next_day": null,
     "verified_next_week": null
   }

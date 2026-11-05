@@ -1287,7 +1287,11 @@
       "Risk": "Portfolio constraints allow 5% exposure but current analysis suggests weak risk\u2011adjusted return; holding preserves capital while monitoring valuation and earnings updates."
     },
     "corrections_made": "Adjusted recommendation from BUY to HOLD due to overvaluation concerns; removed unrealistic position size calculation; corrected exposure interpretation; updated price predictions to modest upside based on current data and track record.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3060.0,
+      "direction_correct": true,
+      "error_pct": 0.16
+    },
     "verified_next_week": null
   },
   {
@@ -1308,6 +1312,27 @@
       "Risk": "Portfolio constraints limit position size to 1 share (~1.6% of portfolio) and the high valuation increases downside risk."
     },
     "corrections_made": "Recalculated position size to 1 share (\u20b93,036.5) to fit 5% cap; adjusted trade proposal to reflect realistic sizing; omitted erroneous 66\u2011share suggestion.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-05",
+    "price_at_prediction": 3060.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3075.0,
+    "predicted_next_week_price": 3100.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High trailing and forward P/E suggest overvaluation; modest growth and low debt mitigate risk but upside limited.",
+      "Technical": "Price above 20\u2011day and 50\u2011day SMAs and bullish MACD but 3\u2011month return negative; RSI neutral; volatility low.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Potential upside if earnings improve; technical support at 20\u2011day SMA.",
+      "Bear": "High valuation, negative 3\u2011month return, limited volatility; risk of reversal.",
+      "Risk": "Portfolio constraints preclude new position; existing exposure zero; risk of over\u2011valuation."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }
