@@ -2706,10 +2706,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/samsara-staff-software-engineer": {
     "title": "Samsara: Staff Software Engineer",
     "score": 0,
-    "why": "The role is a generic Staff Software Engineer position with no explicit Angular or TypeScript requirement and appears to be backend/full\u2011stack rather than UI\u2011focused.",
-    "gap": "Lack of Angular/TypeScript focus",
-    "first_seen": "2026-10-01",
-    "suppress_until": "2026-10-15"
+    "why": "The role is a generic Staff Software Engineer position with no explicit Angular or TypeScript focus, likely backend\u2011oriented.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-11-05",
+    "suppress_until": "2026-11-19"
   },
   "WN::https://www.workingnomads.com/job/go/1835309/": {
     "title": "AI Content Analyst (No Experience Required) @ Peroptyx",
@@ -4226,34 +4226,34 @@
   "WN::https://www.workingnomads.com/job/go/1958438/": {
     "title": "Senior DevOps Engineer @ Lemon.io",
     "score": 0,
-    "why": "The role is a Senior DevOps Engineer, which falls under pure DevOps and does not involve Angular or TypeScript frontend work.",
-    "gap": "No Angular/TypeScript focus",
-    "first_seen": "2026-10-21",
-    "suppress_until": "2026-11-04"
+    "why": "Senior DevOps Engineer is a pure DevOps position, which is excluded by the scoring rules.",
+    "gap": "Pure DevOps role",
+    "first_seen": "2026-11-05",
+    "suppress_until": "2026-11-19"
   },
   "WN::https://www.workingnomads.com/job/go/1957823/": {
     "title": "Quality Assurance Rater - Spanish speakers in Spain @ TELUS Digital",
     "score": 0,
-    "why": "The position is a Quality Assurance Rater, a QA role unrelated to UI/Angular development.",
-    "gap": "Not a UI/Frontend role",
-    "first_seen": "2026-10-21",
-    "suppress_until": "2026-11-04"
+    "why": "Quality Assurance Rater is a QA role, explicitly excluded from scoring.",
+    "gap": "Pure QA role",
+    "first_seen": "2026-11-05",
+    "suppress_until": "2026-11-19"
   },
   "WN::https://www.workingnomads.com/job/go/1957803/": {
     "title": "Quality Assurance Rater - French speakers in France @ TELUS Digital",
     "score": 0,
-    "why": "This is a Quality Assurance Rater role, lacking any Angular or TypeScript responsibilities.",
-    "gap": "Not a UI/Frontend role",
-    "first_seen": "2026-10-21",
-    "suppress_until": "2026-11-04"
+    "why": "Quality Assurance Rater is a QA role, explicitly excluded from scoring.",
+    "gap": "Pure QA role",
+    "first_seen": "2026-11-05",
+    "suppress_until": "2026-11-19"
   },
   "WN::https://www.workingnomads.com/job/go/1957776/": {
     "title": "Quality Assurance Rater - German speakers in Germany @ TELUS Digital",
     "score": 0,
-    "why": "The job is a Quality Assurance Rater, which does not match the candidate\u2019s UI Solution Architect expertise.",
-    "gap": "Not a UI/Frontend role",
-    "first_seen": "2026-10-21",
-    "suppress_until": "2026-11-04"
+    "why": "Quality Assurance Rater is a QA role, explicitly excluded from scoring.",
+    "gap": "Pure QA role",
+    "first_seen": "2026-11-05",
+    "suppress_until": "2026-11-19"
   },
   "WN::https://www.workingnomads.com/job/go/1960693/": {
     "title": "Senior Angular Developer @ Lemon.io",
@@ -4502,5 +4502,29 @@
     "gap": "Absence of Angular/TypeScript requirement",
     "first_seen": "2026-11-04",
     "suppress_until": "2026-11-18"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/maven-clinic-director-marketing-operations": {
+    "title": "Maven Clinic: Director, Marketing Operations",
+    "score": 0,
+    "why": "This is a Director, Marketing Operations role, not a technical UI or frontend position.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-11-05",
+    "suppress_until": "2026-11-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/fivetran-global-alliance-lead-capgemini": {
+    "title": "Fivetran : Global Alliance Lead, Capgemini",
+    "score": 0,
+    "why": "The Global Alliance Lead position is a partnership/business role, unrelated to Angular/TypeScript development.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-11-05",
+    "suppress_until": "2026-11-19"
+  },
+  "WN::https://www.workingnomads.com/job/go/1994915/": {
+    "title": "Technical Operations Lead @ Lemon.io",
+    "score": 0,
+    "why": "Technical Operations Lead is an ops\u2011focused role without any mention of Angular or frontend work.",
+    "gap": "Not a UI/Frontend role",
+    "first_seen": "2026-11-05",
+    "suppress_until": "2026-11-19"
   }
 }
