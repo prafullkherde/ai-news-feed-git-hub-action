@@ -1186,18 +1186,18 @@
   "RemoteOK::1135285": {
     "title": "Junior Front End Developer @ PULSE (MENA)",
     "score": 0,
-    "why": "The role is for a **Junior** Front End Developer, which falls below the 7\u2011year seniority threshold.",
-    "gap": "Junior level (<\u202f7\u202fyears experience)",
-    "first_seen": "2026-10-22",
-    "suppress_until": "2026-11-05"
+    "why": "The role is explicitly a **Junior** Front End position, which falls below the 7\u2011year experience threshold.",
+    "gap": "Junior level requirement",
+    "first_seen": "2026-11-06",
+    "suppress_until": "2026-11-20"
   },
   "RemoteOK::1135269": {
     "title": "Front End Developer @ Acro Commerce",
     "score": 70,
-    "why": "It is a generic Front End Developer role without an explicit Angular/TypeScript requirement, so the candidate\u2019s strong Angular background is relevant but capped.",
+    "why": "The posting calls for a generic Front End Developer without specifying Angular/TypeScript, so the candidate\u2019s seniority is a good fit but the score is capped at 75.",
     "gap": "No explicit Angular/TypeScript requirement",
-    "first_seen": "2026-10-22",
-    "suppress_until": "2026-11-05"
+    "first_seen": "2026-11-06",
+    "suppress_until": "2026-11-20"
   },
   "WN::https://www.workingnomads.com/job/go/1746261/": {
     "title": "Account Manager, Creative Operations @ Storm Ideas",
@@ -4257,11 +4257,11 @@
   },
   "WN::https://www.workingnomads.com/job/go/1960693/": {
     "title": "Senior Angular Developer @ Lemon.io",
-    "score": 92,
-    "why": "The job explicitly seeks a **Senior Angular Developer**, matching the candidate\u2019s 17+\u202fyears of Angular/TypeScript experience and senior UI architect background.",
+    "score": 95,
+    "why": "The job explicitly seeks a **Senior Angular Developer**, matching the candidate\u2019s 17+ years of Angular/TypeScript experience and senior\u2011level expectations.",
     "gap": "None",
-    "first_seen": "2026-10-22",
-    "suppress_until": "2026-11-05"
+    "first_seen": "2026-11-06",
+    "suppress_until": "2026-11-20"
   },
   "WWR::https://weworkremotely.com/remote-jobs/wrike-director-global-gtm-strategy-operations": {
     "title": "Wrike: Director, Global GTM Strategy & Operations",
@@ -4526,5 +4526,29 @@
     "gap": "Not a UI/Frontend role",
     "first_seen": "2026-11-05",
     "suppress_until": "2026-11-19"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/mixpanel-customer-value-architect-iii": {
+    "title": "Mixpanel: Customer Value Architect III",
+    "score": 0,
+    "why": "\u201cCustomer Value Architect III\u201d focuses on analytics/strategy rather than UI development, and does not list Angular or TypeScript.",
+    "gap": "Not a UI\u2011focused role",
+    "first_seen": "2026-11-06",
+    "suppress_until": "2026-11-20"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/sanctuary-computer-head-of-technology": {
+    "title": "Sanctuary Computer: Head of Technology",
+    "score": 0,
+    "why": "\u201cHead of Technology\u201d is a broad leadership role with no clear Angular/TS focus and likely exceeds the UI\u2011only scope.",
+    "gap": "Not a UI\u2011specific position",
+    "first_seen": "2026-11-06",
+    "suppress_until": "2026-11-20"
+  },
+  "WN::https://www.workingnomads.com/job/go/1996233/": {
+    "title": "AI Content Reviewer, Video Annotation @ iMerit Technology",
+    "score": 0,
+    "why": "The AI Content Reviewer role is unrelated to front\u2011end development and contains no Angular/TS requirements.",
+    "gap": "Not a UI role",
+    "first_seen": "2026-11-06",
+    "suppress_until": "2026-11-20"
   }
 }
