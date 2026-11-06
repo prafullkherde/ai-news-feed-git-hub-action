@@ -1244,7 +1244,11 @@
       "Risk": "Portfolio constraints limit position size; historical accuracy for this ticker is modest (57% next\u2011day, 42% next\u2011week)."
     },
     "corrections_made": "Adjusted trade sizing to comply with portfolio limits; removed unrealistic 720\u2011million\u2011share proposal; acknowledged high debt and weak technicals; set HOLD recommendation instead of BUY.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 38.59,
+      "direction_correct": false,
+      "error_pct": 10.57
+    },
     "verified_next_week": null
   },
   {
@@ -1265,6 +1269,27 @@
       "Risk": "Portfolio exposure is limited (0%) and risk tolerance is high; however, the stock\u2019s weak momentum and high debt make a new position unattractive at present."
     },
     "corrections_made": "Overstated sentiment as all headlines were treated positive; corrected to acknowledge mixed market commentary and lack of clear bullish consensus.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-06",
+    "price_at_prediction": 38.59,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 37.8,
+    "predicted_next_week_price": 38.2,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Solid revenue growth and order pipeline but high debt-to-equity and modest earnings upside; valuation at P/B 5.13 may be high for industrials.",
+      "Technical": "Price below 50\u2011day SMA, MACD below signal, RSI below 50; overall bearish bias with modest volatility.",
+      "Sentiment": "Positive headlines on new contracts, but limited impact on price given recent 3\u2011month decline.",
+      "Bull": "Order wins could boost revenue, but technicals and valuation cap upside.",
+      "Bear": "High leverage, 3\u2011month loss, bearish technicals; risk of further downside.",
+      "Risk": "Portfolio constraints limit position size; high volatility relative to small portfolio value."
+    },
+    "corrections_made": "Adjusted trade proposal to respect 5% portfolio limit; corrected stop\u2011loss logic (should be below current price, not above); removed erroneous statement that MACD above signal in bear case (MACD is below signal).",
     "verified_next_day": null,
     "verified_next_week": null
   }
