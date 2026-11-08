@@ -3802,10 +3802,10 @@
   "WWR::https://weworkremotely.com/remote-jobs/twikey-senior-java-developer": {
     "title": "Twikey: Senior Java Developer",
     "score": 0,
-    "why": "The role is a Senior Java Developer, a pure backend position with no frontend focus.",
-    "gap": "No Angular/TypeScript requirement (backend\u2011only).",
-    "first_seen": "2026-10-04",
-    "suppress_until": "2026-10-18"
+    "why": "The Twikey Senior Java Developer role is a pure backend Java position, with no mention of UI work or Angular/TypeScript.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-11-08",
+    "suppress_until": "2026-11-22"
   },
   "WWR::https://weworkremotely.com/remote-jobs/steuart-nutrition-software-developer-ai-coding": {
     "title": "STEUART NUTRITION: Software Developer AI Coding",
@@ -4550,5 +4550,29 @@
     "gap": "Not a UI role",
     "first_seen": "2026-11-06",
     "suppress_until": "2026-11-20"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/squarespace-staff-software-engineer-revenue-systems": {
+    "title": "Squarespace: Staff Software Engineer, Revenue Systems",
+    "score": 0,
+    "why": "The Squarespace Staff Software Engineer role focuses on revenue systems and is primarily backend\u2011oriented, with no explicit Angular or TypeScript requirement.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-11-08",
+    "suppress_until": "2026-11-22"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/dremio-staff-software-engineer-connectivity": {
+    "title": "Dremio: Staff Software Engineer - Connectivity",
+    "score": 0,
+    "why": "Dremio\u2019s Staff Software Engineer \u2013 Connectivity position centers on data connectivity and infrastructure, not on frontend development, and does not list Angular/TS.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-11-08",
+    "suppress_until": "2026-11-22"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/mixpanel-customer-value-architect-iii-1": {
+    "title": "Mixpanel: Customer Value Architect III",
+    "score": 0,
+    "why": "Mixpanel\u2019s Customer Value Architect III is a solution\u2011architect/consulting role without an explicit requirement for Angular or TypeScript frontend work.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-11-08",
+    "suppress_until": "2026-11-22"
   }
 }
