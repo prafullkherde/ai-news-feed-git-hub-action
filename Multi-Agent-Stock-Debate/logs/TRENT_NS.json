@@ -1217,7 +1217,11 @@
       "direction_correct": true,
       "error_pct": -0.12
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3079.0,
+      "direction_correct": true,
+      "error_pct": -0.68
+    }
   },
   {
     "date": "2026-10-30",
@@ -1242,7 +1246,11 @@
       "direction_correct": true,
       "error_pct": 0.71
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3079.0,
+      "direction_correct": true,
+      "error_pct": 0.95
+    }
   },
   {
     "date": "2026-11-02",
@@ -1267,7 +1275,11 @@
       "direction_correct": true,
       "error_pct": 0.15
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3119.2,
+      "direction_correct": true,
+      "error_pct": 2.37
+    }
   },
   {
     "date": "2026-11-03",
@@ -1337,7 +1349,11 @@
       "Risk": "Portfolio constraints preclude new position; existing exposure zero; risk of over\u2011valuation."
     },
     "corrections_made": "none",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3079.0,
+      "direction_correct": true,
+      "error_pct": 0.13
+    },
     "verified_next_week": null
   },
   {
@@ -1358,6 +1374,31 @@
       "Risk": "Portfolio constraints limit position size to 5%; given the high valuation and modest upside, a conservative stance is prudent."
     },
     "corrections_made": "Revised the trade proposal to reflect portfolio constraints and adjusted confidence to Medium based on mixed signals; omitted over\u2011optimistic price targets and unrealistic position sizing.",
+    "verified_next_day": {
+      "actual_price": 3119.2,
+      "direction_correct": true,
+      "error_pct": 1.6
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-09",
+    "price_at_prediction": 3119.2,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3125.0,
+    "predicted_next_week_price": 3180.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High forward P/E and price\u2011to\u2011book suggest overvaluation; modest margins and growth limit upside.",
+      "Technical": "Price above 20\u2011 and 50\u2011day SMAs and strong MACD indicate short\u2011term bullish bias, but RSI near 70 and limited 3\u2011month gain temper enthusiasm.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Valuation compression expected, strong ROE and debt profile.",
+      "Bear": "High valuation persists; momentum may weaken as RSI approaches overbought.",
+      "Risk": "Portfolio constraints preclude new position; high valuation risk outweighs technical upside."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }

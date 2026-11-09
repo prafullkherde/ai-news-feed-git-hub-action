@@ -1120,7 +1120,11 @@
       "direction_correct": true,
       "error_pct": 0.33
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 293.77,
+      "direction_correct": false,
+      "error_pct": 6.83
+    }
   },
   {
     "date": "2026-10-30",
@@ -1145,7 +1149,11 @@
       "direction_correct": true,
       "error_pct": 0.33
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 293.77,
+      "direction_correct": true,
+      "error_pct": 1.3
+    }
   },
   {
     "date": "2026-11-02",
@@ -1170,7 +1178,11 @@
       "direction_correct": true,
       "error_pct": 1.05
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 298.59,
+      "direction_correct": true,
+      "error_pct": 1.22
+    }
   },
   {
     "date": "2026-11-03",
@@ -1240,7 +1252,11 @@
       "Risk": "Low volatility masks potential for smooth decline; stop\u2011loss would be tight; position size would exceed 5% limit if entered; overall risk\u2011reward unfavorable."
     },
     "corrections_made": "Overstated bullish potential in Executor\u2019s trade proposal and bull case; corrected recommendation to SELL and removed proposed position.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 293.77,
+      "direction_correct": false,
+      "error_pct": 4.92
+    },
     "verified_next_week": null
   },
   {
@@ -1261,6 +1277,31 @@
       "Risk": "Potential downside risk outweighs modest upside; stop\u2011loss would trigger before target reached."
     },
     "corrections_made": "Overrode Executor\u2019s buy proposal and Bull case by noting weak technicals and low track record accuracy; corrected confidence to Low and set position to 0%.",
+    "verified_next_day": {
+      "actual_price": 298.59,
+      "direction_correct": true,
+      "error_pct": -1.29
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-09",
+    "price_at_prediction": 298.59,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 296.5,
+    "predicted_next_week_price": 290.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing PE of 29.71 is moderate but no other fundamental data limits valuation insight; no evidence of earnings growth or balance\u2011sheet strength; risk of overvaluation remains.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, RSI below 50, MACD negative and below signal, 3\u2011month decline of 9.24%; overall bearish trend with limited upside to 20\u2011day SMA (~0.5% gain).",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Minor MACD convergence and RSI above oversold could trigger a short\u2011term bounce, but upside is small and risk of further decline exists.",
+      "Bear": "Price below key moving averages, negative momentum, lack of catalysts; risk of continued downtrend.",
+      "Risk": "Low volatility (1.55%) limits large swings, but current bias is bearish; a position could be lost if trend continues. Portfolio constraints allow 5% but recommendation is to hold cash."
+    },
+    "corrections_made": "Adjusted recommendation from BUY to HOLD based on bearish technicals and limited upside; set next\u2011day and next\u2011week price targets reflecting expected continuation of downtrend; removed unsupported bullish claims about mean\u2011reversion gains.",
     "verified_next_day": null,
     "verified_next_week": null
   }

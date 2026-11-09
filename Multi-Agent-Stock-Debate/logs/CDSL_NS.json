@@ -1196,7 +1196,11 @@
       "direction_correct": true,
       "error_pct": 0.56
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1331.4,
+      "direction_correct": false,
+      "error_pct": 9.13
+    }
   },
   {
     "date": "2026-10-30",
@@ -1221,7 +1225,11 @@
       "direction_correct": true,
       "error_pct": 0.56
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1331.4,
+      "direction_correct": false,
+      "error_pct": 6.51
+    }
   },
   {
     "date": "2026-11-02",
@@ -1246,7 +1254,11 @@
       "direction_correct": false,
       "error_pct": 6.02
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1356.0,
+      "direction_correct": false,
+      "error_pct": 11.15
+    }
   },
   {
     "date": "2026-11-03",
@@ -1316,7 +1328,11 @@
       "Risk": "Portfolio constraints prohibit any position above 5\u202f% of a \u20b9100\u202fk portfolio. Previous calls have low accuracy; a conservative stance is warranted."
     },
     "corrections_made": "Adjusted recommendation to HOLD; removed unsupported bullish bias; acknowledged portfolio constraint; provided realistic price predictions based on recent trend and low volatility.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1331.4,
+      "direction_correct": false,
+      "error_pct": 1.59
+    },
     "verified_next_week": null
   },
   {
@@ -1337,6 +1353,31 @@
       "Risk": "Limited diversification impact if position taken; but high valuation and low volatility reduce risk\u2011reward profile."
     },
     "corrections_made": "Corrected MACD signal interpretation (signal line is -13.894, not a positive value); acknowledged that large MACD\u2011signal gap may be misleading due to signal line being deeply negative; adjusted recommendation to HOLD based on high valuation and modest recent performance.",
+    "verified_next_day": {
+      "actual_price": 1356.0,
+      "direction_correct": false,
+      "error_pct": 1.95
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-09",
+    "price_at_prediction": 1356.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1358.0,
+    "predicted_next_week_price": 1365.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong margins and low leverage but high P/E and P/B suggest overvaluation; earnings growth modest; regulatory risk present.",
+      "Technical": "Price above short\u2011 and medium\u2011term SMAs, RSI near 64, MACD positive but signal line negative; momentum not explosive; volatility low.",
+      "Sentiment": "Mixed headlines; earnings positive but regulatory penalty and price slide raise concerns.",
+      "Bull": "Bullish trend confirmed by SMAs and MACD; forward PE lower than trailing PE.",
+      "Bear": "High valuation multiples, limited upside cushion, regulatory risk, flat 3\u2011month return.",
+      "Risk": "Low volatility but high valuation; past accuracy low; risk of correction."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }

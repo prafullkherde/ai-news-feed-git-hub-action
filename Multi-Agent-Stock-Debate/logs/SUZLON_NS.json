@@ -1149,7 +1149,11 @@
       "direction_correct": false,
       "error_pct": 7.47
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 38.8,
+      "direction_correct": false,
+      "error_pct": 23.17
+    }
   },
   {
     "date": "2026-10-30",
@@ -1174,7 +1178,11 @@
       "direction_correct": true,
       "error_pct": -0.7
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 38.8,
+      "direction_correct": false,
+      "error_pct": 14.12
+    }
   },
   {
     "date": "2026-11-02",
@@ -1199,7 +1207,11 @@
       "direction_correct": false,
       "error_pct": 6.72
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 38.91,
+      "direction_correct": false,
+      "error_pct": 17.91
+    }
   },
   {
     "date": "2026-11-03",
@@ -1269,7 +1281,11 @@
       "Risk": "Portfolio exposure is limited (0%) and risk tolerance is high; however, the stock\u2019s weak momentum and high debt make a new position unattractive at present."
     },
     "corrections_made": "Overstated sentiment as all headlines were treated positive; corrected to acknowledge mixed market commentary and lack of clear bullish consensus.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 38.8,
+      "direction_correct": false,
+      "error_pct": 4.02
+    },
     "verified_next_week": null
   },
   {
@@ -1290,6 +1306,31 @@
       "Risk": "Portfolio constraints limit position size; high volatility relative to small portfolio value."
     },
     "corrections_made": "Adjusted trade proposal to respect 5% portfolio limit; corrected stop\u2011loss logic (should be below current price, not above); removed erroneous statement that MACD above signal in bear case (MACD is below signal).",
+    "verified_next_day": {
+      "actual_price": 38.91,
+      "direction_correct": false,
+      "error_pct": 2.94
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-09",
+    "price_at_prediction": 38.91,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 38.5,
+    "predicted_next_week_price": 38.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Valuation is high relative to peers (P/B 5.15) and debt\u2011to\u2011equity 6.55, raising solvency concerns; revenue growth 26% is solid but earnings may not keep pace with the premium.",
+      "Technical": "Price sits above 20\u2011day SMA but below 50\u2011day SMA; RSI 44 and MACD negative indicate weak momentum; 3\u2011month decline 19% signals a downtrend.",
+      "Sentiment": "Recent order wins are positive but isolated; analyst commentary is cautiously optimistic; overall sentiment is mixed.",
+      "Bull": "Potential upside if earnings improve and order pipeline converts; forward P/E 19.1 suggests room for valuation lift.",
+      "Bear": "High leverage, weak technicals, and a 19% 3\u2011month decline suggest downside risk; P/B premium may not be justified.",
+      "Risk": "Portfolio constraint limits position to 5% (\u2248128 shares); risk\u2011reward is modest; given low prediction accuracy, a conservative stance is prudent."
+    },
+    "corrections_made": "Adjusted trade size to comply with 5% portfolio limit (\u2248128 shares, \u20b94,980); removed unrealistic 200k position; corrected confidence to Medium based on mixed signals and low historical accuracy.",
     "verified_next_day": null,
     "verified_next_week": null
   }
