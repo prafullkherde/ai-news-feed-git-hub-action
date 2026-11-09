@@ -4574,5 +4574,29 @@
     "gap": "Lack of Angular/TypeScript focus",
     "first_seen": "2026-11-08",
     "suppress_until": "2026-11-22"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/alloy-founding-forward-deployed-engineer": {
+    "title": "Alloy: Founding Forward Deployed Engineer",
+    "score": 70,
+    "why": "The role is a forward\u2011deployed engineering position that likely involves full\u2011stack work but does not explicitly require Angular or TypeScript, so the candidate\u2019s UI expertise is only partially aligned.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-11-09",
+    "suppress_until": "2026-11-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/airbnb-operations-engineer-biztech": {
+    "title": "Airbnb: Operations Engineer, BizTech",
+    "score": 0,
+    "why": "The position is an Operations Engineer role focused on BizTech infrastructure, which does not involve UI/frontend development.",
+    "gap": "Role is non\u2011frontend (operations/DevOps)",
+    "first_seen": "2026-11-09",
+    "suppress_until": "2026-11-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lithic-senior-software-engineer-processing": {
+    "title": "Lithic: Senior Software Engineer, Processing",
+    "score": 0,
+    "why": "The Senior Software Engineer role is centered on payment\u2011processing backend systems, not on UI or frontend technologies.",
+    "gap": "Role is backend\u2011focused, no UI component.",
+    "first_seen": "2026-11-09",
+    "suppress_until": "2026-11-23"
   }
 }
