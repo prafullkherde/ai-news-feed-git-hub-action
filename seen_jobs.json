@@ -4598,5 +4598,173 @@
     "gap": "Role is backend\u2011focused, no UI component.",
     "first_seen": "2026-11-09",
     "suppress_until": "2026-11-23"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/current-freelance-marketo-email-engineer": {
+    "title": "Current: Freelance Marketo Email Engineer",
+    "score": 0,
+    "why": "The role is a Marketo Email Engineer, which is a marketing\u2011automation position and not a UI/Frontend development job.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/clover-health-director-ai-enabled-fraud-prevention-investigations": {
+    "title": "Clover Health: Director, AI-Enabled Fraud Prevention & Investigations",
+    "score": 0,
+    "why": "This is a Director role focused on AI\u2011enabled fraud prevention, a pure backend/leadership position with no UI/Angular requirement.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lithic-senior-software-engineer-product-platform": {
+    "title": "Lithic: Senior Software Engineer, Product Platform",
+    "score": 0,
+    "why": "The Senior Software Engineer, Product Platform role does not explicitly require Angular or any frontend work, so it falls outside the candidate\u2019s core expertise.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007977/": {
+    "title": "Senior SecOps Engineer @ Proxify",
+    "score": 0,
+    "why": "Senior SecOps Engineer is a security\u2011operations role, not a UI/Frontend position.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007975/": {
+    "title": "Senior AI Engineer (Backend-Focused) @ Proxify",
+    "score": 0,
+    "why": "Senior AI Engineer (Backend\u2011Focused) is a backend\u2011centric role with no frontend requirements.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007974/": {
+    "title": "Senior Fullstack Developer (React.js / Node.js) @ Proxify",
+    "score": 60,
+    "why": "The position requires React.js (a non\u2011Angular stack), which caps the score at 60 according to the rules.",
+    "gap": "Lack of React experience (candidate\u2019s expertise is Angular/TypeScript).",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007972/": {
+    "title": "Senior DevOps Engineer (Azure) @ Proxify",
+    "score": 0,
+    "why": "Senior DevOps Engineer (Azure) is a DevOps role, excluded by the scoring rules.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007970/": {
+    "title": "Senior DevOps Engineer (GCP) @ Proxify",
+    "score": 0,
+    "why": "Senior DevOps Engineer (GCP) is a DevOps position, excluded by the scoring rules.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007968/": {
+    "title": "Senior Data Engineer (Azure) @ Proxify",
+    "score": 0,
+    "why": "Senior Data Engineer (Azure) is a data\u2011engineering role, not a UI/Frontend job.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007966/": {
+    "title": "Senior Data Engineer (Python) @ Proxify",
+    "score": 0,
+    "why": "Senior Data Engineer (Python) is a backend/data role with no UI focus.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007948/": {
+    "title": "Senior MS Power BI Developer @ Proxify",
+    "score": 0,
+    "why": "Senior MS Power\u202fBI Developer is a business\u2011intelligence role, not a UI/Angular position.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007934/": {
+    "title": "Senior Data Scientist (Python) @ Proxify",
+    "score": 0,
+    "why": "Senior Data Scientist (Python) is a data\u2011science role, not relevant to UI/Frontend work.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007932/": {
+    "title": "Senior ML Engineer (Python) @ Proxify",
+    "score": 0,
+    "why": "Senior ML Engineer (Python) is a machine\u2011learning role, not a UI/Frontend position.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007930/": {
+    "title": "Senior Microsoft Dynamics 365 Developer @ Proxify",
+    "score": 0,
+    "why": "Senior Microsoft Dynamics\u202f365 Developer focuses on the Dynamics platform, with no explicit Angular/TypeScript requirement.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007928/": {
+    "title": "Senior QA Automation Engineer @ Proxify",
+    "score": 0,
+    "why": "Senior QA Automation Engineer is a quality\u2011assurance role, excluded by the scoring rules.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007926/": {
+    "title": "Senior Salesforce Developer @ Proxify",
+    "score": 0,
+    "why": "Senior Salesforce Developer works on the Salesforce platform, not an Angular/TypeScript frontend role.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007924/": {
+    "title": "Senior SAP S/4HANA Developer @ Proxify",
+    "score": 0,
+    "why": "Senior SAP S/4HANA Developer is an ERP development role, not a UI/Angular position.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007922/": {
+    "title": "Senior Business Central Developer @ Proxify",
+    "score": 0,
+    "why": "Senior Business Central Developer is an ERP/Business Central role, not a UI/Angular job.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007849/": {
+    "title": "Data Analyst (No Experience Required) - Japanese and English @ Peroptyx",
+    "score": 0,
+    "why": "Data Analyst (No Experience Required) is an entry\u2011level analytics role, not a senior UI/Frontend position.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007847/": {
+    "title": "Data Analyst (No Experience Required) @ Peroptyx",
+    "score": 0,
+    "why": "Data Analyst (No Experience Required) is an entry\u2011level analytics role, not a senior UI/Frontend position.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2007538/": {
+    "title": "New Business Manager @ Surfer",
+    "score": 0,
+    "why": "New Business Manager is a sales/operations role, not a UI/Frontend development position.",
+    "gap": "None",
+    "first_seen": "2026-11-10",
+    "suppress_until": "2026-11-24"
   }
 }
