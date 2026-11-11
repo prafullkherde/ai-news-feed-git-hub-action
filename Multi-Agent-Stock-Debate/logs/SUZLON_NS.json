@@ -1354,5 +1354,26 @@
     "corrections_made": "Adjusted stop\u2011loss logic (should be below entry, not above); removed unrealistic position sizing; corrected MACD interpretation (line above signal is bullish but not decisive); acknowledged portfolio limit and set position to 0%.",
     "verified_next_day": null,
     "verified_next_week": null
+  },
+  {
+    "date": "2026-11-11",
+    "price_at_prediction": 38.91,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 38.7,
+    "predicted_next_week_price": 38.3,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High debt\u2011to\u2011equity (6.55) and price\u2011to\u2011book (5.14) raise valuation and liquidity concerns; profit margin and revenue growth are solid but may not offset leverage.",
+      "Technical": "Price above 20\u2011day SMA but below 50\u2011day SMA; RSI 44 indicates neutral; MACD above signal but both negative; 3\u2011month return \u201319.19% signals recent weakness; volatility 2.21% is low, limiting upside potential.",
+      "Sentiment": "Order\u2011book wins (~652\u202fMW) are positive but represent a small fraction of total revenue; headline sentiment may overstate impact.",
+      "Bull": "Executor over\u2011emphasized the forward P/E discount and MACD crossover; these signals are weak given overall bearish trend and high debt.",
+      "Bear": "Executor under\u2011stressed the debt burden and valuation; the bearish technicals and poor recent performance support a cautious stance.",
+      "Risk": "High leverage, modest upside, and low volatility increase downside risk; portfolio constraints allow only 5% exposure, so a conservative approach is warranted."
+    },
+    "corrections_made": "Overstated bullish case by treating MACD above signal as strong upside; ignored debt\u2011to\u2011equity and price\u2011to\u2011book concerns; adjusted price targets to reflect recent decline and low volatility.",
+    "verified_next_day": null,
+    "verified_next_week": null
   }
 ]

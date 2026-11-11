@@ -1207,7 +1207,11 @@
       "direction_correct": false,
       "error_pct": 4.4
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 303.49,
+      "direction_correct": true,
+      "error_pct": 7.62
+    }
   },
   {
     "date": "2026-11-04",
@@ -1302,7 +1306,11 @@
       "Risk": "Low volatility (1.55%) limits large swings, but current bias is bearish; a position could be lost if trend continues. Portfolio constraints allow 5% but recommendation is to hold cash."
     },
     "corrections_made": "Adjusted recommendation from BUY to HOLD based on bearish technicals and limited upside; set next\u2011day and next\u2011week price targets reflecting expected continuation of downtrend; removed unsupported bullish claims about mean\u2011reversion gains.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 303.49,
+      "direction_correct": false,
+      "error_pct": 2.36
+    },
     "verified_next_week": null
   },
   {
@@ -1323,6 +1331,31 @@
       "Risk": "Volatility moderate (1.55%); potential loss if price falls below 20\u2011day SMA; limited reward does not justify entry given current risk profile."
     },
     "corrections_made": "Overrode Executor\u2019s buy recommendation by applying conservative stance due to weak technicals and poor track record; adjusted next\u2011day and next\u2011week price estimates to reflect bearish bias.",
+    "verified_next_day": {
+      "actual_price": 303.49,
+      "direction_correct": false,
+      "error_pct": 2.53
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-11",
+    "price_at_prediction": 303.49,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 301.2,
+    "predicted_next_week_price": 295.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 30.2 is high but no other fundamentals available; risk of overvaluation.",
+      "Technical": "Price above 20\u2011day SMA but below 50\u2011day SMA; MACD bullish crossover weak; RSI near neutral; 3\u2011month decline suggests weak trend.",
+      "Sentiment": "No news data; sentiment unknown.",
+      "Bull": "Short\u2011term bounce possible but limited by 50\u2011day resistance.",
+      "Bear": "Medium\u2011term bearish trend persists; high P/E may not justify upside.",
+      "Risk": "Low volatility but recent decline and weak fundamentals increase downside risk."
+    },
+    "corrections_made": "Overrode Executor\u2019s buy recommendation; adjusted stop\u2011loss and position size to reflect portfolio constraints; corrected mis\u2011calculation of 5.5 points vs 12.96 points below 50\u2011day SMA; removed unsupported claims of earnings\u2011driven upside due to missing data.",
     "verified_next_day": null,
     "verified_next_week": null
   }
