@@ -4766,5 +4766,21 @@
     "gap": "None",
     "first_seen": "2026-11-10",
     "suppress_until": "2026-11-24"
+  },
+  "WN::https://www.workingnomads.com/job/go/2012619/": {
+    "title": "Remote Customer Service Representative - Independent Contractor @ ShyftOff",
+    "score": 0,
+    "why": "The role is a non\u2011technical Customer Service Representative, which does not match the candidate\u2019s UI/Angular expertise.",
+    "gap": "No relevant technical experience",
+    "first_seen": "2026-11-11",
+    "suppress_until": "2026-11-25"
+  },
+  "WN::https://www.workingnomads.com/job/go/2011124/": {
+    "title": "Senior .NET Full-stack Developer @ Lemon.io",
+    "score": 35,
+    "why": "The position requires senior .NET full\u2011stack development, a stack that does not include Angular or TypeScript, limiting relevance for an Angular\u2011focused UI architect.",
+    "gap": "Stack mismatch (Angular/TS vs .NET)",
+    "first_seen": "2026-11-11",
+    "suppress_until": "2026-11-25"
   }
 }
