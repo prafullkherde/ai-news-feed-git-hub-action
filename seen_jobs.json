@@ -4782,5 +4782,45 @@
     "gap": "Stack mismatch (Angular/TS vs .NET)",
     "first_seen": "2026-11-11",
     "suppress_until": "2026-11-25"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/bdf-experts-sap-berater-fi-co-m-w-d": {
+    "title": "BDF EXPERTS: SAP Berater FI/CO (M/W/D)",
+    "score": 0,
+    "why": "The role is a SAP FI/CO consultant, a pure backend/ERP position with no frontend focus.",
+    "gap": "Not a UI/Angular role",
+    "first_seen": "2026-11-12",
+    "suppress_until": "2026-11-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-fullstack-developer-react-js-node-js-5": {
+    "title": "Proxify AB: Senior Fullstack Developer (React.js / Node.js)",
+    "score": 60,
+    "why": "The position is a Senior Full\u2011Stack role centered on React.js (frontend) and Node.js (backend), and the candidate\u2019s expertise is in Angular/TypeScript, not React.",
+    "gap": "Lacks required React experience",
+    "first_seen": "2026-11-12",
+    "suppress_until": "2026-11-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-python-11": {
+    "title": "Proxify AB: Senior Backend Developer (Python)",
+    "score": 0,
+    "why": "This is a Senior Backend Developer role focused on Python, with no frontend or Angular/TypeScript component.",
+    "gap": "Pure backend role",
+    "first_seen": "2026-11-12",
+    "suppress_until": "2026-11-26"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-node-js-nest-js-4": {
+    "title": "Proxify AB: Senior Backend Developer (Node.js / Nest.js)",
+    "score": 0,
+    "why": "The job is a Senior Backend Developer role using Node.js/Nest.js, which does not require UI, Angular, or TypeScript front\u2011end work.",
+    "gap": "Pure backend role",
+    "first_seen": "2026-11-12",
+    "suppress_until": "2026-11-26"
+  },
+  "WN::https://www.workingnomads.com/job/go/2014034/": {
+    "title": "Senior UI & UX Designer @ Lemon.io",
+    "score": 0,
+    "why": "The opening is for a Senior UI & UX Designer, a design\u2011only position that does not involve Angular or TypeScript development.",
+    "gap": "Design\u2011only, no development focus",
+    "first_seen": "2026-11-12",
+    "suppress_until": "2026-11-26"
   }
 }
