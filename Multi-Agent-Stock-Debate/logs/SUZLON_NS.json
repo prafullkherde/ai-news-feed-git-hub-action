@@ -1236,7 +1236,11 @@
       "direction_correct": false,
       "error_pct": 7.61
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 38.88,
+      "direction_correct": false,
+      "error_pct": 11.09
+    }
   },
   {
     "date": "2026-11-04",
@@ -1331,7 +1335,11 @@
       "Risk": "Portfolio constraint limits position to 5% (\u2248128 shares); risk\u2011reward is modest; given low prediction accuracy, a conservative stance is prudent."
     },
     "corrections_made": "Adjusted trade size to comply with 5% portfolio limit (\u2248128 shares, \u20b94,980); removed unrealistic 200k position; corrected confidence to Medium based on mixed signals and low historical accuracy.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 38.88,
+      "direction_correct": true,
+      "error_pct": 0.99
+    },
     "verified_next_week": null
   },
   {
@@ -1352,7 +1360,11 @@
       "Risk": "Portfolio constraints allow only 5\u202f% exposure; a small position would be insufficient to capture meaningful upside while limiting risk."
     },
     "corrections_made": "Adjusted stop\u2011loss logic (should be below entry, not above); removed unrealistic position sizing; corrected MACD interpretation (line above signal is bullish but not decisive); acknowledged portfolio limit and set position to 0%.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 38.88,
+      "direction_correct": true,
+      "error_pct": 0.47
+    },
     "verified_next_week": null
   },
   {
@@ -1373,6 +1385,27 @@
       "Risk": "High leverage, modest upside, and low volatility increase downside risk; portfolio constraints allow only 5% exposure, so a conservative approach is warranted."
     },
     "corrections_made": "Overstated bullish case by treating MACD above signal as strong upside; ignored debt\u2011to\u2011equity and price\u2011to\u2011book concerns; adjusted price targets to reflect recent decline and low volatility.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-12",
+    "price_at_prediction": 38.88,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 37.9,
+    "predicted_next_week_price": 36.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High debt-to-equity (6.55) and price-to-book (5.14) suggest overvaluation; modest profit margin (12.3%) and revenue growth (26%) are offset by weak recent performance (-18% 3\u2011month return).",
+      "Technical": "Price below 50\u2011day SMA and MACD below signal line indicate bearish momentum; RSI neutral but no clear upside catalyst.",
+      "Sentiment": "Positive headlines on new orders, but lack of dividend and high leverage dampen enthusiasm; analyst commentary is cautious.",
+      "Bull": "Forward P/E lower than trailing P/E and new contracts could lift revenue, but valuation premium and technical weakness reduce conviction.",
+      "Bear": "High leverage, weak recent performance, and bearish technicals increase risk of further decline.",
+      "Risk": "Portfolio constraints allow 5% exposure but high valuation and debt make the risk premium unattractive; past prediction accuracy is low, so a conservative stance is warranted."
+    },
+    "corrections_made": "Adjusted recommendation to HOLD based on high debt, high P/B, bearish technicals, and low historical prediction accuracy; removed overconfident buy case.",
     "verified_next_day": null,
     "verified_next_week": null
   }

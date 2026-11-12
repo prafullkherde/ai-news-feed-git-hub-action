@@ -1304,7 +1304,11 @@
       "direction_correct": true,
       "error_pct": 0.16
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3222.7,
+      "direction_correct": true,
+      "error_pct": 4.97
+    }
   },
   {
     "date": "2026-11-04",
@@ -1399,7 +1403,11 @@
       "Risk": "Portfolio constraints preclude new position; high valuation risk outweighs technical upside."
     },
     "corrections_made": "none",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3222.7,
+      "direction_correct": true,
+      "error_pct": 3.13
+    },
     "verified_next_week": null
   },
   {
@@ -1420,7 +1428,11 @@
       "Risk": "Portfolio constraints allow small position; however, high valuation and limited upside warrant a conservative stance."
     },
     "corrections_made": "none",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3222.7,
+      "direction_correct": true,
+      "error_pct": 2.96
+    },
     "verified_next_week": null
   },
   {
@@ -1439,6 +1451,27 @@
       "Bull": "Strong short\u2011term trend and solid fundamentals (profit margin 8.6%, ROE 27%).",
       "Bear": "Elevated valuation metrics, near\u2011overbought RSI, modest recent performance, and low volatility signal potential for a pullback.",
       "Risk": "Potential downside if valuation corrects; limited upside given current price and low volatility."
+    },
+    "corrections_made": "None",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-12",
+    "price_at_prediction": 3222.7,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3200.0,
+    "predicted_next_week_price": 3150.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High trailing and forward P/E (89.45/62.02) and price\u2011to\u2011book (21.82) indicate overvaluation; modest dividend yield and low debt support stability but do not offset valuation risk.",
+      "Technical": "Price above 20\u2011 and 50\u2011day SMAs but RSI is 77.68 (overbought) and MACD spread, while positive, may not sustain; low 3\u2011month return (6.54%) and low volatility (2.26%) suggest limited upside.",
+      "Sentiment": "No recent news; sentiment neutral; high valuation may trigger pullback.",
+      "Bull": "Strong short\u2011term trend and solid fundamentals could support a brief rally.",
+      "Bear": "Overbought conditions, high valuation multiples, and low recent return raise risk of correction.",
+      "Risk": "Portfolio constraints allow small position, but risk\u2011reward profile is weak; conservative stance recommended."
     },
     "corrections_made": "None",
     "verified_next_day": null,

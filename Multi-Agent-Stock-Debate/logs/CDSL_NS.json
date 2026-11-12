@@ -1283,7 +1283,11 @@
       "direction_correct": false,
       "error_pct": 6.76
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1407.0,
+      "direction_correct": false,
+      "error_pct": 14.86
+    }
   },
   {
     "date": "2026-11-04",
@@ -1378,7 +1382,11 @@
       "Risk": "Low volatility but high valuation; past accuracy low; risk of correction."
     },
     "corrections_made": "none",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1407.0,
+      "direction_correct": true,
+      "error_pct": 3.61
+    },
     "verified_next_week": null
   },
   {
@@ -1399,7 +1407,11 @@
       "Risk": "Portfolio constraints limit position; past prediction accuracy low; risk of over\u2011exposure."
     },
     "corrections_made": "Overrode Executor\u2019s bullish trade proposal and position sizing; adjusted predictions to reflect conservative outlook given low track record.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1407.0,
+      "direction_correct": true,
+      "error_pct": 3.42
+    },
     "verified_next_week": null
   },
   {
@@ -1420,6 +1432,27 @@
       "Risk": "Position size limited to 3 shares (~4.1% of portfolio) to stay within 5% cap; stop\u2011loss at 3% below entry would protect against reversal."
     },
     "corrections_made": "Adjusted position size to 3 shares to comply with 5% portfolio constraint; updated confidence to Medium due to mixed signals and past low accuracy; removed unrealistic target of \u20b91,440 and replaced with more conservative price forecasts. | Position forced to 0% by code \u2014 recommendation was HOLD, not BUY.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-12",
+    "price_at_prediction": 1407.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1395.0,
+    "predicted_next_week_price": 1380.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples (trailing PE 60, forward PE 48) and modest revenue growth (22%) suggest limited upside; low debt and strong margins are positive but do not offset valuation risk.",
+      "Technical": "Price above 20\u2011 and 50\u2011day SMAs but RSI 75.5 indicates overbought; MACD bullish but divergence may fade; volatility is low, limiting large moves.",
+      "Sentiment": "Mixed headlines and regulatory penalty create uncertainty; sentiment is balanced, not strongly bullish.",
+      "Bull": "Forward PE lower than trailing indicates earnings improvement; strong profit margin and low leverage support earnings quality.",
+      "Bear": "High multiples, overbought RSI, limited recent upside, and regulatory risk could trigger a pullback.",
+      "Risk": "Portfolio constraints limit position size; past accuracy for this ticker is low (50% next\u2011day, 38% next\u2011week), warranting a conservative stance."
+    },
+    "corrections_made": "Revised the trade proposal to a HOLD recommendation due to portfolio exposure limits and low track\u2011record accuracy; adjusted price predictions to reflect potential short\u2011term pullback.",
     "verified_next_day": null,
     "verified_next_week": null
   }
