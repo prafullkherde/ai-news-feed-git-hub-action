@@ -1312,7 +1312,11 @@
       "direction_correct": false,
       "error_pct": 1.44
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1455.0,
+      "direction_correct": true,
+      "error_pct": 9.4
+    }
   },
   {
     "date": "2026-11-05",
@@ -1432,7 +1436,11 @@
       "Risk": "Position size limited to 3 shares (~4.1% of portfolio) to stay within 5% cap; stop\u2011loss at 3% below entry would protect against reversal."
     },
     "corrections_made": "Adjusted position size to 3 shares to comply with 5% portfolio constraint; updated confidence to Medium due to mixed signals and past low accuracy; removed unrealistic target of \u20b91,440 and replaced with more conservative price forecasts. | Position forced to 0% by code \u2014 recommendation was HOLD, not BUY.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1455.0,
+      "direction_correct": true,
+      "error_pct": 6.99
+    },
     "verified_next_week": null
   },
   {
@@ -1453,6 +1461,27 @@
       "Risk": "Portfolio constraints limit position size; past accuracy for this ticker is low (50% next\u2011day, 38% next\u2011week), warranting a conservative stance."
     },
     "corrections_made": "Revised the trade proposal to a HOLD recommendation due to portfolio exposure limits and low track\u2011record accuracy; adjusted price predictions to reflect potential short\u2011term pullback.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-13",
+    "price_at_prediction": 1455.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1440.0,
+    "predicted_next_week_price": 1425.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong earnings and low leverage but high valuation may limit upside; no clear catalyst for growth beyond current level.",
+      "Technical": "Price above 20\u2011 and 50\u2011day SMAs but RSI 81.23 and large MACD gap signal potential pullback; volatility modest.",
+      "Sentiment": "Mixed headlines; earnings optimism offset by regulatory concerns; overall sentiment cautiously bullish.",
+      "Bull": "Positive fundamentals and recent earnings support a modest upside; however valuation premium reduces margin.",
+      "Bear": "High valuation, overbought technicals, regulatory risk and limited recent gains raise downside risk.",
+      "Risk": "Portfolio constraints and low track record accuracy suggest avoiding new position; potential for short\u2011term correction."
+    },
+    "corrections_made": "Fixed over\u2011stated bullish claims by noting valuation premium and limited upside; corrected trade sizing to reflect portfolio limits; omitted unsupported profit target calculations.",
     "verified_next_day": null,
     "verified_next_week": null
   }

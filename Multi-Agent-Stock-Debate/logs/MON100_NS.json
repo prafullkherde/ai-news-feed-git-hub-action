@@ -1236,7 +1236,11 @@
       "direction_correct": false,
       "error_pct": 12.63
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 305.2,
+      "direction_correct": false,
+      "error_pct": 17.38
+    }
   },
   {
     "date": "2026-11-05",
@@ -1356,7 +1360,11 @@
       "Risk": "Low volatility but recent decline and weak fundamentals increase downside risk."
     },
     "corrections_made": "Overrode Executor\u2019s buy recommendation; adjusted stop\u2011loss and position size to reflect portfolio constraints; corrected mis\u2011calculation of 5.5 points vs 12.96 points below 50\u2011day SMA; removed unsupported claims of earnings\u2011driven upside due to missing data.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 305.2,
+      "direction_correct": false,
+      "error_pct": 1.33
+    },
     "verified_next_week": null
   },
   {
@@ -1377,6 +1385,27 @@
       "Risk": "High valuation with no growth support, low volatility, and negative recent performance increase risk of further decline."
     },
     "corrections_made": "Corrected the technical assessment that price is above 20\u2011day SMA (not below); clarified that MACD is negative but above signal does not guarantee reversal; noted lack of fundamental data and high trailing\u2011PE as risk factors; updated recommendation to HOLD instead of long trade.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-13",
+    "price_at_prediction": 305.2,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 303.5,
+    "predicted_next_week_price": 310.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 30.09 is high but no other fundamentals available; valuation risk outweighs potential upside.",
+      "Technical": "Price above 20\u2011day SMA but below 50\u2011day SMA; MACD bullish crossover weak; RSI neutral; 3\u2011month decline indicates medium\u2011term weakness.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Short\u2011term bullish signals (20\u2011day SMA, MACD crossover) are modest.",
+      "Bear": "Medium\u2011term bearish trend (50\u2011day SMA, 3\u2011month return) and high valuation suggest caution.",
+      "Risk": "Low volatility but weak trend; potential downside risk exceeds modest upside; portfolio constraints allow but risk\u2011reward unfavorable."
+    },
+    "corrections_made": "Overrode Executor\u2019s buy recommendation due to medium\u2011term bearish context and high valuation; aligned confidence with past accuracy record.",
     "verified_next_day": null,
     "verified_next_week": null
   }

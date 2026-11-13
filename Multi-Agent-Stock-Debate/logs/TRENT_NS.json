@@ -1333,7 +1333,11 @@
       "direction_correct": true,
       "error_pct": 0.16
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3180.0,
+      "direction_correct": true,
+      "error_pct": 2.58
+    }
   },
   {
     "date": "2026-11-05",
@@ -1453,7 +1457,11 @@
       "Risk": "Potential downside if valuation corrects; limited upside given current price and low volatility."
     },
     "corrections_made": "None",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3180.0,
+      "direction_correct": true,
+      "error_pct": 1.6
+    },
     "verified_next_week": null
   },
   {
@@ -1474,6 +1482,27 @@
       "Risk": "Portfolio constraints allow small position, but risk\u2011reward profile is weak; conservative stance recommended."
     },
     "corrections_made": "None",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-13",
+    "price_at_prediction": 3180.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3170.0,
+    "predicted_next_week_price": 3200.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High trailing and forward P/E suggest overvaluation; modest profit margins and low leverage provide some stability but growth expectations are not yet reflected in price.",
+      "Technical": "Price above 20\u2011 and 50\u2011day SMAs with bullish MACD, yet RSI is 78.05 indicating overbought conditions; volatility is low, implying limited short\u2011term upside.",
+      "Sentiment": "No recent news; market sentiment driven by technicals appears positive but tempered by high RSI.",
+      "Bull": "Strong earnings growth and low debt support a potential upside if valuation compresses.",
+      "Bear": "High multiples and overbought RSI raise risk of a pullback; limited recent return suggests weak momentum.",
+      "Risk": "Position size limited to 5% of portfolio; current exposure is 0%, so a small position could be considered if risk tolerance allows."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }

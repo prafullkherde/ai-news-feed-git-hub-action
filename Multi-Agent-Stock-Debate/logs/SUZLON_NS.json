@@ -1265,7 +1265,11 @@
       "direction_correct": false,
       "error_pct": 10.57
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 38.86,
+      "direction_correct": true,
+      "error_pct": 6.47
+    }
   },
   {
     "date": "2026-11-05",
@@ -1385,7 +1389,11 @@
       "Risk": "High leverage, modest upside, and low volatility increase downside risk; portfolio constraints allow only 5% exposure, so a conservative approach is warranted."
     },
     "corrections_made": "Overstated bullish case by treating MACD above signal as strong upside; ignored debt\u2011to\u2011equity and price\u2011to\u2011book concerns; adjusted price targets to reflect recent decline and low volatility.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 38.86,
+      "direction_correct": true,
+      "error_pct": 0.41
+    },
     "verified_next_week": null
   },
   {
@@ -1406,6 +1414,27 @@
       "Risk": "Portfolio constraints allow 5% exposure but high valuation and debt make the risk premium unattractive; past prediction accuracy is low, so a conservative stance is warranted."
     },
     "corrections_made": "Adjusted recommendation to HOLD based on high debt, high P/B, bearish technicals, and low historical prediction accuracy; removed overconfident buy case.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-13",
+    "price_at_prediction": 38.86,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 37.5,
+    "predicted_next_week_price": 38.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High debt\u2011to\u2011equity (6.55) and 3\u2011month loss of 18% undermine confidence in revenue growth translating to price gains; forward P/E of 18.8 is modest but not compelling given leverage.",
+      "Technical": "Price below 50\u2011day SMA and MACD below signal despite negative values; moderate volatility (2.18%) limits short\u2011term upside.",
+      "Sentiment": "Recent contract wins are positive but do not offset the recent sharp decline; no evidence of sustained momentum.",
+      "Bull": "Forward P/E lower than trailing, but high leverage and negative recent returns weaken bullish case.",
+      "Bear": "Debt burden, negative 3\u2011month return, price below 50\u2011day SMA, and weak MACD support a cautious stance.",
+      "Risk": "Portfolio constraints allow only 5% exposure; given the high risk profile and low recent performance, a conservative approach is warranted."
+    },
+    "corrections_made": "Adjusted target prices to reflect realistic upside (\u22481% next day, \u22482% next week) and set position to 0% due to high risk and low track record accuracy.",
     "verified_next_day": null,
     "verified_next_week": null
   }
