@@ -4822,5 +4822,13 @@
     "gap": "Design\u2011only, no development focus",
     "first_seen": "2026-11-12",
     "suppress_until": "2026-11-26"
+  },
+  "WN::https://www.workingnomads.com/job/go/2016531/": {
+    "title": "Senior React Full-stack Developer @ Lemon.io",
+    "score": 45,
+    "why": "Candidate excels in Angular/TypeScript but the role explicitly requires React, a stack the candidate does not list.",
+    "gap": "React experience",
+    "first_seen": "2026-11-13",
+    "suppress_until": "2026-11-27"
   }
 }
