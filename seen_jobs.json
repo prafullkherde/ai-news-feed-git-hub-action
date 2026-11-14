@@ -4830,5 +4830,45 @@
     "gap": "React experience",
     "first_seen": "2026-11-13",
     "suppress_until": "2026-11-27"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/celonis-client-value-partner-cvp-utilities-energy-industry": {
+    "title": "Celonis: Client Value Partner (CVP) - Utilities & Energy Industry",
+    "score": 0,
+    "why": "The Client Value Partner role is a consulting/partner position focused on utilities & energy, not a frontend development job.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-11-14",
+    "suppress_until": "2026-11-28"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/celonis-client-value-partner-cvp-oil-gas-industry": {
+    "title": "Celonis: Client Value Partner (CVP) - Oil & Gas Industry",
+    "score": 0,
+    "why": "This Client Value Partner role targets the oil & gas sector and involves client partnership duties, not UI engineering.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-11-14",
+    "suppress_until": "2026-11-28"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/reddit-analytics-engineer": {
+    "title": "Reddit: Analytics Engineer",
+    "score": 0,
+    "why": "An Analytics Engineer position at Reddit is centered on data analysis and engineering, not frontend UI work.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-11-14",
+    "suppress_until": "2026-11-28"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/growth-minded-senior-data-engineer": {
+    "title": "Growth Minded: Senior Data Engineer",
+    "score": 0,
+    "why": "The Senior Data Engineer role is a backend/data\u2011pipeline position, unrelated to UI or frontend development.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-11-14",
+    "suppress_until": "2026-11-28"
+  },
+  "WN::https://www.workingnomads.com/job/go/2019516/": {
+    "title": "QA Testers Wanted to Jump on an AI Assistant project @ Tester Work",
+    "score": 0,
+    "why": "This is a QA testing role for an AI assistant project, which does not involve UI architecture or development.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-11-14",
+    "suppress_until": "2026-11-28"
   }
 }
