@@ -4870,5 +4870,37 @@
     "gap": "No Angular/TypeScript requirement",
     "first_seen": "2026-11-14",
     "suppress_until": "2026-11-28"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/oportun-senior-data-engineer-capital-markets-r13923": {
+    "title": "Oportun: Senior Data Engineer - Capital Markets (R13923)",
+    "score": 0,
+    "why": "The role is a Senior Data Engineer for capital markets, a backend\u2011focused position with no mention of Angular or TypeScript.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-11-15",
+    "suppress_until": "2026-11-29"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-senior-analytics-engineer-bi-lead-channel-insights-ix360": {
+    "title": "Toptal: Senior Analytics Engineer / BI Lead \u2014 Channel Insights (iX360)",
+    "score": 0,
+    "why": "The Senior Analytics Engineer / BI Lead role centers on analytics and business intelligence, not on UI development with Angular/TypeScript.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-11-15",
+    "suppress_until": "2026-11-29"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-salesforce-developer-for-org-ownership-and-ongoing-platform-development": {
+    "title": "Toptal: Salesforce Developer for Org Ownership and Ongoing Platform Development",
+    "score": 0,
+    "why": "The Salesforce Developer position is specific to the Salesforce platform and does not require Angular or TypeScript expertise.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-11-15",
+    "suppress_until": "2026-11-29"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/vertex-marketing-group-distribution-engineer": {
+    "title": "Vertex Marketing Group: Distribution Engineer",
+    "score": 0,
+    "why": "The Distribution Engineer role is an engineering/infrastructure position with no indication of frontend work or Angular/TypeScript requirements.",
+    "gap": "Lack of Angular/TypeScript focus",
+    "first_seen": "2026-11-15",
+    "suppress_until": "2026-11-29"
   }
 }
