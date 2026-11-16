@@ -4902,5 +4902,37 @@
     "gap": "Lack of Angular/TypeScript focus",
     "first_seen": "2026-11-15",
     "suppress_until": "2026-11-29"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/offerup-software-development-engineer-ii-remote-colombia": {
+    "title": "OfferUp: Software Development Engineer II (Remote @ Colombia)",
+    "score": 0,
+    "why": "The role is a generic Software Development Engineer position with no explicit Angular or TypeScript requirement, likely backend\u2011focused.",
+    "gap": "No Angular/TypeScript focus",
+    "first_seen": "2026-11-16",
+    "suppress_until": "2026-11-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/maven-clinic-head-of-member-growth-b2b2c": {
+    "title": "Maven Clinic: Head of Member Growth (B2B2C)",
+    "score": 0,
+    "why": "This is a Head of Member Growth (B2B2C) role, unrelated to UI/frontend development.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-11-16",
+    "suppress_until": "2026-11-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/lemon-io-senior-vue-developer-1": {
+    "title": "Lemon.io: Senior Vue Developer",
+    "score": 40,
+    "why": "The position is a Senior Vue Developer role, which is a Vue\u2011only stack and caps the score at 60, but the candidate lacks Vue experience.",
+    "gap": "Vue experience",
+    "first_seen": "2026-11-16",
+    "suppress_until": "2026-11-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/ritual-core-protocol-engineer": {
+    "title": "Ritual: Core Protocol Engineer",
+    "score": 0,
+    "why": "Core Protocol Engineer is a backend/network\u2011protocol role with no relevance to Angular/TypeScript UI work.",
+    "gap": "Not a UI/Frontend position",
+    "first_seen": "2026-11-16",
+    "suppress_until": "2026-11-30"
   }
 }
