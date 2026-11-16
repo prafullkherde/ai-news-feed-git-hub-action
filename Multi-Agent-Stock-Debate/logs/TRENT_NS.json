@@ -1362,7 +1362,11 @@
       "direction_correct": true,
       "error_pct": 0.13
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3165.2,
+      "direction_correct": true,
+      "error_pct": 2.1
+    }
   },
   {
     "date": "2026-11-06",
@@ -1482,7 +1486,11 @@
       "Risk": "Portfolio constraints allow small position, but risk\u2011reward profile is weak; conservative stance recommended."
     },
     "corrections_made": "None",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3165.2,
+      "direction_correct": true,
+      "error_pct": -1.09
+    },
     "verified_next_week": null
   },
   {
@@ -1501,6 +1509,27 @@
       "Bull": "Strong earnings growth and low debt support a potential upside if valuation compresses.",
       "Bear": "High multiples and overbought RSI raise risk of a pullback; limited recent return suggests weak momentum.",
       "Risk": "Position size limited to 5% of portfolio; current exposure is 0%, so a small position could be considered if risk tolerance allows."
+    },
+    "corrections_made": "none",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-16",
+    "price_at_prediction": 3165.2,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3170.0,
+    "predicted_next_week_price": 3200.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples (trailing PE 90, forward PE 62) and modest profit margin (8.6%) suggest limited upside; strong ROE and low debt mitigate risk but do not offset high multiples.",
+      "Technical": "Stock is above 20\u2011day and 50\u2011day SMAs with bullish MACD, yet RSI is 81.86 indicating overbought conditions; volatility is low (2.27%) and 3\u2011month return modest (5.97%).",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Strong fundamentals and liquidity; potential earnings acceleration could justify valuation.",
+      "Bear": "Overbought RSI, high multiples, thin margins; risk of short\u2011term pullback.",
+      "Risk": "Position size would exceed portfolio constraints; shorting would add leverage risk. Holding preserves capital and avoids breaching limits."
     },
     "corrections_made": "none",
     "verified_next_day": null,

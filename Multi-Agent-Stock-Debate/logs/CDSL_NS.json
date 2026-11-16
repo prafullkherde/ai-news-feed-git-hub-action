@@ -1341,7 +1341,11 @@
       "direction_correct": false,
       "error_pct": 1.59
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1447.0,
+      "direction_correct": false,
+      "error_pct": 10.88
+    }
   },
   {
     "date": "2026-11-06",
@@ -1461,7 +1465,11 @@
       "Risk": "Portfolio constraints limit position size; past accuracy for this ticker is low (50% next\u2011day, 38% next\u2011week), warranting a conservative stance."
     },
     "corrections_made": "Revised the trade proposal to a HOLD recommendation due to portfolio exposure limits and low track\u2011record accuracy; adjusted price predictions to reflect potential short\u2011term pullback.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1447.0,
+      "direction_correct": false,
+      "error_pct": 3.73
+    },
     "verified_next_week": null
   },
   {
@@ -1482,6 +1490,27 @@
       "Risk": "Portfolio constraints and low track record accuracy suggest avoiding new position; potential for short\u2011term correction."
     },
     "corrections_made": "Fixed over\u2011stated bullish claims by noting valuation premium and limited upside; corrected trade sizing to reflect portfolio limits; omitted unsupported profit target calculations.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-16",
+    "price_at_prediction": 1447.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1435.0,
+    "predicted_next_week_price": 1420.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Valuation is high (P/E 59, P/B 15) with modest dividend; earnings growth solid but may not sustain premium.",
+      "Technical": "RSI 88 indicates overbought; price above 20/50 SMA but 3\u2011month return modest; volatility low.",
+      "Sentiment": "Mixed headlines; regulatory penalty adds downside risk.",
+      "Bull": "Strong margins and low debt suggest resilience; earnings calls positive.",
+      "Bear": "High valuation, overbought RSI, regulatory risk could trigger pullback.",
+      "Risk": "Low volatility but overbought conditions increase reversal risk; portfolio constraints limit position size."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }

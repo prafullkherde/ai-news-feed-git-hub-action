@@ -1294,7 +1294,11 @@
       "direction_correct": false,
       "error_pct": 4.02
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 38.25,
+      "direction_correct": false,
+      "error_pct": 4.79
+    }
   },
   {
     "date": "2026-11-06",
@@ -1414,7 +1418,11 @@
       "Risk": "Portfolio constraints allow 5% exposure but high valuation and debt make the risk premium unattractive; past prediction accuracy is low, so a conservative stance is warranted."
     },
     "corrections_made": "Adjusted recommendation to HOLD based on high debt, high P/B, bearish technicals, and low historical prediction accuracy; removed overconfident buy case.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 38.25,
+      "direction_correct": true,
+      "error_pct": 0.92
+    },
     "verified_next_week": null
   },
   {
@@ -1435,6 +1443,27 @@
       "Risk": "Portfolio constraints allow only 5% exposure; given the high risk profile and low recent performance, a conservative approach is warranted."
     },
     "corrections_made": "Adjusted target prices to reflect realistic upside (\u22481% next day, \u22482% next week) and set position to 0% due to high risk and low track record accuracy.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-16",
+    "price_at_prediction": 38.25,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 37.8,
+    "predicted_next_week_price": 39.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Suzlon shows solid revenue growth (26%) and healthy margins (12.3%) but carries high debt-to-equity (6.55) and trades above typical industrial P/B (4.95), indicating valuation risk. Forward P/E (18.4) is modest but not compelling given the high leverage.",
+      "Technical": "Price is just above the 20\u2011day SMA but below the 50\u2011day SMA, with negative MACD and neutral RSI, suggesting short\u2011term bearish bias. Recent 3\u2011month decline (\u201119.2%) and low volatility (2.19%) imply limited upside potential.",
+      "Sentiment": "Positive order\u2011book news (651\u202fMW) is offset by lack of dividend yield and mixed analyst coverage. Sentiment is cautiously optimistic but not strong enough to override technical weakness.",
+      "Bull": "Order pipeline and improving earnings projections support a potential upside to the 50\u2011day SMA, but the current price is still below medium\u2011term trend and valuation is stretched.",
+      "Bear": "High leverage, negative short\u2011term momentum, and recent price decline raise downside concerns. The stock may need a clear breakout above the 50\u2011day SMA to justify a long position.",
+      "Risk": "Given the low next\u2011week direction accuracy (37%) and moderate next\u2011day accuracy (56%), a conservative stance is warranted. The portfolio constraint allows a small position, but the risk\u2011reward profile currently favors a hold."
+    },
+    "corrections_made": "Revised bullish/technical assessment to reflect negative MACD and 3\u2011month decline; adjusted confidence to Medium; set HOLD recommendation instead of BUY; removed unsupported claim of strong upside based solely on order flow.",
     "verified_next_day": null,
     "verified_next_week": null
   }
