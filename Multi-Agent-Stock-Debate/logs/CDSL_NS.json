@@ -1370,7 +1370,11 @@
       "direction_correct": false,
       "error_pct": 1.95
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1433.9,
+      "direction_correct": true,
+      "error_pct": 6.21
+    }
   },
   {
     "date": "2026-11-09",
@@ -1490,7 +1494,11 @@
       "Risk": "Portfolio constraints and low track record accuracy suggest avoiding new position; potential for short\u2011term correction."
     },
     "corrections_made": "Fixed over\u2011stated bullish claims by noting valuation premium and limited upside; corrected trade sizing to reflect portfolio limits; omitted unsupported profit target calculations.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1433.9,
+      "direction_correct": true,
+      "error_pct": -0.42
+    },
     "verified_next_week": null
   },
   {
@@ -1511,6 +1519,27 @@
       "Risk": "Low volatility but overbought conditions increase reversal risk; portfolio constraints limit position size."
     },
     "corrections_made": "none",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-17",
+    "price_at_prediction": 1433.9,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1400.0,
+    "predicted_next_week_price": 1380.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Valuation remains high with trailing PE 59.6 and forward PE 47.8; strong margins and low debt support resilience but earnings growth must accelerate to justify premium.",
+      "Technical": "RSI 84.45 signals overbought; price 9% above 20\u2011day SMA; MACD positive but divergence may precede pullback; volatility 1.8% suggests limited swing.",
+      "Sentiment": "Mixed headlines; regulatory penalty adds tail risk; earnings positives offset but not enough to offset high valuation.",
+      "Bull": "Strong profitability and low leverage; price above SMAs; recent 3\u2011month gain 6.2%.",
+      "Bear": "High valuation, overbought RSI, regulatory penalty; potential short\u2011term pullback; low margin for error.",
+      "Risk": "Portfolio constraint limits exposure to 5% of \u20b9100k; shorting would breach limit; risk of regulatory action could trigger sharper decline."
+    },
+    "corrections_made": "Adjusted position size to 0% due to portfolio limit; corrected predicted prices to reflect modest pullback from overbought conditions; noted that previous trade proposal exceeded allowed exposure.",
     "verified_next_day": null,
     "verified_next_week": null
   }

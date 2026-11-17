@@ -1294,7 +1294,11 @@
       "direction_correct": true,
       "error_pct": -1.29
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 301.5,
+      "direction_correct": false,
+      "error_pct": -2.74
+    }
   },
   {
     "date": "2026-11-09",
@@ -1414,7 +1418,11 @@
       "Risk": "Low volatility but weak trend; potential downside risk exceeds modest upside; portfolio constraints allow but risk\u2011reward unfavorable."
     },
     "corrections_made": "Overrode Executor\u2019s buy recommendation due to medium\u2011term bearish context and high valuation; aligned confidence with past accuracy record.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 301.5,
+      "direction_correct": true,
+      "error_pct": -0.66
+    },
     "verified_next_week": null
   },
   {
@@ -1435,6 +1443,27 @@
       "Risk": "High valuation without growth evidence, modest volatility, and recent weakness increase downside risk; portfolio constraints allow but not justify position."
     },
     "corrections_made": "Revised recommendation to HOLD based on bearish technicals, high valuation, and poor fundamental data; removed unsupported bullish claims.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-17",
+    "price_at_prediction": 301.5,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 300.5,
+    "predicted_next_week_price": 298.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 30.3 is high but lacking growth data; valuation uncertainty.",
+      "Technical": "Price above 20\u2011day SMA but below 50\u2011day SMA; MACD negative yet above signal; RSI 60.3 indicates modest upside pressure; overall trend bearish.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Short\u2011term bullish crossover and 20\u2011day SMA support a minor bounce.",
+      "Bear": "Longer\u2011term downtrend, negative MACD, 3\u2011month decline, high P/E suggest potential correction.",
+      "Risk": "Position size limited by 5% cap; volatility moderate; no leverage data; overall risk moderate."
+    },
+    "corrections_made": "None",
     "verified_next_day": null,
     "verified_next_week": null
   }
