@@ -4934,5 +4934,69 @@
     "gap": "Not a UI/Frontend position",
     "first_seen": "2026-11-16",
     "suppress_until": "2026-11-30"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/bybit-blockchain-risk-control-lead": {
+    "title": "Bybit: Blockchain Risk Control Lead",
+    "score": 0,
+    "why": "The role is a Blockchain Risk Control Lead, focused on security and risk, not UI development.",
+    "gap": "No frontend/Angular responsibilities",
+    "first_seen": "2026-11-17",
+    "suppress_until": "2026-12-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/bybit-animator-intern": {
+    "title": "Bybit: Animator Intern",
+    "score": 0,
+    "why": "An Animator Intern position is junior and unrelated to senior UI architecture.",
+    "gap": "Junior level / non\u2011technical UI role",
+    "first_seen": "2026-11-17",
+    "suppress_until": "2026-12-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-senior-deployment-engineer-with-llm-and-gpu-infrastructure-experience": {
+    "title": "Toptal: Senior Deployment Engineer with LLM and GPU Infrastructure experience",
+    "score": 0,
+    "why": "Senior Deployment Engineer is a DevOps/infrastructure role, excluded by the scoring rules.",
+    "gap": "Pure backend/DevOps focus",
+    "first_seen": "2026-11-17",
+    "suppress_until": "2026-12-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-ai-engineer-agentic-systems": {
+    "title": "Toptal: AI Engineer - Agentic Systems",
+    "score": 0,
+    "why": "AI Engineer \u2013 Agentic Systems is an AI research role, not a frontend position.",
+    "gap": "No frontend/Angular work",
+    "first_seen": "2026-11-17",
+    "suppress_until": "2026-12-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/affirm-analytics-engineer-ii-full-stack-revenue-analytics": {
+    "title": "Affirm: Analytics Engineer II, Full Stack (Revenue Analytics)",
+    "score": 70,
+    "why": "The role is a Full\u2011Stack Analytics Engineer; it involves frontend work but does not explicitly require Angular or TypeScript, so it is capped at 75.",
+    "gap": "Lack of explicit Angular/TypeScript requirement",
+    "first_seen": "2026-11-17",
+    "suppress_until": "2026-12-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/netlify-senior-staff-data-scientist": {
+    "title": "Netlify: Senior Staff Data Scientist",
+    "score": 0,
+    "why": "Senior Staff Data Scientist is a data\u2011science position, not a UI/frontend role.",
+    "gap": "Pure backend/data\u2011science focus",
+    "first_seen": "2026-11-17",
+    "suppress_until": "2026-12-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/mercury-business-continuity-management-lead": {
+    "title": "Mercury: Business Continuity Management Lead",
+    "score": 0,
+    "why": "Business Continuity Management Lead is a governance/operations role, unrelated to UI development.",
+    "gap": "No frontend/technical UI duties",
+    "first_seen": "2026-11-17",
+    "suppress_until": "2026-12-01"
+  },
+  "WN::https://www.workingnomads.com/job/go/2027058/": {
+    "title": "Video Creator (100% remote) @ Marker Video",
+    "score": 0,
+    "why": "Video Creator is a creative production role, not a senior UI engineering position.",
+    "gap": "Non\u2011technical, non\u2011frontend role",
+    "first_seen": "2026-11-17",
+    "suppress_until": "2026-12-01"
   }
 }
