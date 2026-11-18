@@ -4998,5 +4998,21 @@
     "gap": "Non\u2011technical, non\u2011frontend role",
     "first_seen": "2026-11-17",
     "suppress_until": "2026-12-01"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stockx-category-manager-sneakers": {
+    "title": "StockX: Category Manager - Sneakers",
+    "score": 0,
+    "why": "The role is a Category Manager (non\u2011technical) with no requirement for Angular or TypeScript.",
+    "gap": "Lack of required Angular/TypeScript experience",
+    "first_seen": "2026-11-18",
+    "suppress_until": "2026-12-02"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/oportun-sr-data-analytics-engineer-r14153": {
+    "title": "Oportun: Sr. Data Analytics Engineer (R14153)",
+    "score": 0,
+    "why": "The position is a Senior Data Analytics Engineer focused on data/backend work, not a frontend/Angular role.",
+    "gap": "Lack of required Angular/TypeScript experience",
+    "first_seen": "2026-11-18",
+    "suppress_until": "2026-12-02"
   }
 }
