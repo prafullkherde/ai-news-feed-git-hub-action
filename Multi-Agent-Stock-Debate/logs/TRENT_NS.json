@@ -1420,7 +1420,11 @@
       "direction_correct": true,
       "error_pct": 3.13
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3176.3,
+      "direction_correct": true,
+      "error_pct": -0.12
+    }
   },
   {
     "date": "2026-11-10",
@@ -1445,7 +1449,11 @@
       "direction_correct": true,
       "error_pct": 2.96
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3176.3,
+      "direction_correct": true,
+      "error_pct": 0.83
+    }
   },
   {
     "date": "2026-11-11",
@@ -1540,7 +1548,11 @@
       "Risk": "Position size would exceed portfolio constraints; shorting would add leverage risk. Holding preserves capital and avoids breaching limits."
     },
     "corrections_made": "none",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3176.3,
+      "direction_correct": true,
+      "error_pct": 0.2
+    },
     "verified_next_week": null
   },
   {
@@ -1561,6 +1573,27 @@
       "Risk": "Portfolio constraints limit position size; risk of overextension if a reversal occurs."
     },
     "corrections_made": "none",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-18",
+    "price_at_prediction": 3176.3,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3150.0,
+    "predicted_next_week_price": 3200.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High trailing and forward P/E (\u224890 and 63) indicate valuation pressure; modest dividend yield and high price-to-book suggest premium pricing; earnings growth and ROE are solid but may not justify current multiples.",
+      "Technical": "Price above 20\u2011 and 50\u2011day SMAs but RSI is 76.96 (overbought) and MACD is only modestly above signal, pointing to possible short\u2011term pullback; volatility is low, so price swings are limited.",
+      "Sentiment": "No recent headlines; sentiment neutral.",
+      "Bull": "Strong uptrend and accelerating MACD, solid fundamentals and earnings growth could support upside if valuation compresses.",
+      "Bear": "Overbought RSI, high valuation multiples, modest margin and growth sustainability concerns; price is 5\u201310% above short\u2011term SMAs, indicating potential overextension.",
+      "Risk": "High valuation risk, limited upside if earnings miss; short\u2011term pullback could hit target quickly; portfolio exposure is currently zero, so no immediate position needed."
+    },
+    "corrections_made": "Adjusted recommendation from short\u2011sell to HOLD due to high valuation and overbought technicals; removed unsupported claim of 2% position size and corrected price calculations to reflect realistic share count; updated confidence to Medium based on mixed signals.",
     "verified_next_day": null,
     "verified_next_week": null
   }

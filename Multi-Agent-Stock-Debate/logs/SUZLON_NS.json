@@ -1352,7 +1352,11 @@
       "direction_correct": true,
       "error_pct": 0.99
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 37.19,
+      "direction_correct": true,
+      "error_pct": -2.13
+    }
   },
   {
     "date": "2026-11-10",
@@ -1377,7 +1381,11 @@
       "direction_correct": true,
       "error_pct": 0.47
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 37.19,
+      "direction_correct": true,
+      "error_pct": -2.64
+    }
   },
   {
     "date": "2026-11-11",
@@ -1472,7 +1480,11 @@
       "Risk": "Given the low next\u2011week direction accuracy (37%) and moderate next\u2011day accuracy (56%), a conservative stance is warranted. The portfolio constraint allows a small position, but the risk\u2011reward profile currently favors a hold."
     },
     "corrections_made": "Revised bullish/technical assessment to reflect negative MACD and 3\u2011month decline; adjusted confidence to Medium; set HOLD recommendation instead of BUY; removed unsupported claim of strong upside based solely on order flow.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 37.19,
+      "direction_correct": true,
+      "error_pct": -1.61
+    },
     "verified_next_week": null
   },
   {
@@ -1493,6 +1505,27 @@
       "Risk": "Portfolio constraints allow 5% exposure, but given the high debt and bearish technicals, a conservative approach is warranted to avoid potential downside."
     },
     "corrections_made": "None",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-18",
+    "price_at_prediction": 37.19,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 36.8,
+    "predicted_next_week_price": 36.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High debt-to-equity (6.55) and modest profit margin (12.3%) raise concerns about earnings quality; forward P/E improvement is modest and may not offset valuation premium.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs; MACD still below signal line; 3\u2011month return of \u201321% indicates recent weakness; RSI near 50 is neutral.",
+      "Sentiment": "Positive headlines about new orders are offset by lack of dividend income and high leverage; sentiment may be overstated if order wins do not materialise.",
+      "Bull": "Potential upside to 50\u2011day SMA (~\u20b940) but distance is large relative to recent volatility; bullish crossover is weak.",
+      "Bear": "High debt, zero dividend, and recent 3\u2011month decline suggest risk of further downside; valuation may be stretched for a growth play.",
+      "Risk": "Portfolio constraints allow 5% but given low track record accuracy (58% next\u2011day, 42% next\u2011week) a conservative stance is warranted."
+    },
+    "corrections_made": "Overrode Executor\u2019s bullish trade proposal and trade\u2011size recommendation; adjusted price predictions to reflect recent decline and high volatility; acknowledged critic errors and limited bullish bias.",
     "verified_next_day": null,
     "verified_next_week": null
   }

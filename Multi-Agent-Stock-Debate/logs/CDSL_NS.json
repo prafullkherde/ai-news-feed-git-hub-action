@@ -1399,7 +1399,11 @@
       "direction_correct": true,
       "error_pct": 3.61
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1439.8,
+      "direction_correct": true,
+      "error_pct": 5.48
+    }
   },
   {
     "date": "2026-11-10",
@@ -1424,7 +1428,11 @@
       "direction_correct": true,
       "error_pct": 3.42
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1439.8,
+      "direction_correct": true,
+      "error_pct": 4.33
+    }
   },
   {
     "date": "2026-11-11",
@@ -1519,7 +1527,11 @@
       "Risk": "Low volatility but overbought conditions increase reversal risk; portfolio constraints limit position size."
     },
     "corrections_made": "none",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1439.8,
+      "direction_correct": true,
+      "error_pct": 0.33
+    },
     "verified_next_week": null
   },
   {
@@ -1540,6 +1552,27 @@
       "Risk": "Portfolio constraint limits exposure to 5% of \u20b9100k; shorting would breach limit; risk of regulatory action could trigger sharper decline."
     },
     "corrections_made": "Adjusted position size to 0% due to portfolio limit; corrected predicted prices to reflect modest pullback from overbought conditions; noted that previous trade proposal exceeded allowed exposure.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-18",
+    "price_at_prediction": 1439.8,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1415.0,
+    "predicted_next_week_price": 1400.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation (trailing PE 58.6, forward PE 47) relative to peers and modest growth prospects; low dividend yield offers little income cushion; debt is low but profit margins may not sustain if earnings slow.",
+      "Technical": "Price above 20\u2011 and 50\u2011day SMAs but RSI 83.5 indicates overbought; MACD bullish but could reverse; volatility low yet price has only 7% 3\u2011month gain.",
+      "Sentiment": "Mixed headlines: strong earnings reports offset by regulatory penalty risk; market sentiment cautious.",
+      "Bull": "Strong margins and low leverage support upside, but valuation premium may limit upside.",
+      "Bear": "Overbought technicals, high valuation, regulatory risk, and weak 3\u2011month return suggest potential pullback.",
+      "Risk": "Portfolio constraints allow small position, but recent track record (52% next\u2011day, 44% next\u2011week accuracy) and high valuation warrant a conservative stance."
+    },
+    "corrections_made": "Overrode Executor\u2019s buy recommendation due to high valuation and overbought RSI; adjusted next\u2011day and next\u2011week price targets to reflect potential short\u2011term pullback.",
     "verified_next_day": null,
     "verified_next_week": null
   }
