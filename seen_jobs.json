@@ -2305,11 +2305,11 @@
   },
   "WWR::https://weworkremotely.com/remote-jobs/storetasker-senior-shopify-developer-remote-flexible-3": {
     "title": "Storetasker: Senior Shopify Developer (Remote + Flexible)",
-    "score": 70,
-    "why": "The Senior Shopify Developer role is a frontend position but does not explicitly require Angular/TypeScript, so the candidate\u2019s expertise is only partially aligned.",
-    "gap": "Lack of Shopify/Liquid platform experience",
-    "first_seen": "2026-10-16",
-    "suppress_until": "2026-10-30"
+    "score": 55,
+    "why": "Senior Shopify Developer is a front\u2011end role but does not require Angular/TypeScript, which caps relevance.",
+    "gap": "Lack of Shopify/Liquid experience",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
   },
   "WWR::https://weworkremotely.com/remote-jobs/superplane-product-engineer-1": {
     "title": "SuperPlane: Product Engineer",
@@ -5014,5 +5014,133 @@
     "gap": "Lack of required Angular/TypeScript experience",
     "first_seen": "2026-11-18",
     "suppress_until": "2026-12-02"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/jumio-principal-enterprise-architect": {
+    "title": "Jumio: Principal Enterprise Architect",
+    "score": 0,
+    "why": "The role is a Principal Enterprise Architect with no explicit UI focus, likely backend/enterprise architecture.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/bitovi-backend-platform-developer-consultant-temporal-kubernetes": {
+    "title": "Bitovi: Backend / Platform Developer Consultant (Temporal & Kubernetes)",
+    "score": 0,
+    "why": "Pure backend/platform developer role (Temporal & Kubernetes) with no UI component.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/salesloft-hr-enablement-lead": {
+    "title": "Salesloft: HR Enablement Lead",
+    "score": 0,
+    "why": "HR Enablement Lead is a non\u2011technical, people\u2011focused position.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/legion-senior-integration-engineer": {
+    "title": "Legion: Senior Integration Engineer",
+    "score": 0,
+    "why": "Senior Integration Engineer focuses on system integration, not UI development.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/cambridge-information-group-inc-front-end-developer": {
+    "title": "Cambridge Information Group Inc: Front-End Developer",
+    "score": 70,
+    "why": "Front\u2011End Developer is a generic UI role; without Angular/TS mention the score is capped at 75, but senior experience pushes it high.",
+    "gap": "Unspecified tech stack (no Angular/TS requirement)",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/simpletiger-web-developer-wordpress-hubspot-u-s-based-remote-contractor": {
+    "title": "SimpleTiger: Web Developer: WordPress & HubSpot (U.S. Based, Remote Contractor)",
+    "score": 50,
+    "why": "Web Developer for WordPress & HubSpot is a front\u2011end role but uses a different stack, limiting relevance.",
+    "gap": "WordPress/HUBSpot expertise required",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stockx-director-category-growth-general-manager": {
+    "title": "StockX: Director, Category Growth (General Manager)",
+    "score": 0,
+    "why": "Director, Category Growth is a business/management role, not a UI engineering position.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-broker-dealer-operations-associate": {
+    "title": "Coinbase: Broker Dealer Operations, Associate",
+    "score": 0,
+    "why": "Broker Dealer Operations Associate is an operations role with no UI responsibilities.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/coinbase-associate-manager-internal-audit": {
+    "title": "Coinbase: Associate Manager, Internal Audit",
+    "score": 0,
+    "why": "Associate Manager, Internal Audit is an audit/finance role, not related to front\u2011end development.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/reddit-frontend-engineer-ads": {
+    "title": "Reddit: Frontend Engineer, Ads",
+    "score": 60,
+    "why": "Frontend Engineer, Ads at Reddit is likely a React\u2011centric position, capping relevance at 60.",
+    "gap": "React experience required",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/planetscale-software-engineer-planetscale-postgres": {
+    "title": "PlanetScale: Software Engineer - PlanetScale Postgres",
+    "score": 0,
+    "why": "Software Engineer \u2013 PlanetScale Postgres is a backend/database role, not UI focused.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/stockx-category-manager-trading-cards": {
+    "title": "StockX: Category Manager - Trading Cards",
+    "score": 0,
+    "why": "Category Manager \u2013 Trading Cards is a product/marketing role, not a UI engineering position.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/2033949/": {
+    "title": "Quality Assurance Rater - Spanish speakers in Spain @ TELUS Digital",
+    "score": 0,
+    "why": "Quality Assurance Rater is a QA role, not a front\u2011end development position.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/2033922/": {
+    "title": "Quality Assurance Rater - German speakers in Germany @ TELUS Digital",
+    "score": 0,
+    "why": "Quality Assurance Rater is a QA role, not a front\u2011end development position.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/2033903/": {
+    "title": "Quality Assurance Rater - French speakers in France @ TELUS Digital",
+    "score": 0,
+    "why": "Quality Assurance Rater is a QA role, not a front\u2011end development position.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
+  },
+  "WN::https://www.workingnomads.com/job/go/2032572/": {
+    "title": "Senior Data Engineer @ Lemon.io",
+    "score": 0,
+    "why": "Senior Data Engineer is a data\u2011engineering role with no UI responsibilities.",
+    "gap": "None",
+    "first_seen": "2026-11-19",
+    "suppress_until": "2026-12-03"
   }
 }
