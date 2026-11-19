@@ -1410,7 +1410,11 @@
       "direction_correct": true,
       "error_pct": 0.41
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 36.13,
+      "direction_correct": true,
+      "error_pct": -5.67
+    }
   },
   {
     "date": "2026-11-12",
@@ -1505,7 +1509,11 @@
       "Risk": "Portfolio constraints allow 5% exposure, but given the high debt and bearish technicals, a conservative approach is warranted to avoid potential downside."
     },
     "corrections_made": "None",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 36.13,
+      "direction_correct": true,
+      "error_pct": -3.14
+    },
     "verified_next_week": null
   },
   {
@@ -1526,6 +1534,20 @@
       "Risk": "Portfolio constraints allow 5% but given low track record accuracy (58% next\u2011day, 42% next\u2011week) a conservative stance is warranted."
     },
     "corrections_made": "Overrode Executor\u2019s bullish trade proposal and trade\u2011size recommendation; adjusted price predictions to reflect recent decline and high volatility; acknowledged critic errors and limited bullish bias.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-19",
+    "price_at_prediction": 36.13,
+    "recommendation": "PARSE_ERROR",
+    "confidence": "Low",
+    "predicted_next_day_price": null,
+    "predicted_next_week_price": null,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {},
+    "corrections_made": "BA response could not be parsed as JSON",
     "verified_next_day": null,
     "verified_next_week": null
   }

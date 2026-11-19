@@ -1478,7 +1478,11 @@
       "direction_correct": true,
       "error_pct": 1.6
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3190.0,
+      "direction_correct": true,
+      "error_pct": -0.31
+    }
   },
   {
     "date": "2026-11-12",
@@ -1573,7 +1577,11 @@
       "Risk": "Portfolio constraints limit position size; risk of overextension if a reversal occurs."
     },
     "corrections_made": "none",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3190.0,
+      "direction_correct": true,
+      "error_pct": 0.0
+    },
     "verified_next_week": null
   },
   {
@@ -1594,6 +1602,27 @@
       "Risk": "High valuation risk, limited upside if earnings miss; short\u2011term pullback could hit target quickly; portfolio exposure is currently zero, so no immediate position needed."
     },
     "corrections_made": "Adjusted recommendation from short\u2011sell to HOLD due to high valuation and overbought technicals; removed unsupported claim of 2% position size and corrected price calculations to reflect realistic share count; updated confidence to Medium based on mixed signals.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-19",
+    "price_at_prediction": 3190.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3170.0,
+    "predicted_next_week_price": 3250.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High trailing and forward P/E (90.7 and 63.2) indicate overvaluation; modest profit margin (8.6%) and low dividend yield (0.13%) reduce income appeal; balance sheet is moderate with debt-to-equity 29.5% but no strong defensive cushion.",
+      "Technical": "Stock is above 20\u2011 and 50\u2011day SMAs, but RSI is 73.8 (overbought) and MACD gap is narrowing, suggesting potential short\u2011term pullback; volatility is low (2.26%) but recent 3\u2011month return is 8.28% which may not sustain further upside.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Recent 3\u2011month gain and strong short\u2011term trend could support a modest upside; forward earnings growth may justify some valuation premium.",
+      "Bear": "High valuation multiples, overbought RSI, and limited income make downside risk plausible; track record of 85% next\u2011day accuracy is encouraging but not decisive.",
+      "Risk": "Portfolio constraint limits position to 5%; current exposure is 0%; risk of overvaluation and short\u2011term pullback outweighs potential gains."
+    },
+    "corrections_made": "Overrode Executor\u2019s buy recommendation due to portfolio constraint violation and high valuation; adjusted price targets to more conservative levels; noted lack of recent headlines in sentiment analysis.",
     "verified_next_day": null,
     "verified_next_week": null
   }

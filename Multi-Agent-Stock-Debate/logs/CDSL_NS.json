@@ -1457,7 +1457,11 @@
       "direction_correct": true,
       "error_pct": 6.99
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1416.6,
+      "direction_correct": true,
+      "error_pct": 2.65
+    }
   },
   {
     "date": "2026-11-12",
@@ -1552,7 +1556,11 @@
       "Risk": "Portfolio constraint limits exposure to 5% of \u20b9100k; shorting would breach limit; risk of regulatory action could trigger sharper decline."
     },
     "corrections_made": "Adjusted position size to 0% due to portfolio limit; corrected predicted prices to reflect modest pullback from overbought conditions; noted that previous trade proposal exceeded allowed exposure.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1416.6,
+      "direction_correct": true,
+      "error_pct": 1.19
+    },
     "verified_next_week": null
   },
   {
@@ -1573,6 +1581,27 @@
       "Risk": "Portfolio constraints allow small position, but recent track record (52% next\u2011day, 44% next\u2011week accuracy) and high valuation warrant a conservative stance."
     },
     "corrections_made": "Overrode Executor\u2019s buy recommendation due to high valuation and overbought RSI; adjusted next\u2011day and next\u2011week price targets to reflect potential short\u2011term pullback.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-19",
+    "price_at_prediction": 1416.6,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1405.0,
+    "predicted_next_week_price": 1390.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High trailing and forward P/E relative to sector and modest earnings growth suggest limited upside; low debt and strong margins are positive but valuation remains a concern.",
+      "Technical": "RSI in overbought territory and modest 3\u2011month return indicate potential short\u2011term pullback; MACD bullish but gap to 20\u2011day SMA is narrow.",
+      "Sentiment": "Mixed news with regulatory penalty introduces risk; earnings headlines positive but not enough to offset overvaluation.",
+      "Bull": "Strong fundamentals and recent earnings support a bullish case, but valuation and technical overboughtness temper enthusiasm.",
+      "Bear": "High valuation, overbought RSI, low volatility and regulatory risk support a bearish view.",
+      "Risk": "Potential for a correction within 5\u201310% range; portfolio constraints limit position size; past accuracy low for this ticker."
+    },
+    "corrections_made": "None",
     "verified_next_day": null,
     "verified_next_week": null
   }

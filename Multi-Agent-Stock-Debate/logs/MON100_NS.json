@@ -1381,7 +1381,11 @@
       "direction_correct": false,
       "error_pct": 1.33
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 296.77,
+      "direction_correct": true,
+      "error_pct": 0.6
+    }
   },
   {
     "date": "2026-11-12",
@@ -1476,7 +1480,11 @@
       "Risk": "Position size limited by 5% cap; volatility moderate; no leverage data; overall risk moderate."
     },
     "corrections_made": "None",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 296.77,
+      "direction_correct": true,
+      "error_pct": -1.24
+    },
     "verified_next_week": null
   },
   {
@@ -1497,6 +1505,27 @@
       "Risk": "Low volatility but recent decline suggests risk of further downside; stop\u2011loss at 20\u2011day SMA would still allow significant loss relative to entry."
     },
     "corrections_made": "Overstated bullish case; corrected recommendation to HOLD and adjusted price forecasts.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-19",
+    "price_at_prediction": 296.77,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 295.8,
+    "predicted_next_week_price": 292.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 30.68 is high but no other fundamentals available; cannot justify a bullish case based solely on this metric.",
+      "Technical": "Price is slightly above 20\u2011day SMA but well below 50\u2011day SMA; MACD is negative and below signal, indicating weak momentum; RSI is neutral; overall technicals suggest a sideways or mildly bearish bias.",
+      "Sentiment": "No recent headlines; sentiment inferred from technicals is cautiously bearish.",
+      "Bull": "Executor over\u2011emphasized a modest 0.53% premium over SMA\u201120 as a strong bullish signal; in reality this is negligible and does not outweigh the 5.4% gap below SMA\u201150.",
+      "Bear": "Executor correctly noted medium\u2011term bearish signals, but the proposed short trade ignores the low volatility and the high probability of a short\u2011term pullback; risk of over\u2011trading is high.",
+      "Risk": "Portfolio constraints allow a 5% position, but given the low accuracy of past predictions (58% next\u2011day, 45% next\u2011week) and the lack of supporting fundamentals, a conservative HOLD is preferable to avoid unnecessary exposure."
+    },
+    "corrections_made": "Revised bullish bias assessment, removed unsupported short trade proposal, adjusted price predictions to reflect modest downward drift, set position to 0% due to HOLD recommendation",
     "verified_next_day": null,
     "verified_next_week": null
   }
