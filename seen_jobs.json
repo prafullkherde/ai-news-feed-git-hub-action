@@ -5142,5 +5142,45 @@
     "gap": "None",
     "first_seen": "2026-11-19",
     "suppress_until": "2026-12-03"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/zoominfo-technologies-llc-principal-product-management-growth": {
+    "title": "ZoomInfo Technologies LLC: Principal Product Management, Growth",
+    "score": 0,
+    "why": "The role is a Principal Product Management position with no frontend or Angular/TypeScript responsibilities.",
+    "gap": "No UI/Angular focus",
+    "first_seen": "2026-11-20",
+    "suppress_until": "2026-12-04"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/oportun-senior-ml-engineer-r14284": {
+    "title": "Oportun: Senior ML Engineer (R14284)",
+    "score": 0,
+    "why": "This Senior ML Engineer role is centered on machine\u2011learning and backend work, not UI development.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-11-20",
+    "suppress_until": "2026-12-04"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/dropbox-backend-product-software-engineer-1": {
+    "title": "Dropbox: Backend Product Software Engineer",
+    "score": 0,
+    "why": "The Backend Product Software Engineer position is a backend\u2011only engineering role, lacking any Angular/TypeScript duties.",
+    "gap": "No UI/Angular focus",
+    "first_seen": "2026-11-20",
+    "suppress_until": "2026-12-04"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/gitlab-backend-engineer-knowledge-graph": {
+    "title": "GitLab: Backend Engineer, Knowledge Graph",
+    "score": 0,
+    "why": "The Backend Engineer, Knowledge Graph job is purely backend and does not involve frontend or Angular work.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-11-20",
+    "suppress_until": "2026-12-04"
+  },
+  "WN::https://www.workingnomads.com/job/go/2034803/": {
+    "title": "Content Reviewer - United States @ TELUS Digital",
+    "score": 0,
+    "why": "Content Reviewer is a non\u2011technical, non\u2011development role with no relevance to UI or Angular expertise.",
+    "gap": "Not a development position",
+    "first_seen": "2026-11-20",
+    "suppress_until": "2026-12-04"
   }
 }
