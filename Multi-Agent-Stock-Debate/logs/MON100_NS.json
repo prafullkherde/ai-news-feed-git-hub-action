@@ -1410,7 +1410,11 @@
       "direction_correct": true,
       "error_pct": 1.12
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 303.3,
+      "direction_correct": true,
+      "error_pct": 2.81
+    }
   },
   {
     "date": "2026-11-13",
@@ -1505,7 +1509,11 @@
       "Risk": "Low volatility but recent decline suggests risk of further downside; stop\u2011loss at 20\u2011day SMA would still allow significant loss relative to entry."
     },
     "corrections_made": "Overstated bullish case; corrected recommendation to HOLD and adjusted price forecasts.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 303.3,
+      "direction_correct": false,
+      "error_pct": 1.34
+    },
     "verified_next_week": null
   },
   {
@@ -1526,6 +1534,27 @@
       "Risk": "Portfolio constraints allow a 5% position, but given the low accuracy of past predictions (58% next\u2011day, 45% next\u2011week) and the lack of supporting fundamentals, a conservative HOLD is preferable to avoid unnecessary exposure."
     },
     "corrections_made": "Revised bullish bias assessment, removed unsupported short trade proposal, adjusted price predictions to reflect modest downward drift, set position to 0% due to HOLD recommendation",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-20",
+    "price_at_prediction": 303.3,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 295.0,
+    "predicted_next_week_price": 290.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 30.23 is high and no other fundamental data available; valuation appears stretched with no growth metrics to justify it.",
+      "Technical": "Price above 20\u2011day SMA but below 50\u2011day SMA; MACD negative and below signal; RSI in bullish range but near overbought; 3\u2011month return negative; overall medium\u2011term trend bearish.",
+      "Sentiment": "No recent news or sentiment data; neutral.",
+      "Bull": "Short\u2011term technicals (above 20\u2011day SMA, positive MACD histogram) suggest possible brief upside.",
+      "Bear": "Medium\u2011term downtrend (below 50\u2011day SMA), negative MACD, declining 3\u2011month return, high P/E without growth; risk of further decline.",
+      "Risk": "Limited upside potential, low volatility, and high valuation create a risk\u2011reward imbalance; portfolio constraints allow only 5% exposure but the trade would be marginally profitable if it works, yet the probability of success is low given track record."
+    },
+    "corrections_made": "Corrected MACD interpretation (negative and below signal, not bullish); removed erroneous claim that MACD was above signal; adjusted stop\u2011loss suggestion to reflect 20\u2011day SMA support; clarified that 50\u2011day SMA is a resistance not a target; noted lack of forward\u2011PE and other fundamentals; updated risk assessment to reflect bearish medium\u2011term trend; set recommendation to HOLD instead of BUY.",
     "verified_next_day": null,
     "verified_next_week": null
   }

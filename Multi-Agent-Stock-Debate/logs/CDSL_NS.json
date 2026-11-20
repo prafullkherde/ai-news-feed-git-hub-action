@@ -1486,7 +1486,11 @@
       "direction_correct": false,
       "error_pct": 3.73
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1423.4,
+      "direction_correct": false,
+      "error_pct": 3.14
+    }
   },
   {
     "date": "2026-11-13",
@@ -1581,7 +1585,11 @@
       "Risk": "Portfolio constraints allow small position, but recent track record (52% next\u2011day, 44% next\u2011week accuracy) and high valuation warrant a conservative stance."
     },
     "corrections_made": "Overrode Executor\u2019s buy recommendation due to high valuation and overbought RSI; adjusted next\u2011day and next\u2011week price targets to reflect potential short\u2011term pullback.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1423.4,
+      "direction_correct": true,
+      "error_pct": 0.59
+    },
     "verified_next_week": null
   },
   {
@@ -1602,6 +1610,27 @@
       "Risk": "Potential for a correction within 5\u201310% range; portfolio constraints limit position size; past accuracy low for this ticker."
     },
     "corrections_made": "None",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-20",
+    "price_at_prediction": 1423.4,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1410.0,
+    "predicted_next_week_price": 1415.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong profitability and low debt but valuation multiples (P/E 47-59, P/B 15) are high relative to peers, raising upside risk.",
+      "Technical": "Price well above 20/50 SMA but RSI 73.95 indicates overbought; MACD positive but gap may narrow; volatility low.",
+      "Sentiment": "Mixed headlines \u2013 earnings growth positive but regulatory penalty and a headline about a price slide add caution.",
+      "Bull": "Positive earnings momentum and solid margins support upside potential.",
+      "Bear": "High valuation, overbought RSI, narrow SMA cushion, and regulatory risk suggest possible pullback.",
+      "Risk": "Given past low directional accuracy (55% next-day, 44% next-week) and high valuation, a conservative stance is prudent."
+    },
+    "corrections_made": "Replaced critic responses with acknowledgment of API errors; adjusted price targets to reflect modest expected decline; maintained HOLD recommendation due to high valuation and overbought technicals.",
     "verified_next_day": null,
     "verified_next_week": null
   }

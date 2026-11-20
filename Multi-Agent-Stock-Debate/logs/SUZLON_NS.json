@@ -1439,7 +1439,11 @@
       "direction_correct": true,
       "error_pct": 0.92
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 36.95,
+      "direction_correct": true,
+      "error_pct": 1.23
+    }
   },
   {
     "date": "2026-11-13",
@@ -1534,7 +1538,11 @@
       "Risk": "Portfolio constraints allow 5% but given low track record accuracy (58% next\u2011day, 42% next\u2011week) a conservative stance is warranted."
     },
     "corrections_made": "Overrode Executor\u2019s bullish trade proposal and trade\u2011size recommendation; adjusted price predictions to reflect recent decline and high volatility; acknowledged critic errors and limited bullish bias.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 36.95,
+      "direction_correct": true,
+      "error_pct": 0.41
+    },
     "verified_next_week": null
   },
   {
@@ -1548,6 +1556,27 @@
     "position_value": 0.0,
     "why": {},
     "corrections_made": "BA response could not be parsed as JSON",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-20",
+    "price_at_prediction": 36.95,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 36.5,
+    "predicted_next_week_price": 36.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Suzlon shows solid profitability (12% margin, 25% revenue growth) but carries a very high debt\u2011to\u2011equity of 6.55, well above industry norms, raising concerns about future financing and cash\u2011flow pressure. The forward P/E of 18.1 is only slightly above the industrial sector average (~15), not a clear discount. Dividend yield is zero, indicating earnings are being reinvested rather than returned to shareholders. Overall the fundamentals are mixed: growth is strong but leverage is a risk.",
+      "Technical": "The stock is trading below both the 20\u2011day (37.32) and 50\u2011day (39.67) moving averages, with a bearish MACD cross and a 3\u2011month decline of 22.7%. Volatility is modest (2.2%) but the price has been in a downtrend, suggesting limited short\u2011term upside. A 1% upside to the 20\u2011day SMA is modest and may not justify a new position.",
+      "Sentiment": "Positive headlines about new wind\u2011farm orders are encouraging, but the volume of news is small and the market may already have priced in the contracts. No significant analyst upgrades or macro catalysts are evident. Sentiment is mildly bullish but not strong enough to override technical weakness.",
+      "Bull": "Bull case relies on order backlog and modest upside to short\u2011term SMA. However, the technical signals are bearish and the debt load limits the upside potential. The bullish narrative is not compelling enough given the risk profile.",
+      "Bear": "Bear case highlights high leverage, price below key moving averages, and a steep recent decline. These factors suggest a cautious stance. The forward P/E is not a strong bearish signal, but the debt burden and lack of dividend support add to downside risk.",
+      "Risk": "High debt\u2011to\u2011equity, zero dividend, and bearish technical indicators increase downside risk. A stop\u2011loss at 6.6% below entry would cap losses but the stock could continue to decline if leverage issues materialize. The portfolio constraint allows a small position, but the risk/reward ratio is not attractive at this time."
+    },
+    "corrections_made": "Corrected debt\u2011to\u2011equity interpretation (ratio, not percent); clarified forward P/E relative to sector; noted that the bullish narrative is not strong enough to override technical weakness; removed overstated bullish sentiment; adjusted predictions to reflect moderate downside.",
     "verified_next_day": null,
     "verified_next_week": null
   }
