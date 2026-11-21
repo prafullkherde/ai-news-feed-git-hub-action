@@ -1194,10 +1194,10 @@
   "RemoteOK::1135269": {
     "title": "Front End Developer @ Acro Commerce",
     "score": 70,
-    "why": "The posting calls for a generic Front End Developer without specifying Angular/TypeScript, so the candidate\u2019s seniority is a good fit but the score is capped at 75.",
-    "gap": "No explicit Angular/TypeScript requirement",
-    "first_seen": "2026-11-06",
-    "suppress_until": "2026-11-20"
+    "why": "The position is a Front End Developer role but does not explicitly require Angular or TypeScript, so the candidate\u2019s expertise is relevant but not a perfect match.",
+    "gap": "Lack of explicit Angular/TypeScript requirement",
+    "first_seen": "2026-11-21",
+    "suppress_until": "2026-12-05"
   },
   "WN::https://www.workingnomads.com/job/go/1746261/": {
     "title": "Account Manager, Creative Operations @ Storm Ideas",
@@ -2417,11 +2417,11 @@
   },
   "WWR::https://weworkremotely.com/remote-jobs/yooli-full-time-software-engineer-position-react-and-rest-1": {
     "title": "Yooli: FULL TIME: Software Engineer Position - React and Rest",
-    "score": 60,
-    "why": "Senior UI architect with 17+\u202fyears, but the role is React\u2011only and the candidate\u2019s expertise is Angular/TypeScript, triggering the 60\u2011point cap.",
-    "gap": "Lack of demonstrated React experience.",
-    "first_seen": "2026-10-19",
-    "suppress_until": "2026-11-02"
+    "score": 55,
+    "why": "The job calls for React (a different stack) and REST APIs, which caps the candidate\u2019s score despite senior experience.",
+    "gap": "React\u2011only stack, no Angular/TypeScript",
+    "first_seen": "2026-11-21",
+    "suppress_until": "2026-12-05"
   },
   "WWR::https://weworkremotely.com/remote-jobs/thehivecareers-co-web-developer-remote-1": {
     "title": "thehivecareers.co: Web Developer (Remote)",
@@ -5182,5 +5182,37 @@
     "gap": "Not a development position",
     "first_seen": "2026-11-20",
     "suppress_until": "2026-12-04"
+  },
+  "RemoteOK::1137835": {
+    "title": "Technical Lead Norm Compliance @ Norm",
+    "score": 0,
+    "why": "The role is a Technical Lead for compliance and does not specify any frontend or Angular/TypeScript responsibilities.",
+    "gap": "No UI/Angular focus",
+    "first_seen": "2026-11-21",
+    "suppress_until": "2026-12-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/custom-mechanical-solutions-quality-and-reliability-engineer": {
+    "title": "Custom Mechanical Solutions: Quality and Reliability Engineer",
+    "score": 0,
+    "why": "This is a Quality and Reliability Engineer role focused on mechanical systems, unrelated to UI development.",
+    "gap": "Pure engineering/QA, no frontend work",
+    "first_seen": "2026-11-21",
+    "suppress_until": "2026-12-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/welcomehome-software-senior-software-engineer": {
+    "title": "WelcomeHome Software: Senior Software Engineer",
+    "score": 0,
+    "why": "The Senior Software Engineer listing provides no indication of a frontend focus or Angular/TypeScript usage.",
+    "gap": "Unclear UI requirements, likely non\u2011frontend",
+    "first_seen": "2026-11-21",
+    "suppress_until": "2026-12-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/knock-lending-manager-front-end-remote": {
+    "title": "Knock: Lending Manager (Front End) - Remote",
+    "score": 70,
+    "why": "The Lending Manager (Front End) role is UI\u2011focused but does not mention Angular or TypeScript, limiting the score to the generic front\u2011end cap.",
+    "gap": "No explicit Angular/TypeScript requirement",
+    "first_seen": "2026-11-21",
+    "suppress_until": "2026-12-05"
   }
 }
