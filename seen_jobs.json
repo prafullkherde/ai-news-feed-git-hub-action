@@ -114,18 +114,18 @@
   "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-ai-engineer-architect": {
     "title": "A.Team: Senior Independent AI Engineer / Architect",
     "score": 0,
-    "why": "This is an AI engineering/architecture role that does not involve UI or Angular/TypeScript work.",
-    "gap": "None",
-    "first_seen": "2026-10-24",
-    "suppress_until": "2026-11-07"
+    "why": "The position focuses on AI engineering/architecture, not on Angular or TypeScript frontend work.",
+    "gap": "No Angular/TypeScript requirement (None)",
+    "first_seen": "2026-11-22",
+    "suppress_until": "2026-12-06"
   },
   "WWR::https://weworkremotely.com/remote-jobs/a-team-senior-independent-software-developer-90-170-hr": {
     "title": "A.Team: Senior Independent Software Developer ($90-$170/hr)",
-    "score": 68,
-    "why": "The position is a senior\u2011level independent software developer role that is not UI\u2011specific, limiting the relevance of the candidate\u2019s deep Angular expertise.",
-    "gap": "Lack of explicit UI/Angular focus",
-    "first_seen": "2026-10-22",
-    "suppress_until": "2026-11-05"
+    "score": 0,
+    "why": "The listing is a generic Senior Software Developer role with no explicit Angular or TypeScript focus.",
+    "gap": "Lack of Angular/TypeScript requirement (None)",
+    "first_seen": "2026-11-22",
+    "suppress_until": "2026-12-06"
   },
   "WWR::https://weworkremotely.com/remote-jobs/memora-aps-founding-engineer": {
     "title": "Memora ApS: Founding Engineer",
@@ -5214,5 +5214,21 @@
     "gap": "No explicit Angular/TypeScript requirement",
     "first_seen": "2026-11-21",
     "suppress_until": "2026-12-05"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/crazy-maple-studio-screenwriter-reelshort-contractor": {
+    "title": "Crazy Maple Studio: Screenwriter - ReelShort (Contractor)",
+    "score": 0,
+    "why": "The role is a Screenwriter position, unrelated to UI/Frontend development.",
+    "gap": "No relevant technical requirements (None)",
+    "first_seen": "2026-11-22",
+    "suppress_until": "2026-12-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/mantech-quantum-research-scientist": {
+    "title": "MANTECH: Quantum Research Scientist",
+    "score": 0,
+    "why": "The job is a Quantum Research Scientist role, unrelated to UI/Frontend development.",
+    "gap": "No relevant frontend technology mentioned (None)",
+    "first_seen": "2026-11-22",
+    "suppress_until": "2026-12-06"
   }
 }
