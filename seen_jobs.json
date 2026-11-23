@@ -5230,5 +5230,29 @@
     "gap": "No relevant frontend technology mentioned (None)",
     "first_seen": "2026-11-22",
     "suppress_until": "2026-12-06"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/drfirst-com-inc-senior-software-engineer": {
+    "title": "DRFIRST COM INC: Senior Software Engineer",
+    "score": 65,
+    "why": "The posting does not mention Angular or TypeScript, so the candidate\u2019s core expertise is not explicitly required, limiting the score.",
+    "gap": "No Angular/TypeScript requirement",
+    "first_seen": "2026-11-23",
+    "suppress_until": "2026-12-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/secure-privacy-senior-full-stack-web-developer-net-c-mongodb-angular-redux-ai-first-with-gdpr-experience": {
+    "title": "Secure Privacy: Senior Full-Stack Web Developer (.NET/C#/MongoDB/Angular/Redux) \u2013 AI-First, with GDPR Experience",
+    "score": 92,
+    "why": "The role explicitly requires Angular (and Redux) which aligns with the candidate\u2019s 17+ years of Angular/TypeScript experience, making them a strong fit.",
+    "gap": "Lack of .NET/C# experience",
+    "first_seen": "2026-11-23",
+    "suppress_until": "2026-12-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-ml-inference-engineer-terminal-bench-task-designer": {
+    "title": "Toptal: ML Inference Engineer \u2013 Terminal-Bench Task Designer",
+    "score": 0,
+    "why": "The position is focused on ML inference engineering, a pure backend/ML role with no UI responsibilities.",
+    "gap": "Not a UI role",
+    "first_seen": "2026-11-23",
+    "suppress_until": "2026-12-07"
   }
 }
