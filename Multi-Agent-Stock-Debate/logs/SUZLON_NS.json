@@ -1497,7 +1497,11 @@
       "direction_correct": true,
       "error_pct": -1.61
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 35.86,
+      "direction_correct": false,
+      "error_pct": -8.05
+    }
   },
   {
     "date": "2026-11-17",
@@ -1581,7 +1585,11 @@
       "Risk": "High debt\u2011to\u2011equity, zero dividend, and bearish technical indicators increase downside risk. A stop\u2011loss at 6.6% below entry would cap losses but the stock could continue to decline if leverage issues materialize. The portfolio constraint allows a small position, but the risk/reward ratio is not attractive at this time."
     },
     "corrections_made": "Corrected debt\u2011to\u2011equity interpretation (ratio, not percent); clarified forward P/E relative to sector; noted that the bullish narrative is not strong enough to override technical weakness; removed overstated bullish sentiment; adjusted predictions to reflect moderate downside.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 35.86,
+      "direction_correct": true,
+      "error_pct": -1.75
+    },
     "verified_next_week": null
   },
   {
@@ -1602,6 +1610,27 @@
       "Risk": "Leverage risk, modest volatility, potential for downside; portfolio constraint limits exposure."
     },
     "corrections_made": "none",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-24",
+    "price_at_prediction": 35.86,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 35.5,
+    "predicted_next_week_price": 35.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High debt\u2011to\u2011equity (6.55) and modest forward P/E improvement suggest limited upside; profitability is solid but leverage is a concern.",
+      "Technical": "Price below 20\u2011 and 50\u2011day SMAs, 3\u2011month decline 23.7%; RSI neutral, MACD barely bullish \u2013 no strong reversal signal.",
+      "Sentiment": "Positive contract news exists but no evidence of a sustained earnings surge; analyst upgrades are speculative.",
+      "Bull": "Forward P/E lower than trailing P/E, but valuation still high relative to peers; order pipeline may support revenue but not immediate price action.",
+      "Bear": "High leverage, high P/B, weak recent momentum, limited earnings upside; risk of further downside.",
+      "Risk": "Portfolio constraints allow 5% exposure but given the risk profile a conservative stance is warranted."
+    },
+    "corrections_made": "Corrected executor\u2019s stop\u2011loss placement (should be below entry, not above); removed unrealistic 2% allocation claim; acknowledged lack of verified next\u2011day/next\u2011week accuracy; adjusted recommendation to HOLD instead of BUY.",
     "verified_next_day": null,
     "verified_next_week": null
   }

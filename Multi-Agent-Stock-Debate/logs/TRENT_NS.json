@@ -1565,7 +1565,11 @@
       "direction_correct": true,
       "error_pct": 0.2
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3208.0,
+      "direction_correct": true,
+      "error_pct": 0.25
+    }
   },
   {
     "date": "2026-11-17",
@@ -1660,7 +1664,11 @@
       "Risk": "High valuation, overbought technicals, and low volatility suggest a cautious approach; no significant downside risk identified beyond normal market fluctuations."
     },
     "corrections_made": "Corrected trade size interpretation (\u20b98.7\u202fbillion was a mis\u2011calculation; actual position would be ~\u20b916,125 for 5% of \u20b9100,000). Rejected short proposal due to portfolio constraints. Updated recommendation to HOLD instead of short.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3208.0,
+      "direction_correct": true,
+      "error_pct": 0.25
+    },
     "verified_next_week": null
   },
   {
@@ -1681,6 +1689,27 @@
       "Risk": "Portfolio constraints limit position size; high valuation and overbought status increase downside risk."
     },
     "corrections_made": "None",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-24",
+    "price_at_prediction": 3208.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3220.0,
+    "predicted_next_week_price": 3300.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High P/E and P/B ratios suggest overvaluation; modest profit margin and low dividend yield reduce income appeal; debt-to-equity is moderate but not negligible.",
+      "Technical": "Price above 20\u2011 and 50\u2011day SMAs with bullish RSI and MACD, but RSI approaching 70 and MACD gap modest; overall momentum is positive but not explosive.",
+      "Sentiment": "No recent news headlines available; sentiment uncertain.",
+      "Bull": "Forward P/E lower than trailing P/E indicates expected earnings improvement; strong ROE and revenue growth support upside potential.",
+      "Bear": "High valuation multiples and approaching overbought RSI raise risk of pullback; modest MACD gap may not sustain rally.",
+      "Risk": "Portfolio constraint limits position to 1 share (~0.5% exposure); volatility low but valuation risk high; conservative stance advised."
+    },
+    "corrections_made": "Revised recommendation to HOLD due to strict 5% portfolio limit and overvaluation concerns; adjusted price targets to modest upside; removed erroneous large position proposal.",
     "verified_next_day": null,
     "verified_next_week": null
   }

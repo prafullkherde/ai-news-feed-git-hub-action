@@ -1544,7 +1544,11 @@
       "direction_correct": true,
       "error_pct": 0.33
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1395.0,
+      "direction_correct": true,
+      "error_pct": -1.76
+    }
   },
   {
     "date": "2026-11-17",
@@ -1639,7 +1643,11 @@
       "Risk": "Given past low directional accuracy (55% next-day, 44% next-week) and high valuation, a conservative stance is prudent."
     },
     "corrections_made": "Replaced critic responses with acknowledgment of API errors; adjusted price targets to reflect modest expected decline; maintained HOLD recommendation due to high valuation and overbought technicals.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1395.0,
+      "direction_correct": true,
+      "error_pct": -1.06
+    },
     "verified_next_week": null
   },
   {
@@ -1660,6 +1668,27 @@
       "Risk": "Portfolio constraint limits position to 5% of \u20b9100,000 (\u20b95,000); current trade proposal would exceed by a factor of 1,000; historical accuracy for this ticker is low (next\u2011day 53%, next\u2011week 46%)."
     },
     "corrections_made": "None",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-24",
+    "price_at_prediction": 1395.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1390.0,
+    "predicted_next_week_price": 1380.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples (P/E 57.7, P/B 14.7) and modest revenue growth (22%) suggest limited upside; strong profitability and low debt mitigate risk but do not offset premium.",
+      "Technical": "Price above 20\u2011 and 50\u2011day SMAs but RSI 73.3 indicates overbought; MACD bullish but may reverse; low volatility (1.8%) and modest 3\u2011month return (3.65%) imply limited momentum.",
+      "Sentiment": "Mixed headlines: earnings highlights positive, but regulatory penalty and price slide caution; overall sentiment neutral\u2011to\u2011cautious.",
+      "Bull": "Strong earnings quality and low leverage could support future earnings growth, but current price may be too high for such growth.",
+      "Bear": "Valuation stretched, overbought technicals, low volatility and regulatory risk increase downside probability.",
+      "Risk": "Portfolio constraints limit position size; high valuation and overbought signals raise risk of correction."
+    },
+    "corrections_made": "Overrode the executor\u2019s buy recommendation due to portfolio cap violation and overbought technicals; adjusted price predictions to reflect conservative outlook.",
     "verified_next_day": null,
     "verified_next_week": null
   }

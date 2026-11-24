@@ -1468,7 +1468,11 @@
       "direction_correct": true,
       "error_pct": -0.3
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 296.98,
+      "direction_correct": true,
+      "error_pct": 0.67
+    }
   },
   {
     "date": "2026-11-17",
@@ -1563,7 +1567,11 @@
       "Risk": "Limited upside potential, low volatility, and high valuation create a risk\u2011reward imbalance; portfolio constraints allow only 5% exposure but the trade would be marginally profitable if it works, yet the probability of success is low given track record."
     },
     "corrections_made": "Corrected MACD interpretation (negative and below signal, not bullish); removed erroneous claim that MACD was above signal; adjusted stop\u2011loss suggestion to reflect 20\u2011day SMA support; clarified that 50\u2011day SMA is a resistance not a target; noted lack of forward\u2011PE and other fundamentals; updated risk assessment to reflect bearish medium\u2011term trend; set recommendation to HOLD instead of BUY.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 296.98,
+      "direction_correct": true,
+      "error_pct": 0.67
+    },
     "verified_next_week": null
   },
   {
@@ -1584,6 +1592,27 @@
       "Risk": "Portfolio constraints allow 5% exposure, but the technical bias and low volatility reduce upside; a hold preserves capital until clearer signals emerge."
     },
     "corrections_made": "Overstated bullish potential by citing 20\u2011SMA as strong support; corrected to note 50\u2011SMA gap and negative MACD weaken rebound case; removed unsupported claim of \u201creasonable valuation multiple\u201d due to lack of growth data; adjusted predictions to reflect moderate downside.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-24",
+    "price_at_prediction": 296.98,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 295.0,
+    "predicted_next_week_price": 290.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing PE of 30.04 is high but no other fundamental data; cannot justify a bullish stance.",
+      "Technical": "Price below 50\u2011day SMA, negative MACD, RSI in upper\u2011mid; signals weak medium\u2011term trend.",
+      "Sentiment": "No recent headlines; sentiment unknown.",
+      "Bull": "Short\u2011term support near SMA\u201120 but overall bearish indicators outweigh it.",
+      "Bear": "Price below SMA\u201150, negative MACD, 3\u2011month decline; suggests further downside.",
+      "Risk": "Low volatility but recent 10% drop; risk of additional pullback."
+    },
+    "corrections_made": "Overrode Executor\u2019s bullish trade proposal and recommendation; acknowledged lack of fundamental data and weak technical signals; adjusted next\u2011week price forecast to reflect potential further decline.",
     "verified_next_day": null,
     "verified_next_week": null
   }
