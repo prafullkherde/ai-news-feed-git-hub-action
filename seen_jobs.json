@@ -5254,5 +5254,37 @@
     "gap": "Not a UI role",
     "first_seen": "2026-11-23",
     "suppress_until": "2026-12-07"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/vertican-senior-applied-ai-engineer-document-intelligence": {
+    "title": "Vertican: Senior Applied AI Engineer, Document Intelligence",
+    "score": 0,
+    "why": "The role is focused on applied AI and document intelligence, with no mention of frontend, Angular, or TypeScript.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-11-24",
+    "suppress_until": "2026-12-08"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/toptal-cryptography-specialist-for-ai-lab": {
+    "title": "Toptal: Cryptography Specialist for AI lab",
+    "score": 0,
+    "why": "This position centers on cryptography for an AI lab, lacking any frontend or Angular/TypeScript responsibilities.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-11-24",
+    "suppress_until": "2026-12-08"
+  },
+  "WN::https://www.workingnomads.com/job/go/2043539/": {
+    "title": "Looking For Online ESL Teachers - Remote- Joining Rewards of up to USD $100 @ Polly English",
+    "score": 0,
+    "why": "The job is for online ESL teaching, which is unrelated to UI development or Angular/TypeScript.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-11-24",
+    "suppress_until": "2026-12-08"
+  },
+  "WN::https://www.workingnomads.com/job/go/2043006/": {
+    "title": "Case Manager (Philippines) @ Sneed & Mitchell LLP",
+    "score": 0,
+    "why": "A case manager role is a non\u2011technical, non\u2011frontend position with no relevance to Angular or TypeScript.",
+    "gap": "No frontend/Angular requirement",
+    "first_seen": "2026-11-24",
+    "suppress_until": "2026-12-08"
   }
 }
