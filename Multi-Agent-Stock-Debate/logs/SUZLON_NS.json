@@ -1468,7 +1468,11 @@
       "direction_correct": true,
       "error_pct": -0.19
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 36.96,
+      "direction_correct": true,
+      "error_pct": -2.74
+    }
   },
   {
     "date": "2026-11-16",
@@ -1577,6 +1581,27 @@
       "Risk": "High debt\u2011to\u2011equity, zero dividend, and bearish technical indicators increase downside risk. A stop\u2011loss at 6.6% below entry would cap losses but the stock could continue to decline if leverage issues materialize. The portfolio constraint allows a small position, but the risk/reward ratio is not attractive at this time."
     },
     "corrections_made": "Corrected debt\u2011to\u2011equity interpretation (ratio, not percent); clarified forward P/E relative to sector; noted that the bullish narrative is not strong enough to override technical weakness; removed overstated bullish sentiment; adjusted predictions to reflect moderate downside.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-24",
+    "price_at_prediction": 36.96,
+    "recommendation": "HOLD",
+    "confidence": "Low",
+    "predicted_next_day_price": 36.5,
+    "predicted_next_week_price": 35.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong earnings growth and high ROE but very high debt-to-equity and zero dividend yield; valuation modest but not compelling.",
+      "Technical": "Price below 20\u2011day and 50\u2011day SMAs, RSI near over\u2011bought, MACD negative; 3\u2011month decline of 20.97% indicates weak trend.",
+      "Sentiment": "Positive order pipeline headlines but no earnings or operational upside; sentiment neutral to slightly bullish but not enough to offset technical weakness.",
+      "Bull": "Forward P/E lower than trailing but not enough upside; order pipeline may support revenue but debt risk remains.",
+      "Bear": "High leverage, negative momentum, recent decline; risk of further pullback.",
+      "Risk": "Leverage risk, modest volatility, potential for downside; portfolio constraint limits exposure."
+    },
+    "corrections_made": "none",
     "verified_next_day": null,
     "verified_next_week": null
   }

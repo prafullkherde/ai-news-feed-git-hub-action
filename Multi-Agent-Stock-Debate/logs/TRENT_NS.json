@@ -1536,7 +1536,11 @@
       "direction_correct": false,
       "error_pct": 1.06
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3256.1,
+      "direction_correct": true,
+      "error_pct": 1.75
+    }
   },
   {
     "date": "2026-11-16",
@@ -1631,7 +1635,11 @@
       "Risk": "Portfolio constraint limits position to 5%; current exposure is 0%; risk of overvaluation and short\u2011term pullback outweighs potential gains."
     },
     "corrections_made": "Overrode Executor\u2019s buy recommendation due to portfolio constraint violation and high valuation; adjusted price targets to more conservative levels; noted lack of recent headlines in sentiment analysis.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3256.1,
+      "direction_correct": false,
+      "error_pct": 2.72
+    },
     "verified_next_week": null
   },
   {
@@ -1652,6 +1660,27 @@
       "Risk": "High valuation, overbought technicals, and low volatility suggest a cautious approach; no significant downside risk identified beyond normal market fluctuations."
     },
     "corrections_made": "Corrected trade size interpretation (\u20b98.7\u202fbillion was a mis\u2011calculation; actual position would be ~\u20b916,125 for 5% of \u20b9100,000). Rejected short proposal due to portfolio constraints. Updated recommendation to HOLD instead of short.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-24",
+    "price_at_prediction": 3256.1,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3240.0,
+    "predicted_next_week_price": 3300.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation (PE 90.24/62.90) and modest profit margin (8.6%) suggest limited upside; strong revenue growth (21.9%) but low dividend yield (0.12%) indicates reinvestment focus.",
+      "Technical": "Price above 20\u2011 and 50\u2011day SMAs and MACD bullish, but RSI 77.24 indicates overbought; volatility low (2.26%) supports stability but may mask a pullback.",
+      "Sentiment": "No recent news; technicals imply bullish momentum but overbought signals caution.",
+      "Bull": "Strong revenue growth and high ROE (27%) support future earnings improvement.",
+      "Bear": "Very high PE and P/B ratios, overbought RSI, modest margins raise valuation risk.",
+      "Risk": "Portfolio constraints limit position size; high valuation and overbought status increase downside risk."
+    },
+    "corrections_made": "None",
     "verified_next_day": null,
     "verified_next_week": null
   }

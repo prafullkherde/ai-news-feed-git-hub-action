@@ -1515,7 +1515,11 @@
       "direction_correct": true,
       "error_pct": -0.42
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1430.0,
+      "direction_correct": true,
+      "error_pct": 0.35
+    }
   },
   {
     "date": "2026-11-16",
@@ -1610,7 +1614,11 @@
       "Risk": "Potential for a correction within 5\u201310% range; portfolio constraints limit position size; past accuracy low for this ticker."
     },
     "corrections_made": "None",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1430.0,
+      "direction_correct": false,
+      "error_pct": 1.78
+    },
     "verified_next_week": null
   },
   {
@@ -1631,6 +1639,27 @@
       "Risk": "Given past low directional accuracy (55% next-day, 44% next-week) and high valuation, a conservative stance is prudent."
     },
     "corrections_made": "Replaced critic responses with acknowledgment of API errors; adjusted price targets to reflect modest expected decline; maintained HOLD recommendation due to high valuation and overbought technicals.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-24",
+    "price_at_prediction": 1430.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1425.0,
+    "predicted_next_week_price": 1410.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples (trailing P/E 57.7, forward P/E 46.1, P/B 14.7) and modest dividend yield (0.89%) reduce upside potential; strong profitability and low leverage are positive but may not justify current price.",
+      "Technical": "RSI 79.5 indicates overbought condition; price only 9% above 20\u2011day SMA and 8.7% above 50\u2011day SMA, suggesting limited room for further upside before a pull\u2011back; low volatility (1.79%) could precede a sharper reversal.",
+      "Sentiment": "Mixed headlines with regulatory penalty and a \u201cSlide?\u201d headline introduce downside risk; earnings\u2011call positives are outweighed by negative coverage.",
+      "Bull": "Profit margins and ROE are strong, but valuation compression required; technicals show bullish divergence but overbought risk.",
+      "Bear": "High valuation, overbought RSI, low volatility, regulatory risk, and limited upside above SMAs support caution.",
+      "Risk": "Portfolio constraint limits position to 5% of \u20b9100,000 (\u20b95,000); current trade proposal would exceed by a factor of 1,000; historical accuracy for this ticker is low (next\u2011day 53%, next\u2011week 46%)."
+    },
+    "corrections_made": "None",
     "verified_next_day": null,
     "verified_next_week": null
   }
