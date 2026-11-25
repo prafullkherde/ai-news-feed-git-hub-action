@@ -1712,5 +1712,26 @@
     "corrections_made": "Revised recommendation to HOLD due to strict 5% portfolio limit and overvaluation concerns; adjusted price targets to modest upside; removed erroneous large position proposal.",
     "verified_next_day": null,
     "verified_next_week": null
+  },
+  {
+    "date": "2026-11-25",
+    "price_at_prediction": 3208.0,
+    "recommendation": "BUY",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3220.0,
+    "predicted_next_week_price": 3380.0,
+    "proposed_position_pct": 2.0,
+    "position_value": 2000.0,
+    "why": {
+      "Fundamental": "The company shows solid profitability (profit margin ~8.6%) and strong ROE (~27%) but carries very high valuation multiples (trailing PE 93, forward PE 65) that may be unsustainable if growth slows. The modest debt-to-equity (~29%) and low dividend yield suggest a growth\u2011oriented strategy.",
+      "Technical": "Price is well above both 20\u2011day and 50\u2011day SMAs, RSI is 67.7 (below overbought), MACD positive and above signal, indicating bullish momentum. Volatility is low (2.26%) so a modest target is reasonable.",
+      "Sentiment": "No recent headlines; technicals dominate sentiment assessment. Market appears neutral to slightly bullish.",
+      "Bull": "Bull case highlights strong trend, good earnings efficiency, and low leverage.",
+      "Bear": "Bear case points to high valuation and modest upside potential; risk if earnings miss expectations.",
+      "Risk": "Target 3380 (~5.4% upside) with stop 3100 (~2.7% downside) gives risk\u2011reward ~1:2.5. Position size 2% of portfolio keeps dollar risk within 5% cap."
+    },
+    "corrections_made": "Adjusted target to 3380 based on 5.4% upside rather than 5.4% of 3\u2011month gain; clarified that 2% portfolio exposure is within 5% limit; noted that high PE may overstate growth expectations and added risk commentary.",
+    "verified_next_day": null,
+    "verified_next_week": null
   }
 ]

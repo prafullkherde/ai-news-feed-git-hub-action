@@ -1497,7 +1497,11 @@
       "direction_correct": true,
       "error_pct": -1.24
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 294.03,
+      "direction_correct": true,
+      "error_pct": -1.33
+    }
   },
   {
     "date": "2026-11-18",
@@ -1592,7 +1596,11 @@
       "Risk": "Portfolio constraints allow 5% exposure, but the technical bias and low volatility reduce upside; a hold preserves capital until clearer signals emerge."
     },
     "corrections_made": "Overstated bullish potential by citing 20\u2011SMA as strong support; corrected to note 50\u2011SMA gap and negative MACD weaken rebound case; removed unsupported claim of \u201creasonable valuation multiple\u201d due to lack of growth data; adjusted predictions to reflect moderate downside.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 294.03,
+      "direction_correct": true,
+      "error_pct": -0.33
+    },
     "verified_next_week": null
   },
   {
@@ -1613,6 +1621,31 @@
       "Risk": "Low volatility but recent 10% drop; risk of additional pullback."
     },
     "corrections_made": "Overrode Executor\u2019s bullish trade proposal and recommendation; acknowledged lack of fundamental data and weak technical signals; adjusted next\u2011week price forecast to reflect potential further decline.",
+    "verified_next_day": {
+      "actual_price": 294.03,
+      "direction_correct": true,
+      "error_pct": -0.33
+    },
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-25",
+    "price_at_prediction": 294.03,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 292.5,
+    "predicted_next_week_price": 285.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing PE of 29.74 is high but no other fundamentals available; valuation unsupported, risk of overvaluation.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, RSI modestly bullish, MACD slightly above signal but negative; overall weak trend.",
+      "Sentiment": "No recent news; quantitative signals suggest cautious sentiment.",
+      "Bull": "Small bullish crossover and modest RSI could trigger a short\u2011term bounce, but limited upside.",
+      "Bear": "Downward bias from 50\u2011day SMA gap, 3\u2011month loss, weak momentum; potential for further decline.",
+      "Risk": "Limited data, high volatility relative to position size, past prediction accuracy low; conservative stance advised."
+    },
+    "corrections_made": "Overrode Executor\u2019s short trade proposal due to insufficient evidence and portfolio constraints; corrected confidence to Medium based on track record.",
     "verified_next_day": null,
     "verified_next_week": null
   }
