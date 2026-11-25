@@ -4626,58 +4626,58 @@
   "WN::https://www.workingnomads.com/job/go/2007977/": {
     "title": "Senior SecOps Engineer @ Proxify",
     "score": 0,
-    "why": "Senior SecOps Engineer is a security\u2011operations role, not a UI/Frontend position.",
-    "gap": "None",
-    "first_seen": "2026-11-10",
-    "suppress_until": "2026-11-24"
+    "why": "Senior SecOps Engineer is a security\u2011operations role with no frontend responsibilities.",
+    "gap": "Pure security/ops focus",
+    "first_seen": "2026-11-25",
+    "suppress_until": "2026-12-09"
   },
   "WN::https://www.workingnomads.com/job/go/2007975/": {
     "title": "Senior AI Engineer (Backend-Focused) @ Proxify",
     "score": 0,
-    "why": "Senior AI Engineer (Backend\u2011Focused) is a backend\u2011centric role with no frontend requirements.",
-    "gap": "None",
-    "first_seen": "2026-11-10",
-    "suppress_until": "2026-11-24"
+    "why": "Senior AI Engineer (Backend\u2011Focused) is centered on backend AI work, not UI/frontend.",
+    "gap": "Pure backend focus",
+    "first_seen": "2026-11-25",
+    "suppress_until": "2026-12-09"
   },
   "WN::https://www.workingnomads.com/job/go/2007974/": {
     "title": "Senior Fullstack Developer (React.js / Node.js) @ Proxify",
     "score": 60,
-    "why": "The position requires React.js (a non\u2011Angular stack), which caps the score at 60 according to the rules.",
-    "gap": "Lack of React experience (candidate\u2019s expertise is Angular/TypeScript).",
-    "first_seen": "2026-11-10",
-    "suppress_until": "2026-11-24"
+    "why": "The position is a Senior Fullstack Developer using React.js, which is a frontend stack but does not require Angular/TypeScript, so the candidate\u2019s primary expertise is not a direct match and the score is capped at 60.",
+    "gap": "Lack of React experience (candidate specializes in Angular/TypeScript)",
+    "first_seen": "2026-11-25",
+    "suppress_until": "2026-12-09"
   },
   "WN::https://www.workingnomads.com/job/go/2007972/": {
     "title": "Senior DevOps Engineer (Azure) @ Proxify",
     "score": 0,
-    "why": "Senior DevOps Engineer (Azure) is a DevOps role, excluded by the scoring rules.",
-    "gap": "None",
-    "first_seen": "2026-11-10",
-    "suppress_until": "2026-11-24"
+    "why": "Senior DevOps Engineer (Azure) is a DevOps role with no frontend component.",
+    "gap": "Pure DevOps focus",
+    "first_seen": "2026-11-25",
+    "suppress_until": "2026-12-09"
   },
   "WN::https://www.workingnomads.com/job/go/2007970/": {
     "title": "Senior DevOps Engineer (GCP) @ Proxify",
     "score": 0,
-    "why": "Senior DevOps Engineer (GCP) is a DevOps position, excluded by the scoring rules.",
-    "gap": "None",
-    "first_seen": "2026-11-10",
-    "suppress_until": "2026-11-24"
+    "why": "Senior DevOps Engineer (GCP) is a DevOps position, not a UI/frontend role.",
+    "gap": "Pure DevOps focus",
+    "first_seen": "2026-11-25",
+    "suppress_until": "2026-12-09"
   },
   "WN::https://www.workingnomads.com/job/go/2007968/": {
     "title": "Senior Data Engineer (Azure) @ Proxify",
     "score": 0,
-    "why": "Senior Data Engineer (Azure) is a data\u2011engineering role, not a UI/Frontend job.",
-    "gap": "None",
-    "first_seen": "2026-11-10",
-    "suppress_until": "2026-11-24"
+    "why": "Senior Data Engineer (Azure) is a data\u2011engineering role, unrelated to frontend development.",
+    "gap": "Pure data/backend focus",
+    "first_seen": "2026-11-25",
+    "suppress_until": "2026-12-09"
   },
   "WN::https://www.workingnomads.com/job/go/2007966/": {
     "title": "Senior Data Engineer (Python) @ Proxify",
     "score": 0,
-    "why": "Senior Data Engineer (Python) is a backend/data role with no UI focus.",
-    "gap": "None",
-    "first_seen": "2026-11-10",
-    "suppress_until": "2026-11-24"
+    "why": "Senior Data Engineer (Python) is a data\u2011engineering position with no frontend responsibilities.",
+    "gap": "Pure data/backend focus",
+    "first_seen": "2026-11-25",
+    "suppress_until": "2026-12-09"
   },
   "WN::https://www.workingnomads.com/job/go/2007948/": {
     "title": "Senior MS Power BI Developer @ Proxify",
@@ -5286,5 +5286,13 @@
     "gap": "No frontend/Angular requirement",
     "first_seen": "2026-11-24",
     "suppress_until": "2026-12-08"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/epam-systems-senior-web-application-security-engineer": {
+    "title": "EPAM Systems: Senior Web Application Security Engineer",
+    "score": 0,
+    "why": "The role is a Senior Web Application Security Engineer, which is a pure security/backend position and does not involve frontend development.",
+    "gap": "Pure security/backend focus",
+    "first_seen": "2026-11-25",
+    "suppress_until": "2026-12-09"
   }
 }
