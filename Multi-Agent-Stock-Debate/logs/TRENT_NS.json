@@ -1594,7 +1594,11 @@
       "direction_correct": true,
       "error_pct": 0.0
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 3319.6,
+      "direction_correct": true,
+      "error_pct": 3.09
+    }
   },
   {
     "date": "2026-11-18",
@@ -1689,7 +1693,11 @@
       "Risk": "Portfolio constraints limit position size; high valuation and overbought status increase downside risk."
     },
     "corrections_made": "None",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3319.6,
+      "direction_correct": false,
+      "error_pct": 2.46
+    },
     "verified_next_week": null
   },
   {
@@ -1710,7 +1718,11 @@
       "Risk": "Portfolio constraint limits position to 1 share (~0.5% exposure); volatility low but valuation risk high; conservative stance advised."
     },
     "corrections_made": "Revised recommendation to HOLD due to strict 5% portfolio limit and overvaluation concerns; adjusted price targets to modest upside; removed erroneous large position proposal.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 3319.6,
+      "direction_correct": true,
+      "error_pct": 3.09
+    },
     "verified_next_week": null
   },
   {
@@ -1731,6 +1743,27 @@
       "Risk": "Target 3380 (~5.4% upside) with stop 3100 (~2.7% downside) gives risk\u2011reward ~1:2.5. Position size 2% of portfolio keeps dollar risk within 5% cap."
     },
     "corrections_made": "Adjusted target to 3380 based on 5.4% upside rather than 5.4% of 3\u2011month gain; clarified that 2% portfolio exposure is within 5% limit; noted that high PE may overstate growth expectations and added risk commentary.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-26",
+    "price_at_prediction": 3319.6,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 3320.0,
+    "predicted_next_week_price": 3300.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High P/E and P/B suggest valuation premium; modest margins and debt-to-equity moderate risk; no recent earnings guidance to support a bullish move.",
+      "Technical": "Price well above 20\u2011 and 50\u2011day SMAs but RSI in overbought territory; MACD bullish but may not sustain; volatility low, indicating limited room for large moves.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Potential upside if earnings improve, but valuation remains high.",
+      "Bear": "Overbought RSI and narrow cushion above 20\u2011day SMA raise pullback risk; high valuation may correct.",
+      "Risk": "Portfolio constraints limit position size; shorting would violate limits; existing exposure is zero, so holding is safest."
+    },
+    "corrections_made": "None",
     "verified_next_day": null,
     "verified_next_week": null
   }

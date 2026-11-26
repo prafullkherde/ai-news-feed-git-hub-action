@@ -1573,7 +1573,11 @@
       "direction_correct": true,
       "error_pct": 1.19
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1413.0,
+      "direction_correct": true,
+      "error_pct": 2.39
+    }
   },
   {
     "date": "2026-11-18",
@@ -1668,7 +1672,11 @@
       "Risk": "Portfolio constraint limits position to 5% of \u20b9100,000 (\u20b95,000); current trade proposal would exceed by a factor of 1,000; historical accuracy for this ticker is low (next\u2011day 53%, next\u2011week 46%)."
     },
     "corrections_made": "None",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1413.0,
+      "direction_correct": true,
+      "error_pct": -0.84
+    },
     "verified_next_week": null
   },
   {
@@ -1689,7 +1697,11 @@
       "Risk": "Portfolio constraints limit position size; high valuation and overbought signals raise risk of correction."
     },
     "corrections_made": "Overrode the executor\u2019s buy recommendation due to portfolio cap violation and overbought technicals; adjusted price predictions to reflect conservative outlook.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1413.0,
+      "direction_correct": false,
+      "error_pct": 1.65
+    },
     "verified_next_week": null
   },
   {
@@ -1710,6 +1722,27 @@
       "Risk": "Exceeds portfolio exposure limits if a trade were taken; high valuation increases risk of correction."
     },
     "corrections_made": "Revised valuation assessment (P/B and P/E relative to sector), acknowledged overbought RSI as a bearish signal, adjusted recommendation to HOLD, set position to 0% due to exposure constraints.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-26",
+    "price_at_prediction": 1413.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1420.0,
+    "predicted_next_week_price": 1480.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High valuation multiples (trailing PE 59.6, forward PE 47.6) and modest dividend yield (0.9%) reduce upside potential; strong profitability and low debt are positives but not enough to offset overvaluation.",
+      "Technical": "Price is above both 20\u2011day and 50\u2011day SMAs, but RSI is 68.1 (near overbought) and MACD spread is narrow, indicating limited bullish momentum; volatility is low (1.8%) suggesting a sideways range rather than a breakout.",
+      "Sentiment": "News mix is balanced (40% bullish, 40% bearish, 20% neutral); regulatory penalty headline adds downside risk; earnings highlights are positive but not decisive.",
+      "Bull": "Short\u2011term trend appears bullish, but valuation and technical signals are weak; potential upside limited.",
+      "Bear": "Overvaluation, near\u2011overbought RSI, narrow MACD gap, regulatory risk, and stagnant 3\u2011month return support caution.",
+      "Risk": "Portfolio constraints prohibit a meaningful position; high valuation and limited momentum increase risk of a pullback."
+    },
+    "corrections_made": "Corrected the trade proposal to reflect portfolio constraints (cannot allocate 2% of a \u20b9100,000 portfolio to CDSL.NS); adjusted confidence to Medium based on mixed signals; provided realistic price predictions instead of speculative targets.",
     "verified_next_day": null,
     "verified_next_week": null
   }

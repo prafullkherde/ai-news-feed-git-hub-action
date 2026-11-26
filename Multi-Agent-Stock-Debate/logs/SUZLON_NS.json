@@ -1526,7 +1526,11 @@
       "direction_correct": true,
       "error_pct": -3.14
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 36.13,
+      "direction_correct": true,
+      "error_pct": -1.01
+    }
   },
   {
     "date": "2026-11-18",
@@ -1610,7 +1614,11 @@
       "Risk": "Leverage risk, modest volatility, potential for downside; portfolio constraint limits exposure."
     },
     "corrections_made": "none",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 36.13,
+      "direction_correct": true,
+      "error_pct": -1.01
+    },
     "verified_next_week": null
   },
   {
@@ -1631,7 +1639,11 @@
       "Risk": "Portfolio constraints allow 5% exposure but given the risk profile a conservative stance is warranted."
     },
     "corrections_made": "Corrected executor\u2019s stop\u2011loss placement (should be below entry, not above); removed unrealistic 2% allocation claim; acknowledged lack of verified next\u2011day/next\u2011week accuracy; adjusted recommendation to HOLD instead of BUY.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 36.13,
+      "direction_correct": false,
+      "error_pct": 1.77
+    },
     "verified_next_week": null
   },
   {
@@ -1652,6 +1664,27 @@
       "Risk": "Portfolio constraints limit position size; past prediction accuracy for this ticker is low (61% next\u2011day, 46% next\u2011week), increasing uncertainty."
     },
     "corrections_made": "Overrode the executor\u2019s short trade proposal to comply with the 5% portfolio constraint and adjusted the recommendation to HOLD based on the weak technicals, high debt, and low track\u2011record accuracy.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-26",
+    "price_at_prediction": 36.13,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 35.8,
+    "predicted_next_week_price": 36.5,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong revenue growth and profit margins support upside, but high debt\u2011to\u2011equity (6.55) and modest price\u2011to\u2011book (4.80\u00d7) raise concerns about earnings pressure and valuation stretch.",
+      "Technical": "Price below both 20\u2011day and 50\u2011day SMAs, MACD below signal, and 3\u2011month decline of 22.65% indicate a bearish short\u2011term trend; RSI near neutral and low volatility suggest limited upside momentum.",
+      "Sentiment": "Positive headlines on new blade plant and wind orders provide a bullish narrative, yet the lack of dividend and high leverage temper enthusiasm.",
+      "Bull": "Forward P/E lower than trailing and strong order book could drive earnings growth, but the current price may already reflect expected upside.",
+      "Bear": "High leverage, high book multiple, and weak technicals increase downside risk; a further sell\u2011off could erode valuation quickly.",
+      "Risk": "Portfolio exposure is capped at 5%; given the mixed signals and moderate track record accuracy, a conservative hold is prudent."
+    },
+    "corrections_made": "Revised recommendation to HOLD based on bearish technicals and high leverage; adjusted next\u2011day and next\u2011week price targets to reflect modest upside potential.",
     "verified_next_day": null,
     "verified_next_week": null
   }
