@@ -4770,18 +4770,18 @@
   "WN::https://www.workingnomads.com/job/go/2012619/": {
     "title": "Remote Customer Service Representative - Independent Contractor @ ShyftOff",
     "score": 0,
-    "why": "The role is a non\u2011technical Customer Service Representative, which does not match the candidate\u2019s UI/Angular expertise.",
-    "gap": "No relevant technical experience",
-    "first_seen": "2026-11-11",
-    "suppress_until": "2026-11-25"
+    "why": "The position is a Remote Customer Service Representative, unrelated to software development or UI architecture.",
+    "gap": "None",
+    "first_seen": "2026-11-26",
+    "suppress_until": "2026-12-10"
   },
   "WN::https://www.workingnomads.com/job/go/2011124/": {
     "title": "Senior .NET Full-stack Developer @ Lemon.io",
     "score": 35,
-    "why": "The position requires senior .NET full\u2011stack development, a stack that does not include Angular or TypeScript, limiting relevance for an Angular\u2011focused UI architect.",
-    "gap": "Stack mismatch (Angular/TS vs .NET)",
-    "first_seen": "2026-11-11",
-    "suppress_until": "2026-11-25"
+    "why": "The Senior .NET Full\u2011stack Developer role requires .NET/C# expertise and does not list Angular or TypeScript, limiting relevance to the candidate\u2019s skill set.",
+    "gap": ".NET/C# expertise",
+    "first_seen": "2026-11-26",
+    "suppress_until": "2026-12-10"
   },
   "WWR::https://weworkremotely.com/remote-jobs/bdf-experts-sap-berater-fi-co-m-w-d": {
     "title": "BDF EXPERTS: SAP Berater FI/CO (M/W/D)",
@@ -5294,5 +5294,29 @@
     "gap": "Pure security/backend focus",
     "first_seen": "2026-11-25",
     "suppress_until": "2026-12-09"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/karat-software-engineer-interviewer": {
+    "title": "Karat: Software Engineer Interviewer",
+    "score": 0,
+    "why": "The position is a Software Engineer Interviewer role, not a development job that requires Angular or TypeScript.",
+    "gap": "None",
+    "first_seen": "2026-11-26",
+    "suppress_until": "2026-12-10"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/golden-1-credit-union-web-applications-programmer-ii-sitecore-development-required": {
+    "title": "Golden 1 Credit Union: Web Applications Programmer II (Sitecore Development Required)",
+    "score": 45,
+    "why": "The role focuses on Sitecore (a .NET CMS) development, which does not involve Angular/TypeScript and does not match the candidate\u2019s primary stack.",
+    "gap": ".NET/C# and Sitecore experience",
+    "first_seen": "2026-11-26",
+    "suppress_until": "2026-12-10"
+  },
+  "WN::https://www.workingnomads.com/job/go/2049641/": {
+    "title": "Senior Analytics Engineer / BI Developer (dbt, SQL & Power BI) @ Talmatic",
+    "score": 0,
+    "why": "This is a Senior Analytics Engineer/BI Developer role centered on dbt, SQL, and Power\u202fBI, with no frontend or Angular/TypeScript requirements.",
+    "gap": "None",
+    "first_seen": "2026-11-26",
+    "suppress_until": "2026-12-10"
   }
 }
