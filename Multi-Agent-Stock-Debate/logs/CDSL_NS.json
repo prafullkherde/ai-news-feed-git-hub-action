@@ -1602,7 +1602,11 @@
       "direction_correct": true,
       "error_pct": 0.59
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 1441.0,
+      "direction_correct": false,
+      "error_pct": 2.93
+    }
   },
   {
     "date": "2026-11-19",
@@ -1722,7 +1726,11 @@
       "Risk": "Exceeds portfolio exposure limits if a trade were taken; high valuation increases risk of correction."
     },
     "corrections_made": "Revised valuation assessment (P/B and P/E relative to sector), acknowledged overbought RSI as a bearish signal, adjusted recommendation to HOLD, set position to 0% due to exposure constraints.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 1441.0,
+      "direction_correct": false,
+      "error_pct": 4.42
+    },
     "verified_next_week": null
   },
   {
@@ -1743,6 +1751,27 @@
       "Risk": "Portfolio constraints prohibit a meaningful position; high valuation and limited momentum increase risk of a pullback."
     },
     "corrections_made": "Corrected the trade proposal to reflect portfolio constraints (cannot allocate 2% of a \u20b9100,000 portfolio to CDSL.NS); adjusted confidence to Medium based on mixed signals; provided realistic price predictions instead of speculative targets.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-27",
+    "price_at_prediction": 1441.0,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 1425.0,
+    "predicted_next_week_price": 1450.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "High forward P/E (48x) and trailing P/E (60x) suggest valuation premium; profit margin and ROE are strong but may not justify such multiples; debt-to-equity is low, but price-to-book of 15x is above sector average.",
+      "Technical": "Stock is above both 20\u2011day and 50\u2011day SMAs, but RSI is 70.85 indicating over\u2011bought conditions; MACD is positive but not a strong divergence; volatility is low (1.8%) which limits upside potential.",
+      "Sentiment": "Three of five headlines are earnings\u2011positive, but one headline highlights a regulatory penalty; overall sentiment is cautiously optimistic but tempered by risk.",
+      "Bull": "Bull case relies on high valuation and over\u2011bought momentum; these factors are fragile and could reverse quickly.",
+      "Bear": "Bear case highlights high multiples and over\u2011bought RSI; potential pullback is plausible; regulatory penalty adds downside risk.",
+      "Risk": "Limited upside cushion before resistance; high valuation may not sustain; over\u2011bought RSI increases probability of a short\u2011term correction."
+    },
+    "corrections_made": "Adjusted recommendation from BUY to HOLD due to high valuation and over\u2011bought technicals; reduced position size to 0% per portfolio constraints; corrected predicted prices to reflect modest upside.",
     "verified_next_day": null,
     "verified_next_week": null
   }

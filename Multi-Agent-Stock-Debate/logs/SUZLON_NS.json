@@ -1555,7 +1555,11 @@
       "direction_correct": true,
       "error_pct": 0.41
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 36.29,
+      "direction_correct": true,
+      "error_pct": -0.58
+    }
   },
   {
     "date": "2026-11-19",
@@ -1664,7 +1668,11 @@
       "Risk": "Portfolio constraints limit position size; past prediction accuracy for this ticker is low (61% next\u2011day, 46% next\u2011week), increasing uncertainty."
     },
     "corrections_made": "Overrode the executor\u2019s short trade proposal to comply with the 5% portfolio constraint and adjusted the recommendation to HOLD based on the weak technicals, high debt, and low track\u2011record accuracy.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 36.29,
+      "direction_correct": false,
+      "error_pct": 1.65
+    },
     "verified_next_week": null
   },
   {
@@ -1685,6 +1693,27 @@
       "Risk": "Portfolio exposure is capped at 5%; given the mixed signals and moderate track record accuracy, a conservative hold is prudent."
     },
     "corrections_made": "Revised recommendation to HOLD based on bearish technicals and high leverage; adjusted next\u2011day and next\u2011week price targets to reflect modest upside potential.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-27",
+    "price_at_prediction": 36.29,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 35.9,
+    "predicted_next_week_price": 35.7,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Strong revenue growth and profit margins but high debt-to-equity (6.55) and zero dividend yield raise caution; forward P/E modest but not compelling enough to offset leverage risk.",
+      "Technical": "Price below both 20\u2011 and 50\u2011day SMAs, RSI 41.21, MACD slightly below signal, and a 3\u2011month decline of 22.87% suggest a bearish bias; volatility is moderate (2.16%).",
+      "Sentiment": "Positive order announcements are offset by analyst caution and duplicate unrelated headlines; overall sentiment is mixed.",
+      "Bull": "Forward P/E lower than trailing and near\u2011term SMA support entry, but the upside is limited by current downside trend and high leverage.",
+      "Bear": "Recent 3\u2011month decline, bearish technicals, high debt, and lack of dividend yield support a cautious stance.",
+      "Risk": "Portfolio constraints allow up to 5% exposure; however, given the weak technicals and high debt, a conservative approach is warranted."
+    },
+    "corrections_made": "Revised recommendation to HOLD based on bearish technicals and high debt; adjusted predicted prices to reflect recent downtrend; removed over\u2011optimistic entry logic from trade proposal.",
     "verified_next_day": null,
     "verified_next_week": null
   }

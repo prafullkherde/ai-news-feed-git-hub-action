@@ -1526,7 +1526,11 @@
       "direction_correct": false,
       "error_pct": 1.34
     },
-    "verified_next_week": null
+    "verified_next_week": {
+      "actual_price": 301.74,
+      "direction_correct": false,
+      "error_pct": 1.09
+    }
   },
   {
     "date": "2026-11-19",
@@ -1646,7 +1650,11 @@
       "Risk": "Limited data, high volatility relative to position size, past prediction accuracy low; conservative stance advised."
     },
     "corrections_made": "Overrode Executor\u2019s short trade proposal due to insufficient evidence and portfolio constraints; corrected confidence to Medium based on track record.",
-    "verified_next_day": null,
+    "verified_next_day": {
+      "actual_price": 301.74,
+      "direction_correct": false,
+      "error_pct": 3.16
+    },
     "verified_next_week": null
   },
   {
@@ -1667,6 +1675,27 @@
       "Risk": "Given the track record (58% next\u2011day, 49% next\u2011week accuracy) and the weak technical signals, the risk of a short\u2011term move against the current price is significant. No new position is warranted to avoid unnecessary exposure."
     },
     "corrections_made": "Overstated bullish case by implying a near\u2011term rebound solely on 20\u2011day SMA proximity; corrected to reflect weak MACD and negative trend. Removed unsupported claim that PE of 30.52 is 'modest for growth\u2011oriented Indian market'; noted lack of other fundamentals. Adjusted recommendation to HOLD and set position pct to 0.",
+    "verified_next_day": null,
+    "verified_next_week": null
+  },
+  {
+    "date": "2026-11-27",
+    "price_at_prediction": 301.74,
+    "recommendation": "HOLD",
+    "confidence": "Medium",
+    "predicted_next_day_price": 298.5,
+    "predicted_next_week_price": 295.0,
+    "proposed_position_pct": 0,
+    "position_value": 0.0,
+    "why": {
+      "Fundamental": "Trailing P/E of 31.09 is high but no other fundamental data available; valuation may be over\u2011priced.",
+      "Technical": "Price slightly above 20\u2011day SMA but below 50\u2011day SMA; MACD and RSI neutral; recent 3\u2011month decline suggests weak medium\u2011term trend.",
+      "Sentiment": "No recent news; sentiment neutral.",
+      "Bull": "Short\u2011term bullish crossover on MACD and price above 20\u2011day SMA.",
+      "Bear": "High valuation, 3\u2011month decline, price below 50\u2011day SMA, negative momentum.",
+      "Risk": "Portfolio constraint limits position to 5\u202f% of $100,000; current proposal would exceed this by far; volatility modest but recent trend weak."
+    },
+    "corrections_made": "Corrected trade size to comply with 5\u202f% portfolio limit; noted lack of fundamental data beyond trailing P/E; emphasized portfolio constraint violation.",
     "verified_next_day": null,
     "verified_next_week": null
   }
