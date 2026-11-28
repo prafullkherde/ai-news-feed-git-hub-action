@@ -4825,11 +4825,11 @@
   },
   "WN::https://www.workingnomads.com/job/go/2016531/": {
     "title": "Senior React Full-stack Developer @ Lemon.io",
-    "score": 45,
-    "why": "Candidate excels in Angular/TypeScript but the role explicitly requires React, a stack the candidate does not list.",
-    "gap": "React experience",
-    "first_seen": "2026-11-13",
-    "suppress_until": "2026-11-27"
+    "score": 60,
+    "why": "The job requires senior React full\u2011stack development; while senior, it is React\u2011only, capping the score at 60 per the rules.",
+    "gap": "Stack mismatch \u2013 React instead of Angular/TypeScript",
+    "first_seen": "2026-11-28",
+    "suppress_until": "2026-12-12"
   },
   "WWR::https://weworkremotely.com/remote-jobs/celonis-client-value-partner-cvp-utilities-energy-industry": {
     "title": "Celonis: Client Value Partner (CVP) - Utilities & Energy Industry",
@@ -5326,5 +5326,45 @@
     "gap": "No explicit Angular/TypeScript requirement",
     "first_seen": "2026-11-27",
     "suppress_until": "2026-12-11"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/terac-offensive-cybersecurity-engineers-build-rl-environments-for-ai-evaluation": {
+    "title": "Terac: Offensive Cybersecurity Engineers: Build RL Environments for AI Evaluation",
+    "score": 0,
+    "why": "The role is for offensive cybersecurity engineering, unrelated to UI/Angular development.",
+    "gap": "No frontend or Angular/TypeScript focus",
+    "first_seen": "2026-11-28",
+    "suppress_until": "2026-12-12"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/exa-support-engineer-paygo": {
+    "title": "Exa: Support Engineer, PAYGO",
+    "score": 0,
+    "why": "A support engineer position does not involve UI architecture or Angular/TypeScript work.",
+    "gap": "No frontend or Angular/TypeScript focus",
+    "first_seen": "2026-11-28",
+    "suppress_until": "2026-12-12"
+  },
+  "WWR::https://weworkremotely.com/remote-jobs/oneimaging-cloud-systems-administrator": {
+    "title": "OneImaging: Cloud Systems Administrator",
+    "score": 0,
+    "why": "Cloud Systems Administrator is an ops/backend role, not a UI/Angular position.",
+    "gap": "No frontend or Angular/TypeScript focus",
+    "first_seen": "2026-11-28",
+    "suppress_until": "2026-12-12"
+  },
+  "WN::https://www.workingnomads.com/job/go/2054343/": {
+    "title": "Senior Back-end Developer @ Lemon.io",
+    "score": 0,
+    "why": "Senior Back\u2011end Developer is a pure backend role, outside the candidate\u2019s UI expertise.",
+    "gap": "No frontend or Angular/TypeScript focus",
+    "first_seen": "2026-11-28",
+    "suppress_until": "2026-12-12"
+  },
+  "WN::https://www.workingnomads.com/job/go/2053690/": {
+    "title": "Business Development Representative (German Speaker) @ Respond.io",
+    "score": 0,
+    "why": "Business Development Representative is a sales role, not a technical UI position.",
+    "gap": "Not a technical UI/Angular role",
+    "first_seen": "2026-11-28",
+    "suppress_until": "2026-12-12"
   }
 }
